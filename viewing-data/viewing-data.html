@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>HNN Tutorials</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="HNN Tutorials" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/viewing-data/viewing-data.html" />
+<meta property="og:url" content="http://localhost:4000/viewing-data/viewing-data.html" />
+<meta property="og:site_name" content="HNN Tutorials" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/viewing-data/viewing-data.html","headline":"HNN Tutorials","@type":"WebPage","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e22554844923cf1295a14bbe79c3d1a9b04aab15">
+  </head>
+  <body class="page-template page-template-page-templates page-template-template-fullwidth page-template-page-templatestemplate-fullwidth-php page page-id-81 wp-custom-logo blog-post elementor-default elementor-page elementor-page-81" data-gr-c-s-loaded="true" data-elementor-device-mode="desktop">
+    <header class="header">
+      <div id="primary" class=" page-header header-small">
+        <div class="container" style="padding-top: 170px;">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+              <h1 class="hestia-title">Tutorials</h1>
+	    </div>
+          </div>
+        </div>
+        <div data-parallax="active" class="header-filter" style="background-image: url(&quot;/assets/specto_test.png&quot;);"></div>
+      </div>
+    </header>
+    <main id="content" class="main-content main default" role="main">
+      
+<div>
+
+<span class="c7 c18"></span>
+
+</div>
+
+<h1 id="viewing-data"><span class="c11 c7">Viewing Data</span></h1>
+
+<p><span class="c6 c7"></span></p>
+
+<h2 id="getting-started"><span class="c11 c7">Getting Started</span></h2>
+
+<p><span class="c6">Examples of how to load and compare simulation results to data are given in each of the other tutorials. Here, we detail how view temporal and spectral features of your data, with or without simultaneous simulation results.</span></p>
+
+<h2><span class="c11 c7"></span></h2>
+
+<h2 id="table-of-contents"><span class="c11 c7">Table of Contents</span></h2>
+
+<p><span class="c6 c10"><a href="#h.2onrz04b2lrc">Viewing Data</a></span></p>
+
+<p><span class="c6 c10"><a href="#h.rsy5oiv65dgo">1. Data format</a></span></p>
+
+<p><span class="c6 c10"><a href="#h.v6iygzr1zqhg">2. How to Load Data</a></span></p>
+
+<p><span class="c6 c10"><a href="#h.dlkiwbrhu2xo">3. Root-mean-square error (RMSE) comparison of model and experimental data</a></span></p>
+
+<p><span class="c6 c10"><a href="#h.n273rfa38s2u">4. Viewing experimental spectrograms</a></span></p>
+
+<p><span class="c6 c10"><a href="#h.feik4of7nt8d">5. Viewing experimental power spectral density</a></span></p>
+
+<h3 id="-1"><span class="c11 c7"></span></h3>
+
+<h3 id="1-data-format"><span class="c11 c7">1. Data format</span></h3>
+
+<p><span class="c6">HNN currently supports loading dipole time series data stored in plain text files. The first column of a txt file is the time, and the second column is the dipole time-series. HNN</span> <span class="c6">assumes data is sampled at 600 Hz</span><span class="c6 c7">, the standard for many MEG systems. We have provided a few examples of MEG ERP data to get you started. This data is located in the data subfolder under the hnn root folder. (Note, when loading your own data, if it was not collected at 600Hz, you must first downsample to 600Hz to view it in the HNN GUI.)</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<h3 id="2-how-to-load-data"><span class="c11 c7">2. How to Load Data</span></h3>
+
+<p><span class="c6 c7">From the main HNN window, go to:</span></p>
+
+<p><span class="c6 c15">File menu</span><span class="c6">&gt;</span> <span class="c6 c15">Load data file</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">Then select the file. HNN will then load the data and display the waveform in the dipole panel of the output canvas as shown below.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 518.67px; height: 458.82px;"><img src="/viewing-data/images/image2.png" alt="_images/ERPYes2Compare.png" /></span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">In this example, the solid blue line is the experimental data and the solid black/gray lines are from the simulation (gray lines are individual trials, black line is average across trials).</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<h3 id="3-root-mean-square-error-rmse-comparison-of-model-and-experimental-data"><span class="c7 c11">3. Root-mean-square error (RMSE) comparison of model and experimental data</span></h3>
+
+<p><span class="c6 c7">When HNN loads dipole data, it performs a root-mean-square error comparison against all simulation dipole traces. Root mean squared error is defined as:</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><img src="/viewing-data/images/image1.png" alt="" /></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6">The summation is across all corresponding samples of the simulated (</span><span class="c6 c14">S</span><span class="c6">) and experimental (</span><span class="c6 c14">E</span><span class="c6">) dipole signals, where there are</span> <span class="c6 c14">n</span> <span class="c6 c7">samples. Since the simulation typically uses a higher sampling rate than MEG data, HNN downsamples the simulation data before performing the RMSE calculation.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<h3 id="4-viewing-experimental-spectrograms"><span class="c11 c7">4. Viewing experimental spectrograms</span></h3>
+
+<p><span class="c6">You can load time series data directly into the “HNN Spectrogram Viewer” and a spectrogram will be calculated using a</span> <span class="c6">7-cycle Morlet wavelet</span><span class="c6">(for more details right click to see HNN’s implementation:</span> <span class="c6 c10"><a href="https://www.google.com/url?q=https://github.com/jonescompneurolab/hnn/blob/master/specfn.py&amp;sa=D&amp;ust=1552526149115000">specfn.py</a></span><span class="c6">). To load an example of spontaneous SI activity from data provided, first start the HNN Spectrogram Viewer by clicking</span> <span class="c6 c15">View Spectrograms</span><span class="c6">from HNN’s</span> <span class="c6 c15">View</span><span class="c6">menu in then main GUI. Then, click</span> <span class="c6 c15">File</span><span class="c6">&gt;</span> <span class="c6 c15">Load Data File</span><span class="c6 c7">.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">And load the file S1_ongoing.txt. Next, select Trial 32 from the drop-down menu at the bottom of the viewer. You will see the following display.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 419.15px; height: 367.50px;"><img src="/viewing-data/images/image5.png" alt="_images/yes_trial32_prestim_dipole_specgram.png" /></span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">This single trial example of spontaneous SI data exhibits non-continuous brief alpha and beta events. Since these data are spontaneous and non-time locked, it would be difficult to directly compare to simulated data. Instead, we generally compare qualitative features of full spectrograms between data and simulation results, or directly compare the power spectral density, as described below.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<h3 id="5-viewing-experimental-power-spectral-density"><span class="c11 c7">5. Viewing experimental power spectral density</span></h3>
+
+<p><span class="c6 c7">HNN can compare simulation and experimental data PSDs.</span></p>
+
+<p><span class="c6 c7">For this example, we will use a param file from a simulation that produces alpha and beta events.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6">Download the relevant param file here:</span> <span class="c6 c10"><a href="https://www.google.com/url?q=http://hnn.brown.edu/param/AlphaAndBeta.param&amp;sa=D&amp;ust=1552526149119000">AlphaAndBeta.param</a></span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">Then load the parameter file values by clicking:</span></p>
+
+<p><span class="c6 c15">Set Parameters From File</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">Then select the file you just downloaded. If you have not already run this simulation, do so now by clicking:</span></p>
+
+<p><span class="c6 c15">Start Simulation</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">Then, to view the simulation’s power spectral density (PSD) – the time average of the spectrogram, click:</span></p>
+
+<p><span class="c6 c15">View Menu</span><span class="c6">&gt;</span> <span class="c6 c15">View PSD</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">You should see the following window.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 522.67px; height: 453.33px;"><img src="/viewing-data/images/image3.png" alt="_images/AlphaAndBetaViewPSD.png" /></span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6">Power spectral density from the simulation shows a strong peak at alpha (10 Hz), with a lower power in beta (~20 Hz). Top/middle/bottom panels show the PSD contributions from layer 2, layer 5, and the aggregate from layer 2 and layer 5. We can then use HNN to compare to experimental PSD data. To do so, you will need time-series of MEG data in a format that HNN can read (more details provided above). Once you have such data, you can load it with the HNN PSD viewer by clicking:</span> <span class="c6 c15">File menu</span><span class="c6">&gt;</span> <span class="c6 c15">Load data</span><span class="c6 c7">.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6">Then select the file. HNN will calculate the</span> <span class="c6">PSD from the time-series data</span><sup><a href="#cmnt1">[a]</a></sup><sup><a href="#cmnt2">[b]</a></sup><span class="c6 c7"> and overlay it on the simulation aggregate dipole PSD for comparison. Below is an example.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 522.67px; height: 453.33px;"><img src="/viewing-data/images/image4.png" alt="_images/AlphaAndBetaViewPSDCompare.png" /></span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<p><span class="c6 c7">Strong similarity of PSD generated by model (bottom white traces) and PSD from experimental MEG data (bottom yellow traces). Solid/dotted lines are mean+/-standard error. This data is from primary somatosensory cortex from spontaneous prestimulus activity.</span></p>
+
+<p><span class="c6 c7"></span></p>
+
+<div class="c2">
+
+[[a]](#cmnt_ref1)<span class="c5">We should detail how this is done and.or provide a link to the code.</span>
+
+</div>
+
+<div class="c2">
+
+[[b]](#cmnt_ref2)<span class="c5">here PSD is the TFR's average over time</span>
+
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/jonescompneurolab/hnn-tutorials">hnn-tutorials</a> is maintained by <a href="https://github.com/jonescompneurolab">jonescompneurolab</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
