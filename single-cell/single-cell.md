@@ -19,13 +19,13 @@ Note that before running/loading new simulations, we first remove the prior simu
 
 ### 2.1. Load/view parameters to define the network structure & to "activate" the network. 
 
-For the exercise below, we will use the parameter file `single_cell_L5.param`, which can be obtained by clicking [here](https://jonescompneurolab.github.io/hnn-tutorials/single-cell/single_cell_L5.param). After downloading the file, copy it to a location that can be accessed by the HNN GUI. For Docker-based installs, this is the `hnn/param` directory located where you ran the docker-compose command. For example, `~/hnn/installer/mac/hnn/param`.
+For the exercise below, we will use the parameter file `single_cell_l5.param`, which can be obtained by clicking [here](https://jonescompneurolab.github.io/hnn-tutorials/single-cell/single_cell_l5.param). After downloading the file, copy it to a location that can be accessed by the HNN GUI. For Docker-based installs, this is the `hnn/param` directory located where you ran the docker-compose command. For example, `~/hnn/installer/mac/hnn/param`.
 
 To load the initial parameter set, navigate to the HNN GUI and click:
 
 `Set Parameters From File`
 
-Then select the file [single_cell_L5.param](https://jonescompneurolab.github.io/hnn-tutorials/single-cell/single_cell_L5.param) from the `hnn/param` folder where the file was copied to above.
+Then select the file [single_cell_l5.param](https://jonescompneurolab.github.io/hnn-tutorials/single-cell/single_cell_l5.param) from the `hnn/param` folder where the file was copied to above.
 
 This will load a configuration of isolated cells without any network connections between them. The dimensions of the pyramidal so the network is 1x1, and can be verified in the GUI by navigating to `Set Parameters -> Network`.
 
