@@ -1,5 +1,5 @@
 # Overview
-We demonstrate how to use the HNN software to simulate several of the most commonly recorded EEG/MEG signals, including event related potentials (ERPs) and low frequency rhythms:
+We demonstrate how to use the HNN software to simulate several of the most commonly recorded EEG/MEG signals, including event related potentials (ERPs) and low-frequency rhythms:
 
 1. Event Related Potentials (ERPs) (0-175ms)
 2. Alpha (7-14Hz) and Beta Rhythms (15-29Hz)
