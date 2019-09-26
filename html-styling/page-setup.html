@@ -1,0 +1,78 @@
+<!-- START -->
+<!-- html header, styling for Tutorials pages -->
+<!-- note: requires stylesheet.css to be in the parent directory; see <head> section -->
+<!-- copy the contents below into the appropriate sections of your html page -->
+
+<!-- document setup -->
+
+<html>
+
+<!-- head area -->
+<head>
+<meta charset="utf-8" />
+<title>Tutorials - HNN</title>
+<!-- import CSS style sheet from Github directory -->
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css" />
+</head>
+
+<!-- body styling -->
+<body>
+
+<!-- add Tutorials header -->
+<div class="headercontainer">
+<div class="headertext">Alpha and Beta</div>
+</div>
+
+<!-- set width for body to 900px -->
+<div id="wrapper">
+
+<!-- add button to scroll to top -->
+<button onclick="topFunction()" id="myBtn" title="Scroll to top">Top</button>
+
+<!-- script for scroll button function -->
+<script>
+//Get the button:
+mybutton = document.getElementById("myBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+<!-- return to tutorials page -->
+<div style="text-align:center; vertical-align: middle; padding:10px;">
+<p></p>
+
+<tbody>
+<tr style="border: none;">
+<td style="border: none; width: 33.3%; padding: 1px;">
+</td>
+
+<td style="border: none; width: 33.3%; padding: 1px;">
+<a style="text-decoration: none" href="https://hnn.brown.edu/index.php/tutorials/">
+<p><img src="https://hnn.brown.edu/wp-content/uploads/2019/06/Model_PN.png" width="60" height="auto"></p>
+<p style=" font-family: sans-serif; font-size: x-large; font-weight:700; color: #474095; border:0px; margin:0px;">Return to Tutorials</p>
+</a>
+</td>
+
+<td style="border: none; width: 33.3%; padding: 1px;">
+</td>
+</tr>
+</tbody>
+</div>
+
+<!-- your contents go here -->
+
+<!-- </body> -->
+<!-- </html> -->
+<!-- END -->
