@@ -6,15 +6,16 @@ In order to understand the workflow and initial parameter sets provided with thi
 
 <!-- start Figure 1 -->
 
-<div style="background-color:rgba(0, 0, 0, 0.025); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
+<div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
 
 ### Figure 1
 
-<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png" alt="image3" width=90%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png" alt="image3" width=90%/></a></p>
 
 **Left:** Spectrogram of spontaneous activity from current dipole source in SI averaged across 100 trials, from an example subject, shows nearly continuous prestimulus alpha and beta oscillations. At time zero, a brief tap was given to the contralateral finger tip and the spontaneous oscillations briefly desynchronized.
 
 **Right:** A closer look at the prestimulus waveform and spectrogram from spontaneous activity during example signal trials, shows that the alpha and beta oscillations occur intermittently and primarily non-overlapping.</span>
+
 </div>
 
 <!-- end Figure 1 -->
@@ -100,7 +101,8 @@ In this tutorial, we will explore parameter changes that illustrate these result
 <!-- -->
 
 <a id="toc_one"></a>
-## 1\. Simulating Rhythmic Proximal Inputs: Alpha Only
+
+## 1. Simulating Rhythmic Proximal Inputs: Alpha Only
 
 Note that before running/loading new simulations, we first remove the prior simulation(s) by pressing the “Remove Simulation” button at the bottom of the GUI. If we do not do this, both simulation dipoles are displayed (the old simulation is displayed with a dotted line, new simulation with a solid line; see “Tour of the GUI” for more details on simulation controls).
 

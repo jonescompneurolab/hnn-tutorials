@@ -1,8 +1,3 @@
-<!-- START -->
-<!-- html header, styling for Tutorials pages -->
-<!-- note: requires stylesheet.css to be in the parent directory; see <head> section -->
-<!-- copy the contents below into the appropriate sections of your html page -->
-
 <!-- document setup -->
 
 <html>
@@ -18,8 +13,17 @@
 <!-- body styling -->
 <body>
 
+<!-- add Navbar -->
+<div class="navbar">
+  <div id="wrapper">
+    <img src="https://hnn.brown.edu/wp-content/uploads/2018/05/mainlogo3.png" alt="HNN" scale="0">
+    <a href="https://hnn.brown.edu/index.php/tutorials/#jumptutorials">TUTORIALS</a>
+    <a href="https://hnn.brown.edu">HOME</a>
+  </div>
+</div>
+
 <!-- add Tutorials header -->
-<div class="headercontainer">
+<div class="headercontainer main">
 <div class="headertext">Alpha and Beta</div>
 </div>
 
@@ -59,10 +63,10 @@ function topFunction() {
 </td>
 
 <td style="border: none; width: 33.3%; padding: 1px;">
-<a style="text-decoration: none" href="https://hnn.brown.edu/index.php/tutorials/">
-<p><img src="https://hnn.brown.edu/wp-content/uploads/2019/06/Model_PN.png" width="60" height="auto"></p>
-<p style=" font-family: sans-serif; font-size: x-large; font-weight:700; color: #474095; border:0px; margin:0px;">Return to Tutorials</p>
-</a>
+<!--<a style="text-decoration: none" href="https://hnn.brown.edu/index.php/tutorials/">-->
+<p><img src="https://hnn.brown.edu/wp-content/uploads/2019/06/EEG_Brain.png" width="60" height="auto"></p>
+<p style=" font-family: sans-serif; font-size: x-large; font-weight:700; color: #1156a3; border:0px; margin:0px;">Tutorials</p>
+<!--</a>-->
 </td>
 
 <td style="border: none; width: 33.3%; padding: 1px;">
@@ -71,15 +75,13 @@ function topFunction() {
 </tbody>
 </div>
 
-<!-- your contents go here -->
-
 <h1 id="alpha-7-14-hz-and-beta-15-29-hz-rhythms-the-mu-complex">Alpha (7-14 Hz) and Beta (15-29 Hz) Rhythms: The Mu-Complex</h1>
 <h2 id="getting-started">Getting Started</h2>
 <p>In order to understand the workflow and initial parameter sets provided with this tutorial, we must first briefly describe prior studies that led to the creation of the data you will aim to simulate. This tutorial is based on results from Jones et al. 2009 where, using MEG, we recorded spontaneous (pre-stimulus) alpha (7-14 Hz) and beta (15-20 Hz) rhythms that arise as part of the mu-complex from the primary somatosensory cortex (S1) [1]. (Figure 1. See also [2-4].)</p>
 <!-- start Figure 1 -->
-<div style="background-color:rgba(0, 0, 0, 0.025); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
+<div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; padding:15px; margin-top:20px; margin-bottom:20px">
 <h3 id="figure-1">Figure 1</h3>
-<p align="center">
+<p>
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png" alt="image3" width=90%/></a>
 </p>
 <p><strong>Left:</strong> Spectrogram of spontaneous activity from current dipole source in SI averaged across 100 trials, from an example subject, shows nearly continuous prestimulus alpha and beta oscillations. At time zero, a brief tap was given to the contralateral finger tip and the spontaneous oscillations briefly desynchronized.</p>
@@ -137,7 +139,8 @@ Schematic illustration of exogenous 10 Hz burst drive through proximal and dista
 <!-- the above lines of text have been reviewed -->
 <!-- -->
 <!-- -->
-<p><a id="toc_one"></a> ## 1. Simulating Rhythmic Proximal Inputs: Alpha Only</p>
+<p><a id="toc_one"></a></p>
+<h2 id="simulating-rhythmic-proximal-inputs-alpha-only">1. Simulating Rhythmic Proximal Inputs: Alpha Only</h2>
 <p>Note that before running/loading new simulations, we first remove the prior simulation(s) by pressing the “Remove Simulation” button at the bottom of the GUI. If we do not do this, both simulation dipoles are displayed (the old simulation is displayed with a dotted line, new simulation with a solid line; see “Tour of the GUI” for more details on simulation controls).</p>
 <h3 id="loadview-parameters-to-define-the-network-structure-to-activate-the-network.">1.1 Load/view parameters to define the network structure &amp; to “activate” the network.  </h3>
 <p>As described in the “Getting Started” section, low-frequency alpha and beta rhythms can be simulated by a combination of rhythmic subthreshold proximal and distal ~10Hz inputs. Here, we begin by describing the impact of proximal inputs only. An initial parameter set that will simulate the effect of ~10 Hz subthreshold proximal drive is provided in the file <a href="https://www.google.com/url?q=https://hnn.brown.edu/wp-content/uploads/2018/05/AlphaAndBeta.zip&amp;sa=D&amp;ust=1552525363605000">OnlyRhythmicProx.param</a>.</p>
@@ -485,7 +488,3 @@ Schematic illustration of exogenous 10 Hz burst drive through proximal and dista
 <div>
 
 </div>
-
-</body>
-</html>
-<!-- END -->
