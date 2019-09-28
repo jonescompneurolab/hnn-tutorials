@@ -21,7 +21,7 @@ These examples are based on our published studies investigating spontaneous and 
 
 Before starting the tutorials, it is necessary to understand the framework for the adjustable spike train drive in HNN’s template network. This framework is based on known layer specific patterns of synaptic input to cortical circuits. Local cortical networks receive synaptic input from spiking activity in other parts of the brain through two primary projection pathways. One pathway, representative of the pathway from lemniscal thalamus to cortex, arrives in granular layers and propagates to the proximal dendrites of neocortical pyramidal neurons (the source of the primary dipole current – see [Overview & Uniqueness](https://hnn.brown.edu/index.php/overview-uniqueness/)). HNN refers to this as proximal drive, as shown in red below. The other pathway represents input from higher order cortical areas or non-lemniscal input to the distal dendrites of neocortical pyramidal neurons supragranular layers. HNN refers to this as distal drive, as shown in green below.
 
-<p style="text-align: center">
+<p align="center">
 <img style="text-align: center" src="images/Proximal-distal-spike-drive.png" height="300" />
 </p>
 
