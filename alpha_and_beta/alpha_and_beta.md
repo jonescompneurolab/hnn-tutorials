@@ -12,7 +12,7 @@ In order to understand the workflow and initial parameter sets provided with thi
 
 ### Figure 1
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image3.png" alt="image3" width=90%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image3.png" alt="image3" width=90%/></a></p>
 
 **Left:** Spectrogram of spontaneous activity from current dipole source in SI averaged across 100 trials, from an example subject, shows nearly continuous prestimulus alpha and beta oscillations. At time zero, a brief tap was given to the contralateral finger tip and the spontaneous oscillations briefly desynchronized.
 
@@ -30,7 +30,7 @@ Our goal was to use our neocortical model to reproduce features of the waveform 
 
 ### Figure 2
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image29.png" alt="image29" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image29.png" alt="image29" width=90%/>
 </a>
 <p>Key features of the spontaneous non-average SI alpha/beta complex include, intermittent transient bouts of alpha/beta activity, a waveform that oscillates around 0nAm, PSD with peaks in the alpha and beta bands, primarily non-overlapping alpha and beta events, and a symmetric waveform oscillation. The model was able to reproduce each of these features.</p>
 
@@ -44,8 +44,8 @@ Our goal was to use our neocortical model to reproduce features of the waveform 
 
 <h3>Figure 3</h3>
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image4.png">
-<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image4.png" alt="image4" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image4.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image4.png" alt="image4" width=80%/>
 </a>
 <p>Schematic illustration of exogenous 10 Hz burst drive through proximal and distal projection pathways.  “Population bursts”, consisting of a set number of “burst units” (10, 2-spike bursts shown) drive post-synaptic conductances in the local network with a set frequency (100 ms ISI) and mean delay between proximal and distal. </p>
 </div>
@@ -129,19 +129,19 @@ You should see the values of adjustable parameters displayed as in the dialog bo
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png" alt="image11" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image11.png" alt="image11" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image18.png" alt="image18" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image18.png" alt="image18" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image32.png" alt="image32" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image32.png" alt="image32" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -154,7 +154,7 @@ You should see the values of adjustable parameters displayed as in the dialog bo
 
 <!-- end Figure 4 -->
 
-Timing tab: The rhythmic proximal inputs drive excitatory synapses in the neocortical network in a proximal projection pattern, as shown at the bottom of the dialog box. For further details on the connectivity structure of the network, see the Under the Hoodsection of the HNN website. Rhythmic proximal input occurs through stochastic, presynaptic bursts of action potentials from a population of bursting cells (set with “Number bursts”; see Figure 3) onto postsynaptic neurons of the modelled network. Stochasticity is introduced in two places: the spike train start time for each bursting cell is sampled from a normal distribution with mean “Start time mean (ms)” and standard deviation “Start time stdev (ms)” and the inter-burst intervals for each bursting cell are sampled from a normal distribution of mean ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image1.png)(e.g., a 100 ms inter-burst interval corresponds to a “Burst frequency” of 10 Hz) and standard deviation “Burst stdev (ms)” (see Figure 3). Also note that the number of spikes per burst unit is set with “Spikes/burst” (currently, only values of 1 and 2 with a fixed 10ms delay can be used) and the final stop time for the entire population of rhythmic proximal inputs is set with “Stop time (ms)”.
+Timing tab: The rhythmic proximal inputs drive excitatory synapses in the neocortical network in a proximal projection pattern, as shown at the bottom of the dialog box. For further details on the connectivity structure of the network, see the Under the Hoodsection of the HNN website. Rhythmic proximal input occurs through stochastic, presynaptic bursts of action potentials from a population of bursting cells (set with “Number bursts”; see Figure 3) onto postsynaptic neurons of the modelled network. Stochasticity is introduced in two places: the spike train start time for each bursting cell is sampled from a normal distribution with mean “Start time mean (ms)” and standard deviation “Start time stdev (ms)” and the inter-burst intervals for each bursting cell are sampled from a normal distribution of mean ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image1.png)(e.g., a 100 ms inter-burst interval corresponds to a “Burst frequency” of 10 Hz) and standard deviation “Burst stdev (ms)” (see Figure 3). Also note that the number of spikes per burst unit is set with “Spikes/burst” (currently, only values of 1 and 2 with a fixed 10ms delay can be used) and the final stop time for the entire population of rhythmic proximal inputs is set with “Stop time (ms)”.
 
 Layer 2/3, and Layer 5 tabs: This dialog boxallows you to set the postsynaptic conductance of each of the excitatory synapses in the networks. There are AMPA and NMDA receptors on each cell type (pyramidal and basket cells). There is also a delay parameter to control the arrival time of each spike to the network. In this example, the delay to the layer 2/3 cells is 0.1 ms, with a slightly longer delay to the layer 5 cells of 1 ms. For further details on the connectivity structure of the network, see Under the Hood.  
 
@@ -172,7 +172,7 @@ This simulation runs for 700 ms of simulation time, so will take a little longer
 
 ### Figure 5
 
-<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image25.png" alt="image25" width=90%/></a></p>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image25.png" alt="image25" width=90%/></a></p>
 </div>
 
 <!-- end Figure 5 -->
@@ -218,17 +218,17 @@ You should see the values of adjustable parameters displayed as  in the dialog 
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png" alt="image6" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image6.png" alt="image6" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image22.png" alt="image22" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image22.png" alt="image22" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image5.png" alt="image5" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image5.png" alt="image5" width=100%/>
 </a>
 </td>
 
@@ -254,7 +254,7 @@ Once completed, you will see output in the GUI window similar to that shown belo
 
 ### Figure 7
 
-<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image7.png" alt="image7" width=90%/></a>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image7.png" alt="image7" width=90%/></a>
 
 </div>
 
@@ -301,12 +301,12 @@ You should see the values displayed in the dialogue boxes below.
 <tr style="border: none;">
 
 <td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image11.png" alt="image11" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image11.png" alt="image11" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png" alt="image6" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image6.png" alt="image6" width=100%/>
 </a>
 </td>
 
@@ -334,7 +334,7 @@ Once completed, you will see output similar to that shown below.
 
 ### Figure 9
 
-<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image28.png" alt="image28" width=90%/></a>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image28.png" alt="image28" width=90%/></a>
 
 </div>
 
@@ -379,17 +379,17 @@ You should see the values displayed in the three dialog boxes below.
 <tr style="border: none;">
 
 <td style="border: none; vertical-align:top" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image19.png" alt="image19" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image19.png" alt="image19" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image9.png" alt="image9" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image9.png" alt="image9" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image14.png" alt="image14" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image14.png" alt="image14" width=100%/>
 </a>
 </td>
 </tr>
@@ -407,7 +407,7 @@ To run this simulation, click Start Simulation from the main GUI window. This s
 
 ### Figure 11
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image17.png" alt="image17" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image17.png" alt="image17" width=90%/>
 </a>
 </div>
 
@@ -426,7 +426,7 @@ You will then see a window similar to the one shown below, allowing you to selec
 
 ### Figure 12
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image31.png" alt="image31" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image31.png" alt="image31" width=90%/>
 </a>
 </div>
 
@@ -447,12 +447,12 @@ To run this simulation, open the Rhythmic Proximal Inputsand Rhythmic Distal Inp
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image8.png" alt="image8" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image8.png" alt="image8" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image13.png" alt="image13" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image13.png" alt="image13" width=100%/>
 </a>
 </td>
 
@@ -466,7 +466,7 @@ To run this simulation, click Start Simulation from the main GUI window. Once c
 
 ### Figure 14
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image27.png" alt="image27" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image27.png" alt="image27" width=90%/>
 </a>
 </div>
 
@@ -487,7 +487,7 @@ You should see the following window.
 
 ### Figure 15
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image21.png" alt="image21" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image21.png" alt="image21" width=90%/>
 </a>
 </div>
 
@@ -513,7 +513,7 @@ You should see something similar to the following window.
 
 ### Figure 16
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image33.png" alt="image33" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image33.png" alt="image33" width=90%/>
 </a>
 </div>
 
@@ -538,7 +538,7 @@ Below is an example output using the S1_ongoing file provided above. The viewer 
 
 ### Figure 17
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image15.png" alt="image 15" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image15.png" alt="image 15" width=90%/>
 </a>
 </div>
 
@@ -555,7 +555,7 @@ And load the file S1_ongoing.txt. Next, select Trial 32 (for example) from the d
 
 ### Figure 18
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image10.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image10.png" alt="image10" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image10.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image10.png" alt="image10" width=90%/>
 </a>
 </div>
 
@@ -581,7 +581,7 @@ Set Parameters > Rhythmic Distal Inputs
 ```
 
 
-Under the timing tab, reduce the Burst stdev (Hz) value from 20 ms to 10 ms.  This will create higher synchrony in the timing of the distal input bursts. Under both the Layer 2/3 and Layer 5 tabs, increase the postsynaptic condances weights of the AMPA synapses onto the Layer 2/3 and Layer 5 pyramidal neurons from 5.4e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image2.png)to 6e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image2.png). Both of these changes will cause the distal input burst to push a greater amount of current flow down the pyramidal neuron dendrites. The “Rhythmic Distal Input” dialog windows should look as shown below.
+Under the timing tab, reduce the Burst stdev (Hz) value from 20 ms to 10 ms.  This will create higher synchrony in the timing of the distal input bursts. Under both the Layer 2/3 and Layer 5 tabs, increase the postsynaptic condances weights of the AMPA synapses onto the Layer 2/3 and Layer 5 pyramidal neurons from 5.4e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)to 6e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png). Both of these changes will cause the distal input burst to push a greater amount of current flow down the pyramidal neuron dendrites. The “Rhythmic Distal Input” dialog windows should look as shown below.
 
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 
@@ -594,17 +594,17 @@ Under the timing tab, reduce the Burst stdev (Hz) value from 20 ms to 10 ms.  T
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image26.png" alt="image26" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image26.png" alt="image26" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image16.png" alt="image 16" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image16.png" alt="image 16" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image30.png" alt="image30" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image30.png" alt="image30" width=100%/>
 </a>
 </td>
 
@@ -618,7 +618,7 @@ Next, we will test how these parameter changes affect the simulation. Click on S
 
 ### Figure 20
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image34.png" alt="image34" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image34.png" alt="image34" width=90%/>
 </a>
 </div>
 
@@ -635,7 +635,7 @@ You should see the following window:
 
 ### Figure 21
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image36.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image36.png" alt="image36" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image36.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image36.png" alt="image36" width=90%/>
 </a>
 </div>
 
@@ -649,7 +649,7 @@ Try changing the frequency of the rhythmic distal drive from 10 Hz to 20 Hz. Try
 
 Recall that in the above simulations, the strength of the rhythmic proximal and distal inputs were chosen so that the cells remained subthreshold (no spiking). We will now demonstrate what happens if we increase the strength of the inputs far enough to induce spikes. Instead of simulating subthreshold alpha/beta events, we will see that the dipole signals are dominated by higher-frequency events created by spiking activity. We note that the produced waveforms of activity are, to our knowledge, not typically observed in MEG or EEG data, supporting the notion that alpha/beta rhythms are created through subthreshold processes.
 
-To test this, change the parameters in the “Rhythmic Distal Inputs” dialog box as follows. First, change the simulation name to, e.g., AlphaAndBetaSpike in the main Set Parameterswindow. This will save the simulation data to a file with this new name. If you don’t still have the “Rhythmic Distal Inputs” dialog window open, click set parameters > Rhythmic Distal Inputs. Under the timing tab, change the Burst stdev value back to 20 ms. Under both the Layer 2/3 and Layer 5 tabs, increase the postsynaptic conductance weights of the AMPA synapses onto the Layer 2/3 and Layer 5 pyramidal neurons from 6e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image2.png)to 40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image2.png) (a big change that will provide enough current to cause the cells to spike). The “Rhythmic Distal Input” dialog windows should look as shown below.
+To test this, change the parameters in the “Rhythmic Distal Inputs” dialog box as follows. First, change the simulation name to, e.g., AlphaAndBetaSpike in the main Set Parameterswindow. This will save the simulation data to a file with this new name. If you don’t still have the “Rhythmic Distal Inputs” dialog window open, click set parameters > Rhythmic Distal Inputs. Under the timing tab, change the Burst stdev value back to 20 ms. Under both the Layer 2/3 and Layer 5 tabs, increase the postsynaptic conductance weights of the AMPA synapses onto the Layer 2/3 and Layer 5 pyramidal neurons from 6e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)to 40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png) (a big change that will provide enough current to cause the cells to spike). The “Rhythmic Distal Input” dialog windows should look as shown below.
 
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 
@@ -662,17 +662,17 @@ To test this, change the parameters in the “Rhythmic Distal Inputs” dialog b
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image6.png" alt="image6" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image6.png" alt="image6" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image12.png" alt="image12" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image12.png" alt="image12" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image20.png" alt="image20" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image20.png" alt="image20" width=100%/>
 </a>
 </td>
 
@@ -686,11 +686,11 @@ Next, run the simulation. Click on Start Simulation from the main GUI window. O
 
 ### Figure 23
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image37.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image37.png" alt="image37" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image37.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image37.png" alt="image37" width=90%/>
 </a>
 </div>
 
-Notice that the histogram profile of the distal input bursts (green) are once again wider corresponding to less synchronous input and comparable to those shown in the example in Step 3\. However, in this case the postsynaptic conductance of these driving spike is significantly larger (40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image2.png)). This strong input induces spiking activity in the pyramidal neuron on several cycles of the drive (2.5 shown here) resulting in a sharp and rapidly oscillating dipole waveform. The corresponding dipole spectrogram shows broadband spiking from ~60-120 Hz. This type of activity is not typically seen in EEG or MEG data, and hence unlikely to underlie macroscale recordings.
+Notice that the histogram profile of the distal input bursts (green) are once again wider corresponding to less synchronous input and comparable to those shown in the example in Step 3\. However, in this case the postsynaptic conductance of these driving spike is significantly larger (40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)). This strong input induces spiking activity in the pyramidal neuron on several cycles of the drive (2.5 shown here) resulting in a sharp and rapidly oscillating dipole waveform. The corresponding dipole spectrogram shows broadband spiking from ~60-120 Hz. This type of activity is not typically seen in EEG or MEG data, and hence unlikely to underlie macroscale recordings.
 
 We can verify the increase in high-frequency activity more directly by viewing the simulation’s power spectral density (PSD). To do so, click on the View> View PSD from the main GUI window. You should see the following window.
 
@@ -698,7 +698,7 @@ We can verify the increase in high-frequency activity more directly by viewing t
 
 ### Figure 24
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image23.png" alt="image23" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image23.png" alt="image23" width=90%/>
 </a>
 </div>
 
@@ -712,7 +712,7 @@ We can verify that the neurons are spiking by looking at the spiking raster plot
 
 ### Figure 25
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image38.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image38.png" alt="image38" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image38.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image38.png" alt="image38" width=90%/>
 </a>
 </div>
 
@@ -746,12 +746,12 @@ We mentioned above that, in addition to parameters controlling the strength and 
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image9.png" alt="image9" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image9.png" alt="image9" width=100%/>
 </a>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image35.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image35.png" alt="image35" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image35.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image35.png" alt="image35" width=100%/>
 </a>
 </td>
 
@@ -767,7 +767,7 @@ Next, we will run the simulation to investigate the impact of this parameter cha
 
 ### Figure 27
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Alpha%20Beta%20Tutorial/images/image24.png" alt="image24" width=90%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image24.png" alt="image24" width=90%/>
 </a>
 </div>
 
