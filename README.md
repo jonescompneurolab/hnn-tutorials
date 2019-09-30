@@ -29,6 +29,8 @@ HNN allows you to define and adjust trains of action potentials that generate ex
 
 * <a href="https://jonescompneurolab.github.io/hnn-tutorials/Tour%20of%20the%20GUI/gui_tour">Tour of the GUI</a>
 * <a href="https://jonescompneurolab.github.io/hnn-tutorials/alpha_and_beta/alpha_and_beta">Alpha and Beta</a>
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/optimization/optimization">Optimization</a>
+
 
 
 ## References
