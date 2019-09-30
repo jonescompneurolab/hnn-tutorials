@@ -1,8 +1,8 @@
-# Automated Parameter Optimizaiton
+# Automated Parameter Optimization
 
 ## Getting started
 
-HNN release 1.0 provides an automated model optimization tool that can be used to efficiently estimate parameter values that will minimize the error between model ouput and features of the ERP wavesforms from experiements. The optimization tool reduces the number of simulations needed to optimize the model by leveraging two insights. First, key parameters of ERP generation are related to the exogneous inputs, which are the only parameters currently estimated. Second, results from our sensitivity analyses have shown that the parameters of a particular input are more or less likely to have a dominant effect on a feature of the dipole waveform depending on that input's timing and the onset of any other inputs leading up to the feature. We combine these insights in a stepwise optimzation procedure that is presented in more detal in our [bioRxiv preprint](https://www.biorxiv.org/content/10.1101/740597v2) on HNN.
+HNN release 1.0 provides an automated model optimization tool that can be used to efficiently estimate parameter values that will minimize the error between model ouput and features of the ERP wavesforms from experiements. The optimization tool reduces the number of simulations needed to optimize the model by leveraging two insights. First, key parameters of ERP generation are related to the exogneous inputs, which are the only parameters currently estimated. Second, results from our sensitivity analyses have shown that the parameters of a particular input are more or less likely to have a dominant effect on a feature of the dipole waveform depending on that input's timing and the onset of any other inputs leading up to the feature. We combine these insights in a stepwise optimzation procedure that is presented in more detal in <a href=#reference-1>[1]</a>.
 
 The rest of this tutorial examines how HNN's optimization tool can be used to estimate parameters for ERP simulations that more closely match experiemental data given an approximate baseline configuration. Users may use one of the parameter files included with HNN or use the GUI to interactively add and remove evoked inputs to arrive at a suitable starting point for optimization. This tutorial will also explore a process for identifying the key parameters responsible for the improved model fit.
 
@@ -12,14 +12,28 @@ We start from the parameter file used in the previous [ERP tutorial](https://hnn
 
 <h3>Figure 1</h3>
 
-<a href="images/image01.png">
-<img src="images/image01.png" alt="image01" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image01.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image01.png" alt="image01" width=80%/>
 </a>
 <p>
 </p>
+
 </div>
 
-## Optimizing model to new data
+## Tutorial table of contents
+
+1. [Optimizing baseline parameters to new data](#optimizing-baseline-parameters-to-new-data)
+    - [Configuring parameter optimization](#configuring-parameter-optimization)
+    - [Running a first optimization](#running-a-first-optimization)
+2. [Repeating optimization](#repeating-optimization)
+3. [Optimizing with less smoothing](#optimizing-with-less-smoothing)
+4. [Identifying key parameters](#identifying-key-parameters)
+    - [Proximal 1 input](#proximal-1-input)
+    - [Distal 1 input](#distal-1-input)
+    - [Proximal 2 input](#proximal-2-input)
+5. [Exercises for further exploration](#exercises-for-further-exploration)
+
+## Optimizing baseline parameters to new data
 
 From the above plot, it is possible to make inferences on the underlying circuit-level dynamics responsible for the observed ERP waveform in the 50% detection scenario. However, HNN users may be interested in making inferences on the dynamics responsible for different experiemental conditions or even different cortical areas. For example, if we are interested in how the exogenous inputs might differ in the case of suprathreshold stimulation -- 100% detection -- we observe in the plot below that dipole magnitude changes significantly. The RMSE between the old simulation output and the suprathreashold data is now 30.53 
 
@@ -27,8 +41,8 @@ From the above plot, it is possible to make inferences on the underlying circuit
 
 <h3>Figure 2</h3>
 
-<a href="images/image02.png">
-<img src="images/image02.png" alt="image02" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image02.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image02.png" alt="image02" width=80%/>
 </a>
 <p>
 </p>
@@ -40,8 +54,8 @@ The plot above show that the configured stop time of the ERPYes simulation at 17
 
 <h3>Figure 3</h3>
 
-<a href="images/image03.png">
-<img src="images/image03.png" alt="image03" width=40%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image03.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image03.png" alt="image03" width=40%/>
 </a>
 <p>
 </p>
@@ -53,14 +67,14 @@ Change the "Simulation Name" to "ERPYes3Trials_173ms_opt3" and click "Run Simula
 
 <h3>Figure 4</h3>
 
-<a href="images/image04.png">
-<img src="images/image04.png" alt="image04" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image04.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image04.png" alt="image04" width=80%/>
 </a>
 <p>
 </p>
 </div>
 
-## Configuration
+### Configuring parameter optimization
 
 Once a data file and parameter file have been loaded, the "Configure Optimization" menu selection will become available under the "Simulation" drop-down menu. Click on this selection to open up the "Configure Optimization" dialog box.
 
@@ -68,8 +82,8 @@ Once a data file and parameter file have been loaded, the "Configure Optimizatio
 
 <h3>Figure 5</h3>
 
-<a href="images/image05.png">
-<img src="images/image05.png" alt="image05" width=50%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image05.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image05.png" alt="image05" width=50%/>
 </a>
 <p>
 </p>
@@ -79,7 +93,7 @@ The upper portion of this dialog box contains configuration for the stepwise opt
 
 The tabs of the dialog box are organized by the configured evoked inputs and show the input's parameters in rows, along with the range used by the optimization algorithm in search for parameter estimates. The user-specfied field "Range specifier" can be modified to include a wider or narrower parameter search if additional insights into biologically reasonable values are known ahead of time. Pressing the "Recalculate Ranges" button will update the range if necessary.
 
-## Running optimization
+### Running a first optimization
 
 Leave all parameters enabled for optimization (checked) and press the "Run Optimization" button to begin the procedure. Depending on your system, it will take between 1 and 3 hours to finish. You can monitor the progress in the "View Simulation Log" dialog box. The output will indicate what step (pass) and iteration (simulation) is currently being run. The dipole plot in the main HNN window will be updated after each step has completed. Note that the first steps may not run the complete simulation, so RMSE is calculated over the shortened time duration.
 
@@ -89,8 +103,8 @@ After the the optimization completes, the new optimized fit will be shown in gra
 
 <h3>Figure 6</h3>
 
-<a href="images/image06.png">
-<img src="images/image06.png" alt="image06" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image06.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image06.png" alt="image06" width=80%/>
 </a>
 <p>
 </p>
@@ -109,19 +123,19 @@ The changes made to parameters can be seen in the tabs of the "Configure Optimiz
 <tr style="border: none;">
 
 <td style="border: none;" width="33%">
-<a href="images/image07.png"><img src="images/image07.png" alt="image07" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image07.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image07.png" alt="image07" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image08.png"><img src="images/image08.png" alt="image08" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image08.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image08.png" alt="image08" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image09.png"><img src="images/image09.png" alt="image09" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image09.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image09.png" alt="image09" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -129,10 +143,11 @@ The changes made to parameters can be seen in the tabs of the "Configure Optimiz
 </tr>
 
 </table>
+<p>Parameter values and relative changes in the first optimization shown in Figure 6.</p>
 
 </div>
 
-## Refining optimization
+## Repeating optimization
 
 Running another optimization round
 
@@ -140,10 +155,10 @@ Running another optimization round
 
 <h3>Figure 8</h3>
 
-<a href="images/image10.png">
-<img src="images/image10.png" alt="image10" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image10.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image10.png" alt="image10" width=80%/>
 </a>
-<p>
+<p>reducing RMSE from 17.65 to 14.07
 </p>
 </div>
 
@@ -158,19 +173,19 @@ Running another optimization round
 <tr style="border: none;">
 
 <td style="border: none;" width="33%">
-<a href="images/image11.png"><img src="images/image11.png" alt="image11" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image11.png" alt="image11" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image12.png"><img src="images/image12.png" alt="image12" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image12.png" alt="image12" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image13.png"><img src="images/image13.png" alt="image13" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image13.png" alt="image13" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -178,17 +193,17 @@ Running another optimization round
 </tr>
 
 </table>
-
+Parameter values and relative changes in the optimization shown in Figure 8.
 </div>
 
-## Further refinement
+## Optimizing with less smoothing
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
 <h3>Figure 10</h3>
 
-<a href="images/image14.png">
-<img src="images/image14.png" alt="image14" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image14.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image14.png" alt="image14" width=80%/>
 </a>
 <p>
 </p>
@@ -205,19 +220,19 @@ Running another optimization round
 <tr style="border: none;">
 
 <td style="border: none;" width="33%">
-<a href="images/image15.png"><img src="images/image15.png" alt="image15" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image15.png" alt="image15" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image16.png"><img src="images/image16.png" alt="image16" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image16.png" alt="image16" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image17.png"><img src="images/image17.png" alt="image17" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image17.png" alt="image17" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -225,7 +240,7 @@ Running another optimization round
 </tr>
 
 </table>
-
+Parameter values and relative changes in the optimization shown in Figure 10, reducing RMSE from 14.07 to 10.40
 </div>
 
 ## Optimizing for detailed ERP features
@@ -236,8 +251,8 @@ Change smoothing window and run another round
 
 <h3>Figure 12</h3>
 
-<a href="images/image18.png">
-<img src="images/image18.png" alt="image18" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image18.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image18.png" alt="image18" width=80%/>
 </a>
 <p>
 </p>
@@ -256,26 +271,28 @@ Note that there were minimal changes to the first and second proxmal inputs wher
 <tr style="border: none;">
 
 <td style="border: none;" width="33%">
-<a href="images/image19.png"><img src="images/image19.png" alt="image19" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image19.png" alt="image19" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image20.png"><img src="images/image20.png" alt="image20" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image20.png" alt="image20" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="33%">
-<a href="images/image21.png"><img src="images/image21.png" alt="image21" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image21.png" alt="image21" width=100%/>
 </a>
-<p>  </p>
+<p> </p>
 </td>
 
 </tr>
 
 </table>
+
+<p>Parameter values and relative changes in the final optimization shown in Figure 12, reducing RMSE from 12.62 to 8.49.</p>
 
 </div>
 
@@ -291,23 +308,23 @@ In proximal 1, the L5 pyramidal NMDA weight is necessary to produce the second "
 
 <h3>Figure 14</h3>
 
-<a href="images/image22.png">
-<img src="images/image22.png" alt="image22" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image22.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image22.png" alt="image22" width=80%/>
 </a>
-<p>
+<p>An increase in L5 pyramidal NMDA weighting (from 0 to 0.023) results in the small peak at 50 ms.
 </p>
 </div>
 
-Also increasing L2/3 AMPA and L5 basket NMDA weights are necessary to pull down the dipole in concert with the distal input. Below shows with default values in the dashed line and the simulation average in dark black with the 2 optimized parameters.
+Also increasing L2/3 AMPA and L5 basket NMDA weights contribute to the deep trough between 60 and 80 ms . Below shows with default values in the dashed line and the simulation average in dark black with the 2 optimized parameters.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
 <h3>Figure 15</h3>
 
-<a href="images/image23.png">
-<img src="images/image23.png" alt="image23" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image23.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image23.png" alt="image23" width=80%/>
 </a>
-<p>
+<p>Difference when changing two parameters of the proximal 1 input: layer 2/3 pyramidal AMPA and layer 5 basket NMDA weights. These changes in the proximal 1 input are necessary to produce the trough at 75 ms. Changing the parameters of the distal 1 input alone are not enough to produce the trough.
 </p>
 </div>
 
@@ -319,34 +336,32 @@ For the distal input, the key parameters were the timing (start time mean and st
 
 <h3>Figure 16</h3>
 
-<a href="images/image24.png">
-<img src="images/image24.png" alt="image24" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image24.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image24.png" alt="image24" width=80%/>
 </a>
-<p>
-</p>
+<p> Difference when changing 3 parameters of the distal 1 input: layer 2/3 Pyr NMDA weight (+3000%), start time, and start time stdev. The dipole between 45 ms and 85 ms is shifted down by the NMDA parameter increase, while the mimumum is shifted to the right by the timing parameters.
+</p> 
 </div>
 
 ### Proximal 2 input
 
-Similarly to the previous inputs, only a few parameters of the proximal 2 evoked input were significant contributors to the reduced RMSE of the optimized simulation. Besides decreasing the mean start time approximately 16 s, the layer 5 pyramidal NMDA and layer 2/3 AMPA weights were necessary to push the dipole up to its maximum at 135 ms. The layer 5 pyramidal AMPA weight increased 110% and the layer 2/3 pyramidal AMPA weight increased 893%. The plot below shows the difference in changing the two synaptic weights. The dashed black line is from using default values for the proximal 2 input parameters (except mean start time) and the black line is from simulations using the optimized ayer 5 pyramidal NMDA and layer 2/3 AMPA weights.
+Similarly to the previous inputs, only a few parameters of the proximal 2 evoked input were significant contributors to the reduced RMSE of the optimized simulation. Besides decreasing the mean start time approximately 16 s, the layer 5 pyramidal NMDA and layer 2/3 AMPA weights were necessary to push the dipole up to its maximum at 135 ms. The layer 5 pyramidal AMPA weight increased 110% and the layer 2/3 pyramidal AMPA weight increased 893%. The plot below shows the difference in changing the two synaptic weights. The dashed black line is from using default values for the proximal 2 input parameters (except mean start time) and the black line is from simulations using the optimized layer 5 pyramidal NMDA and layer 2/3 AMPA weights.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
 <h3>Figure 17</h3>
 
-<a href="images/image25.png">
-<img src="images/image25.png" alt="image25" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image25.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image25.png" alt="image25" width=80%/>
 </a>
 <p>
-</p>
+</p> Difference when changing 2 parameters of the proximal 2 input: layer 5 pyramidal NMDA (+110%) and layer 2/3 AMPA (+893%) weights. The dipole is shifted up following the last evoked input to more closely match the peak at 135 ms in simulation and 140 ms in experimental data.
 </div>
 
-## Exercise for further exploration
+## Exercises for further exploration
 
-
-## 7. Have fun exploring your own data!
-
+1. The final optimized fit of Figure 12 matches the trough at 75 ms very well, but if the number of trials is increased to 100, then then RMSE rises to 10.59 and the trough ocurrs at 65 ms. The sample size of 3 trials is not sufficient to capture the high amount of variability in the dipole at the large trough. Changing to 20 trials produces a trough at at 65 ms, so use 20 trials for optimizing only the first two inputs. Note that this optimization will take several hours if done on a laptop. The initial parameter file can be downloaded heres as [ERPYes20Trials_173ms_opt4_window15ms.param](ERPYes20Trials_173ms_opt4_window15ms.param) so that you do not need to follow each optimization done above.
 
 ## References
 
-1. Neymotin, S. A. et al. Human Neocortical Neurosolver (HNN): A new software tool for interpreting the cellular and network origin of human MEG/EEG data. bioRxiv 740597; doi: https://doi.org/10.1101/740597
+1. <a name="reference-1">Neymotin, S. A. et al. </a>Human Neocortical Neurosolver (HNN): A new software tool for interpreting the cellular and network origin of human MEG/EEG data. bioRxiv 740597; doi: https://doi.org/10.1101/740597
