@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[6]:
 
 
 ## import os
@@ -43,7 +43,7 @@ subfolder=os.path.join(parentdirectory,subfolder)
 #print(subfolder)
 
 
-# In[2]:
+# In[7]:
 
 
 ## change directory to 'subfolder' as defined above
@@ -67,7 +67,7 @@ for e in x:
 mystring+="\nYour response: "
 #print(mystring)
 
-## prompt user to select file, save file chosen to 'subfile'
+## prompt user to select file, save file chosen to 'subfile_og'
 
 shift2 = 0
 while 1 > shift2 or lenx < shift2:
@@ -75,11 +75,11 @@ while 1 > shift2 or lenx < shift2:
         shift2 = int(input(mystring))
     except ValueError:
         print('Try again')
-subfile = x[shift2-1]
-print('You chose: '+subfile)
+subfile_og = x[shift2-1]
+print('You chose: '+subfile_og)
 
 
-# In[3]:
+# In[8]:
 
 
 ## change directory to 'parentdirectory' as defined above; not necessary
@@ -95,30 +95,42 @@ headerfile='page-setup.html'
 htmlheader= os.path.join(parentdirectory,headersubfolder)
 htmlheader=os.path.join(htmlheader,headerfile)
 #print(htmlheader)
+htmlbody_og= os.path.join(subfolder,subfile_og)
+subfile="body_"+subfile_og
 htmlbody= os.path.join(subfolder,subfile)
 #print(htmlbody)
+os.rename(htmlbody_og,htmlbody)
+
+
 
 filenames = [htmlheader,htmlbody]
 
 
-# In[4]:
+# In[9]:
 
 
-outname=input('Specify your file name. Include the .html filetype. \n  Your response: ')
-outpath=os.path.join(subfolder,outname)
+#outname=input('\nSpecify your output file name. Include the .html filetype. \n  Your response: ')
+#outpath=os.path.join(subfolder,outname)
 #print(outfile)
 
-with open(outpath, 'w') as outfile:
+#with open(outpath, 'w') as outfile:
+with open(htmlbody_og, 'w') as outfile:
     for fname in filenames:
         with open(fname) as infile:
             for line in infile:
                 outfile.write(line)
 
 
-# In[ ]:
+# In[10]:
 
 
-
+#print(htmlheader)
+#print(htmlbody)
+#print(outpath)
+print(htmlbody)
+print(htmlbody_og)
+print(subfile_og)
+print(subfile)
 
 
 # In[ ]:
