@@ -20,11 +20,14 @@ These examples are based on our published studies investigating spontaneous and 
 
 
 Before starting the tutorials, it is necessary to understand the framework for the adjustable spike train drive in HNN’s template network. This framework is based on known layer specific patterns of synaptic input to cortical circuits. Local cortical networks receive synaptic input from spiking activity in other parts of the brain through two primary projection pathways. One pathway, representative of the pathway from lemniscal thalamus to cortex, arrives in granular layers and propagates to the proximal dendrites of neocortical pyramidal neurons (the source of the primary dipole current – see [Overview & Uniqueness](https://hnn.brown.edu/index.php/overview-uniqueness/)). HNN refers to this as proximal drive, as shown in red below. The other pathway represents input from higher order cortical areas or non-lemniscal input to the distal dendrites of neocortical pyramidal neurons supragranular layers. HNN refers to this as distal drive, as shown in green below.
-<center>
-   <img src="images/Proximal-distal-spike-drive.png" height="300" />
-</center>
+
+<p align="center">
+<img style="text-align: center" src="images/Proximal-distal-spike-drive.png" height="300" />
+</p>
+
 HNN allows you to define and adjust trains of action potentials that generate excitatory synaptic drive to targets in the the local cortical network through these two pathways. There are several ways to change the pattern of action potential drive through different “buttons” build into the HNN GUI: “evoked response”, “rhythmic proximal” and “rhythmic distal”. The dialog boxes that open with these buttons allow creation and adjustment of a patterns of evoked response drive or rhythmic drive to the network. These design features are motivated by our prior studies. We have simulated evoked responses through a sequence of proximal and distal spike train drive [1-2], this sequence is provided as default parameters set to begin simulating evoked responses; parameters can be adjusted and additional inputs can be created in “evoked response” dialog box, as detailed further in the evoked response tutorial below. We have simulated low frequency alpha and beta rhythms through patterns of rhythmic drive (repeated bursts of spikes) through proximal and distal projection pathways [1,3-4]. Default parameters sets to begin simulating low frequency rhythms via rhythmic drive are provided; parameters can be adjusted in the corresponding dialog boxes, as detailed further in the alpha/beta tutorial below.
 
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/alpha_and_beta/alpha_and_beta">Alpha and Beta</a>
 
 
 ## References
