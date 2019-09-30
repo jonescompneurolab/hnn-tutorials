@@ -2,30 +2,18 @@
 
 ## Getting started
 
-HNN release 1.0 provides an automated model optimization tool that can be used to efficiently estimate parameter values that will minimize the error between model ouput and features of the ERP wavesforms from experiements. The optimization tool reduces the number of simulations needed to optimize the model by leveraging two insights. First, key parameters of ERP generation are related to the exogneous inputs, which are the only parameters currently estimated. Second, results from our sensitivity analyses have shown that the parameters of a particular input are more or less likely to have a dominant effect on a feature of the dipole waveform depending on that input's timing and the onset of any other inputs leading up to the feature. We combine these insights in a stepwise optimzation procedure that is presented in more detal in <a href=#reference-1>[1]</a>.
+HNN release 1.0 provides an automated model optimization tool that can be used to efficiently estimate parameter values that will minimize the error between model ouput and features of experimental ERP waveforms. The optimization tool is designed to efficiently arrive at parameter estimates without the need for supercomputing or high performance computing resources. We leverage two insights to reduce the number of simulations needed for optimization. First, the key parameters of ERP generation are related to the "activation" of the network (i.e. exogneous or evoked inputs), so these are the only parameters estimated. Second, results from sensitivity analyses have shown that the parameters of a particular input will have their most prominent effect on a feature of the dipole waveform after the input's onset, but decaying as other inputs contribute to the waveform. We combine these insights in a stepwise optimzation procedure part of HNN. For more details on the tool, please see <a href=#reference-1>[1]</a>.
 
-The rest of this tutorial examines how HNN's optimization tool can be used to estimate parameters for ERP simulations that more closely match experiemental data given an approximate baseline configuration. Users may use one of the parameter files included with HNN or use the GUI to interactively add and remove evoked inputs to arrive at a suitable starting point for optimization. This tutorial will also explore a process for identifying the key parameters responsible for the improved model fit.
+The rest of this tutorial demonstrates how HNN's optimization tool can be used to estimate parameters for ERP simulations, resulting in a better match to experiemental data. Before starting optimization, however, users must supply a baseline configuration that includes the number and type of hypothesized evoked inputs and each input's approximate start time. Users may use one of the parameter files included with HNN or use the GUI to interactively add and remove evoked inputs to arrive at a suitable starting point for optimization.
 
-We start from the parameter file used in the previous [ERP tutorial](https://hnn.brown.edu/index.php/erp-tutorial/) with simulation output matched to experimental data on SI the evoked response elictied from a perceptual threshold-level stimulation -- 50% detected. The parameters for the exogenous inputs in this simulation scenario were tuned to closely match the experimental waveform where the root mean squared error (RMSE) is 5.57 for 100 trials and 5.02 for 3 trials.
-
-<div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
-
-<h3>Figure 1</h3>
-
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image01.png">
-<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image01.png" alt="image01" width=80%/>
-</a>
-<p>
-</p>
-
-</div>
+After completing a first optimization to match new experimental data, the tutorial will cover refining the optimization and then using the optimized values to identify the key parameters responsible for the improved fit.
 
 ## Tutorial table of contents
 
 1. [Optimizing baseline parameters to new data](#optimizing-baseline-parameters-to-new-data)
     - [Configuring parameter optimization](#configuring-parameter-optimization)
     - [Running a first optimization](#running-a-first-optimization)
-2. [Repeating optimization](#repeating-optimization)
+2. [Repeating optimization rounds](#repeating-optimization-rounds)
 3. [Optimizing with less smoothing](#optimizing-with-less-smoothing)
 4. [Identifying key parameters](#identifying-key-parameters)
     - [Proximal 1 input](#proximal-1-input)
@@ -35,7 +23,29 @@ We start from the parameter file used in the previous [ERP tutorial](https://hnn
 
 ## Optimizing baseline parameters to new data
 
-From the above plot, it is possible to make inferences on the underlying circuit-level dynamics responsible for the observed ERP waveform in the 50% detection scenario. However, HNN users may be interested in making inferences on the dynamics responsible for different experiemental conditions or even different cortical areas. For example, if we are interested in how the exogenous inputs might differ in the case of suprathreshold stimulation -- 100% detection -- we observe in the plot below that dipole magnitude changes significantly. The RMSE between the old simulation output and the suprathreashold data is now 30.53 
+We start from the ERP example used in the previous [Evoked potentials tutorial](https://hnn.brown.edu/index.php/erp-tutorial/). The tutorial began with an experimental paradigm of a somatosensory cortex ERP elictied from a perceptual threshold-level stimulation -- 50% detected -- and then introduced the suprathreshold case -- 100% detected. We will explore the differences between these two cases in more detail, starting with simulation parameters tuned for the 50% scenario and using the automated model optimization tool to arrive at parameters that fit the 100% detected suprathreshold scenario.
+
+Figure 1 shows the simulation of the parameters from the perceptual threshold-level stimulation example, for 3 trials. Start by clicking "Set Parameters From File" button and loading the parameter file "ERPYes100Trials.param". Then change the number of trials, by clicking on "Set Parameters" and then "Run". Change the trials to 3. Now load the data file "yes_trial_S1_ERP_all_avg.txt" by going to the File drop-down menu and selecting "Load data file". Finally click "Run Simulation" to reproduce the plot below.
+
+The very low RMSE of 5.02 supports that these parameters were tuned to match the yes_trial_S1_ERP_all_avg data. Having the simulation "matched" to the experimental data allows users to develop their own hypotheses and make inferences on the dynamics responsible for producing the ERP waveform observed in the experiment.
+
+<div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
+
+<h3>Figure 1</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image01.png">
+<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image01.png" alt="image01" width=80%/>
+</a>
+<p>Simulation of perceptual threshold-level stimulation parameter set over 3 trials, matched to experimental data.
+</p>
+
+</div>
+
+However, HNN users may be interested in making inferences on the dynamics underlying different experiemental conditions or even different cortical areas. We will explore what circuit-level parameters belonging to the evoked inputs change in the suprathreshold stimulation scenario using automated model optimizaiton.
+
+Remove the "yes_trial_S1_ERP_all_avg" data plot from the main HNN window by clicking on the File drop-down menu and selecting "Clear data file(s)". Then load the suprathreshold data "S1_SupraT.txt" from File->"Load data file".
+
+The plot below shows the differences between the threshold-level simulation and the suprathreshold data. The RMSE between the old simulation output and the suprathreashold data is now 30.53, indicating a poor fit of simulation parameters to the experimental data.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -44,11 +54,11 @@ From the above plot, it is possible to make inferences on the underlying circuit
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image02.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image02.png" alt="image02" width=80%/>
 </a>
-<p>
+<p> Simulation run with parameters for the perceptual threshold-level scenario plotted against the longer duration suprathreshold-level experimental data
 </p>
 </div>
 
-The plot above show that the configured stop time of the ERPYes simulation at 170.0 ms ocurrs before the end of the suprathreshold data. To use simulate all the way until the end of the available data, click the Set Parameters button, then the Run button and change the duration to 173.325 ms. 
+The "S1_SupraT" experimental data extends further than the "yes_trial_S1_ERP_all_avg" used previosly. We can simulate the full length of this data file by changing the simulation duration. Click the "Set Parameters button" and then the "Run" button and change the duration to 173.325 ms. as shown in Figure 3.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -57,11 +67,11 @@ The plot above show that the configured stop time of the ERPYes simulation at 17
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image03.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image03.png" alt="image03" width=40%/>
 </a>
-<p>
+<p> Run Parameters dialog box
 </p>
 </div>
 
-Change the "Simulation Name" to "ERPYes3Trials_173ms_opt3" and click "Run Simulation" to calculate an updated RMSE.
+Also change the "Simulation Name" to "ERPYes3Trials_173ms_opt". Next click "Run Simulation" button to obtain an updated RMSE for 3 trials over the 173.325 ms simulation. Now the simulation runs for the full duration of the experiental data that we are comparing to.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -70,13 +80,13 @@ Change the "Simulation Name" to "ERPYes3Trials_173ms_opt3" and click "Run Simula
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image04.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image04.png" alt="image04" width=80%/>
 </a>
-<p>
+<p>Full 173 ms simulation still using the paramters for the 50% experiment.
 </p>
 </div>
 
 ### Configuring parameter optimization
 
-Once a data file and parameter file have been loaded, the "Configure Optimization" menu selection will become available under the "Simulation" drop-down menu. Click on this selection to open up the "Configure Optimization" dialog box.
+Once both data and parameter files have been loaded, the "Configure Optimization" menu selection will become available under the "Simulation" drop-down menu. Click on this selection to open up the "Configure Optimization" dialog box shown in Figure 5.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -85,19 +95,21 @@ Once a data file and parameter file have been loaded, the "Configure Optimizatio
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image05.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image05.png" alt="image05" width=50%/>
 </a>
-<p>
+<p>"Configure Optimization" dialog box with different areas highlighted: 1) Breakdown of the optimization steps for each evoked input. When inputs are combined in a single step, they are shown here. The user can configure the number of simulations for each step. 2) Tabs to navigate to the parameters and optimization range configuration for each evoked input. 3) The range is calculated from the user specified multiplier and displayed for each parameter.
 </p>
 </div>
 
-The upper portion of this dialog box contains configuration for the stepwise optimization procedure and displays the inputs and parameters that will be optimized at each step. In the ERPYes parameter file, there are three evoked inputs defined, each of which is the focus for a step (pass) of the optimization procedure. During this step, the optimization will minimize a weighted RMSE measure that upweights errors that are most likely to be affected by changes in the input being optimized and downweights parts that are least affected. The last optimization step varies all parameters at once and is designed to minimize downstream effects that might arise from overfitting earlier featires of the waveform during previous steps. The default number of simulations for each step were chosen to provide a signficantly improved fit, but keep the overall time required by the optimization on the order of a couple of hours, even on a laptop.
+The upper portion of this dialog box contains configuration information for the stepwise optimization procedure and displays the inputs and parameters that will be optimized in each step. In the parameter file we are using for somatosensory ERPs, there are three evoked inputs defined, each of which is targeted in a step (pass) of the optimization procedure. During each step, the optimization will minimize a weighted RMSE measure that upweights errors that are most likely to be affected by changes in the input being optimized and downweights parts that are least affected. The last optimization step varies all parameters at once and is designed to minimize downstream effects that might arise from overfitting earlier featires of the waveform during previous steps. The default number of simulations for each step were chosen to provide a signficantly improved fit, but keep the overall time required by the optimization to 1-3 hours, even on a laptop.
 
-The tabs of the dialog box are organized by the configured evoked inputs and show the input's parameters in rows, along with the range used by the optimization algorithm in search for parameter estimates. The user-specfied field "Range specifier" can be modified to include a wider or narrower parameter search if additional insights into biologically reasonable values are known ahead of time. Pressing the "Recalculate Ranges" button will update the range if necessary.
+The tabs of the dialog box are organized by the evoked inputs and show the input's parameters in rows, along with the range used by the optimization algorithm as it searches for parameter estimates. We use the COBYLA algorithm <a href=#reference-2>[2]</a> implemented in the [`nlopt` Python package](https://nlopt.readthedocs.io/en/latest/NLopt_Algorithms/#cobyla-constrained-optimization-by-linear-approximations)
+
+The user-specfied field "Range specifier" can be modified to include a wider or narrower parameter search if additional insights into biologically reasonable values are known ahead of time. Pressing the "Recalculate Ranges" button will display updated ranges.
 
 ### Running a first optimization
 
-Leave all parameters enabled for optimization (checked) and press the "Run Optimization" button to begin the procedure. Depending on your system, it will take between 1 and 3 hours to finish. You can monitor the progress in the "View Simulation Log" dialog box. The output will indicate what step (pass) and iteration (simulation) is currently being run. The dipole plot in the main HNN window will be updated after each step has completed. Note that the first steps may not run the complete simulation, so RMSE is calculated over the shortened time duration.
+Leave all parameters enabled for optimization (checked) and press the "Run Optimization" button to begin the procedure. Depending on your system, it will take between 1 and 3 hours to finish. You can monitor the progress in the "View Simulation Log" dialog box. The output will indicate what step (pass) and iteration (simulation) is currently being run. The dipole plot in the main HNN window will be updated after each step has completed. Note that the first steps do not require a full simulation, beacuse the weighted RMSE is insignificant at later points. In the dipole plots HNN will only display normal (non-weighted RMSE)
 
-After the the optimization completes, the new optimized fit will be shown in gray in the dipole plot with the initial fit (before optimization) shown in dashed black. As shown below, the RMSE was reduced from 30.43 to 17.65. The amplitudes of the trough at 70 ms and the peak at 135 ms were increased to more closely match the experimental waveform.
+After all optimization steps complete, you will see a plot simular to Figure 6, where the optimized fit will be shown in gray with the initial fit (before optimization) marked by a dashed black line. We can see that the first round of optimization reduced overall RMSE from 30.43 to 17.65. The amplitudes of the trough at 70 ms and the peak at 135 ms were increased, but there trough stil is not an ideal fit.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -106,11 +118,9 @@ After the the optimization completes, the new optimized fit will be shown in gra
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image06.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image06.png" alt="image06" width=80%/>
 </a>
-<p>
+<p>The first round of automated parameter optimization reduces the RMSE from 30.43 to 17.65 between the average of 3 simulations and the suprathreshold experimental data.
 </p>
 </div>
-
-The changes made to parameters can be seen in the tabs of the "Configure Optimization" dialog.
 
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 
@@ -147,9 +157,11 @@ The changes made to parameters can be seen in the tabs of the "Configure Optimiz
 
 </div>
 
-## Repeating optimization
+## Repeating optimization rounds
 
-Running another optimization round
+While the fit in Figure 6 is significantly improved, we haven't yet achieved the same level of fit with the suprathreshold data that we had with the threshold-level data (RMSE 5.02). The default ranges may have limited parameter exploration or the number of simulations run may just be insufficient to sample the high-dimensional parameter space. The parameter changes in green and red in Figure 7 show that some changes may have been limited in one of these ways. Given a limited number of simulations, the entire range won't be explored, and in fact, the COBYLA algorithm starts with changes of 75%. So a change of 200% may have been the largest change explored. To see if these parameters were limited by the ranges, we perform 2 more optimizations below. Note that you can skip over performing these yourself, as each one will take 1-3 hours.
+
+The second optimization has a better fit in the region characterized by the large negative trough, and RMSE drops to 14.07. However, several parameters did not change as much as in the first optimizaiton. One that continued to increase by over 200% was the layer 2/3 pyramidal NMDA weight for the distal 1 input.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -158,7 +170,7 @@ Running another optimization round
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image10.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image10.png" alt="image10" width=80%/>
 </a>
-<p>reducing RMSE from 17.65 to 14.07
+<p>A second optimization round reducing RMSE from 17.65 to 14.07
 </p>
 </div>
 
@@ -196,7 +208,7 @@ Running another optimization round
 Parameter values and relative changes in the optimization shown in Figure 8.
 </div>
 
-## Optimizing with less smoothing
+We performed a third optimization round with the resultant fit shown in Figure 10. Finally the simulation output is close to the negative trough in the experimental data and RMSE is reduced to 10.40. We can see that the layer 2/3 pyramidal NMDA weight for the distal 1 input increased again, by 174% this time. At this point, it has changed over 2500% from its baseline value.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -205,7 +217,7 @@ Parameter values and relative changes in the optimization shown in Figure 8.
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image14.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image14.png" alt="image14" width=80%/>
 </a>
-<p>
+<p>A third optimization round reducing RMSE from 14.07 to 10.40
 </p>
 </div>
 
@@ -240,12 +252,14 @@ Parameter values and relative changes in the optimization shown in Figure 8.
 </tr>
 
 </table>
-Parameter values and relative changes in the optimization shown in Figure 10, reducing RMSE from 14.07 to 10.40
+Parameter values and relative changes in the optimization shown in Figure 10.
 </div>
 
-## Optimizing for detailed ERP features
+## Optimizing with less smoothing
 
-Change smoothing window and run another round
+Even though our optimization has dropped the RMSE to the suprathreshold data to 10.40, we are still using a large smoothing window (the default for perceptual-level threshold simulations) of 30 ms. The suprathreshold data has sharper features that we may want to optimize to. To explore what the simulation output looks like with a smaller smoothing window, click "Set Parameters" -> "Run", select the "Analysis" tab and then enter 15 for "Dipole Smooth Window (ms)". Change the simulation name to indicate that smoothing has changes (e.g. append "window_15ms") and then click "Run Simulation" to see the output. RMSE will rise to 12.62 and the trough shifts to the left a bit.
+
+Run an optimization round on the simulation with less smoothing using the default number of simulations and parameter ranges. After the optimization completes, you should see a plot like Figure 12 below, where the RMSE is reduced to 8.49, a very good fit.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -254,11 +268,11 @@ Change smoothing window and run another round
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image18.png">
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image18.png" alt="image18" width=80%/>
 </a>
-<p>
+<p>Fit after optimization using simulation trials with a 15 ms smoothing window
 </p>
 </div>
 
-Note that there were minimal changes to the first and second proxmal inputs where changes were 75% or less, but for the distal evoked input, AMPA weights changed significantly. The plot reflects this in that the regions around the proximal inputs changed minimally in the optimized but, but the trough following the distal input follows the experimental data closely in slope and nearly reaches it's minimum at the same time.
+Note that there were minimal changes to the first and second proxmal inputs where changes were 75% or less, but for the distal evoked input, AMPA weights changed significantly. The plot reflects this in that the regions around the proximal inputs changed minimally, but the negative trough immediately following the distal input is fit very closely by the optimized parameters. The downward deflection follows the slope of the experimental data closely and nearly reaches its minimum at the same time, around 75 ms.
 
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 
@@ -292,11 +306,13 @@ Note that there were minimal changes to the first and second proxmal inputs wher
 
 </table>
 
-<p>Parameter values and relative changes in the final optimization shown in Figure 12, reducing RMSE from 12.62 to 8.49.</p>
+<p>Parameter values and relative changes in the final optimization shown in Figure 12</p>
 
 </div>
 
 ## Identifying key parameters
+
+Through a total of 4 optimizations from a baseline parameter set designed for a different experiemental scenario, we have found parameters matching new experimental data. Given this highly optimized fit, we can examine which parameters changed and by how much to form hypotheses on whether some parameters were more important than others. HNN allows us to test these hypotheses by changing individual parameters and observing the differences in dipole plotting in the GUI.
 
 ### Proximal 1 input
 
@@ -340,12 +356,12 @@ For the distal input, the key parameters were the timing (start time mean and st
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image24.png" alt="image24" width=80%/>
 </a>
 <p> Difference when changing 3 parameters of the distal 1 input: layer 2/3 Pyr NMDA weight (+3000%), start time, and start time stdev. The dipole between 45 ms and 85 ms is shifted down by the NMDA parameter increase, while the mimumum is shifted to the right by the timing parameters.
-</p> 
+</p>
 </div>
 
 ### Proximal 2 input
 
-Similarly to the previous inputs, only a few parameters of the proximal 2 evoked input were significant contributors to the reduced RMSE of the optimized simulation. Besides decreasing the mean start time approximately 16 s, the layer 5 pyramidal NMDA and layer 2/3 AMPA weights were necessary to push the dipole up to its maximum at 135 ms. The layer 5 pyramidal AMPA weight increased 110% and the layer 2/3 pyramidal AMPA weight increased 893%. The plot below shows the difference in changing the two synaptic weights. The dashed black line is from using default values for the proximal 2 input parameters (except mean start time) and the black line is from simulations using the optimized layer 5 pyramidal NMDA and layer 2/3 AMPA weights.
+Similarly to the previous inputs, only a few parameters of the proximal 2 evoked input were significant contributors to the reduced RMSE of the optimized simulation. Besides decreasing the mean start time approximately 16 s, the layer 5 pyramidal NMDA and layer 2/3 pyramidal AMPA weights were necessary to push the dipole up to its maximum at 135 ms. The layer 5 pyramidal AMPA weight increased 110% and the layer 2/3 pyramidal AMPA weight increased 893%. The plot below shows the difference in changing the two synaptic weights. The dashed black line is from using default values for the proximal 2 input parameters (except mean start time) and the black line is from simulations using the optimized layer 5 pyramidal NMDA and layer 2/3 AMPA weights.
 
 <div style="background-color:rgba(0, 0, 0, 0); margin-top:20px; text-align: center; vertical-align: middle; margin-bottom:40px;">
 
@@ -355,13 +371,14 @@ Similarly to the previous inputs, only a few parameters of the proximal 2 evoked
 <img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/optimization/images/image25.png" alt="image25" width=80%/>
 </a>
 <p>
-</p> Difference when changing 2 parameters of the proximal 2 input: layer 5 pyramidal NMDA (+110%) and layer 2/3 AMPA (+893%) weights. The dipole is shifted up following the last evoked input to more closely match the peak at 135 ms in simulation and 140 ms in experimental data.
+</p> Difference when changing 2 parameters of the proximal 2 input: layer 5 pyramidal NMDA (+110%) and layer 2/3 pyramidal AMPA (+893%) weights. The dipole is shifted up following the last evoked input to more closely match the peak at 135 ms in simulation and 140 ms in experimental data.
 </div>
-
-## Exercises for further exploration
-
-1. The final optimized fit of Figure 12 matches the trough at 75 ms very well, but if the number of trials is increased to 100, then then RMSE rises to 10.59 and the trough ocurrs at 65 ms. The sample size of 3 trials is not sufficient to capture the high amount of variability in the dipole at the large trough. Changing to 20 trials produces a trough at at 65 ms, so use 20 trials for optimizing only the first two inputs. Note that this optimization will take several hours if done on a laptop. The initial parameter file can be downloaded heres as [ERPYes20Trials_173ms_opt4_window15ms.param](ERPYes20Trials_173ms_opt4_window15ms.param) so that you do not need to follow each optimization done above.
 
 ## References
 
-1. <a name="reference-1">Neymotin, S. A. et al. </a>Human Neocortical Neurosolver (HNN): A new software tool for interpreting the cellular and network origin of human MEG/EEG data. bioRxiv 740597; doi: https://doi.org/10.1101/740597
+1. <a name="reference-1">Neymotin, S. A. et al.</a> Human Neocortical Neurosolver (HNN): A new software tool for interpreting the cellular and network origin of human MEG/EEG data. bioRxiv 740597; doi: https://doi.org/10.1101/740597
+
+2. <a name="reference-2">Powell, M. J. D.</a> (1994). A Direct Search Optimization Method That Models the Objective and Constraint
+Functions by Linear Interpolation. In J.-P. Gomez Susana and Hennart (Ed.), Advances in
+Optimization and Numerical Analysis (pp. 51–67). Dordrecht: Springer Netherlands.
+https://doi.org/10.1007/978-94-015-8330-5_4
