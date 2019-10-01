@@ -19,7 +19,7 @@ In-depth tutorials describing how to perform source localizations are commonly p
 
 <h3>Table 1</h3>
 
-<table style="border-collapse: collapse; border: none; text-align:center; align: center; width: 100%;">
+<table style="background-color:rgba(0, 0, 0, 0); border-collapse: collapse; border: none; text-align:center; align: center; width: 100%;">
 
 <tr style="border: none; align: center; width: 100%;">
 
