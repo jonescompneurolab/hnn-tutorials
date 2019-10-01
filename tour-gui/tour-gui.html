@@ -29,7 +29,7 @@
 
 <!-- add Tutorials header -->
 <div class="headercontainer main">
-<div class="headertext">Alpha and Beta</div>
+<div class="headertext">  </div>
 </div>
 
 <!-- set width for body to 900px -->
@@ -85,13 +85,14 @@ function topFunction() {
 <!-- </body> -->
 <!-- </html> -->
 <!-- END -->
+<!-- pandoc -f markdown -t html -o tour-gui.html tour-gui.md -->
 <h1 id="tour-of-the-graphical-user-interface-gui">Tour of the Graphical User Interface (GUI)</h1>
 <p>Here we provide an overview of the major GUI components, and provide a description of all the parameters that the GUI provides.</p>
 <p>This is a display of the GUI after running a simulation that produces an event-related potential (ERP; see ERP tutorial for more information on that simulation’s details).</p>
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-1">Figure 1</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image21.png" alt="image21" width=90%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image21.png" alt="image21" width=90%/></a>
 </p>
 </div>
 <p>The top of the GUI contains a standard menu and buttons for setting parameters, running simulations, and viewing the simulation/experimental data output.</p>
@@ -99,7 +100,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-2">Figure 2</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image15.png" alt="image15" width=90%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image15.png" alt="image15" width=90%/></a>
 </p>
 </div>
 <p>In the example above, the newest simulation’s dipole is drawn in a solid line, while previously run simulations are drawn using dotted lines. You can select/highlight a particular simulation by clicking on the different simulations populating the list, or from menu Simulation -&gt; Go to Previous Simulation (Ctrl+Z), Go to Next Simulation (Ctrl+Y). Cycling between simulations is useful for comparing how different model parameters influence the generated dipole signal.</p>
@@ -108,7 +109,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-3">Figure 3</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image29.png" alt="image 29" width=90%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image29.png" alt="image 29" width=90%/></a>
 </p>
 </div>
 <h2 id="preliminaries-parameter-files">Preliminaries: Parameter Files</h2>
@@ -119,7 +120,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-4">Figure 4</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image33.png" alt="image33" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image33.png" alt="image33" width=50%/></a>
 </p>
 </div>
 <p>Pressing each button on this dialog brings up a new dialog box with more adjustable parameters. We will go through each below. The next thing to note is the Simulation Name. This should be a unique identifier for any particular simulation you run. HNN also uses this variable to determine where to save the output files. In the dialog displayed, note that the value is set to default. This is because the default.param file was loaded. We suggest you change this name when you make changes to the parameters, before running a new simulation.</p>
@@ -127,7 +128,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-5">Figure 5</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image23.png" alt="image23" width=90%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image23.png" alt="image23" width=90%/></a>
 </p>
 </div>
 <p>Note that the directory path is /home/hnn/data/default, corresponding to the default Simulation Name parameter specified in the GUI. Also note the individual files present in the window:</p>
@@ -146,7 +147,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-6">Figure 6</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image22.png" alt="image22" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image22.png" alt="image22" width=50%/></a>
 </p>
 </div>
 <ul>
@@ -161,7 +162,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-7">Figure 7</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image26.png" alt="image26" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image26.png" alt="image26" width=50%/></a>
 </p>
 </div>
 <ul>
@@ -176,7 +177,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-8">Figure 8</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image19.png" alt="image19" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image19.png" alt="image19" width=50%/></a>
 </p>
 </div>
 <p>All these parameters are random number generator seeds for the different types of inputs provided to the model. Varying a seed will still maintain statistically identical inputs but allow for controlled variability.</p>
@@ -196,7 +197,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-9">Figure 9</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image4.png" alt="image4" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image4.png" alt="image4" width=50%/></a>
 </p>
 </div>
 <p>and include lengths/diameters of individual compartments. Although not strictly related, we have also included axial resistivity and capacitive in this panel.</p>
@@ -204,7 +205,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-10">Figure 10</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image25.png" alt="image25" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image25.png" alt="image25" width=50%/></a>
 </p>
 </div>
 <p>These include the excitatory (AMPA/NMDA) and inhibitory (GABAA/GABAB) reversal potentials and rise/decay exponential time-constants.</p>
@@ -212,7 +213,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-11">Figure 11</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image27.png" alt="image27" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image27.png" alt="image27" width=50%/></a>
 </p>
 </div>
 <p>To modify properties of the layer 5 pyramidal neurons, click on the right arrow to access the relevant tabs (beginning with L5 Pyr).</p>
@@ -221,14 +222,14 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-12">Figure 12</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image24.png" alt="image24" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image24.png" alt="image24" width=50%/></a>
 </p>
 </div>
 <p>This 3D visualization of the model is rotated to allow easier viewing. The top and bottom represent supra- and infragranular cortical layers. In this figure, the following color code is used for the different cell types in the model– red: layer 5 pyramidal neurons; green: layer 2/3 pyramidal neurons; white: layer 2/3 interneurons; blue: layer 5 interneurons.</p>
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-13">Figure 13</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image18.png" alt="image18" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image18.png" alt="image18" width=50%/></a>
 </p>
 </div>
 <p>The figure above shows a schematic of network connectivity. The blue cells are pyramidal neurons, while the orange circles represent the interneurons. The lines between neurons represent local synaptic connections. Lines ending with a circle are excitatory (AMPA/NMDA) synapses, while lines ending with a line are inhibitory (GABAA/GABAB) synapses.</p>
@@ -236,7 +237,7 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-14">Figure 14</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image34.png" alt="image34" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image34.png" alt="image34" width=50%/></a>
 </p>
 </div>
 <p>Note that the pyramidal cells are arranged in the X-Y plane, so the number of cells in a layer is the product of the number along the X and Y directions. The number of interneurons per layer is adjusted to be ⅓ the number of pyramidal neurons in an equally distributed configuration.</p>
@@ -244,15 +245,15 @@ function topFunction() {
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-15">Figure 15</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image30.png" alt="image30" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image30.png" alt="image30" width=50%/></a>
 </p>
 </div>
-<p>In this example, AMPA/NMDA weight are the excitatory synaptic weights, while GABAA/GABAB are the inhibitory synaptic weights. All weights are specified in units of conductance (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image1.png" />). Note that the synaptic weight, w, between two cells is scaled by the distance between the two cells through the following equation:<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image2.png" />, where wis the weight specified in the dialog, dis the distance between the cells in the X-Y plane (distance is in arbitrary units), and λ is a spatial length constant which is 3 or 20 (λ is also in arbitrary units) when a presynaptic cell is excitatory or inhibitory, respectively, in order to have shorter spread of excitation relative to inhibition.</p>
+<p>In this example, AMPA/NMDA weight are the excitatory synaptic weights, while GABAA/GABAB are the inhibitory synaptic weights. All weights are specified in units of conductance (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png" />). Note that the synaptic weight, w, between two cells is scaled by the distance between the two cells through the following equation:<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image2.png" />, where wis the weight specified in the dialog, dis the distance between the cells in the X-Y plane (distance is in arbitrary units), and λ is a spatial length constant which is 3 or 20 (λ is also in arbitrary units) when a presynaptic cell is excitatory or inhibitory, respectively, in order to have shorter spread of excitation relative to inhibition.</p>
 <p>Excitatory (E) and inhibitory (I) tone within the network is a major factor influencing network dynamics. The following dialog, accessible with the Synaptic Gains button from the main Set Parameters dialog, facilitates scaling of E-&gt;E, E-&gt;I, I-&gt;E, and I-&gt;I weights, without having to adjust the weights between specific types of cells.</p>
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-16">Figure 16</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image13.png" alt="image13" width=30%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image13.png" alt="image13" width=30%/></a>
 </p>
 </div>
 <p>In this dialog changing the 1.0 to other values and pressing OK will multiply the appropriate weights displayed in the Local Network Parameter dialog. For example, setting E-&gt;E to a value of 2.0 will double the weights between all pairs of excitatory cells. Changing a value and then pressing Cancel will produce no effect.</p>
@@ -267,12 +268,12 @@ Figure 17
 </tr>
 <tr style="border: none;">
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image32.png" alt="image17" width=80%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image32.png" alt="image17" width=80%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image28.png" alt="image28" width=80%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image28.png" alt="image28" width=80%/> </a>
 <p>
 </p>
 </td>
@@ -286,7 +287,7 @@ Figure 17
 <div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: middle; margin-top:20px; margin-bottom:40px">
 <h3 id="figure-18">Figure 18</h3>
 <p>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image6.png" alt="image6" width=50%/></a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image6.png" alt="image6" width=50%/></a>
 </p>
 </div>
 <p>Schematic illustration of rhythmic 10 Hz burst drive through proximal and distal projection pathways.  “Population bursts”, consisting of a set number of “burst units” (10, 2-spike bursts shown)  drive post-synaptic conductances in the local network with a set frequency (100 ms ISI) and mean delay between proximal and distal.  </p>
@@ -299,34 +300,34 @@ Figure 19
 </tr>
 <tr style="border: none;">
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image9.png" alt="image9" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image9.png" alt="image9" width=100%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image3.png" alt="image3" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image3.png" alt="image3" width=100%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image7.png" alt="image 7" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image7.png" alt="image 7" width=100%/> </a>
 <p>
 </p>
 </td>
 </tr>
 <tr style="border: none;">
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image17.png" alt="image17" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image17.png" alt="image17" width=100%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image31.png" alt="image31" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image31.png" alt="image31" width=100%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image12.png" alt="image12" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image12.png" alt="image12" width=100%/> </a>
 <p>
 </p>
 </td>
@@ -355,12 +356,12 @@ Figure 20
 </tr>
 <tr style="border: none;">
 <td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image14.png" alt="image14" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image14.png" alt="image14" width=100%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image20.png" alt="image20" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image20.png" alt="image20" width=100%/> </a>
 <p>
 </p>
 </td>
@@ -372,10 +373,10 @@ Figure 20
 <li>Start time mean (ms) - average start time</li>
 <li>Start time stdev (ms) - standard deviation of start time</li>
 <li>Number spikes - number of inputs provided to each synapse</li>
-<li>L2/3 Pyr weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 2 pyramidal neurons</li>
-<li>L2/3 Basket weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 2 basket cells</li>
-<li>L5 Pyr weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 5 pyramidal neurons</li>
-<li>L5 Basket weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 5 basket cells (only used for proximal inputs)</li>
+<li>L2/3 Pyr weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 2 pyramidal neurons</li>
+<li>L2/3 Basket weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 2 basket cells</li>
+<li>L5 Pyr weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 5 pyramidal neurons</li>
+<li>L5 Basket weight AMPA/NMDA (<img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png" />) - weight of AMPA/NMDA synaptic inputs to layer 5 basket cells (only used for proximal inputs)</li>
 </ul>
 <p>Synchronous Inputs indicates whether for a specific evoked proximal/distal input each neuron receives the input at the same time, or if instead each neuron receives the evoked input events independently drawn from the same distribution. Increment input (ms) indicates whether to increment the Start time of all evoked inputs on each trial. To remove the input shown in the currently active tab, press the Remove Input button.</p>
 <h3 id="poisson-inputs-synaptic">Poisson Inputs (Synaptic)</h3>
@@ -389,19 +390,19 @@ Figure 21
 </tr>
 <tr style="border: none;">
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image5.png" alt="image5" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image5.png" alt="image5" width=100%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image10.png
-"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image10.png
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image10.png
+"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image10.png
 " alt="image10" width=100%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image16.png" alt="image16" width=100%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image16.png" alt="image16" width=100%/> </a>
 <p>
 </p>
 </td>
@@ -420,12 +421,12 @@ Figure 22
 </tr>
 <tr style="border: none;">
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image8.png" alt="image8" width=80%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image8.png" alt="image8" width=80%/> </a>
 <p>
 </p>
 </td>
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Tour%20of%20the%20GUI/images/image11.png" alt="image11" width=80%/> </a>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image11.png" alt="image11" width=80%/> </a>
 <p>
 </p>
 </td>
