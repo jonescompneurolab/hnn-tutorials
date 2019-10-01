@@ -1,4 +1,4 @@
-<!-- pandoc -f markdown -t html -o tour-gui.html tour-gui.md -->
+<!-- pandoc -f markdown -t html -o tour_gui.html tour_gui.md -->
 
 # Tour of the Graphical User Interface (GUI)
 
@@ -10,7 +10,7 @@ This is a display of the GUI after running a simulation that produces an event-r
 
 ### Figure 1
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image21.png" alt="image21" width=90%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image21.png" alt="image21" width=90%/></a></p>
 </div>
 
 The top of the GUI contains a standard menu and buttons for setting parameters, running simulations, and viewing the simulation/experimental data output.
@@ -22,7 +22,7 @@ The bottom of the main GUI window shows a list of the simulations that have been
 
 ### Figure 2
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image15.png" alt="image15" width=90%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image15.png" alt="image15" width=90%/></a></p>
 
 </div>
 
@@ -36,7 +36,7 @@ In the window shown below, there are several schematics to provide intuition on 
 
 ### Figure 3
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image29.png" alt="image 29" width=90%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image29.png" alt="image 29" width=90%/></a></p>
 
 </div>
 
@@ -57,7 +57,7 @@ To view and set the parameters that control the simulation, press the Set Parame
 
 ### Figure 4
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image33.png" alt="image33" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image33.png" alt="image33" width=50%/></a></p>
 
 </div>
 
@@ -69,7 +69,7 @@ Here is an example of the data directory and files saved after running the simul
 
 ### Figure 5
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image23.png" alt="image23" width=90%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image23.png" alt="image23" width=90%/></a></p>
 
 </div>
 
@@ -93,7 +93,7 @@ Pressing the Run button on the Set Parameters dialog box brings up the following
 
 ### Figure 6
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image22.png" alt="image22" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image22.png" alt="image22" width=50%/></a></p>
 
 </div>
 
@@ -110,7 +110,7 @@ Clicking on the Analysis tab brings up the following parameters.
 
 ### Figure 7
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image26.png" alt="image26" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image26.png" alt="image26" width=50%/></a></p>
 
 </div>
 
@@ -127,7 +127,7 @@ Clicking on the Randomization Seeds tab brings up the following parameters.
 
 ### Figure 8
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image19.png" alt="image19" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image19.png" alt="image19" width=50%/></a></p>
 
 </div>
 
@@ -152,7 +152,7 @@ These parameters control the cell’s geometry:
 
 ### Figure 9
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image4.png" alt="image4" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image4.png" alt="image4" width=50%/></a></p>
 
 </div>
 
@@ -164,7 +164,7 @@ Clicking on the L2/3 Pyr Synapses tab allows you to modify the postsynaptic prop
 
 ### Figure 10
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image25.png" alt="image25" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image25.png" alt="image25" width=50%/></a></p>
 
 </div>
 
@@ -176,7 +176,7 @@ Clicking on the L2/3 Pyr Biophysics tab allows you to modify the biophysical pro
 
 ### Figure 11
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image27.png" alt="image27" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image27.png" alt="image27" width=50%/></a></p>
 
 </div>
 
@@ -190,7 +190,7 @@ Neurons in the model are arranged in three dimensions. The XY plane is used to 
 
 ### Figure 12
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image24.png" alt="image24" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image24.png" alt="image24" width=50%/></a></p>
 
 </div>
 
@@ -200,7 +200,7 @@ This 3D visualization of the model is rotated to allow easier viewing. The top a
 
 ### Figure 13
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image18.png" alt="image18" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image18.png" alt="image18" width=50%/></a></p>
 </div>
 
 The figure above shows a schematic of network connectivity. The blue cells are pyramidal neurons, while the orange circles represent the interneurons. The lines between neurons represent local synaptic connections. Lines ending with a circle are excitatory (AMPA/NMDA) synapses, while lines ending with a line are inhibitory (GABAA/GABAB) synapses.
@@ -211,7 +211,7 @@ Pressing the Local Network button on the Set Parameters dialog box brings up the
 
 ### Figure 14
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image34.png" alt="image34" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image34.png" alt="image34" width=50%/></a></p>
 </div>
 
 Note that the pyramidal cells are arranged in the X-Y plane, so the number of cells in a layer is the product of the number along the X and Y directions. The number of interneurons per layer is adjusted to be ⅓ the number of pyramidal neurons in an equally distributed configuration.
@@ -222,10 +222,10 @@ To adjust synaptic weights onto a particular cell type, click the corresponding 
 
 ### Figure 15
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image30.png" alt="image30" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image30.png" alt="image30" width=50%/></a></p>
 </div>
 
-In this example, AMPA/NMDA weight are the excitatory synaptic weights, while GABAA/GABAB are the inhibitory synaptic weights. All weights are specified in units of conductance (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png)). Note that the synaptic weight, w, between two cells is scaled by the distance between the two cells through the following equation:![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image2.png), where wis the weight specified in the dialog, dis the distance between the cells in the X-Y plane (distance is in arbitrary units), and λ is a spatial length constant which is 3 or 20 (λ is also in arbitrary units) when a presynaptic cell is excitatory or inhibitory, respectively, in order to have shorter spread of excitation relative to inhibition.
+In this example, AMPA/NMDA weight are the excitatory synaptic weights, while GABAA/GABAB are the inhibitory synaptic weights. All weights are specified in units of conductance (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image1.png)). Note that the synaptic weight, w, between two cells is scaled by the distance between the two cells through the following equation:![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image2.png), where wis the weight specified in the dialog, dis the distance between the cells in the X-Y plane (distance is in arbitrary units), and λ is a spatial length constant which is 3 or 20 (λ is also in arbitrary units) when a presynaptic cell is excitatory or inhibitory, respectively, in order to have shorter spread of excitation relative to inhibition.
 
 Excitatory (E) and inhibitory (I) tone within the network is a major factor influencing network dynamics. The following dialog, accessible with the Synaptic Gains button from the main Set Parameters dialog, facilitates scaling of E->E, E->I, I->E, and I->I weights, without having to adjust the weights between specific types of cells.
 
@@ -233,7 +233,7 @@ Excitatory (E) and inhibitory (I) tone within the network is a major factor inf
 
 ### Figure 16
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image13.png" alt="image13" width=30%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image13.png" alt="image13" width=30%/></a></p>
 </div>
 
 In this dialog changing the 1.0 to other values and pressing OK will multiply the appropriate weights displayed in the Local Network Parameter dialog. For example, setting E->E to a value of 2.0 will double the weights between all pairs of excitatory cells. Changing a value and then pressing Cancel will produce no effect.
@@ -253,13 +253,13 @@ For both rhythmic and evoked synaptic inputs (described below) we use the terms 
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image32.png" alt="image17" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image32.png" alt="image17" width=80%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image28.png" alt="image28" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image28.png" alt="image28" width=80%/>
 </a>
 <p>  </p>
 </td>
@@ -280,7 +280,7 @@ Rhythmic inputs are selected using an average frequency with variability. The re
 
 ### Figure 18
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image6.png" alt="image6" width=50%/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image6.png" alt="image6" width=50%/></a></p>
 </div>
 
 Schematic illustration of rhythmic 10 Hz burst drive through proximal and distal projection pathways.  “Population bursts”, consisting of a set number of “burst units” (10, 2-spike bursts shown)  drive post-synaptic conductances in the local network with a set frequency (100 ms ISI) and mean delay between proximal and distal.  
@@ -296,19 +296,19 @@ Schematic illustration of rhythmic 10 Hz burst drive through proximal and distal
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image9.png" alt="image9" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image9.png" alt="image9" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image3.png" alt="image3" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image3.png" alt="image3" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image7.png" alt="image 7" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image7.png" alt="image 7" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -317,19 +317,19 @@ Schematic illustration of rhythmic 10 Hz burst drive through proximal and distal
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image17.png" alt="image17" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image17.png" alt="image17" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image31.png" alt="image31" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image31.png" alt="image31" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image12.png" alt="image12" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image12.png" alt="image12" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -365,13 +365,13 @@ Evoked inputs are used to model event related potentials (ERPs) and are typicall
 <tr style="border: none;">
 
 <td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image14.png" alt="image14" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image14.png" alt="image14" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image20.png" alt="image20" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image20.png" alt="image20" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -385,10 +385,10 @@ Proximal and distal inputs are numbered sequentially. In the example shown, ther
 *   Start time mean (ms) - average start time
 *   Start time stdev (ms) - standard deviation of start time
 *   Number spikes - number of inputs provided to each synapse
-*   L2/3 Pyr weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 2 pyramidal neurons
-*   L2/3 Basket weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 2 basket cells
-*   L5 Pyr weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 5 pyramidal neurons
-*   L5 Basket weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 5 basket cells (only used for proximal inputs)
+*   L2/3 Pyr weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 2 pyramidal neurons
+*   L2/3 Basket weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 2 basket cells
+*   L5 Pyr weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 5 pyramidal neurons
+*   L5 Basket weight AMPA/NMDA (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image1.png)) - weight of AMPA/NMDA synaptic inputs to layer 5 basket cells (only used for proximal inputs)
 
 Synchronous Inputs indicates whether for a specific evoked proximal/distal input each neuron receives the input at the same time, or if instead each neuron receives the evoked input events independently drawn from the same distribution. Increment input (ms) indicates whether to increment the Start time of all evoked inputs on each trial. To remove the input shown in the currently active tab, press the Remove Input button.
 
@@ -407,21 +407,21 @@ Poisson Inputs, are excitatory AMPA or NMDA synaptic inputs to the somata of dif
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image5.png" alt="image5" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image5.png" alt="image5" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image10.png
-"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image10.png
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image10.png
+"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image10.png
 " alt="image10" width=100%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image16.png" alt="image16" width=100%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image16.png" alt="image16" width=100%/>
 </a>
 <p>  </p>
 </td>
@@ -449,13 +449,13 @@ Tonic inputs are modeled as somatic current clamps with a fixed current injecti
 <tr style="border: none;">
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image8.png" alt="image8" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image8.png" alt="image8" width=80%/>
 </a>
 <p>  </p>
 </td>
 
 <td style="border: none;" width="30%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui-tour/images/image11.png" alt="image11" width=80%/>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gui/images/image11.png" alt="image11" width=80%/>
 </a>
 <p>  </p>
 </td>
