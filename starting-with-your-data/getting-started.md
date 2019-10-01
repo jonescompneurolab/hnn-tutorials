@@ -7,7 +7,7 @@ Now that you’ve completed the tutorials, it’s time to get started using HNN 
 <p><a href=""><img src="" alt="" width=90%/></a></p>
 -->
 
-<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Getting%20Started%20With%20Your%20Data/images/Step_Figure.bmp"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Getting%20Started%20With%20Your%20Data/images/Step_Figure.bmp" alt="Step_Figure" width=70%/></a></p>
+<p align="center"><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/starting-with-your-data/images/Step_Figure.bmp"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/starting-with-your-data/images/Step_Figure.bmp" alt="Step_Figure" width=70%/></a></p>
 
 Currently, source localization is an independent process (future releases of HNN will include an integration with MNE-Python and provide an all-in-one tool). If your data is not source-localized yet, you can perform this step with any software package you’re familiar with, such as [MNE-Python](www.martinos.org/mne) or the MATLAB toolbox [FieldTrip](http://www.fieldtriptoolbox.org).
 
