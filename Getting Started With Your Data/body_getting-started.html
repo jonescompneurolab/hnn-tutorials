@@ -1,0 +1,88 @@
+<!-- pandoc -f markdown -t html -o getting-started.html readme.md -->
+<h2 id="getting-started-with-your-own-data">Getting started with your own data</h2>
+<p>Now that you’ve completed the tutorials, it’s time to get started using HNN to explore your own data! First, make sure your data is in the right format. HNN simulates primary current dipoles, i.e. the neural sources of the sensor-level EEG/MEG signal. This means that, for a direct comparison between your data and HNN simulations in units of nAm, your EEG/MEG has to be transformed into source-localized data (but see box below for how to use HNN with sensor data).</p>
+<!--
+<p><a href=""><img src="" alt="" width=90%/></a></p>
+-->
+<p align="center">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Getting%20Started%20With%20Your%20Data/images/Step_Figure.bmp"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/Getting%20Started%20With%20Your%20Data/images/Step_Figure.bmp" alt="Step_Figure" width=70%/></a>
+</p>
+<p>Currently, source localization is an independent process (future releases of HNN will include an integration with MNE-Python and provide an all-in-one tool). If your data is not source-localized yet, you can perform this step with any software package you’re familiar with, such as <a href="www.martinos.org/mne">MNE-Python</a> or the MATLAB toolbox <a href="http://www.fieldtriptoolbox.org">FieldTrip</a>.</p>
+<p>In-depth tutorials describing how to perform source localizations are commonly provided by the appropriate software. In brief, source localization allows you to identify the brain region from which a given element of your EEG/MEG signal originated. This is a complex problem and several different algorithms have been developed to address it. Broadly, the source localization process involves the following steps, starting with raw EEG/MEG and structural magnetic resonance imaging (MRI) data:</p>
+<!-- Table 1 -->
+<div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: top; margin-top:20px; margin-bottom:40px; border: solid;">
+<table style="border-collapse: collapse; border: none; text-align:center;">
+<tr style="border: none;">
+<h3>
+Table 1
+</h3>
+</tr>
+<tr style="border: none;">
+<td style="border: none; vertical-align: top;" width="47.5%">
+<h4>
+EEG/MEG Data
+</h4>
+<p>
+Preprocessing
+</p>
+<p>
+Epoching &amp; Averaging
+</p>
+<p>
+Noise Covariance Estimation
+</p>
+</td>
+<td style="border: none; vertical-align: top;" width="5%">
+</td>
+<td style="border: none; vertical-align: top;" width="47.5%">
+<h4>
+MRI Data
+</h4>
+<p>
+Volume Conduction Model
+</p>
+<p>
+Source Model
+</p>
+</td>
+</tr>
+</table>
+<table style="border-collapse: collapse; border: none; text-align:center;">
+<tr style="border: none;">
+<td style="border: none; vertical-align: top;" width="5%">
+</td>
+<td style="border: none; vertical-align: top;" width="90%">
+<p>
+Forward Solution
+</p>
+<p>
+Inverse Solution
+</p>
+</td>
+<td style="border: none; vertical-align: top;" width="5%">
+</td>
+</tr>
+</table>
+</div>
+<!-- end Table 1 -->
+<p>Once the source-localized data is extracted and ready to use in HNN, save it in a text file with one column indicating time points and a second column containing amplitude data. To open your data in HNN, first clear any previously loaded data or simulations and then load your text file.</p>
+<pre><code>Edit &gt; Clear canvas
+File &gt; Load data file</code></pre>
+<p>You’re now ready to simulate your data! If you’re not sure where to start, the parameter files provided with the HNN distribution can be a useful starting point. If you come across any difficulties, here are a few points to keep in mind:</p>
+<ul>
+<li>Units: HNN expects data in units of nanoampere-meters (nAm) over milliseconds (ms). Depending on the source localization software used, your data may be in units of Am and/or measured in seconds and should be converted to avoid confusion.</li>
+<li>Sampling Rate: Remember to downsample your data to 600Hz if necessary.</li>
+<li><p>Scale: The parameters included in the HNN distribution are likely to be a good starting point for the simulation of your own data. However, keep in mind that the scale of the associated predictions may differ significantly from your data.</p>
+<p>Adjust magnitude:</p>
+<pre><code>  Set Parameters &gt; Run &gt; Analysis &gt; Dipole Scaling</code></pre>
+<p>Adjust duration:</p>
+<pre><code>  Set Parameters &gt; Run &gt; Duration (ms)</code></pre></li>
+</ul>
+<h2 id="working-with-non-source-localized-data">Working With Non-Source-Localized Data</h2>
+<p>HNN is designed to simulate the primary current generated in a neocortical column, allowing for direct comparisons between these simulations and source-localized EEG/MEG data in the same unit of nAm.</p>
+<p>However, if you are unable to compute source-localized data, you may still benefit from using HNN to simulate your sensor level data data. Since the same currents underlie both the sensor-level and source-localized data, these signals can oftentimes be interpreted similarly (see <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02117/full">Sliva et al., 2018</a>).</p>
+<p>If you’d like to use sensor-level data, such as an event-related potential/field in HNN, it is important to be cautious in the interpretation of your simulations for two reasons:</p>
+<ol type="1">
+<li><p>The signal-to-noise ratio in sensor level is decreased, which may affect the trajectory of the waveform.</p></li>
+<li><p>Source localization allows for an estimation of the direction of the current flow (into or out of the cortex) which is essential for an informed simulation (down or up the pyramidal neuron dendrites) of the data. This information is not available in sensor-level data. However, oftentimes, prior knowledge of the information pathways in the cortex can guide estimations of the orientation of underlying currents. For example, sensory evoked potentials/fields commonly display a characteristic initial peak which corresponds to a ‘feedforward’ (up) input from the lemniscal thalamus, and provides clues regarding the orientation of the underlying source, even in sensor-level data.</p></li>
+</ol>
