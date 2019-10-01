@@ -1,4 +1,4 @@
-<!-- pandoc -f markdown -t html -o getting-started.html readme.md -->
+<!-- pandoc -f markdown -t html -o getting-started.html getting-started.md -->
 ## Getting started with your own data
 
 Now that you’ve completed the tutorials, it’s time to get started using HNN to explore your own data! First, make sure your data is in the right format. HNN simulates primary current dipoles, i.e. the neural sources of the sensor-level EEG/MEG signal. This means that, for a direct comparison between your data and HNN simulations in units of nAm, your EEG/MEG has to be transformed into source-localized data (but see box below for how to use HNN with sensor data).
@@ -15,7 +15,7 @@ In-depth tutorials describing how to perform source localizations are commonly p
 
 <!-- Table 1 -->
 
-<div style="text-align:center; vertical-align: top; margin-top:20px; margin-bottom:40px; border: solid;">
+<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; border: solid; width:600px; margin-left:auto; margin-right:auto;">
 
 <h3>Table 1</h3>
 

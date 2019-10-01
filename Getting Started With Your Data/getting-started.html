@@ -85,7 +85,7 @@ function topFunction() {
 <!-- </body> -->
 <!-- </html> -->
 <!-- END -->
-<!-- pandoc -f markdown -t html -o getting-started.html readme.md -->
+<!-- pandoc -f markdown -t html -o getting-started.html getting-started.md -->
 <h2 id="getting-started-with-your-own-data">Getting started with your own data</h2>
 <p>Now that you’ve completed the tutorials, it’s time to get started using HNN to explore your own data! First, make sure your data is in the right format. HNN simulates primary current dipoles, i.e. the neural sources of the sensor-level EEG/MEG signal. This means that, for a direct comparison between your data and HNN simulations in units of nAm, your EEG/MEG has to be transformed into source-localized data (but see box below for how to use HNN with sensor data).</p>
 <!--
@@ -97,7 +97,7 @@ function topFunction() {
 <p>Currently, source localization is an independent process (future releases of HNN will include an integration with MNE-Python and provide an all-in-one tool). If your data is not source-localized yet, you can perform this step with any software package you’re familiar with, such as <a href="www.martinos.org/mne">MNE-Python</a> or the MATLAB toolbox <a href="http://www.fieldtriptoolbox.org">FieldTrip</a>.</p>
 <p>In-depth tutorials describing how to perform source localizations are commonly provided by the appropriate software. In brief, source localization allows you to identify the brain region from which a given element of your EEG/MEG signal originated. This is a complex problem and several different algorithms have been developed to address it. Broadly, the source localization process involves the following steps, starting with raw EEG/MEG and structural magnetic resonance imaging (MRI) data:</p>
 <!-- Table 1 -->
-<div style="text-align:center; vertical-align: top; margin-top:20px; margin-bottom:40px; border: solid;">
+<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; border: solid; width:600px; margin-left:auto; margin-right:auto;">
 <h3>
 Table 1
 </h3>
