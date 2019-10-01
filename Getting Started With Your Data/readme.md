@@ -15,14 +15,13 @@ In-depth tutorials describing how to perform source localizations are commonly p
 
 <!-- Table 1 -->
 
-<div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: top; margin-top:20px; margin-bottom:40px; border: solid;">
+<div style="text-align:center; vertical-align: top; margin-top:20px; margin-bottom:40px; border: solid;">
 
-<table style="border-collapse: collapse; border: none; text-align:center;">
-<tr style="border: none;">
 <h3>Table 1</h3>
-</tr>
 
-<tr style="border: none;">
+<table style="border-collapse: collapse; border: none; text-align:center; align: center; width: 100%;">
+
+<tr style="border: none; align: center; width: 100%;">
 
 <td style="border: none; vertical-align: top;" width="47.5%">
 <h4> EEG/MEG Data </h4>
@@ -45,16 +44,9 @@ In-depth tutorials describing how to perform source localizations are commonly p
 
 </table>
 
-<table style="border-collapse: collapse; border: none; text-align:center;">
-<tr style="border: none;">
-<td style="border: none; vertical-align: top;" width="5%"></td>
-<td style="border: none; vertical-align: top;" width="90%">
 <p>Forward Solution</p>
 <p>Inverse Solution</p>
-</td>
-<td style="border: none; vertical-align: top;" width="5%"></td>
-</tr>
-</table>
+<br>
 </div>
 
 <!-- end Table 1 -->

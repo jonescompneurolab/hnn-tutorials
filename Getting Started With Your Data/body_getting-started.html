@@ -10,14 +10,12 @@
 <p>Currently, source localization is an independent process (future releases of HNN will include an integration with MNE-Python and provide an all-in-one tool). If your data is not source-localized yet, you can perform this step with any software package you’re familiar with, such as <a href="www.martinos.org/mne">MNE-Python</a> or the MATLAB toolbox <a href="http://www.fieldtriptoolbox.org">FieldTrip</a>.</p>
 <p>In-depth tutorials describing how to perform source localizations are commonly provided by the appropriate software. In brief, source localization allows you to identify the brain region from which a given element of your EEG/MEG signal originated. This is a complex problem and several different algorithms have been developed to address it. Broadly, the source localization process involves the following steps, starting with raw EEG/MEG and structural magnetic resonance imaging (MRI) data:</p>
 <!-- Table 1 -->
-<div style="background-color:rgba(0, 0, 0, 0); text-align:center; vertical-align: top; margin-top:20px; margin-bottom:40px; border: solid;">
-<table style="border-collapse: collapse; border: none; text-align:center;">
-<tr style="border: none;">
+<div style="text-align:center; vertical-align: top; margin-top:20px; margin-bottom:40px; border: solid;">
 <h3>
 Table 1
 </h3>
-</tr>
-<tr style="border: none;">
+<table style="border-collapse: collapse; border: none; text-align:center; align: center; width: 100%;">
+<tr style="border: none; align: center; width: 100%;">
 <td style="border: none; vertical-align: top;" width="47.5%">
 <h4>
 EEG/MEG Data
@@ -47,22 +45,13 @@ Source Model
 </td>
 </tr>
 </table>
-<table style="border-collapse: collapse; border: none; text-align:center;">
-<tr style="border: none;">
-<td style="border: none; vertical-align: top;" width="5%">
-</td>
-<td style="border: none; vertical-align: top;" width="90%">
 <p>
 Forward Solution
 </p>
 <p>
 Inverse Solution
 </p>
-</td>
-<td style="border: none; vertical-align: top;" width="5%">
-</td>
-</tr>
-</table>
+<p><br></p>
 </div>
 <!-- end Table 1 -->
 <p>Once the source-localized data is extracted and ready to use in HNN, save it in a text file with one column indicating time points and a second column containing amplitude data. To open your data in HNN, first clear any previously loaded data or simulations and then load your text file.</p>
