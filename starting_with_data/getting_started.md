@@ -13,11 +13,7 @@ Currently, source localization is an independent process (future releases of HNN
 
 In-depth tutorials describing how to perform source localizations are commonly provided by the appropriate software. In brief, source localization allows you to identify the brain region from which a given element of your EEG/MEG signal originated. This is a complex problem and several different algorithms have been developed to address it. Broadly, the source localization process involves the following steps, starting with raw EEG/MEG and structural magnetic resonance imaging (MRI) data:
 
-<!-- Table 1 -->
-
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; border: solid; width:600px; margin-left:auto; margin-right:auto;">
-
-<h3>Table 1</h3>
+<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; border: solid; border-width: 2px; border-color: #812a89; width:600px; margin-left:auto; margin-right:auto;">
 
 <table style="background-color:rgba(0, 0, 0, 0); border-collapse: collapse; border: none; text-align:center; align: center; width: 100%;">
 
