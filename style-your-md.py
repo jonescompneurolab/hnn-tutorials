@@ -119,6 +119,8 @@ with open(output_fname, 'w') as outfile:
 ## delete body_only.html
 os.remove(htmlbody)
 
+os.chdir(parentdirectory)
+
 
 # In[ ]:
 
