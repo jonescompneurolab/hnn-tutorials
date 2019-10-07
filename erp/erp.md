@@ -12,11 +12,11 @@ In our model, the exogenous driving inputs were simulated as predefined trains o
 
 <!-- start figure -->
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 1
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png" alt="image8" width="700px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png" alt="image8" width="100%" style="max-width:650px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"> Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experiment and neural model simulation. Left: MEG data showing tactile evoked response (ERP) source localized to the hand area of SI. Red: suprathreshold stimulation; Blue: Threshold stimulation (avg. n=100 trials). Right: Neural model simulation depicting proximal/distal inputs needed to replicate the ERP waveform (avg. n=25 trials) </p>
 </div>
@@ -66,7 +66,7 @@ Select data/MEG_detection_data/yes_trial_S1_ERP_all_avg.txt (note that the data 
 
 ### Figure 2
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image7.png" alt="image7" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image7.png" alt="image7" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 </div>
 
@@ -92,28 +92,28 @@ As described in the “Getting Started” section, the evoked response can be si
 
 Each evoked input consists of a Gaussian distributed train of presynaptic action potentials, with several adjustable parameters, including the number of the driving spikes on each trial of the simulation, the mean start time and standard deviation of each spike (ms), and the postsynaptic conductance of the drive defined by the postsynaptic cell (e.g., L2Pyr = Layer 2/3 pyramidal neuron). Note that the Synchronous Inputscheckbox allows specification of whether each cell/synapse receives inputs at the same time or whether each cell/synapse receive inputs independently. In either case, the synaptic input times are drawn from the same distribution. Schematic representations of the postsynaptic location of each input is shown in the dialog box. For further details on the connectivity structure of the network, see the Under the Hood section of the HNN webpage.
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 700px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; max-width: 700px; margin-left:auto; margin-right:auto;">
 
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
+<table style="border-collapse: collapse; border: none; text-align: center; align:center; max-width: 100%;">
 
 <h3>Figure 3</h3>
 
 <tr style="border: none;">
 
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image17.png" alt="image17" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image17.png" alt="image17"/>
 </a>
 <p>  </p>
 </td>
 
-<td style="border: none;" width="33.3">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image25.png" alt="image25" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image25.png" alt="image25"/>
 </a>
 <p>  </p>
 </td>
 
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image5.png" alt="image5" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image5.png" alt="image5"/>
 </a>
 <p>  </p>
 </td>
@@ -138,44 +138,44 @@ File > Clear Data File
 ```
 You can also clear the data from the figure by pressing Control-C).
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 4
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image20.png" alt="image20" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image20.png" alt="image20" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
 
 To run this simulation, we’ll first change the simulation name (i.e., the name under which the simulated data will be saved), and reduce the number of trials for a faster simulation. In the “Set Parameters” dialog box, enter a new descriptivename for the simulation here; for example, ERPYes2Trials, as shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 5
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image22.png" alt="image22" width="200px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image22.png" alt="image22" width="100%" style="max-width:200px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
 
 Next, press the Run button in the “Set Parameters” dialog box, and a “Run Parameters” dialog box will open, with several adjustable parameters, as shown below. These parameters control the duration, integration time step, number of trials, and number of computer processing cores to run the simulation with. Note: NumCores is the number of cores to parallelize the model, is automatically detected by HNN and may differ, depending on your hardware. For a faster simulation, change  the number of trials from 100 to 2.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 6
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image9.png" alt="image9" width="300px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image9.png" alt="image9" width="100%" style="max-width:300px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
 
 Next, navigate to the main HNN GUI window, shown above, and press the Run Simulation. This will start the simulation, which should take 1-2 minutes depending on your hardware.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 7
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image28.png" alt="image28" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image28.png" alt="image28" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -188,11 +188,11 @@ The top two panels of the model output show histograms of input times from dista
 
 Importantly, note that a scaling factor of 3000.00 was multiplied by the net dipole produced by the model, as seen on the y-axis scale. This scaling factor can be adjusted to match the magnitude of the recorded data; the value of 3000 is the default value for the loaded parameterset. To change this scaling factor, click on the Runbutton on the main parameter dialog. Then click on the “Analysis” tab and enter the desired scaling factor in the “Dipole Scaling” text box, as shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 8
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png" alt="image6" width="300px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png" alt="image6" width="100%" style="max-width:300px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -205,11 +205,11 @@ The longer the smoothing window, the more smoothing will occur. To turn off smoo
 
 Also note that before running this simulation, we removed the prior simulation by pressing the “Remove Simulation” button at the bottom of the GUI while it was selected. Had we not done so, both simulation dipoles would be displayed (old simulation with dotted line, new simulation with solid line; see “Tour of the GUI” for more details on simulation control). In the remainder of the tutorial, before running a new simulation, we always remove the previously run simulation.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 9
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png" alt="image3" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png" alt="image3" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -232,11 +232,11 @@ View > View Simulation Dipoles
 ```
 This will allow the user to view the dipole signal contributions from individual layers. The following window will appear (first reload the ERPYes2Trials.param simulation, that was run above, into HNN).
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 10
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png" alt="image14" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png" alt="image14" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -253,11 +253,11 @@ View > View Simulation Spiking Activity
 ```
 The following window will appear.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 11
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image12.png" alt="image12" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image12.png" alt="image12" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -274,11 +274,11 @@ Set Parameters > Run
 
 Running an ERP simulation will now display the wavelet time-frequency representation of the ERP dipole signal as shown in the figure below. Note that when running multiple trials, the average of individual wavelet transforms is shown, rather than performing the wavelet transform on the average dipole signal. Also note that in the simulation below, the evoked inputs were shifted forward 50 ms in time, because the wavelet analysis cuts off the first 50 ms of the dipole signal to avoid edge artifacts. Finally, note that the previous simulation was removed before running this new simulation.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 12
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image13.png" alt="image13" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image13.png" alt="image13" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -295,11 +295,11 @@ File > Load data file > data/MEG_detection_data/yes_trial_S1_ERP_all_avg.txt
 ```
 HNN will load the data and display the waveform in the dipole window as shown with a blue dotted line below. (Note: data not collected at 600 Hz must first be downsampled to 600 Hz to be viewed in the HNN GUI).
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 13
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image10.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image10.png" alt="image10" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image10.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image10.png" alt="image10" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -322,33 +322,33 @@ Set Parameters > Evoked Inputs
 ```
 Click the “Synchronous Inputs”checkbox, then press the Start Simulation button in the main HNN GUI.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 14
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image19.png" alt="image19" width="250px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image19.png" alt="image19" width="100%" style="max-width:250px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
 
 After the simulation has completed, you’ll see the following output. Although the model replicates some gross features of the experimental data, the fit to the data is now substantially worse (RMSE = 16.25). Notice also that there is significantly lower variability of the input times in the green/red histograms at the top of the figure (compare to evoked response inputs shown in Step 5), predicting (in this case) the evoked responses are more likely to be non-synchronous. Remember, however, that this simulation is only based on two trials.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 15
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image11.png" alt="image11" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image11.png" alt="image11" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
 
 If you’re adventurous and have some time, try running the same parameters with 100 trials. Doing so will reduce the RMSE as shown in the image below (RMSE = 13.92). Notice also the change in the histograms of driving spikes.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 16
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image26.png" alt="image26" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image26.png" alt="image26" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -379,11 +379,11 @@ Notice that the timing and magnitude of the peaks in this new data set (the purp
 
 HNN will automatically recalculate the model fit to the data (i.e, the RMSE between the average model response and the loaded data) based on the prior simulations (Step 6.1), showing that the previously used parameter set gave a poor fit to the new data (RMSE = 22.73).
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 17
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image21.png" alt="image21" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image21.png" alt="image21" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -398,28 +398,28 @@ Set Parameters > Evoked Inputs
 ```
 You should see the new values, as displayed in the dialog boxes below.
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 700px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; max-width: 700px; margin-left:auto; margin-right:auto;">
 
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
+<table style="border-collapse: collapse; border: none; text-align: center; align:center; max-width: 100%;">
 
 <h3>Figure 18</h3>
 
 <tr style="border: none;">
 
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image18.png" alt="image18" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image18.png" alt="image18"/>
 </a>
 <p>  </p>
 </td>
 
-<td style="border: none;" width="33.3">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image24.png" alt="image24" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image24.png" alt="image24"/>
 </a>
 <p>  </p>
 </td>
 
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image16.png" alt="image16" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image16.png" alt="image16"/>
 </a>
 <p>  </p>
 </td>
@@ -434,11 +434,11 @@ To run the simulation, let’s reduce the number of trials to 2 (in the “Run�
 
 Simulation results after running 2 trials in the model with the new parameters (non-detection parameters) are shown in the figure below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 19
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image1.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image1.png" alt="image1" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image1.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image1.png" alt="image1" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -463,22 +463,22 @@ File > Load data file > data/MEG_detection_data/S1_SupraT.txt
 ```
 Notice that the two waveforms displayed have substantially different features, including altered timing, amplitude, and sharpness of the peaks in this new data set.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 20
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image15.png" alt="image15" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image15.png" alt="image15" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
 
 Next, load the threshold-level parameters into HNN. At the top of the HNN GUI, click Set Parameters From File and select the file default.param from HNN’s param subfolder from your local machine.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 21
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image4.png" alt="image4" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image4.png" alt="image4" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>
@@ -493,28 +493,28 @@ Set Parameters > Evoked Inputs
 ```
 You should see the new values, as displayed in the dialog boxes below.
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 700px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; max-width: 700px; margin-left:auto; margin-right:auto;">
 
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
+<table style="border-collapse: collapse; border: none; text-align: center; align:center; max-width: 100%;">
 
 <h3>Figure 22</h3>
 
 <tr style="border: none;">
 
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image2.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image2.png" alt="image2" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image2.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image2.png" alt="image2" />
 </a>
 <p>  </p>
 </td>
 
-<td style="border: none;" width="33.3">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image23.png" alt="image23" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image23.png" alt="image23" />
 </a>
 <p>  </p>
 </td>
 
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image27.png" alt="image27" width=100%/>
+<td style="border: none;">
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image27.png" alt="image27" />
 </a>
 <p>  </p>
 </td>
@@ -527,11 +527,11 @@ Next, let’s run the simulation with the Start Simulation button on the main GU
 
 Simulation results after running the model with the new parameters (supra-threshold detection parameters) are shown in the figure below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px; width:750px; margin-left:auto; margin-right:auto;">
+<div style="text-align:center; margin-top:30px; margin-bottom:30px; max-width:750px; margin-left:auto; margin-right:auto;">
 
 ### Figure 23
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image29.png" alt="image29" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image29.png" alt="image29" width="100%" style="max-width:500px;" text-align="center"/></a></p>
 
 <p style="text-align:justify;"></p>
 </div>

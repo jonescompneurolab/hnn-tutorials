@@ -4,7 +4,11 @@
 
 #wrapper {
   margin: 0 auto;
-  width: 900px; /* set page width */
+/*  width: 900px; */
+/*  edited 10/6 */
+  max-width: 900px; /* set page width */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* scroll button */
@@ -41,7 +45,9 @@
   display: flex;
   position: relative;
   height: 300px;
-  min-width: 900px;
+  width: 100%;
+/*  min-width: 900px; */
+/*  edited 10/6 */
   background-image: url(images/brainheader-darkened.png);
   background-size:cover;
   background-position:center;
@@ -259,6 +265,7 @@ color: blue;
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 blockquote {
   margin: 1.5em 0;
@@ -288,6 +295,7 @@ code {
   background-color: #f0f0f0;
   display: block;
   padding: 20px;
+  overflow-x: auto;
 }
 pre.editor-colors {
   margin: 1.5em 0;
