@@ -193,6 +193,7 @@ body {
   color: #555;
   background-color: white;
   overflow: auto;
+  word-wrap: break-word; /* breaks long strings */
 }
 body > :first-child,
 body > div.update-preview > :first-child {
