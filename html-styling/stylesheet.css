@@ -1,7 +1,6 @@
-/* start injections */
+/* start advanced styling and supplementary classes */
 
 /* fix page width */
-
 #wrapper {
   margin: 0 auto;
 /*  width: 900px; */
@@ -46,8 +45,6 @@
   position: relative;
   height: 300px;
   width: 100%;
-/*  min-width: 900px; */
-/*  edited 10/6 */
   background-image: url(images/brainheader-darkened.png);
   background-size:cover;
   background-position:center;
@@ -107,85 +104,42 @@
   padding-right: 5px;
 }
 
-/* Change background on mouse-over */
+/* Change anchor background color on mouse-over */
 .navbar a:hover {
-  /*background: #ddd;
-  border-radius: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  line-height: 50px;*/
   color: #e91e63 !important;
 }
 
-/* Main content */
+/* page margin top */
 .main {
   margin-top: 70px; /* Add a top margin to avoid content overlay */
 }
 
-/* end injections */
+/* figure style class */
+.stylefig {
+  text-align:center;
+  max-width:750px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* table style class
+.styletable  {
+  text-align:center;
+  border-collapse: collapse;
+  border: none;
+  max-width: 100%;
+} */
+
+/* img style class */
+img.imgcenter100{
+  width: 100%;
+  text-align: center;
+}
+
+/* end advanced styling and supplementary classes */
 
 /* start basic styling */
 
-.emoji {
-  max-width: 1em !important;
-}
-del {
-  text-decoration: none;
-  position: relative;
-}
-del::after {
-  border-bottom: 1px solid black;
-  content: '';
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 50%;
-}
-ul.contains-task-list li.task-list-item {
-  position: relative;
-  list-style-type: none;
-}
-ul.contains-task-list li.task-list-item input.task-list-item-checkbox {
-  position: absolute;
-  transform: translateX(-100%);
-  width: 30px;
-}
-span.critic.comment {
-  position: relative;
-}
-span.critic.comment::before {
-  content: '\1f4ac';
-  position: initial;
-}
-span.critic.comment > span {
-  display: none;
-}
-span.critic.comment:hover > span {
-  display: initial;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  border: 1px solid;
-  border-radius: 5px;
-  max-height: 4em;
-  overflow: auto;
-}
-span.critic.comment:focus > span {
-  display: initial;
-  text-decoration: underline;
-  position: initial;
-  top: auto;
-  left: auto;
-  border: initial;
-  border-radius: initial;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  background-color: transparent;
-}
 body {
   padding: 0em;
   margin: 0em;
@@ -210,12 +164,7 @@ body > ol,
 body > div.update-preview > ol {
   margin-bottom: 1.5em;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin-top: 1.0em;
   margin-bottom: 0.5em;
@@ -251,8 +200,7 @@ strong {
 del {
   color: #7e7e7e;
 }
-a,
-a code {
+a, a code {
   color: black;
 }
 a:link {
@@ -268,6 +216,31 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* start table properties */
+table {
+  margin: 1.5em 0; /* top and bottom margins 1.5em; right and left margins 0 */
+  text-align:center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+  max-width: 100%;
+  background-color: transparent;
+}
+/* th {
+  color: #030303;
+  padding: 0.66em 1em;
+  border: 1px solid #d6d6d6;
+} */
+td, tr {
+  padding: 0.66em 1em; /* top and bottom pad 0.66em; right and left pad 1em */
+  border: none;
+}
+td {
+  vertical-align: top;
+}
+/* end table properties */
+
 blockquote {
   margin: 1.5em 0;
   font-size: inherit;
@@ -275,28 +248,72 @@ blockquote {
   border-color: #d6d6d6;
   border-width: 4px;
 }
-hr {
+
+hr { /* hr is page break essentially */
   margin: 3em 0;
   border-top: 2px dashed #d6d6d6;
   background: none;
 }
-table {
-  margin: 1.5em 0;
-}
-th {
-  color: #030303;
-}
-th,
-td {
-  padding: 0.66em 1em;
-  border: 1px solid #d6d6d6;
-}
+
 code {
   color: #030303;
   background-color: #f0f0f0;
   display: block;
   padding: 20px;
   overflow-x: auto;
+}
+
+.emoji {
+  max-width: 1em !important;
+}
+
+del { /* this is the strikethrough tag */
+  text-decoration: none;
+  position: relative;
+}
+
+ul.contains-task-list li.task-list-item {
+  position: relative;
+  list-style-type: none;
+}
+ul.contains-task-list li.task-list-item input.task-list-item-checkbox {
+  position: absolute;
+  transform: translateX(-100%);
+  width: 30px;
+}
+
+/* end basic styling */
+
+/* start unnecessary styling, potentially remove */
+
+span.critic.comment {
+  position: relative;
+}
+span.critic.comment::before {
+  content: '\1f4ac';
+  position: initial;
+}
+span.critic.comment > span {
+  display: none;
+}
+span.critic.comment:hover > span {
+  display: initial;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid;
+  border-radius: 5px;
+  max-height: 4em;
+  overflow: auto;
+}
+span.critic.comment:focus > span {
+  display: initial;
+  text-decoration: underline;
+  position: initial;
+  top: auto;
+  left: auto;
+  border: initial;
+  border-radius: initial;
 }
 pre.editor-colors {
   margin: 1.5em 0;
@@ -773,4 +790,4 @@ pre.editor-colors .fold-marker:after {
   color: #986801;
 }
 
-/* end basic styling */
+/* end unnecessary styling, potentially remove */
