@@ -264,7 +264,7 @@ You can provide rhythmic inputs throughout a simulation, or for a fixed interval
 
 Rhythmic inputs are selected using an average frequency with variability. The resulting synaptic events can be repeated multiple times to create further variability and more inputs. Each burst selects a set of events from a distribution with average starting time, interval (frequency), and appropriate ending time. Each input is sent to the synapses of the appropriate compartments (basal vs apical dendrites, etc.) of the appropriate neurons.
 
-<div class="stylefig" style="max-width:350px;">
+<div class="stylefig" style="max-width:650px;">
 
 ### Figure 18
 
