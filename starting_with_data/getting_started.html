@@ -9,7 +9,8 @@
 
 <!-- head area -->
 <head>
-<meta charset="utf-8" />
+<!-- <meta charset="utf-8" /> --> <!-- old version -->
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- set the viewport https://www.w3schools.com/css/css_rwd_viewport.asp -->
 <title>Tutorials - HNN</title>
 <!-- import CSS style sheet from Github directory -->
 <link rel = "stylesheet" type = "text/css" href = "../html-styling/stylesheet.css" />
@@ -88,18 +89,15 @@ function topFunction() {
 <!-- pandoc -f markdown -t html -o getting-started.html getting-started.md -->
 <h2 id="getting-started-with-your-own-data">Getting started with your own data</h2>
 <p>Now that you’ve completed the tutorials, it’s time to get started using HNN to explore your own data! First, make sure your data is in the right format. HNN simulates primary current dipoles, i.e. the neural sources of the sensor-level EEG/MEG signal. This means that, for a direct comparison between your data and HNN simulations in units of nAm, your EEG/MEG has to be transformed into source-localized data (but see below for how to use HNN with sensor data). Source localization provides insight into not only the location of the source of a given signal, but importantly, also the direction of the estimated net current in or out of the cortex, which corresponds to current flowing down or up the pyramidal neuron dendrites, respectively.</p>
-<!--
-<p><a href=""><img src="" alt="" width=90%/></a></p>
--->
-<p align="center">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/starting_with_data/images/Step_Figure.bmp"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/starting_with_data/images/Step_Figure.bmp" alt="Step_Figure" width=70%/></a>
-</p>
+<div class="stylefig">
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/starting_with_data/images/Step_Figure.bmp"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/starting_with_data/images/Step_Figure.bmp" alt="Step_Figure" width=70%/></a></p>
+</div>
 <p>Currently, source localization is an independent process (future releases of HNN will include an integration with MNE-Python and provide an all-in-one tool). If your data is not source-localized yet, you can perform this step with any software package you’re familiar with, such as <a href="www.martinos.org/mne">MNE-Python</a> or the MATLAB toolbox <a href="http://www.fieldtriptoolbox.org">FieldTrip</a>.</p>
 <p>In-depth tutorials describing how to perform source localizations are commonly provided by the appropriate software. In brief, source localization allows you to identify the brain region from which a given element of your EEG/MEG signal originated. This is a complex problem and several different algorithms have been developed to address it. Broadly, the source localization process involves the following steps, starting with raw EEG/MEG and structural magnetic resonance imaging (MRI) data:</p>
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; border: solid; border-width: 2px; border-color: #812a89; width:600px; margin-left:auto; margin-right:auto;">
-<table style="background-color:rgba(0, 0, 0, 0); border-collapse: collapse; border: none; text-align:center; align: center; width: 100%;">
-<tr style="border: none; align: center; width: 100%;">
-<td style="border: none; vertical-align: top;" width="47.5%">
+<div class="stylefig" style="margin-top:30px; margin-bottom:30px; border: solid; border-width: 2px; border-color: #812a89; max-width:550px;">
+<table style="text-align:center; margin-right:auto; margin-left:auto;">
+<tr>
+<td style="vertical-align: top;" width="50%">
 <h4>
 EEG/MEG Data
 </h4>
@@ -113,9 +111,7 @@ Epoching &amp; Averaging
 Noise Covariance Estimation
 </p>
 </td>
-<td style="border: none; vertical-align: top;" width="5%">
-</td>
-<td style="border: none; vertical-align: top;" width="47.5%">
+<td style="vertical-align: top;" width="50%">
 <h4>
 MRI Data
 </h4>
@@ -136,18 +132,17 @@ Inverse Solution
 </p>
 <p><br></p>
 </div>
-<!-- end Table 1 -->
 <p>Once the source-localized data is extracted and ready to use in HNN, save it in a text file with one column indicating time points and a second column containing amplitude data. To open your data in HNN, first clear any previously loaded data or simulations and then load your text file.</p>
 <pre><code>Edit &gt; Clear canvas
 File &gt; Load data file</code></pre>
-<p>You’re now ready to simulate your data! If you’re not sure where to start, the parameter files provided with the HNN distribution can be a useful starting point. If you come across any difficulties, here are a few points to keep in mind:</p>
+<p>You’re now ready to simulate your data! If you’re not sure where to begin, the parameter files provided with the HNN distribution can be a useful starting point. If you come across any difficulties, here are a few points to keep in mind:</p>
 <ul>
-<li>Units: HNN expects data in units of nanoampere-meters (nAm) over milliseconds (ms). Depending on the source localization software used, your data may be in units of Am and/or measured in seconds and should be converted to avoid confusion.</li>
-<li>Sampling Rate: Remember to downsample your data to 600Hz if necessary.</li>
+<li><p>Units: HNN expects data in units of nanoampere-meters (nAm) over milliseconds (ms). Depending on the source localization software used, your data may be in units of Am and/or measured in seconds and should be converted to avoid confusion.</p></li>
+<li><p>Sampling Rate: Remember to downsample your data to 600Hz if necessary.</p></li>
 <li><p>Scale: The parameters included in the HNN distribution are likely to be a good starting point for the simulation of your own data. However, keep in mind that the scale of the associated predictions may differ significantly from your data.</p>
-<p>Adjust magnitude:</p>
+<p>Magnitude: To adjust the scale magnitude, select:</p>
 <pre><code>  Set Parameters &gt; Run &gt; Analysis &gt; Dipole Scaling</code></pre>
-<p>Adjust duration:</p>
+<p>Duration: To adjust the scale duration, select:</p>
 <pre><code>  Set Parameters &gt; Run &gt; Duration (ms)</code></pre></li>
 </ul>
 <h2 id="working-with-non-source-localized-data">Working With Non-Source-Localized Data</h2>
@@ -157,4 +152,8 @@ File &gt; Load data file</code></pre>
 <ol type="1">
 <li><p>The signal-to-noise ratio in sensor level is decreased, which may affect the trajectory of the waveform.</p></li>
 <li><p>Source localization allows for an estimation of the direction of the current flow (into or out of the cortex) which is essential for an informed simulation (down or up the pyramidal neuron dendrites) of the data. This information is not available in sensor-level data. However, oftentimes, prior knowledge of the information pathways in the cortex can guide estimations of the orientation of underlying currents. For example, sensory evoked potentials/fields commonly display a characteristic initial peak which corresponds to a ‘feedforward’ (up) input from the lemniscal thalamus, and provides clues regarding the orientation of the underlying source, even in sensor-level data.</p></li>
+</ol>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02117/full">Sliva D.D., Black C.J., Bowary P., Agrawal U., Santoyo J.F., Philip N.S., Greenberg B.D., Moore C.I., Jones S.R. A Prospective Study of the Impact of Transcranial Alternating Current Stimulation on EEG Correlates of Somatosensory Perception. Frontiers in Psychology. Vol 9. 2117. 2018. DOI=10.3389/fpsyg.2018.02117.</a></li>
 </ol>
