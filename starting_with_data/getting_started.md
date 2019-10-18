@@ -69,4 +69,4 @@ If you’d like to use sensor-level data, such as an event-related potential/fie
 
 ## References
 
-1. [Sliva D.D., Black C.J., Bowary P., Agrawal U., Santoyo J.F., Philip N.S., Greenberg B.D., Moore C.I., Jones S.R. A Prospective Study of the Impact of Transcranial Alternating Current Stimulation on EEG Correlates of Somatosensory Perception. Frontiers in Psychology. Vol 9. 2117. 2018. DOI=10.3389/fpsyg.2018.02117.](https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02117/full)
+1. Sliva D.D., Black C.J., Bowary P., Agrawal U., Santoyo J.F., Philip N.S., Greenberg B.D., Moore C.I., Jones S.R. A Prospective Study of the Impact of Transcranial Alternating Current Stimulation on EEG Correlates of Somatosensory Perception. Frontiers in Psychology. Vol 9. 2117. 2018. DOI=10.3389/fpsyg.2018.02117.
