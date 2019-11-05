@@ -27,9 +27,13 @@ Before starting the tutorials, it is necessary to understand the framework for t
 
 HNN allows you to define and adjust trains of action potentials that generate excitatory synaptic drive to targets in the the local cortical network through these two pathways. There are several ways to change the pattern of action potential drive through different “buttons” build into the HNN GUI: “evoked response”, “rhythmic proximal” and “rhythmic distal”. The dialog boxes that open with these buttons allow creation and adjustment of a patterns of evoked response drive or rhythmic drive to the network. These design features are motivated by our prior studies. We have simulated evoked responses through a sequence of proximal and distal spike train drive [1-2], this sequence is provided as default parameters set to begin simulating evoked responses; parameters can be adjusted and additional inputs can be created in “evoked response” dialog box, as detailed further in the evoked response tutorial below. We have simulated low frequency alpha and beta rhythms through patterns of rhythmic drive (repeated bursts of spikes) through proximal and distal projection pathways [1,3-4]. Default parameters sets to begin simulating low frequency rhythms via rhythmic drive are provided; parameters can be adjusted in the corresponding dialog boxes, as detailed further in the alpha/beta tutorial below.
 
-* <a href="https://jonescompneurolab.github.io/hnn-tutorials/Tour%20of%20the%20GUI/gui_tour">Tour of the GUI</a>
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/gui/tour_gui">Tour of the GUI</a>
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/optimization/erp/erp">ERP</a>
 * <a href="https://jonescompneurolab.github.io/hnn-tutorials/alpha_and_beta/alpha_and_beta">Alpha and Beta</a>
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/gamma/gamma">Gamma</a>
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/starting_with_data/getting_started">Starting with Your Data</a>
 * <a href="https://jonescompneurolab.github.io/hnn-tutorials/optimization/optimization">Optimization</a>
+
 
 
 
