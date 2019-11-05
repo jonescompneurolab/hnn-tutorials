@@ -8,11 +8,11 @@ Gamma rhythms can encompass a wide band of frequencies from 30-150 Hz. Here, we 
 
 In general, PING rhythms are initiated by “excitation” to the excitatory (E) cells that causes spiking, which in turn synaptically activates a spiking population of inhibitory (I) cells. In turn, these I cells inhibit the E cells, preventing further E cell activity until the E cells can overcome the effects of the inhibition (\~25 ms later). The pattern is repeated, creating a gamma frequency oscillation (\~40 Hz, 40 spikes/second). This general principle is schematically described in Figure 1 below. The frequency of the rhythm is paced by this time constant of decay of inhibition, which is mediated by strong GABA-A currents, as well as the excitability of the E cells (if the E cells are very excitable, they can fire before the inhibition has completely worn off, and the oscillation will be faster).
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:450px;">
 
-### Figure 1
+<h3>Figure 1</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image19.png" alt="image19" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image19.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image19.png" alt="image19" /></a></p>
 
 <p style="text-align:center;">Schematic illustration of the circuit mechanisms underlying PING rhythms. </p>
 
@@ -54,32 +54,22 @@ Set Parameters > Poisson Inputs
 ```
 You should see the values of adjustable parameters displayed as in the dialog boxes below.
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 700px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 850px;">
+<table>
 <h3>Figure 2</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image32.png" alt="image32" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image32.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image32.png" alt="image32" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image46.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image46.png" alt="image46" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image46.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image46.png" alt="image46" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image9.png" alt="image9" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image9.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image9.png" alt="image9" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -94,38 +84,26 @@ Set Parameters> Local Network
 ```
 You should see the values of adjustable parameters displayed as in the dialog boxes below. Notice that the Layer 2/3 and Layer 5 are not connected to each other, the inhibitory conductance weights within layers are stronger than the excitatory conductances, and there are also strong inhibitory-to-inhibitory  connections (i.e., basket-to-basket). This strong autonomous inhibition will cause synchrony among the basket cells, and hence strong inhibition onto the pyramidal neurons (note: this synapse was not depicted in Figure 1).
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 500px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 700px;">
+<table>
 <h3>Figure 3</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image6.png" alt="image6" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image6.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image6.png" alt="image6" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image38.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image38.png" alt="image38" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image38.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image38.png" alt="image38" />
 </a>
-<p>  </p>
 </td>
 </tr>
-
-<tr style="border: none;">
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image34.png" alt="image34" width=100%/>
+<tr><td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image34.png" alt="image34" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image8.png" alt="image8" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image8.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image8.png" alt="image8" />
 </a>
-<p>  </p>
 </td>
 </tr>
 
@@ -142,13 +120,12 @@ Run Simulation
 ```
 Note: If you have run this simulation before, a window will appear asking if you want to overwrite the a param file. If you have not changed the parameters in any way,  click ok, otherwise create a new simulation name in the Set Parameters dialog box. This simulation runs for 550 ms of simulation time. Once completed, you will see output similar to that shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 4
+<h3>Figure 4</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image30.png" alt="image30" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image30.png" alt="image30" /></a></p>
 
-<p style="text-align:justify;"> </p>
 
 </div>
 
@@ -165,13 +142,11 @@ View> View Simulation Spiking Activity
 
 The following window will appear, showing the HNN Spike Viewer.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 5
+<h3>Figure 5</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image14.png" alt="image14" width="500px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image14.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image14.png" alt="image14" /></a></p>
 
 </div>
 
@@ -185,13 +160,11 @@ View > View PSD
 ```
 You should see the following window.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 6
+<h3>Figure 6</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image28.png" alt="image28" width="500px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image28.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image28.png" alt="image28" /></a></p>
 
 </div>
 
@@ -215,26 +188,18 @@ Set Parameters > Local Network
 ```
 Adjust parameters so that all Layer 2/3 weights are set to 0.0 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png) as shown in the dialog boxes below.
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 500px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 650px;">
+<table>
 <h3>Figure 7</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image37.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image37.png" alt="image37" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image37.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image37.png" alt="image37" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image33.png" alt="image33" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image33.png" alt="image33" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -245,51 +210,38 @@ Set Parameters > Poisson Inputs
 ```
 Adjust the strength of the Layer 2/3 Pyr AMPA weight to 0.0 as shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:450px;">
 
-### Figure 8
+<h3>Figure 8</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image23.png" alt="image23" width="300px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image23.png" alt="image23" /></a></p>
 
 </div>
 
 Save the simulation with a new “Simulation Name” in the Set Parameters dialog box: “gamma_L5weak_only” and run the simulation by clicking Start Simulation in the main HNN GUI window. The main HNN GUI will show a gamma rhythm similar to that observed in Step 2, that looks as follows:
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 9
+<h3>Figure 9</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image22.png" alt="image22" width="500px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image22.png" alt="image22" /></a></p>
 
 </div>
 
 However, if you now view the Simulation Spiking Activity and PSD (see step 3 above) you will see activity from only Layer 5 that looks as follows.
 
-
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 500px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 850px;">
+<table>
 <h3>Figure 10</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image43.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image43.png" alt="image43" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image43.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image43.png" alt="image43" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image15.png" alt="image15" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image15.png" alt="image15" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -300,36 +252,32 @@ To examine the impact of cell excitability on gamma expression, we can increase 
 
 As in the Tonic Inputs dialog box below, click on Layer 5, and adjust the amplitude of the tonic drive to the L5 Pyr to be 6.0 nA. This level of injected current will be applied to the soma of the L5 Pyramidal neurons starting at time 0.0 ms and remaining on throughout the simulation (stop time = -1.0 ms).
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:450px;">
 
-### Figure 11
+<h3>Figure 11</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png" alt="image20" width="300px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png" alt="image20" /></a></p>
 
 </div>
 
 Save the simulation with a new simulation name (e.g., "gamma_L5weak_only_tonic") in the Set Parameters dialog box and run the simulation by clicking Start Simulation in the main HNN GUI window. The simulation will yield the following output.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 12
+<h3>Figure 12</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image17.png" alt="image17" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image17.png" alt="image17" /></a></p>
 
-<p style="text-align:justify;"> </p>
 </div>
 
 Notice that the oscillation waveform is now more regular with less noise due to the fact that the tonic drive is strong and outweighs the influence of the Poisson drive. Next, open the simulation spiking activity, which looks as follows:
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 13
+<h3>Figure 13</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image12.png" alt="image12" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image12.png" alt="image12" /></a></p>
 
-<p style="text-align:justify;"> </p>
 </div>
 
 Notice that the Layer 5 pyramidal neurons are now firing nearly synchronously. They in turn synchronously activate the inhibitory basket neurons, which then inhibit the pyramidal neurons for ~20 ms, when the tonic drive outweighs the inhibition and the pyramidal neurons firing again creating a ~50 Hz PING rhythm. This type of synchronous rhythm is sometimes referred to as “strong” PING. Notice that there is also a ~90 Hz component to the dipole spectrogram. Inspection of the dipole waveform shows that this 90 Hz activity does not represent a separate rhythm, but rather reflects the dipole waveform shape which has a fast oscillation on each cycle of the slower rhythm, due to the strong downward currents induced by strong somatic inhibition on the pyramidal neurons.
@@ -341,35 +289,31 @@ Set Parameters > Local Network
 
 Then click on the Layer 5 Bas tab and adjust the weight of the L5 Pyr -> L5 Basket cells from 9.1e-4 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png)to 9.1e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png) (10x weaker) as shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:450px;">
 
-### Figure 14
+<h3>Figure 14</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image41.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image41.png" alt="image41" width="300px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image41.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image41.png" alt="image41" /></a></p>
 
-<p style="text-align:justify;"> </p>
 </div>
 
 Next, save the simulation with a new “Simulation Name” in the Set Parameters dialog box: “gamma_L5weak_only_tonic2” , and run the simulation by clicking Start Simulation  in the main HNN GUI. The main HNN GUI will now show the  following output.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 15
+<h3>Figure 15</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image44.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image44.png" alt="image44" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image44.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image44.png" alt="image44" /></a></p>
 
-<p style="text-align:justify;"> </p>
 </div>
 
 Notice that the rhythm has now slowed from 50 Hz to 40 Hz. This slowing is due to the fact that since the excitatory to inhibitory connection was weakened, it takes longer for the basket cells to respond to the excitation and hence the rhythm is slowed. This can be visualized with the Simulation Spiking Activity as shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 16
+<h3>Figure 16</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image16.png" alt="image16" width="500px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image16.png" alt="image16" /></a></p>
 
 </div>
 
@@ -381,36 +325,32 @@ Set Parameters > Local Network
 ```
 Adjust L5 Basket -> L5 Basket weight from 7.5e-3 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png)to 0 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png) as shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:450px;">
 
-### Figure 17
+<h3>Figure 17</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image26.png" alt="image26" width="300px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image26.png" alt="image26" /></a></p>
 
 </div>
 
 Save the simulation with a new simulation name (e.g., "gamma_L5weak_only_noinh") in the Set Parameters dialog box and run the simulation by clicking Start Simulation in the main HNN GUI. The simulation will then yield the following output.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 18
+<h3>Figure 18</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image3.png" alt="image3" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image3.png" alt="image3" /></a></p>
 
-<p style="text-align:justify;"> </p>
 </div>
 
 Notice that the rhythm is still present but less regular and noisier (compare with first waveform image in this section 4.1 above). You can also observe this in the Simulation Spiking Activity (below). This lack of regularity is due to the fact that removal of the inhibitory to inhibitory connections caused the inhibition to be less synchronous and noiser, and hence the PING rhythm is in turn noisier.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 19
+<h3>Figure 19</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png" alt="image39" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png" alt="image39" /></a></p>
 
-<p style="text-align:justify;"> </p>
 </div>
 
 Lastly, we’ll see that the time constant of inhibitory decay is an essential  parameter controlling the frequency of the PING rhythm. In the Local Network dialog box adjust the strength of the L5 Basket -> L5 Basket weight back to 7.5e-3 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png), and keep all other parameters the same. Next, load the “Cell Parameters” by clicking:
@@ -419,37 +359,32 @@ Set Parameters > Cell Parameters
 ```
 Click on the “L5 Pyr Synapses” tab and adjust the GABAA decay time from 5.0 ms to 2.0 ms (note in these simulations the weight of the GABAB synapses are all set to zero), as shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:400px;">
 
-### Figure 20
+<h3>Figure 20</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image42.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image42.png" alt="image42" width="250px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image42.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image42.png" alt="image42" /></a></p>
 
 </div>
 
 Save the simulation with a new “Simulation Name” in the Set Parameters dialog box: “gamma_L5weak_only_fasterinh”, and run the simulation by clicking Start Simulation  in the main HNN GUI. The main HNN GUI will now show the following output.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 21
+<h3>Figure 21</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image31.png" alt="image31" width="500px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image31.png" alt="image31" /></a></p>
 
 </div>
 
 Notice that the rhythm is now faster at 60 Hz. As can be seen in the Simulation Spiking Activity viewer below this is due to the fact that the faster decay of inhibition allows the pyramidal neurons to recover more quickly from the inhibition and respond to the Poisson drive, resulting in a faster network oscillation.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 22
+<h3>Figure 22</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image21.png" alt="image21" width="500px" text-align="center"/></a></p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image21.png" alt="image21" /></a></p>
 
-<p style="text-align:justify;"> </p>
 </div>
 
 ### 4.1.1 Exercises for further exploration
@@ -478,27 +413,18 @@ Set Parameters > Tonic Inputs
 ```
 You should see the values of adjustable parameters displayed in the dialog boxes below. Note that in the dialog boxes, only the pyramidal neurons are set to receive depolarizing current injections (tonic inputs). These inputs start at the beginning of the simulation (0 ms) and stop at its end (indicated with stop time of -1.0), with slightly stronger input to Layer 5 (6 nA) than to Layer 2/3 (4 nA).
 
-
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 500px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 650px;">
+<table>
 <h3>Figure 23</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image45.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image45.png" alt="image45" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image45.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image45.png" alt="image45" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png" alt="image20" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png" alt="image20" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -509,13 +435,11 @@ Start Simulation
 ```
 This simulation runs for 550 ms of simulation time. Once completed, you will see output similar to that shown below.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 24
+<h3>Figure 24</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image36.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image36.png" alt="image36" width="500px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image36.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image36.png" alt="image36" /></a></p>
 
 </div>
 
@@ -524,26 +448,18 @@ In this simulation, there are no spiking inputs provided to the model, so the HN
 The corresponding spectrogram and PSD (View menu> View PSD) (shown below, right column) confirms that, for this parameter set, the dipole signal contains strong oscillatory components in the gamma range (\~45  Hz) in the net dipole with, once again, a strong contribution from Layer 5. Layer 2/3 is oscillating at higher frequency(\~65 Hz) with lower amplitude (note: Layer 2/3 and Layer 5 are not synaptically connected to each other in this simulation). There is an additional higher frequency component near 80 Hz in Layer 5. A closer look at the dipole currents from Layer 5 (View menu > View Simulation Dipoles) (shown below, left column, middle panel) shows that the 80 Hz activity comes from sharp deflections in the dipole waveform along with a small amplitude peak that together create high power at 80 Hz in the frequency domain. A closer look at the spiking activity in each population below will reveal the mechanisms creating these waveform shapes.
 
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 700px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 850px;">
+<table>
 <h3>Figure 25</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image18.png" alt="image18" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image18.png" alt="image18" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="50%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image24.png" alt="image24" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image24.png" alt="image24" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -556,13 +472,11 @@ The HNN Spike Viewerwill appear, as shown below. The PING mechanism is seen in e
 
 In each layer, the inhibitory neurons are firing synchronously and causing strong somatic inhibition on the pyramidal neurons, resulting in fast downward current flow that creates the sharp dipole deflections seen in the dipole waveforms above. Notice that the small peak in the Layer 5 dipole that contributes to the 80 Hz activity is due to the strong depolarizing current on the pyramidal neurons that causes their voltage to rise quickly even before the inhibitory neurons fire. As an exercise, play with the current injection amplitude provided to the different neurons to see how it affects the generated rhythm.
 
-<div style="text-align:center; margin-top:30px; margin-bottom:30px">
+<div class="stylefig" style="max-width:600px;">
 
-### Figure 26
+<h3>Figure 26</h3>
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image7.png" alt="image7" width="500px" text-align="center"/></a></p>
-
-<p style="text-align:justify;"> </p>
+<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image7.png" alt="image7" /></a></p>
 
 </div>
 
@@ -585,54 +499,36 @@ Set Parameters > Rhythmic Distal Inputs
 You should see the values of adjustable parameters displayed in the dialog boxes below. In this example, the pyramidal neurons receive inputs, and the interneurons do not. The proximal and distal inputs start at 50.0 and 55.0 ms, respectively, and are slightly out of phase to allow synaptic inputs to effectively push current flow up the dendrites followed 5 ms later by current flow down the dendrites. Additionally, the input frequency for both proximal and distal inputs is set to a 50 Hz rhythm provided by “bursts” of excitatory synaptic input (driving burst frequencies; inter-burst-interval of 20 ms), with minimal noise within each driving burst (burst stdev of 2.5 ms). Please review the Alpha/Beta tutorial for a detailed description of the driving bursts. Note also that the amplitude of the inputs, which are only provided to the Layer 5 pyramidal neurons, is set to a small value (4e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png)), which produces only subthreshold responses in the Layer 5 pyramidal neurons. As a result, the gamma mechanism shown in this simulation is fundamentally different from the previous examples, since it does not rely on the local-spiking interactions that underlie the PING mechanism.
 
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 500px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 800px;">
+<table>
 <h3>Figure 27</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image2.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image2.png" alt="image2" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image2.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image2.png" alt="image2" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image11.png" alt="image11" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image11.png" alt="image11" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image47.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image47.png" alt="image47" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image47.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image47.png" alt="image47" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image35.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image35.png" alt="image35" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image35.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image35.png" alt="image35" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image5.png" alt="image5" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image5.png" alt="image5" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image10.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image10.png" alt="image10" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image10.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image10.png" alt="image10" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 
 </table>
@@ -645,26 +541,18 @@ Start Simulation
 This simulation runs for 550 ms of simulation time. Once completed, you will see output similar to that shown below.
 
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 500px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 850px;">
+<table>
 <h3>Figure 28</h3>
-
-<tr style="border: none;">
-
-<td style="border: none; vertical-align: top" width="50%">
+<tr>
+<td>
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image40.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image40.png" alt="image40" width="100%"/>
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="50%">
+<td>
 <a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image25.png" alt="image25" width="100%"/>
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -688,26 +576,18 @@ Set Parameters > Rhythmic Distal Inputs
 You will see the values displayed in the dialog boxes below. Note that additional noise is present in the driving proximal and distal inputs, which now have Burst stdev = 5.0 ms, as compared to 2.5 ms in the previous simulations. This increase adds variability to timing of the burst of synaptic drive each input provides, and hence adds “noise” to the network.
 
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 500px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 650px;">
+<table>
 <h3>Figure 29</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image13.png" alt="image13" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image13.png" alt="image13" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image27.png" alt="image27" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image27.png" alt="image27" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -718,26 +598,18 @@ Start Simulation
 ```
 Once completed, you will see output similar to that shown below.
 
-<div style="text-align:center; vertical-align: top; margin-top:30px; margin-bottom:30px; width: 700px; margin-left:auto; margin-right:auto;">
-
-<table style="border-collapse: collapse; border: none; text-align: center; align:center; width: 100%;">
-
+<div class="stylefig" style="max-width: 850px;">
+<table>
 <h3>Figure 30</h3>
-
-<tr style="border: none;">
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image29.png" alt="image29" width=100%/>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image29.png" alt="image29" />
 </a>
-<p>  </p>
 </td>
-
-<td style="border: none;" width="33.3%">
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image4.png" alt="image4" width=100%/>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image4.png" alt="image4" />
 </a>
-<p>  </p>
 </td>
-
 </tr>
 </table>
 </div>
@@ -751,8 +623,6 @@ In the simulation above, due to the higher variability in synaptic input timing,
 * Adjust the synaptic time constants of GABAA or other synapses; can you alter the peak gamma frequency?
 
 * Add connectivity between Layer 2/3 and Layer 5? Is gamma rhythmicity retained? Under what circumstances might gamma persist?
-
-
 
 ## 5. Have fun exploring your own data!
 
