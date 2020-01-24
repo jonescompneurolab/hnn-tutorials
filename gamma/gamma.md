@@ -1,6 +1,6 @@
 # Gamma Rhythms (30-80 Hz)
 
-## Getting Started
+## Getting Started.
 
 In order to understand the workflow and initial parameter sets provided with this tutorial, we must first briefly describe prior studies on the mechanistic origin of gamma rhythms, including our prior modeling work that led to the creation of the parameter sets you will work with [1].
 
