@@ -618,7 +618,7 @@ In the simulation above, due to the higher variability in synaptic input timing,
 
 ### 4.4.1 Exercises for further exploration
 
-* Restore recurrent synaptic connectivity between pyramidal neurons within a layer (e.g. L5 Pyr -> L5 Pyr weight (![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png))); how does that influence the gamma rhythm?
+* Go back to the gamma_L5weak_L2weak.param file and add recurrent synaptic connectivity between pyramidal neurons within a layer (e.g., L5 Pyr -> L5 Pyr weight = 9.1e-4(![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image1.png))); how does that influence the gamma rhythm? What happens as you change the strength of this connection?
 
 * Adjust the synaptic time constants of GABAA or other synapses; can you alter the peak gamma frequency?
 
