@@ -1,6 +1,6 @@
 <!-- pandoc -f markdown -t html -o tour_gui.html tour_gui.md -->
 
-# Tour of the Graphical User Interface (GUI)
+# Tour of the GUI and Saving Model Data
 
 Here we provide an overview of the major GUI components, and provide a description of all the parameters that the GUI provides.
 
@@ -49,7 +49,7 @@ In order to facilitate effective modeling, we have provided a set of text-based 
 
 
 
-## Setting Parameters
+## Setting Parameters and Saving Model Data on Your Computer
 
 To view and set the parameters that control the simulation, press the Set Parameters button from the main GUI window. This will bring up the following dialog:
 
