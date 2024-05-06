@@ -8,6 +8,5 @@ Updated installation instructions for HNN GUI are currently being developed. Tha
 
 In the meantime, please see the following <a href="https://github.com/jonescompneurolab/hnn/pull/337">GitHub page</a> which outlines the essential components of the Docker installation method for MacOS
 
-## Advanced Users: Local Installation
 
-Intructions for local installation can be found <a href="https://jonescompneurolab.github.io/hnn/installer/mac/">here</a>
+
