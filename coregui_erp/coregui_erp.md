@@ -74,6 +74,8 @@ Note, the software can be used without loading data. If you wish to play with si
 
 ## 2. Load/view parameters to define network structure &  to “activate” the network
 
+When you start HNN, the default template cortical column networks structure distributed with HNN is automatically constructed as is described in the <a href="https://hnn.brown.edu/under-the-hood/">"HNN Template Model" page</a> on the hnn.brown.edu website. Several of the network parameter can be adjusted via the HNN GUI (e.g., local excitatory and inhibitory connection strengths) under the `Network connectivity` tab, but we will leave them fixed for this tutorial and only adjust the inputs that “activate” the network.
+
 An initial parameter set that will simulate the evoked drives that generate an evoked response in close agreement with the SI data described in Step 1 is distributed in the hnn-data repository.  Click on the `External drives` tab at the top of the GUI and then click the `Load external drives` button. Navigate to the `hnn-data/network-configurations` folder on your computer and select  'ERPYesTrials.param', or click <a href="">here</a> to download the parameter file directly and load it into the GUI. 
 
 <div class="stylefig">
@@ -84,9 +86,11 @@ An initial parameter set that will simulate the evoked drives that generate an e
 
 </div>
 
-The template cortical column networks structure for this simulation is described in the <a href="https://hnn.brown.edu/under-the-hood/">"HNN Template Model" page</a> on the hnn.brown.edu website. Several of the network parameter can be adjusted via the HNN GUI (e.g., local excitatory and inhibitory connection strengths) under the `Network connectivity` tab, but we will leave them fixed for this tutorial and only adjust the inputs that “activate” the network.
 
-The values of the parameters that you loaded to “activate” the network in a manner that will generate an evoked response can now be viewed under the `External drives` tab.   As described in the “Getting Started” section, the evoked response can be simulated with a sequence of exogenous driving inputs consisting of a proximal input at ~26 ms (evprox1), followed by a distal input at ~64 ms (evdist1), followed by a subsequent proximal input at ~137 ms (evprox). 
+
+The values of the parameters that you loaded to “activate” the network in a manner that will generate an evoked response can now be viewed under the `External drives` tab.  Note that when you initially start the HNN software, the default 'External drives' represent 1 trial of the parameter set you just loaded.  
+
+As described in the “Getting Started” section, the evoked response can be simulated with a sequence of exogenous driving inputs consisting of a proximal input at ~26 ms (evprox1), followed by a distal input at ~64 ms (evdist1), followed by a subsequent proximal input at ~137 ms (evprox) and the 'External Drive' parameters describe the detail of this input. 
 
 To see the detailed parameter values defining each of these drives click on the dropdown button next to the name of each drive.  Note: additional evoked proximal or distal inputs can be added to your simulation for your hypothesis testing goals by using the `Add drive` button and specifying the drive as "Evoked" and the location as either "proximal" or "distal". Other types of drives can also be defined including poisson, rhythmic, and tonic, as detailed in other tutorials.
 
@@ -112,17 +116,64 @@ Each evoked input consists of a Gaussian distributed train of presynaptic action
 
 ## 3. Running the simulation and visualizing net current dipole
 
-Now that we have an initial parameter set, we can run a simulation for a set number or trials. Let's start by defining 3 trials, by clicking on the simulation tab and defining Trials=3.  On each simulated trial, the timings of the evoked inputs (i.e., spikes) are chosen from a Gaussian distribution with mean and stdev (standard deviation) as defined in the “Evoked drives” tap. Histograms of each of the evoked inputs will be displayed at the top of the Figure tab after the simulations run. 
+Now that we have an initial parameter set, we can run a simulation for a set number or trials. Let's start by defining 3 trials, by clicking on the 'Simulation' tab and defining Trials=3.  On each simulated trial, the timings of the evoked inputs (i.e., spikes) are chosen from a Gaussian distribution with mean and stdev (standard deviation) as defined in the “Evoked drives” tap. Histograms of each of the evoked inputs will be displayed at the top of the Figure tab after the simulations run. 
 
-Before running the simulation, we’ll first change the simulation name (i.e., the name under which the simulated data will be saved) to a new descriptive-name for the simulation here. Under the 'Simulation' tab change 'Name' from default to ERPyes-1trial. Note the default simulation is in fact 1 run of the ERP yes simulation.   There are several other adjustable simulate parameters, in the 'Simulation' tab. These parameters control the duration (stop), integration time step (dt), number of trials (Trials), and the choice of the simulation backend of either MPI (parallel across neurons) or Joblib (parallel across trials), assuming both backends are installed. 
+Before running the simulation, we’ll first change the simulation name (i.e., the name under which the simulated data will be saved) to a new descriptive-name for the simulation here. Under the 'Simulation' tab change 'Name' from default to ERPyes-1trial.  There are several other adjustable simulate parameters, in the 'Simulation' tab. These parameters control the duration (stop), integration time step (dt), number of trials (Trials), and the choice of the simulation backend of either MPI (parallel across neurons) or Joblib (parallel across trials), assuming both backends are installed. 
 
 Hit 'Run" button to run the simulation. A simulation log is shown under the Run button that will tell you the status of your simulaion. 
 
-Once complete, a new Figure 2 window will appear showing the output of the simulation as in the figure below. The thin blue traces are net current dipole signals from individual trials while the thick blue trace is the average ERP, with histograms of the proximal and distal driving spikes shown above. 
+Once complete, a new Figure 2 window will appear showing the output of the simulation as in the figure below. The thin blue traces are net current dipole signals from individual trials while the thick blue trace is the average ERP, with histograms of the Gaussian distributed proximal and distal driving spikes is shown in a subplot at the top of the figure. 
 
 To view the simulation on top of the data and examine the goodness of fit, click on the 'Visualization' tab. Under Figure 2 you will see that Figure 2 has two subplots defined by ax0 and ax1. ax0 describes the adjustable features of the histogram subplot, while ax1 describes the adjustable features of the net current dipole subplot. Note you can change what is shown in either of these subplots by selecting 'clear axis', picking the 'Type' of data from the pulldown menu, and clicking 'Add plot'.  For now, we're going to continue to visualize the net current dipole plot. 
 
 To overlay the data shown in Figure 1 in Figure 2, go to Figure 2 and select ax1. in the 'Data to Compare:' pull down menu choose yes_trial_S1_ERP_all_avg, then click add plot. The data will now be overlaid in Figure 2 with the root mean square error (RMSE) displayed. 
 
- 
 You can remove the data or simulation output from the figure by clicking "clear axis' 
+
+Importantly, note that a scaling factor of 3000.00 was multiplied by the net dipole produced by the model, as seen on the y-axis scale based on the assumption that the dipole signal recorded comes from a larger number of neurons that are approximately sychronously active. This scaling factor can be adjusted to match the magnitude of the recorded data and provides an estimate of the number of pyramidal neurons contributing to the recorded signal by adjusting the 'Simulation Dipole Scaling' value under the Figure 2 tab. Alternatively, the data can be scaled by adjusting the 'Data Dipole Scaling' value.   The Simulatino Dipole Scaling value of 3000 for this simulation accurately accounts for the magnitude of the loaded SI evoked response data and suggests ~600,000 pyramidal neurons (200 PN x3000) contribute to recorded data.  
+<div class="stylefig">
+
+### Figure 8
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png" alt="image6" style="max-width:300px;"/></a>
+
+</div>
+
+Additionallly, in the ERP simulation shown, the raw dipole signal was smoothed using a Hamming filter using a window size of 30 milliseconds, in order to reduce noise in the ERP signal generated by this reduced network model (i.e. 200 pyramidal neurons) under the assumption such noise would average out in a larger more heterogeneous network. The level of smoothing can be changed through setting the value next to 'Dipole Smooth Window (ms). The longer the smoothing window, the more smoothing will occur. To turn off smoothing entirely, set the window size to 0\. Below, we provide an example of the same simulation with smoothing turned off entirely. Note the higher-frequency content compared to the ERP simulation with smoothing turned on. Importantly, don't forget to first change the name of the simulation so that the parameters representing your new simualtion will be saved by clicking on the 'Simulation' tab and changing the Name to "EPRyes3trials-nosmooth", for example. Also _before running this simulation,_ remove the prior simulation by pressing the gray “Clear axis” button at the bottom of the Figure 2 tab.  In the remainder of the tutorial, before running a new simulation, we always remove the previously run simulation.
+
+Now hit the "Run" button and the new un-smoothed simulation results will appear. XXCHECK THIS XX
+
+<div class="stylefig">
+
+### Figure 9
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png" alt="image3" style="max-width:500px;"/></a>
+
+</div>
+
+<a id="toc_4"></a>
+
+## 4. A closer look inside the simulations: contribution of layers and cell types
+
+One of the main advantages of simulating neocortical activity is that we can dive into the details of the simulation to investigate the contribution of different components in the network; e.g., layers, cell types, etc, to the net current dipole signal. HNN currently enables the viewing of the following:
+
+1. layer specific dipole activity
+
+2. spiking activity in each individual neuron population
+### 4.1 Viewing layer specific current dipoles
+
+To view the contribution of pyramidal neurons in the different layers to the net current dipole, let's first create a new Figure window. We first choose a figure Layout template Under the 'Visualization' tab. We have some predefined examples of visalizations to choose from that will automatically be populated or you can create your own.  To view the layer specific contributions simulataneously with the net current dipole choose
+'Dipole layers (3x1)' and click the "Make figure" botton. 
+XX STEPH STOPPED HERE XXX 
+```
+View > View Simulation Dipoles
+```
+This will allow the user to view the dipole signal contributions from individual layers. The following window will appear (first reload the ERPYes2Trials.param simulation, that was run above, into HNN).
+
+<div class="stylefig">
+
+### Figure 10
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png" alt="image14" style="max-width:500px;"/></a>
+
+</div>
