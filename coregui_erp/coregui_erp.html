@@ -92,17 +92,14 @@ function topFunction() {
 <p>In our 2007 study, we investigated the early evoked activity (0-175 ms) elicited by a brief tap to the D3 digit and source localized to an an equivalent current dipole in the contralateral hand area of the primary somatosensory cortex (SI) [1]. The strength of the tap was set at either suprathreshold (100% detection probability) or perceptual threshold (50% detection) levels (see Figure 1, left panel below). Note, to be precise, this data represents source localized event related field (ERF) activity because it was collected using MEG. We use the terminology ERP for simplicity, since the primary current dipoles generating evoked fields and potentials are the same.</p>
 <p>We found that we could reproduce evoked responses that accurately reflected the recorded waveform in our neocortical model from a layer specific sequence of exogenous excitatory synaptic drive to the local SI circuit, see Figure 1right panel below. This drive consisted of “feedforward” / proximal input at ~25 ms post-stimulus, followed by “feedback” / distal input at ~60 ms, followed by a subsequent “feedforward” / proximal input at ~125 ms (Gaussian distribution of input times on each simulated trial). This sequence of drive generated spiking activity and intracellular dendritic current flow in the pyramidal neuron dendrites to reproduce the current dipole signal. This sequence of drive can be interpreted as initial “feedforward” input from the lemniscal thalamus, followed by “feedback” input from higher order cortex or non-lemniscal thalamus, followed by a re-emergent leminsical thalamic drive. Intracranial recordings in non-human primates motivated and supported this assumption [2].</p>
 <p>In our model, the exogenous driving inputs were simulated as predefined trains of action potentials (pre-synaptic spikes) that activated excitatory synapses in the local cortical circuit in proximal and distal projection patterns (i.e. feedforward, and feedback, respectively, as shown schematically in Figure 1 right, and in the HNN GUI Model Schematics). The number, timing and strength (post-synaptic conductance) of the driving spikes were manually adjusted in the model until a close representation of the data was found (all other model parameters were tuned and fixed based on the morphology, physiology and connectivity within layered neocortical circuits [1]. Note, a scaling factor was applied to net dipole output to match to the magnitude of the recorded ERP data and used to predict the number of neurons contributing to the recorded ERP (purple circle, Figure 1, right panel). The dipole units were in nAm, with a one-to-one comparison between data and model output due to the biophysical detail in our model.</p>
-<div class="stylefig">
-<h3 id="figure-1">Figure 1</h3>
-<div class="imgcenter100;" style="max-width:650px;">
+<div style="display:block; width:100%; margin: 0 auto;">
 <figure>
 <img src="../erp/images/image8.png" alt="" /><figcaption>Figure 1</figcaption>
 </figure>
 </div>
-<p style="text-align:justify;">
+<p style="text-align:justify; display: block; margin: 0 auto;width: 90%; font-size: 1em;">
 Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experiment and neural model simulation. Left: MEG data showing tactile evoked response (ERP) source localized to the hand area of SI. Red: suprathreshold stimulation; Blue: Threshold stimulation (avg. n=100 trials). Right: Neural model simulation depicting proximal/distal inputs needed to replicate the ERP waveform (avg. n=25 trials)
 </p>
-</div>
 <p>In summary, to simulate the SI evoked response, a sequence of exogenous excitatory synaptic drive was simulated (by creating presynaptic spikes that activate layer specific synapses in the neocortical network) consisting of proximal drive at ~25 ms, followed by distal drive at ~60 ms, followed by a second proximal drive at ~122 ms. Given this background information, we can now walk you through the steps of simulating a similar ERP, using a subset of the data shown in Figure 1.</p>
 <h2 id="tutorial-table-of-contents">Tutorial Table of Contents</h2>
 <ol type="1">
@@ -121,25 +118,20 @@ Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experim
 <h2 id="loadview-data">1. Load/view data</h2>
 <p>An example ERP dataset is provided in the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data GitHub repository</a>. We use the data as an orienting example for where to begin to simulate an ERP.</p>
 <p>This dataset represents early evoked activity (0-175 ms) from an equivalent current dipole source localized to the hand area of the primary somatosensory cortex (SI), elicited by a brief perceptual threshold level tap to the contralateral D3 digit (read Getting Started above for details). The example dataset provided was collected at 600Hz and contains only averaged data from 100 trials in which the tap was detected. (Note, when loading your own data, if it was not collected at 600Hz, you must first downsample to 600Hz to view it in the HNN GUI).</p>
-<p>To load and view this data, navigate to the main GUI window and on the bottom left corner click:</p>
-<pre><code>Load data</code></pre>
+<p>To load and view this data, navigate to the main GUI window and on the bottom left corner click: <code>Load data</code></p>
 <p>If you have cloned the hnn-data repository, navigate to hnn-data folder on your desktop and select <code>MEG_detection_data/yes_trial_S1_ERP_all_avg.txt</code>. HNN will then load the data and display the waveform in the dipole window as shown below.</p>
 <p>Alternatively, if you have not cloned the hnn-data repository, you can download the file directly by clicking <a href="https://github.com/jonescompneurolab/hnn/blob/master/data/MEG_detection_data/yes_trial_S1_ERP_all_avg.txt">here</a>.</p>
+<div style="display:block; width:90%; margin: 0 auto;">
 <h3 id="figure-2">Figure 2</h3>
-<div class="imgcenter100;" style="max-width:500px;">
-<figure>
-<img src="images/erp_fig_02.png" alt="" /><figcaption>Figure 2</figcaption>
-</figure>
+<p><img src="images/erp_fig_02.png" /></p>
 </div>
 <p>Note, the software can be used without loading data. If you wish to play with simulations without data, proceed to Step 2 first.</p>
 <p><a id="toc_2"></a></p>
 <h2 id="loadview-parameters-to-define-network-structure-to-activate-the-network">2. Load/view parameters to define network structure &amp; to “activate” the network</h2>
 <p>An initial parameter set that will simulate the evoked drives that generate an evoked response in close agreement with the SI data described in Step 1 is distributed in the hnn-data repository. Click on the <code>External drives</code> tab at the top of the GUI and then click the <code>Load external drives</code> button. Navigate to the <code>hnn-data/network-configurations</code> folder on your computer and select ‘ERPYesTrials.param’, or click <a href="">here</a> to download the parameter file directly and load it into the GUI.</p>
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
 <h3 id="figure-3">Figure 3</h3>
-<div class="imgcenter100;" style="max-width:500px;">
-<figure>
-<img src="images/erp_fig_03.png" alt="" /><figcaption>Figure 3</figcaption>
-</figure>
+<p><img src="images/erp_fig_03.png" /></p>
 </div>
 <p>The template cortical column networks structure for this simulation is described in the <a href="https://hnn.brown.edu/under-the-hood/">“HNN Template Model” page</a> on the hnn.brown.edu website. Several of the network parameter can be adjusted via the HNN GUI (e.g., local excitatory and inhibitory connection strengths) under the <code>Network connectivity</code> tab, but we will leave them fixed for this tutorial and only adjust the inputs that “activate” the network.</p>
 <p>The values of the parameters that you loaded to “activate” the network in a manner that will generate an evoked response can now be viewed under the <code>External drives</code> tab. As described in the “Getting Started” section, the evoked response can be simulated with a sequence of exogenous driving inputs consisting of a proximal input at ~26 ms (evprox1), followed by a distal input at ~64 ms (evdist1), followed by a subsequent proximal input at ~137 ms (evprox).</p>
@@ -152,14 +144,14 @@ Figure 4
 </h3>
 <tr>
 <td>
-<div class="imgcenter100;" style="max-width:500px;">
+<div style="max-width:500px;">
 <figure>
 <img src="images/erp_fig_04_01.png" alt="" /><figcaption>Figure 4a</figcaption>
 </figure>
 </div>
 </td>
 <td>
-<div class="imgcenter100;" style="max-width:500px;">
+<div style="max-width:500px;">
 <figure>
 <img src="images/erp_fig_04_02.png" alt="" /><figcaption>Figure 4a</figcaption>
 </figure>

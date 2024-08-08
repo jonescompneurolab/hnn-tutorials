@@ -11,9 +11,13 @@
   padding-right: 10px;
 }
 
-/* page margin top */
+/* Add a top margin to avoid content overlay */
 .main {
-  margin-top: 70px; /* Add a top margin to avoid content overlay */
+  margin-top: 70px; 
+}
+
+p {
+  font-size: 1.2em; 
 }
 
 /* 
@@ -387,5 +391,9 @@ img {
 
 /* line spacing for table of contents */
 h2#tutorial-table-of-contents + ol {
-  line-height: 0.8 !important; /* Ensure OL following the H2 is single spaced */
+  line-height: 0.8 !important;
+}
+
+h2#tutorial-table-of-contents + ol li {
+  line-height: 0.8 !important; 
 }
