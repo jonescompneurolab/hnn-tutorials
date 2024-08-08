@@ -14,9 +14,16 @@ In our model, the exogenous driving inputs were simulated as predefined trains o
 
 ### Figure 1
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png" alt="image8" style="max-width:650px;"/></a>
+<div class="imgcenter100;" style="max-width:650px;">
 
-<p style="text-align:justify;"> Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experiment and neural model simulation. Left: MEG data showing tactile evoked response (ERP) source localized to the hand area of SI. Red: suprathreshold stimulation; Blue: Threshold stimulation (avg. n=100 trials). Right: Neural model simulation depicting proximal/distal inputs needed to replicate the ERP waveform (avg. n=25 trials) </p>
+![Figure 1](../erp/images/image8.png)
+
+</div>
+
+<p style="text-align:justify;"> 
+Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experiment and neural model simulation. Left: MEG data showing tactile evoked response (ERP) source localized to the hand area of SI. Red: suprathreshold stimulation; Blue: Threshold stimulation (avg. n=100 trials). Right: Neural model simulation depicting proximal/distal inputs needed to replicate the ERP waveform (avg. n=25 trials) 
+</p>
+
 </div>
 
 In summary, to simulate the SI evoked response, a sequence of exogenous excitatory synaptic drive was simulated (by creating presynaptic spikes that activate layer specific synapses in the neocortical network) consisting of proximal drive at ~25 ms, followed by distal drive at ~60 ms, followed by a second proximal drive at ~122 ms. Given this background information, we can now walk you through the steps of simulating a similar ERP, using a subset of the data shown in Figure 1.
@@ -51,20 +58,17 @@ An example ERP dataset is provided in the <a href="https://github.com/jonescompn
 
 This dataset represents early evoked activity (0-175 ms) from an equivalent current dipole source localized to the hand area of the primary somatosensory cortex (SI), elicited by a brief perceptual threshold level tap to the contralateral D3 digit (read Getting Started above for details). The example dataset provided was collected at 600Hz and contains only averaged data from 100 trials in which the tap was detected. (Note, when loading your own data, if it was not collected at 600Hz, you must first downsample to 600Hz to view it in the HNN GUI).
 
-To load and view this data, navigate to the main GUI window and on the bottom left corner click:
-```
-Load data
-```
+To load and view this data, navigate to the main GUI window and on the bottom left corner click: `Load data`
 
 If you have cloned the hnn-data repository, navigate to hnn-data folder on your desktop and select `MEG_detection_data/yes_trial_S1_ERP_all_avg.txt`. HNN will then load the data and display the waveform in the dipole window as shown below.
 
 Alternatively, if you have not cloned the hnn-data repository, you can download the file directly by clicking <a href="https://github.com/jonescompneurolab/hnn/blob/master/data/MEG_detection_data/yes_trial_S1_ERP_all_avg.txt">here</a>.
 
-<div class="stylefig">
-
 ### Figure 2
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_02.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_02.png" alt="image7" style="max-width:500px;"/></a>
+<div class="imgcenter100;" style="max-width:500px;">
+
+![Figure 2](images/erp_fig_02.png)
 
 </div>
 
@@ -76,11 +80,13 @@ Note, the software can be used without loading data. If you wish to play with si
 
 An initial parameter set that will simulate the evoked drives that generate an evoked response in close agreement with the SI data described in Step 1 is distributed in the hnn-data repository.  Click on the `External drives` tab at the top of the GUI and then click the `Load external drives` button. Navigate to the `hnn-data/network-configurations` folder on your computer and select  'ERPYesTrials.param', or click <a href="">here</a> to download the parameter file directly and load it into the GUI. 
 
-<div class="stylefig">
+
 
 ### Figure 3
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_01.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_01.png" alt="image7" style="max-width:500px;"/></a>
+<div class="imgcenter100;" style="max-width:500px;">
+
+![Figure 3](images/erp_fig_03.png)
 
 </div>
 
@@ -94,15 +100,21 @@ Each evoked input consists of a Gaussian distributed train of presynaptic action
 
 <div class="stylefig">
 <table>
-<h3>Figure 3</h3>
+<h3>Figure 4</h3>
 <tr>
 <td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_02.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_02.png" alt="image17"/>
-</a>
+<div class="imgcenter100;" style="max-width:500px;">
+
+![Figure 4a](images/erp_fig_04_01.png)
+
+</div>
 </td>
 <td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_03.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_03.png" alt="image25"/>
-</a>
+<div class="imgcenter100;" style="max-width:500px;">
+
+![Figure 4a](images/erp_fig_04_02.png)
+
+</div>
 </td>
 </tr>
 </table>
@@ -124,5 +136,4 @@ To view the simulation on top of the data and examine the goodness of fit, click
 
 To overlay the data shown in Figure 1 in Figure 2, go to Figure 2 and select ax1. in the 'Data to Compare:' pull down menu choose yes_trial_S1_ERP_all_avg, then click add plot. The data will now be overlaid in Figure 2 with the root mean square error (RMSE) displayed. 
 
- 
 You can remove the data or simulation output from the figure by clicking "clear axis' 
