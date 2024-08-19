@@ -102,34 +102,11 @@ Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experim
 </p>
 <p>In summary, to simulate the SI evoked response, a sequence of exogenous excitatory synaptic drive was simulated (by creating presynaptic spikes that activate layer specific synapses in the neocortical network) consisting of proximal drive at ~25 ms, followed by distal drive at ~60 ms, followed by a second proximal drive at ~122 ms. Given this background information, we can now walk you through the steps of simulating a similar ERP, using a subset of the data shown in Figure 1.</p>
 <h2 id="tutorial-table-of-contents">Tutorial Table of Contents</h2>
-<ul>
-<li><a href="#event-related-potentials-erps">Event Related Potentials (ERPs)</a>
-<ul>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#tutorial-table-of-contents">Tutorial Table of Contents</a></li>
-<li><a href="#1-loadview-data">1. Load/view data</a>
-<ul>
-<li><a href="#figure-2">Figure 2</a></li>
-</ul></li>
-<li><a href="#2-loadview-parameters-to-define-network-structure---to-activate-the-network">2. Load/view parameters to define network structure &amp; to “activate” the network</a>
-<ul>
-<li><a href="#figure-3">Figure 3</a></li>
-</ul></li>
-<li><a href="#3-running-the-simulation-and-visualizing-net-current-dipole">3. Running the simulation and visualizing net current dipole</a>
-<ul>
-<li><a href="#figure-5">Figure 5</a></li>
-<li><a href="#figure-6">Figure 6</a></li>
-<li><a href="#figure-7">Figure 7</a></li>
-</ul></li>
-<li><a href="#4-a-closer-look-inside-the-simulations-contribution-of-layers-and-cell-types">4. A closer look inside the simulations: contribution of layers and cell types</a>
-<ul>
-<li><a href="#figure-8">Figure 8</a></li>
-<li><a href="#figure-9">Figure 9</a></li>
-<li><a href="#figure-10">Figure 10</a></li>
-</ul></li>
-<li><a href="#5-comparing-model-output-and-recorded-data">5. Comparing model output and recorded data</a></li>
-</ul></li>
-</ul>
+<p><a href="#1-loadview-data">1. Load/view data</a></p>
+<p><a href="#2-loadview-parameters-to-define-network-structure---to-activate-the-network">2. Load/view parameters to define network structure &amp; to “activate” the network</a></p>
+<p><a href="#3-running-the-simulation-and-visualizing-net-current-dipole">3. Running the simulation and visualizing net current dipole</a></p>
+<p><a href="#4-a-closer-look-inside-the-simulations-contribution-of-layers-and-cell-types">4. A closer look inside the simulations: contribution of layers and cell types</a></p>
+<p><a href="#5-comparing-model-output-and-recorded-data">5. Comparing model output and recorded data</a></p>
 <p><a id="toc_1"></a></p>
 <h2 id="loadview-data">1. Load/view data</h2>
 <p>An example ERP dataset is provided in the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data GitHub repository</a>. We use the data as an orienting example for where to begin to simulate an ERP.</p>
@@ -139,7 +116,7 @@ Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experim
 <p>Alternatively, if you have not cloned the hnn-data repository, you can download the file directly by clicking <a href="https://github.com/jonescompneurolab/hnn/blob/master/data/MEG_detection_data/yes_trial_S1_ERP_all_avg.txt">here</a>.</p>
 <div style="display:block; width:90%; margin: 0 auto;">
 <h3 id="figure-2">Figure 2</h3>
-<p><img src="images/erp_fig_02.png" /></p>
+<p><img src="images/erp_fig_02.gif" /></p>
 </div>
 <p>Note, the software can be used without loading data. If you wish to play with simulations without data, proceed to Step 2 first.</p>
 <p><a id="toc_2"></a></p>
@@ -186,13 +163,14 @@ Figure 4
 <p><img src="images/erp_fig_05.png" /></p>
 </div>
 <p>Once complete, a new Figure 2 window will appear showing the output of the simulation as in the figure below. The thin blue traces are net current dipole signals from individual trials while the thick blue trace is the average ERP, with histograms of the proximal and distal driving spikes shown above.</p>
-<p>To view the simulation on top of the data and examine the goodness of fit, click on the <code>Visualization</code> tab. Under Figure 2 you will see that Figure 2 has two subplots defined by ax0 and ax1. ax0 describes the adjustable features of the histogram subplot, while ax1 describes the adjustable features of the net current dipole subplot. Note you can change what is shown in either of these subplots by selecting <code>clear axis</code>, picking the <code>Type</code> of data from the pulldown menu, and clicking <code>Add plot</code>. For now, we’re going to continue to visualize the net current dipole plot.</p>
-<p>To overlay the data shown in Figure 1 in Figure 2, go to Figure 2 and select ax1. In the <code>Data to Compare:</code> pull-down menu, choose <code>yes_trial_S1_ERP_all_avg</code>, then click <code>add plot</code>. The data will now be overlaid in Figure 2 with the root mean square error (RMSE) displayed.</p>
+<p>Next, let’s create a new figure to view the simulation on top of the loaded data. Click on the <code>Visualization</code> tab and select the <code>[blank] 2row x 1col (1:3)</code> option from the <code>Layout template</code> dropdown menu, then select <code>Make figure</code>.</p>
+<p>You will see that our new figure has two subplots defined by ax0 and ax1, both of which are blank. Select the ax1 subplot and set the <code>Simution Data</code> to <code>ERPyes-3trials</code>. Set <code>Data to compare</code> to <code>yes_trial_S1_ERP_all_avg</code>, then click <code>Add plot</code>.</p>
+<p>Next, select ax0, set the <code>Type</code> to <code>input histogram</code>, and click <code>Add plot</code>.</p>
+<p>Note you can change what is shown in either of these subplots by selecting <code>clear axis</code>, picking the <code>Type</code> of data from the pulldown menu, and clicking <code>Add plot</code>.</p>
 <div style="display:block; width:90%; margin: 0 auto;">
 <h3 id="figure-6">Figure 6</h3>
-<p><img src="images/erp_fig_06.png" /></p>
+<p><img src="images/erp_fig_06.gif" /></p>
 </div>
-<p>You can remove the data or simulation output from the figure by clicking the "clear axis’ button in the tab for the subplot.</p>
 <p>Importantly, note that a scaling factor of 3000.00 was multiplied by the net dipole produced by the model, as seen on the y-axis scale in the figure above. This scaling factor can be adjusted to match the magnitude of the recorded data; the value of 3000 is the default value for the loaded parameter set. In this case, since the template model contains 200 pyramidal neurons (PNs), the simulation predicts that the number of cells that contribute to the signal is 600,000 (200 x 3000) PNs.</p>
 <p>Also note that in the ERP simulation shown, the raw dipole signal was smoothed using a Hamming filter using a window size of 30 milliseconds, in order to reduce noise in the ERP signal generated by this reduced network model. The level of smoothing can be adjusted by changing the value of the Dipole Smooth Window (ms). The longer the window, the more smoothing will occur. To turn off smoothing entirely, set the window size to 0. Below, we provide an example of the same simulation with smoothing turned off entirely. Note the higher-frequency content compared to the ERP simulation with smoothing turned on.</p>
 <div style="display:block; width:90%; margin: 0 auto;">
@@ -219,11 +197,8 @@ Figure 4
 <p><img src="images/erp_fig_09.png" /></p>
 </div>
 <p>This window shows the spiking activity produced in each population in response to the evoked inputs. The top two panels show histograms of distal evoked inputs (green) and proximal evoked inputs (red) provided to the neurons. The large third panel shows a raster plot of the spiking activity generated by the individual neurons, with different populations in different colors as labeled (x-axis: time in ms; y-axis: neuron identifier). The neuron identifiers are arranged vertically by layer, with top representing supragranular layers and the bottom representing the infragranular layers. Individual neuron types are drawn in the different colors shown in the legend. The dotted lines in the bottom panel show a time-series of summed activity per population (these use the same color code as the individual spikes; you can turn these lines off or on by selecting View&gt; Toggle Histograms). The initial view shows the aggregate spiking activity across trials. To see spiking activity generated by a single trial, select the trial number using the combination box at the bottom of the window. This spike viewer window also provides the standard save/navigation functionality through the matplotlib control at the top.</p>
-<p><strong>4.3 Viewing ERP Spectrograms</strong></p>
-<p>From the <code>Visualization</code> tab, select “Dipole-Spectrogram (2x1)” from the <code>Layout template</code> dropdown menu. From the <code>Dataset</code> dropdown, select the simulation data you would like to visualize. Next, click <code>Make figure</code> to generate a new figure.</p>
-<div style="display:block; width:90%; margin: 0 auto;">
-<h3 id="figure-10">Figure 10</h3>
-<p><img src="images/erp_fig_10.png" /></p>
-</div>
-<p>The figure above displays the wavelet time-frequency representation of the ERP dipole signal. Note that when running multiple trials, the average of individual wavelet transforms is shown, rather than performing the wavelet transform on the average dipole signal. Also note that in the simulation below, the evoked inputs were shifted forward 50 ms in time, because the wavelet analysis cuts off the first 50 ms of the dipole signal to avoid edge artifacts.</p>
 <h2 id="comparing-model-output-and-recorded-data">5. Comparing model output and recorded data</h2>
+<p>When loading data, the root-mean-squared-error (RMSE) is calculate between the average simulated ERP waveform and the loaded waveform.</p>
+<p>Our <code>ERPyes-3trial</code> simulation yields an RMSE of ___</p>
+<p>Let’s run a simulation with 10 trials and see how the RMSE changes.</p>
+<p>Notice that when we simulated more trials, the RMSE between the data and the simulated average ERP was ___</p>
