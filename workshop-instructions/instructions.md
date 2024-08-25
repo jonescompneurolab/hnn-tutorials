@@ -1,0 +1,73 @@
+## Logging into the Oscar Virtual Environment
+1. Go to Oscar-on-Demand (OOD): [ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions](https://ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions)
+
+2. Type in the username provided via the workshop host. 
+   - Note: there will be a physical sheet with usernames and their associated bypass code
+  
+3. Type in the password: **TBD**
+
+4. From the DUO authentication screen, select "Other options" and then choose "Bypass code"
+
+5. Enter the bypass code associated your chosen username
+
+## Launching HNN-Core GUI via Oscar
+From the Oscar virtual desktop, open a terminal and run the following command
+
+```bash
+hnn-gui
+```
+
+## Launching HNN-Core (Python) via Oscar
+From the Oscar virtual desktop, open a terminal and run the following commands.
+
+```bash
+module load hnn-workshop/2023.11
+module load miniconda/4.12.0 firefox/87.0
+source /oscar/runtime/opt/hnn-workshop/2023.11/bin/activate
+
+git clone <https://github.com/jasmainak/hnn-workshop-materials.git>
+cd hnn-workshop-materials/
+jupyter notebook &
+```
+
+## Cloning the HNN-Data Repository
+To follow along with the workshop, you'll need to clone the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data) to your local machine.
+
+To do so, launch a terminal and run the following command.
+
+```bash
+git clone https://github.com/jonescompneurolab/hnn-data.git
+```
+
+If you already have the hnn-data repo on your machine, be sure to update it to include the latest changes
+
+```bash
+cd hnn-data
+git pull
+```
+
+## Installing HNN-Core GUI on Your Local Machine via Conda
+Start by creating a new conda environment. We recommend creating an environment with the fewest number of dependencies to speed up the installation process.
+
+```bash
+conda create --name hnn_core_gui python=3.11 --no-default-packages
+conda activate hnn_core_gui
+pip install --pre hnn-core[gui]
+```
+
+To run simulations in parallel across multiple cores, which dramatically speeds up siuations, you'll need to set up the MPI backend.
+
+```bash
+conda activate hnn_core_gui # activate the environment if needed
+conda install -y openmpi mpi4py
+pip install psutil
+export DYLD_FALLBACK_LIBRARY_PATH=${CONDA_PREFIX}/lib
+```
+
+You can now launch the GUI from within your conda environemnt.
+
+```bash
+conda activate hnn_core_gui # activate the environment if needed
+hnn-gui
+```
+
