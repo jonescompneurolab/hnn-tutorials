@@ -125,8 +125,25 @@ function topFunction() {
 </ol>
 <p></span></p>
 <h2 id="launching-the-desktop-app-on-oscar">Launching the Desktop App on Oscar</h2>
+<ol type="1">
+<li>Choose the “Desktop (Advanced)” application. Note that this is different form the regular “Desktop” app.</li>
+<li>You will see a form. Enter the following in the fields.
+<ul>
+<li>Account: [Leave Blank]</li>
+<li>Desktop Environment: xfce</li>
+<li>Number of Hours: 3</li>
+<li>Partition: batch</li>
+<li>Num Cores: 8</li>
+<li>Num GPUs: 1 [This number does not matter]</li>
+<li>Memory (GB): 8</li>
+<li>Reservation: hnn-workshop</li>
+<li>Slurm Features: [Leave Blank]</li>
+</ul></li>
+<li>Click “Launch” . It may take a minute before the “Launch Desktop” button appears.</li>
+</ol>
 <h2 id="launching-hnn-core-gui-via-oscar">Launching HNN-Core GUI via Oscar</h2>
-<p>With the Oscar desktop instance open, open a terminal and type the following to activate the environment.</p>
+<p>With the Oscar desktop instance open, launch a Terminal via the “Terminal Emulator” at the bottom of the Desktop or via the Applications drop-down at the top-left of the Desktop.</p>
+<p>Type the following into the terminal to activate the environment.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">module</span> purge</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="ex">module</span> load python/3.11</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="ex">module</span> load  hpcx-mpi/4.1.5rc2</span>

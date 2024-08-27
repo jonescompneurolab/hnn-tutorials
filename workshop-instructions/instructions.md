@@ -36,10 +36,24 @@
 </span>
 
 ## Launching the Desktop App on Oscar
+1. Choose the "Desktop (Advanced)" application. Note that this is different form the regular "Desktop" app.
+2. You will see a form. Enter the following in the fields.
+   - Account: [Leave Blank]
+   - Desktop Environment: xfce
+   - Number of Hours: 3
+   - Partition: batch
+   - Num Cores: 8
+   - Num GPUs: 1 [This number does not matter]
+   - Memory (GB): 8
+   - Reservation: hnn-workshop
+   - Slurm Features: [Leave Blank]
+3. Click "Launch" . It may take a minute before the “Launch Desktop” button appears.
 
 
 ## Launching HNN-Core GUI via Oscar
-With the Oscar desktop instance open, open a terminal and type the following to activate the environment.
+With the Oscar desktop instance open, launch a Terminal via the “Terminal Emulator” at the bottom of the Desktop or via the Applications drop-down at the top-left of the Desktop.
+
+Type the following into the terminal to activate the environment.
 
 ```bash
 module purge
