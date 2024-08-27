@@ -89,6 +89,7 @@ function topFunction() {
 <p><strong>Table of Contents</strong></p>
 <ul>
 <li><a href="#logging-into-the-oscar-virtual-environment">Logging into the Oscar Virtual Environment</a></li>
+<li><a href="#launching-the-desktop-app-on-oscar">Launching the Desktop App on Oscar</a></li>
 <li><a href="#launching-hnn-core-gui-via-oscar">Launching HNN-Core GUI via Oscar</a></li>
 <li><a href="#launching-hnn-core-python-via-oscar">Launching HNN-Core (Python) via Oscar</a></li>
 <li><a href="#cloning-the-hnn-data-repository">Cloning the HNN-Data Repository</a></li>
@@ -123,6 +124,7 @@ function topFunction() {
 <li>Enter the bypass code associated with the username you selected in Step 2</li>
 </ol>
 <p></span></p>
+<h2 id="launching-the-desktop-app-on-oscar">Launching the Desktop App on Oscar</h2>
 <h2 id="launching-hnn-core-gui-via-oscar">Launching HNN-Core GUI via Oscar</h2>
 <p>With the Oscar desktop instance open, open a terminal and type the following to activate the environment.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">module</span> purge</span>
@@ -132,7 +134,7 @@ function topFunction() {
 <p>Within the same terminal with the <code>hnn_env</code> activated, type the following to launch the GUI.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">hnn-gui</span></span></code></pre></div>
 <h2 id="launching-hnn-core-python-via-oscar">Launching HNN-Core (Python) via Oscar</h2>
-<p>From the Oscar virtual desktop, open a terminal and run the following commands.</p>
+<p>From the Oscar virtual desktop, open a new terminal and run the following commands.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">module</span> purge</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="ex">module</span> load python/3.11</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="ex">module</span> load  hpcx-mpi/4.1.5rc2</span>
@@ -140,7 +142,7 @@ function topFunction() {
 <span id="cb3-5"><a href="#cb3-5"></a></span>
 <span id="cb3-6"><a href="#cb3-6"></a><span class="fu">git</span> clone https://github.com/jasmainak/hnn-workshop-materials.git</span>
 <span id="cb3-7"><a href="#cb3-7"></a><span class="bu">cd</span> hnn-workshop-materials/</span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">jupyter</span> notebook <span class="kw">&amp;</span></span></code></pre></div>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">jupyter</span> lab <span class="co"># or `jupyter notebook` alternatively</span></span></code></pre></div>
 <h2 id="cloning-the-hnn-data-repository">Cloning the HNN-Data Repository</h2>
 <p>To follow along with the workshop, you’ll need to clone the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data repository</a> to your local machine.</p>
 <p>To do so, launch a terminal and run the following command.</p>
@@ -149,15 +151,20 @@ function topFunction() {
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">cd</span> hnn-data</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">git</span> pull</span></code></pre></div>
 <h2 id="installing-hnn-core-gui-on-your-local-machine-via-conda">Installing HNN-Core GUI on Your Local Machine via Conda</h2>
+<p><strong>Note</strong>: We recommend using use Windows Subsystem for Linux (WSL) to run HNN on Windows machines. Installation instructions can be found <a href="https://learn.microsoft.com/en-us/windows/wsl/install">here</a></p>
 <p>Start by creating a new conda environment. We recommend creating an environment with the fewest number of dependencies to speed up the installation process.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">conda</span> create --name hnn_core_gui python=3.11 --no-default-packages</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="ex">conda</span> activate hnn_core_gui</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="ex">pip</span> install --pre hnn-core[gui]</span></code></pre></div>
+<p><strong>MPI Installation</strong></p>
 <p>To run simulations in parallel across multiple cores, which dramatically speeds up siuations, you’ll need to set up the MPI backend.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">conda</span> activate hnn_core_gui <span class="co"># activate the environment if needed</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="ex">conda</span> install -y openmpi mpi4py</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="ex">pip</span> install psutil</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">export</span> <span class="va">DYLD_FALLBACK_LIBRARY_PATH=${CONDA_PREFIX}</span>/lib</span></code></pre></div>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="ex">pip</span> install psutil</span></code></pre></div>
+<p>Additionally, for MacOS, run the following command.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="bu">export</span> <span class="va">DYLD_FALLBACK_LIBRARY_PATH=${CONDA_PREFIX}</span>/lib</span></code></pre></div>
+<p>More detailedd instructions are available on our <a href="https://jonescompneurolab.github.io/hnn-core/stable/parallel.html">parallel backends</a> page.</p>
+<p><strong>Lunch the GUI</strong></p>
 <p>You can now launch the GUI from within your conda environemnt.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">conda</span> activate hnn_core_gui <span class="co"># activate the environment if needed</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="ex">hnn-gui</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">conda</span> activate hnn_core_gui <span class="co"># activate the environment if needed</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="ex">hnn-gui</span></span></code></pre></div>

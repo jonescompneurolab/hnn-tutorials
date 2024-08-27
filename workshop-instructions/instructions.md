@@ -1,6 +1,7 @@
 **Table of Contents**
 
 - [Logging into the Oscar Virtual Environment](#logging-into-the-oscar-virtual-environment)
+- [Launching the Desktop App on Oscar](#launching-the-desktop-app-on-oscar)
 - [Launching HNN-Core GUI via Oscar](#launching-hnn-core-gui-via-oscar)
 - [Launching HNN-Core (Python) via Oscar](#launching-hnn-core-python-via-oscar)
 - [Cloning the HNN-Data Repository](#cloning-the-hnn-data-repository)
@@ -34,6 +35,8 @@
 
 </span>
 
+## Launching the Desktop App on Oscar
+
 
 ## Launching HNN-Core GUI via Oscar
 With the Oscar desktop instance open, open a terminal and type the following to activate the environment.
@@ -51,7 +54,7 @@ hnn-gui
 ```
 
 ## Launching HNN-Core (Python) via Oscar
-From the Oscar virtual desktop, open a terminal and run the following commands.
+From the Oscar virtual desktop, open a new terminal and run the following commands.
 
 ```bash
 module purge
@@ -61,7 +64,7 @@ source /oscar/data/ccv_workshop/hnn_env/bin/activate
 
 git clone https://github.com/jasmainak/hnn-workshop-materials.git
 cd hnn-workshop-materials/
-jupyter notebook &
+jupyter lab # or `jupyter notebook` alternatively
 ```
 
 ## Cloning the HNN-Data Repository
@@ -81,6 +84,9 @@ git pull
 ```
 
 ## Installing HNN-Core GUI on Your Local Machine via Conda
+
+**Note**: We recommend using use Windows Subsystem for Linux (WSL) to run HNN on Windows machines. Installation instructions can be found <a href="https://learn.microsoft.com/en-us/windows/wsl/install">here</a>
+
 Start by creating a new conda environment. We recommend creating an environment with the fewest number of dependencies to speed up the installation process.
 
 ```bash
@@ -89,14 +95,24 @@ conda activate hnn_core_gui
 pip install --pre hnn-core[gui]
 ```
 
+**MPI Installation**
+
 To run simulations in parallel across multiple cores, which dramatically speeds up siuations, you'll need to set up the MPI backend.
 
 ```bash
 conda activate hnn_core_gui # activate the environment if needed
 conda install -y openmpi mpi4py
 pip install psutil
+```
+
+Additionally, for MacOS, run the following command.
+```bash
 export DYLD_FALLBACK_LIBRARY_PATH=${CONDA_PREFIX}/lib
 ```
+
+More detailedd instructions are available on our <a href="https://jonescompneurolab.github.io/hnn-core/stable/parallel.html">parallel backends</a> page. 
+
+**Lunch the GUI**
 
 You can now launch the GUI from within your conda environemnt.
 
