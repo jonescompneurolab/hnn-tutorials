@@ -54,9 +54,10 @@ hnn-gui
 From the Oscar virtual desktop, open a terminal and run the following commands.
 
 ```bash
-module load hnn-workshop/2023.11
-module load miniconda/4.12.0 firefox/87.0
-source /oscar/runtime/opt/hnn-workshop/2023.11/bin/activate
+module purge
+module load python/3.11
+module load  hpcx-mpi/4.1.5rc2
+source /oscar/data/ccv_workshop/hnn_env/bin/activate
 
 git clone https://github.com/jasmainak/hnn-workshop-materials.git
 cd hnn-workshop-materials/
