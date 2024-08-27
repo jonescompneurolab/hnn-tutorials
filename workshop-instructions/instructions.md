@@ -10,23 +10,27 @@
 ## Logging into the Oscar Virtual Environment
 1. Go to Oscar-on-Demand (OOD): [ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions](https://ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions)
 
-2. Type in the username provided via the workshop host. 
-   - Note: there will be a physical sheet with usernames and their associated bypass codes
+2. Select a username from the <a href="https://docs.google.com/spreadsheets/d/1NQuCULv6Nmo1n7cHnsD5ZnEYtnxPeYUWzRBvaXFvliA/edit?usp=sharing">following spreadsheet</a> and add an "X" to the appropriate cell. The "X" is to indicate that the username you selected is "in use" so another participant doesn't try to log in with the same username/bypass code
 
-<span style="max-width: 400px;">
+3. Enter your selected username into 'Username' field of the login page
+
+4. Enter the password: HNNws2024*
+
+<div style="max-width: 400px;">
 
 ![](imgs/oscar_login.png)
 
-</span>
-  
-3. Type in the password: **TBD**
+</div>
 
-4. From the DUO authentication screen, select "Other options" and then choose "Bypass code", andd enter the bypass code associated with your username
+
+5. From the DUO authentication screen, select "Other options" and then choose "Bypass code"
 
 <span style="max-width:800px">
 
 | ![](imgs/duo_01.png) | ![](imgs/duo_02.png) | ![](imgs/duo_03.png) |
 |-----------------------------|-----------------------------|-----------------------------|
+
+6. Enter the bypass code associated with the username you selected in Step 2
 
 </span>
 
