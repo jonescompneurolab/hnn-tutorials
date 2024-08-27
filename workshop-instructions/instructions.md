@@ -3,16 +3,36 @@
 
 2. Type in the username provided via the workshop host. 
    - Note: there will be a physical sheet with usernames and their associated bypass code
+
+<span style="max-width: 400px;">
+
+![](imgs/oscar_login.png)
+
+</span>
   
 3. Type in the password: **TBD**
 
-4. From the DUO authentication screen, select "Other options" and then choose "Bypass code"
+4. From the DUO authentication screen, select "Other options" and then choose "Bypass code", andd enter the bypass code associated with your username
 
-5. Enter the bypass code associated your chosen username
+<span style="max-width:800px">
+
+| ![](imgs/duo_01.png) | ![](imgs/duo_02.png) | ![](imgs/duo_03.png) |
+|-----------------------------|-----------------------------|-----------------------------|
+
+</span>
+
 
 ## Launching HNN-Core GUI via Oscar
-From the Oscar virtual desktop, open a terminal and run the following command
+With the Oscar desktop instance open, open a terminal and type the following to activate the environment.
 
+```bash
+module purge
+module load python/3.11
+module load  hpcx-mpi/4.1.5rc2
+source /oscar/data/ccv_workshop/hnn_env/bin/activate
+```
+
+Within the same terminal with the `hnn_env` activated, type the following to launch the GUI.
 ```bash
 hnn-gui
 ```
