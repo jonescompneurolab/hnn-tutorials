@@ -16,7 +16,7 @@
 
 4. Enter the password: HNNws2024*
 
-<div style="max-width: 400px;">
+<div style="max-width: 600px;">
 
 ![](imgs/oscar_login.png)
 
