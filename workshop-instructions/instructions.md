@@ -1,8 +1,17 @@
+**Table of Contents**
+
+- [Logging into the Oscar Virtual Environment](#logging-into-the-oscar-virtual-environment)
+- [Launching HNN-Core GUI via Oscar](#launching-hnn-core-gui-via-oscar)
+- [Launching HNN-Core (Python) via Oscar](#launching-hnn-core-python-via-oscar)
+- [Cloning the HNN-Data Repository](#cloning-the-hnn-data-repository)
+- [Installing HNN-Core GUI on Your Local Machine via Conda](#installing-hnn-core-gui-on-your-local-machine-via-conda)
+
+
 ## Logging into the Oscar Virtual Environment
 1. Go to Oscar-on-Demand (OOD): [ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions](https://ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions)
 
 2. Type in the username provided via the workshop host. 
-   - Note: there will be a physical sheet with usernames and their associated bypass code
+   - Note: there will be a physical sheet with usernames and their associated bypass codes
 
 <span style="max-width: 400px;">
 
