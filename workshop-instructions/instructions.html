@@ -133,13 +133,14 @@ function topFunction() {
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">hnn-gui</span></span></code></pre></div>
 <h2 id="launching-hnn-core-python-via-oscar">Launching HNN-Core (Python) via Oscar</h2>
 <p>From the Oscar virtual desktop, open a terminal and run the following commands.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">module</span> load hnn-workshop/2023.11</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">module</span> load miniconda/4.12.0 firefox/87.0</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">source</span> /oscar/runtime/opt/hnn-workshop/2023.11/bin/activate</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">git</span> clone <span class="op">&lt;</span>https://github.com/jasmainak/hnn-workshop-materials.git<span class="op">&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">cd</span> hnn-workshop-materials/</span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="ex">jupyter</span> notebook <span class="kw">&amp;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">module</span> purge</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">module</span> load python/3.11</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">module</span> load  hpcx-mpi/4.1.5rc2</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="bu">source</span> /oscar/data/ccv_workshop/hnn_env/bin/activate</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">git</span> clone https://github.com/jasmainak/hnn-workshop-materials.git</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="bu">cd</span> hnn-workshop-materials/</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">jupyter</span> notebook <span class="kw">&amp;</span></span></code></pre></div>
 <h2 id="cloning-the-hnn-data-repository">Cloning the HNN-Data Repository</h2>
 <p>To follow along with the workshop, you’ll need to clone the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data repository</a> to your local machine.</p>
 <p>To do so, launch a terminal and run the following command.</p>
