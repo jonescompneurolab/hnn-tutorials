@@ -52,27 +52,22 @@ We have created a Google CoLab notebook that allows you to run the HNN-Core GUI 
 
 4. Enter the password: HNNws2024*
 
-<div style="max-width: 400px;">
-
-![](imgs/oscar_login.png)
-
-</div>
+![](imgs/oscar_login.png){ width=400px }
 
 
-5. From the DUO authentication screen, select "Other options" and then choose "Bypass code"
+5. <p>From the DUO authentication screen, select "Other options" and then choose "Bypass code"</p>
 
-<div style="max-width:400px">
-
-| ![](imgs/duo_01.png) | ![](imgs/duo_02.png) |
+| ![](imgs/duo_01.png){ width=200px } | ![](imgs/duo_02.png){ width=200px } |
 |-----------------------------|-----------------------------|
 
-1. Enter the bypass code associated with the username you selected in Step 2
+6. <p>Enter the bypass code associated with the username you selected in Step 2</p>
 
-</div>
 
 ### Launching the Desktop App on Oscar
 1. Choose the "Desktop (Advanced)" application. Note that this is different form the regular "Desktop" app.
+
 2. You will see a form. Enter the following in the fields.
+
    - Account: [Leave Blank]
    - Desktop Environment: xfce
    - Number of Hours: 3
@@ -82,6 +77,7 @@ We have created a Google CoLab notebook that allows you to run the HNN-Core GUI 
    - Memory (GB): 8
    - Reservation: hnn-workshop
    - Slurm Features: [Leave Blank]
+
 3. Click "Launch" . It may take a minute before the “Launch Desktop” button appears.
 
 ### Launching HNN-Core GUI via Oscar
