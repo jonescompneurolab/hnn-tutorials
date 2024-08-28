@@ -1,6 +1,9 @@
 **Table of Contents**
 
-- [Cloning the HNN-Data Repository](#cloning-the-hnn-data-repository)
+- [Workshop Sign-In (Optional but Encouraged)](#workshop-sign-in-optional-but-encouraged)
+- [Workshop Materials](#workshop-materials)
+  - [HNN-Core GUI Tutorial](#hnn-core-gui-tutorial)
+  - [HNN-Core Python Tutorial](#hnn-core-python-tutorial)
 - [Preferred Installation Method: Google CoLab](#preferred-installation-method-google-colab)
 - [Alternative Installation Methods](#alternative-installation-methods)
   - [Oscar On Demand (OOD) Virtual Desktop](#oscar-on-demand-ood-virtual-desktop)
@@ -14,28 +17,38 @@
     - [Installing MPI for Parallel Simulations](#installing-mpi-for-parallel-simulations)
     - [Launch the GUI](#launch-the-gui)
 
+# Workshop Sign-In (Optional but Encouraged)
 
-# Cloning the HNN-Data Repository
-To follow along with the workshop, you'll need the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data) on your local machine / virtual environment.
+Please consider 'signing in' to the workshop by providing your institution/location, position, and field of study. This information is used in reporting on milestones for the grants that continue to fund our dissemination and development. We don't ask for name or email, and the form should take no more than 30 seconds to complete.
 
-You can download the file [here](https://github.com/jonescompneurolab/hnn-data/archive/refs/heads/main.zip) or you can run the following command to clone the repository.
+Click [here](https://forms.gle/YnZX9ZRm8WvWpAGU7) to navigate to our Virtual Sign-In Form.
+
+<p>Thanks for your support. &#128513;</p>
+
+
+# Workshop Materials
+
+## HNN-Core GUI Tutorial
+
+This section of the workshop will require you to use HNN-Core GUI. See the sections below outlining the different installation methods available for getting started with the GUI.
+
+To follow along with the workshop, you'll also need to clone or download the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data).
+
+Click [here](https://github.com/jonescompneurolab/hnn-data/archive/refs/heads/main.zip) to download the hnn-data folder directly. Altenatively, you can clone the repository with the follwing command.
 
 ```bash
 git clone https://github.com/jonescompneurolab/hnn-data.git
 ```
 
-If you already cloned the hnn-data repository on your machine, be sure to update it to include the latest changes.
+## HNN-Core Python Tutorial
 
-```bash
-cd hnn-data
-git pull
-```
+The HNN-Core Python tutorial will utilize the following Google CoLab notebook, which can also be downloaded as an .ipynb file and run locally: [hnn-workshop-materials](https://colab.research.google.com/drive/1CvNTB_puonJiVvHmFhKhrr_CjmrfbgVB?usp=sharing)
 
 # Preferred Installation Method: Google CoLab
 
 This installation method is the quickest way to get up and running with the HNN-Core GUI, though it does require a Google Account. If you do not have a Google account, you can either create one for free to run the notebook, or try one of the other installation methods listed below.
 
-We have created a Google CoLab notebook that allows you to run the HNN-Core GUI out of your browser, with access to your local filesystem. Click <a href="https://colab.research.google.com/drive/1CvNTB_puonJiVvHmFhKhrr_CjmrfbgVB?usp=sharing">here</a> to open the notebook, which includes instructions on how to get set up.
+We have created a Google CoLab notebook that allows you to run the HNN-Core GUI out of your browser, with access to your local filesystem. Click <a href="https://colab.research.google.com/drive/1yyjuEBimIu_f7_0Nf3YLwUiVOO7ZrKK3?usp=sharing">here</a> to open the notebook, which includes instructions on how to get set up.
 
 # Alternative Installation Methods
 
