@@ -1,5 +1,6 @@
 **Table of Contents**
 
+- [Workshop Sign-In (Optional but Encouraged)](#workshop-sign-in-optional-but-encouraged)
 - [Cloning the HNN-Data Repository](#cloning-the-hnn-data-repository)
 - [Preferred Installation Method: Google CoLab](#preferred-installation-method-google-colab)
 - [Alternative Installation Methods](#alternative-installation-methods)
@@ -13,6 +14,14 @@
     - [Creating a Conda Env and Installing Dependencies](#creating-a-conda-env-and-installing-dependencies)
     - [Installing MPI for Parallel Simulations](#installing-mpi-for-parallel-simulations)
     - [Launch the GUI](#launch-the-gui)
+
+# Workshop Sign-In (Optional but Encouraged)
+
+Please consider 'signing in' to the workshop by providing your institution/location, position, and field of study. This information is used in reporting on milestones for the grants that continue to fund our dissemination and development. We don't ask for name or email, and the form should take no more than 30 seconds to complete.
+
+Click [here](https://forms.gle/YnZX9ZRm8WvWpAGU7) to navigate to our Virtual Sign-In Form.
+
+<p>Thanks for your support. &#128513;</p>
 
 
 # Cloning the HNN-Data Repository
