@@ -1,7 +1,7 @@
 **Table of Contents**
 
 - [Workshop Sign-In (Optional but Encouraged)](#workshop-sign-in-optional-but-encouraged)
-- [Cloning the HNN-Data Repository](#cloning-the-hnn-data-repository)
+- [Download Workshop Materials](#download-workshop-materials)
 - [Preferred Installation Method: Google CoLab](#preferred-installation-method-google-colab)
 - [Alternative Installation Methods](#alternative-installation-methods)
   - [Oscar On Demand (OOD) Virtual Desktop](#oscar-on-demand-ood-virtual-desktop)
@@ -24,21 +24,22 @@ Click [here](https://forms.gle/YnZX9ZRm8WvWpAGU7) to navigate to our Virtual Sig
 <p>Thanks for your support. &#128513;</p>
 
 
-# Cloning the HNN-Data Repository
-To follow along with the workshop, you'll need the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data) on your local machine / virtual environment.
+# Download Workshop Materials
+To follow along with the workshop, you'll need to download the following materials:
 
-You can download the file [here](https://github.com/jonescompneurolab/hnn-data/archive/refs/heads/main.zip) or you can run the following command to clone the repository.
+- The [hnn-data repository](https://github.com/jonescompneurolab/hnn-data) (needed for the HNN-Core GUI tutorial)
+- The [hnn-workshop-materials repository](https://github.com/jasmainak/hnn-workshop-materials/tree/biomag_2024) (needed for the HNN-Core Python tutorial)
+
+Click [here](https://github.com/jonescompneurolab/hnn-data/archive/refs/heads/main.zip) to download the hnn-data folder, and [here](https://github.com/jasmainak/hnn-workshop-materials/archive/refs/heads/biomag_2024.zip) to download the hnn-workshop-materials folder. 
+
+Altenatively, you can clone the repositores with the follwing commands.
 
 ```bash
 git clone https://github.com/jonescompneurolab/hnn-data.git
+git clone https://github.com/jasmainak/hnn-workshop-materials.git
 ```
 
-If you already cloned the hnn-data repository on your machine, be sure to update it to include the latest changes.
-
-```bash
-cd hnn-data
-git pull
-```
+If you've already cloned the repositories in the past, be sure to run `git pull` to download the latest updates.
 
 # Preferred Installation Method: Google CoLab
 
