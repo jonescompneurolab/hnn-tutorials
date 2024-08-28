@@ -52,7 +52,7 @@ We have created a Google CoLab notebook that allows you to run the HNN-Core GUI 
 
 4. Enter the password: HNNws2024*
 
-<div style="max-width: 600px;">
+<div style="max-width: 400px;">
 
 ![](imgs/oscar_login.png)
 
@@ -61,14 +61,14 @@ We have created a Google CoLab notebook that allows you to run the HNN-Core GUI 
 
 5. From the DUO authentication screen, select "Other options" and then choose "Bypass code"
 
-<span style="max-width:800px">
+<div style="max-width:400px">
 
-| ![](imgs/duo_01.png) | ![](imgs/duo_02.png) | ![](imgs/duo_03.png) |
-|-----------------------------|-----------------------------|-----------------------------|
+| ![](imgs/duo_01.png) | ![](imgs/duo_02.png) |
+|-----------------------------|-----------------------------|
 
-6. Enter the bypass code associated with the username you selected in Step 2
+1. Enter the bypass code associated with the username you selected in Step 2
 
-</span>
+</div>
 
 ### Launching the Desktop App on Oscar
 1. Choose the "Desktop (Advanced)" application. Note that this is different form the regular "Desktop" app.
@@ -131,9 +131,17 @@ pip install --pre hnn-core[gui]
 pip install --pre hnn-core'[gui]'
 ```
 
+Once installed, you can launch the GUI with the following command.
+
+```bash
+hnn-gui
+```
+
 Note that you will not be able to utilize the MPI backend to run simulation in parallel without also installing MPI on your machine. We recommend using the Conda install method below if you would like to utilize MPI, as it significantly streamlines the MPI setup process.
 
 For our workshops, we will be running simulations with only a few trials at most, and so MPI is not strictly necessary to keep up with the materials.
+
+
 
 ## Installing HNN-Core GUI on Your Local Machine via Conda
 
