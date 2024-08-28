@@ -16,15 +16,15 @@
 
 
 # Cloning the HNN-Data Repository
-To follow along with the workshop, you'll need to clone the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data) to your local machine / virtual environment.
+To follow along with the workshop, you'll need the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data) on your local machine / virtual environment.
 
-To do so, launch a terminal and run the following command.
+You can download the file [here](https://github.com/jonescompneurolab/hnn-data/archive/refs/heads/main.zip) or you can run the following command to clone the repository.
 
 ```bash
 git clone https://github.com/jonescompneurolab/hnn-data.git
 ```
 
-If you already have the hnn-data repo on your machine, be sure to update it to include the latest changes
+If you already cloned the hnn-data repository on your machine, be sure to update it to include the latest changes.
 
 ```bash
 cd hnn-data
@@ -35,7 +35,7 @@ git pull
 
 This installation method is the quickest way to get up and running with the HNN-Core GUI, though it does require a Google Account. If you do not have a Google account, you can either create one for free to run the notebook, or try one of the other installation methods listed below.
 
-We have created a Google CoLab notebook that allows you to run the HNN-Core GUI out of your browser, with access to your local filesystem. Click <a href="https://colab.research.google.com/drive/1yyjuEBimIu_f7_0Nf3YLwUiVOO7ZrKK3?usp=sharing">here</a> to open the notebook, which includes instructions on how to get set up.
+We have created a Google CoLab notebook that allows you to run the HNN-Core GUI out of your browser, with access to your local filesystem. Click <a href="https://colab.research.google.com/drive/1CvNTB_puonJiVvHmFhKhrr_CjmrfbgVB?usp=sharing">here</a> to open the notebook, which includes instructions on how to get set up.
 
 # Alternative Installation Methods
 
