@@ -1,117 +1,59 @@
 **Table of Contents**
 
-- [Cloning the HNN-Data Repository](#cloning-the-hnn-data-repository)
-- [Preferred Installation Method: Google CoLab](#preferred-installation-method-google-colab)
-- [Alternative Installation Methods](#alternative-installation-methods)
-  - [Oscar On Demand (OOD) Virtual Desktop](#oscar-on-demand-ood-virtual-desktop)
-    - [Logging in to OOD](#logging-in-to-ood)
-    - [Launching the Desktop App on Oscar](#launching-the-desktop-app-on-oscar)
-    - [Launching HNN-Core GUI via Oscar](#launching-hnn-core-gui-via-oscar)
-    - [Launching HNN-Core (Python) via Oscar](#launching-hnn-core-python-via-oscar)
-  - [Installing HNN-Core GUI on Your Local Machine without Conda](#installing-hnn-core-gui-on-your-local-machine-without-conda)
-  - [Installing HNN-Core GUI on Your Local Machine via Conda](#installing-hnn-core-gui-on-your-local-machine-via-conda)
+- [Workshop Sign-In (Optional but Encouraged)](#workshop-sign-in-optional-but-encouraged)
+- [Workshop Materials](#workshop-materials)
+  - [HNN-Core GUI Tutorial](#hnn-core-gui-tutorial)
+  - [HNN-Core Python Tutorial](#hnn-core-python-tutorial)
+- [Installing HNN-Core GUI Locally](#installing-hnn-core-gui-locally)
+  - [Installing on Your Local Machine without Conda](#installing-on-your-local-machine-without-conda)
+  - [Installing on Your Local Machine with Conda](#installing-on-your-local-machine-with-conda)
     - [Creating a Conda Env and Installing Dependencies](#creating-a-conda-env-and-installing-dependencies)
     - [Installing MPI for Parallel Simulations](#installing-mpi-for-parallel-simulations)
     - [Launch the GUI](#launch-the-gui)
 
 
-# Cloning the HNN-Data Repository
-To follow along with the workshop, you'll need to clone the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data) to your local machine / virtual environment.
+# Workshop Sign-In (Optional but Encouraged)
 
-To do so, launch a terminal and run the following command.
+Please consider 'signing in' to the workshop by providing your institution/location, position, and field of study. This information is used in reporting on milestones for the grants that continue to fund our dissemination and development. We don't ask for name or email, and the form should take no more than 30 seconds to complete.
+
+Click [here](https://forms.gle/YnZX9ZRm8WvWpAGU7) to navigate to our Virtual Sign-In Form.
+
+<p>Thanks for your support. &#128513;</p>
+
+
+# Workshop Materials
+
+## HNN-Core GUI Tutorial
+
+This section of the workshop will require you to use HNN-Core GUI.
+
+
+We have created a Google CoLab notebook that allows you to run the HNN-Core GUI out of your browser, with access to your local filesystem.
+
+This is the quickest way to get up and running with HNN-Core GUI, though it does require a Google Account. If you do not have a Google account, you can either create one for free to run the notebook, or try one of the other installation methods listed below.
+
+Click <a href="https://colab.research.google.com/drive/1yyjuEBimIu_f7_0Nf3YLwUiVOO7ZrKK3?usp=sharing">here</a> to open the CoLab notebook, which includes instructions on how to get started.
+
+To follow along with the workshop, you'll also need to clone or download the [hnn-data repository](https://github.com/jonescompneurolab/hnn-data).
+
+Click [here](https://github.com/jonescompneurolab/hnn-data/archive/refs/heads/main.zip) to download the hnn-data folder directly. Altenatively, you can clone the repository with the follwing command.
 
 ```bash
 git clone https://github.com/jonescompneurolab/hnn-data.git
 ```
 
-If you already have the hnn-data repo on your machine, be sure to update it to include the latest changes
+We will also reference the schematic below throughout the workshop, and we include it here for your reference. 
 
-```bash
-cd hnn-data
-git pull
-```
+![](imgs/full_schematic.png){ width=1000px }
 
-# Preferred Installation Method: Google CoLab
+## HNN-Core Python Tutorial
 
-This installation method is the quickest way to get up and running with the HNN-Core GUI, though it does require a Google Account. If you do not have a Google account, you can either create one for free to run the notebook, or try one of the other installation methods listed below.
-
-We have created a Google CoLab notebook that allows you to run the HNN-Core GUI out of your browser, with access to your local filesystem. Click <a href="https://colab.research.google.com/drive/1yyjuEBimIu_f7_0Nf3YLwUiVOO7ZrKK3?usp=sharing">here</a> to open the notebook, which includes instructions on how to get set up.
-
-# Alternative Installation Methods
-
-**Warning**: You may experience considerable lag in navigating the virtual desktop environment if you do not have a strong WiFi connection. If you experience this issue, we encourage you to try one of the other installation methods here to get started.
-
-## Oscar On Demand (OOD) Virtual Desktop
-
-### Logging in to OOD
-1. Go to Oscar-on-Demand (OOD): [ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions](https://ood.ccv.brown.edu/pun/sys/dashboard/batch_connect/sessions)
-
-2. Select a username from the <a href="https://docs.google.com/spreadsheets/d/1NQuCULv6Nmo1n7cHnsD5ZnEYtnxPeYUWzRBvaXFvliA/edit?usp=sharing">following spreadsheet</a> and add an "X" to the appropriate cell. The "X" is to indicate that the username you selected is "in use" so another participant doesn't try to log in with the same username/bypass code
-
-3. Enter your selected username into 'Username' field of the login page
-
-4. Enter the password: HNNws2024*
-
-![](imgs/oscar_login.png){ width=400px }
+The HNN-Core Python tutorial will utilize the following Google CoLab notebook, which can also be downloaded as an .ipynb file and run locally: [hnn-workshop-materials](https://colab.research.google.com/drive/1CvNTB_puonJiVvHmFhKhrr_CjmrfbgVB?usp=sharing)
 
 
-5. <p>From the DUO authentication screen, select "Other options" and then choose "Bypass code"</p>
+# Installing HNN-Core GUI Locally
 
-| ![](imgs/duo_01.png){ width=200px } | ![](imgs/duo_02.png){ width=200px } |
-|-----------------------------|-----------------------------|
-
-6. <p>Enter the bypass code associated with the username you selected in Step 2</p>
-
-
-### Launching the Desktop App on Oscar
-1. Choose the "Desktop (Advanced)" application. Note that this is different form the regular "Desktop" app.
-
-2. You will see a form. Enter the following in the fields.
-
-   - Account: [Leave Blank]
-   - Desktop Environment: xfce
-   - Number of Hours: 3
-   - Partition: batch
-   - Num Cores: 8
-   - Num GPUs: 1 [This number does not matter]
-   - Memory (GB): 8
-   - Reservation: hnn-workshop
-   - Slurm Features: [Leave Blank]
-
-3. Click "Launch" . It may take a minute before the “Launch Desktop” button appears.
-
-### Launching HNN-Core GUI via Oscar
-With the Oscar desktop instance open, launch a Terminal via the “Terminal Emulator” at the bottom of the Desktop or via the Applications drop-down at the top-left of the Desktop.
-
-Type the following into the terminal to activate the environment.
-
-```bash
-module purge
-module load python/3.11
-module load  hpcx-mpi/4.1.5rc2
-source /oscar/data/ccv_workshop/hnn_env/bin/activate
-```
-
-Within the same terminal with the `hnn_env` activated, type the following to launch the GUI.
-```bash
-hnn-gui
-```
-
-### Launching HNN-Core (Python) via Oscar
-From the Oscar virtual desktop, open a new terminal and run the following commands.
-
-```bash
-module purge
-module load python/3.11
-module load  hpcx-mpi/4.1.5rc2
-source /oscar/data/ccv_workshop/hnn_env/bin/activate
-
-git clone https://github.com/jasmainak/hnn-workshop-materials.git
-cd hnn-workshop-materials/
-jupyter lab # or `jupyter notebook` alternatively
-```
-
-## Installing HNN-Core GUI on Your Local Machine without Conda
+## Installing on Your Local Machine without Conda
 
 You can easily install HNN-Core GUI on your local machine with pip.
 
@@ -139,7 +81,7 @@ For our workshops, we will be running simulations with only a few trials at most
 
 
 
-## Installing HNN-Core GUI on Your Local Machine via Conda
+## Installing on Your Local Machine with Conda
 
 ### Creating a Conda Env and Installing Dependencies
 
