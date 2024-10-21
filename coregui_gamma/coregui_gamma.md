@@ -91,13 +91,6 @@ You should now see a dropdown menu labelled 'extpois (proximal)' which contains 
 
 In this simulation, the network will be “activated” with excitatory AMPA synaptic input, distributed in time as a Poisson process and delivered to the somas of the pyramidal neurons in Layer 2/3 (L2/3) and Layer 5 (L5). This noisy input will generate spiking activity in the pyramidal neurons that can initiate the PING rhythm. 
 
-```python
-# This section needs a rework, as we don't expose the frequency in the external drive parameters of the GUI
-"""
-The Poisson Inputs GUI has 3 tabs. Two tabs regulate the frequency of the Poisson input (Hz) and post-synaptic conductances of this Poisson drive (weights in $\mu S$) onto the Layer 2/3 cell somas and Layer 5 cell somas, respectively, and the third tab regulates the start and stop times (ms) of the Poisson drive. The Stop time (ms)value of -1 indicates that the Poisson inputs are provided throughout the duration of the simulation. Note that in this simulation, only the pyramidal neurons are receiving the Poisson drive, and the drive is faster and weaker to Layer 2/3 pyramids (140 Hz; 8e-4 $\mu S$ to AMPA synapses) compared to the Layer 5 pyramids (40 Hz; 7.5e-3 $\mu S$ to AMPA synapses).
-"""
-```
-
 ### Load Network Parameters
 
 Next, navigate to the `Network` tab and select `Load local network connectivity`. From the popup window, select the `gamma_L5weak_L2weak.json` configuration file from the 'network-configurations' subfolder in the 'hnn-data' directory. 
@@ -184,150 +177,153 @@ Notice that the power in the gamma band is smaller in Layer 2/3 than in Layer 5.
 
 <a id="toc_4"></a>
 
-## 4. Adjusting parameters
+## 4 Adjusting parameters
 
-In the following simulations, we explore parameter alterations influencing the generation of gamma rhythms.
+In the following sections, we explore parameter alterations influencing the generation of gamma rhythms.
 
-Also note that before running/loading new simulations, we first remove the prior simulation by pressing the “Remove Simulation” button at the bottom of the GUI. If we do not do this, both simulation dipoles are displayed (old simulation with dotted line, new simulation with solid line; see “Tour of the GUI” for more details on simulation control).
+In **Section 4.1**, we'll use HNN to explore the impact of two key parameters controlling gamma rhythmicity: cell excitability and network connectivity
 
-### 4.1 Two key parameters controlling gamma rhythmicity are cell “excitability” and network connectivity
+In **Section 4.2**, we'll show that gamma can also be generate with only tonic inputs to the pyramidal neurons. 
 
-In this exercise, HNN will be used to explore the impact of changing several key parameters that control gamma rhythmicity in networks, including cell excitabilityand network connectivity. Cell “excitability” can be adjusted in many ways reflecting the intrinsic properties of a neuron (e.g. membrane resting potential) and/or the influence of external factors such as noisy background inputs or tonic drive via neuromodulation. Parameters controlling network connectivity include the synaptic connection strengths between cells and/or the time constants of synaptic activation. Here, we explore the influence of a few of these factors on gamma rhythmicity. To do so, we will examine activity in only one of the layers, namely Layer 5, by setting all inputs and connectivity in Layer 2/3 to zero.
+### 4.1.1 Adjusting cell excitability
 
-First, reload the parameter file gamma_L5weak_L2weak.param (see step 1 above). To turn off all off the Layer 2/3 activity, load the network parameters with
-```
-Set Parameters > Local Network
-```
-Adjust parameters so that all Layer 2/3 weights are set to 0.0 $\mu S$ as shown in the dialog boxes below.
+Cell “excitability” can be adjusted in many ways, reflecting the intrinsic properties of a neuron (e.g. membrane resting potential) and/or the influence of external factors such as noisy background inputs or tonic drive via neuromodulation. Parameters controlling network connectivity include the synaptic connection strengths between cells and/or the time constants of synaptic activation. Here, we explore the influence of a few of these factors on gamma rhythmicity. To do so, we will examine activity in only one of the layers, namely Layer 5, by setting all inputs and connectivity in Layer 2/3 to zero.
 
-<div class="stylefig" style="max-width: 650px;">
-<table>
-<h3>Figure 7</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image37.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image37.png" alt="image37" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image33.png" alt="image33" />
-</a>
-</td>
-</tr>
-</table>
-</div>
+First, navigate to the `Simulation` tab and change the `Name` to reflect the fact that we will be running a new simulation. We'll use the name `gamma_L5weak_only`. 
 
-Next, load the Poisson input parameters by selecting
-```
-Set Parameters > Poisson Inputs
-```
-Adjust the strength of the Layer 2/3 Pyr AMPA weight to 0.0 as shown below.
+Next, navigate to the `Connectivity` section under the `Network` tab and change all of the Layer 2/3 weights to 0.
 
-<div class="stylefig" style="max-width:450px;">
+Finally, select the `extpois (proximal)` drive under the `External drives` tab and set the Layer 2/3 weights to 0. 
 
-<h3>Figure 8</h3>
+Once you've set all of the Layer 2/3 weights to zero, click the `Run` button to run the simulation. The simulation will yield a gamma rhythm that looks similar to the one we observed previously, as shown in Figure 8 below.
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image23.png" alt="image23" /></a></p>
+#### Figure 8
+
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+
+![](images/gamma_fig_08.png)
 
 </div>
 
-Save the simulation with a new “Simulation Name” in the Set Parameters dialog box: “gamma_L5weak_only” and run the simulation by clicking Start Simulation in the main HNN GUI window. The main HNN GUI will show a gamma rhythm similar to that observed in Step 2, that looks as follows:
+However, if you view the Simulation Spiking Activity and the PSD (see step 3 above) you will see activity from only Layer 5. 
 
-<div class="stylefig" style="max-width:600px;">
+You can follow the same steps as outlined in Section 3 above to generate these visualizations. Note, however, that you need to have the correct simulation selected via the `Dataset` dropdown box under the `Vizualization` tab and above the `Make figure` button, as shown in Figure 9b below. 
 
-<h3>Figure 9</h3>
+#### Figure 9.A
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image22.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image22.png" alt="image22" /></a></p>
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+
+![](images/gamma_fig_09_01.png)
 
 </div>
 
-However, if you now view the Simulation Spiking Activity and PSD (see step 3 above) you will see activity from only Layer 5 that looks as follows.
+#### Figure 9.B
 
-<div class="stylefig" style="max-width: 850px;">
-<table>
-<h3>Figure 10</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image43.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image43.png" alt="image43" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image15.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image15.png" alt="image15" />
-</a>
-</td>
-</tr>
-</table>
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+
+![](images/gamma_fig_09_02.png)
+
 </div>
 
 Notice the weak PING rhythm in Layer 5 consisting of weakly synchronous pyramidal neuron firing, followed by synchronous inhibitory neuron firing, that gates the network dipole rhythm to ~50 Hz.
 
-To examine the impact of cell excitability on gamma expression, we can increase the excitability of the Layer 5 pyramidal neurons by adding a tonic applied current that might represent a neuromodulatory influence. Load the Tonic Input parameters with Set Parameters> Tonic Inputs.
+To examine the impact of cell excitability on gamma expression, we can increase the excitability of the Layer 5 pyramidal neurons by adding a tonic applied current that might represent a neuromodulatory influence. 
 
-As in the Tonic Inputs dialog box below, click on Layer 5, and adjust the amplitude of the tonic drive to the L5 Pyr to be 6.0 nA. This level of injected current will be applied to the soma of the L5 Pyramidal neurons starting at time 0.0 ms and remaining on throughout the simulation (stop time = -1.0 ms).
+To do so, first select the `External drives` tab, then select the `Tonic` option under `Drive` and click the `Add drive` button. This will create a new external drive titled `Tonic1`, as shown in Figure 10 below. Select the new drive, and then set the aplitude of the tonic drive to the Layer 5 pyramidal neuron to be 6 nA. This level of injected current will be applied to the soma of the L5 Pyramidal neurons for the duration of the simulation. 
 
-<div class="stylefig" style="max-width:450px;">
+#### Figure 10.A
 
-<h3>Figure 11</h3>
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png" alt="image20" /></a></p>
-
-</div>
-
-Save the simulation with a new simulation name (e.g., "gamma_L5weak_only_tonic") in the Set Parameters dialog box and run the simulation by clicking Start Simulation in the main HNN GUI window. The simulation will yield the following output.
-
-<div class="stylefig" style="max-width:600px;">
-
-<h3>Figure 12</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image17.png" alt="image17" /></a></p>
+![](images/gamma_fig_10_01.png)
 
 </div>
 
-Notice that the oscillation waveform is now more regular with less noise due to the fact that the tonic drive is strong and outweighs the influence of the Poisson drive. Next, open the simulation spiking activity, which looks as follows:
+#### Figure 10.B
 
-<div class="stylefig" style="max-width:600px;">
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
 
-<h3>Figure 13</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image12.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image12.png" alt="image12" /></a></p>
+![](images/gamma_fig_10_02.png)
 
 </div>
 
-Notice that the Layer 5 pyramidal neurons are now firing nearly synchronously. They in turn synchronously activate the inhibitory basket neurons, which then inhibit the pyramidal neurons for ~20 ms, when the tonic drive outweighs the inhibition and the pyramidal neurons firing again creating a ~50 Hz PING rhythm. This type of synchronous rhythm is sometimes referred to as “strong” PING. Notice that there is also a ~90 Hz component to the dipole spectrogram. Inspection of the dipole waveform shows that this 90 Hz activity does not represent a separate rhythm, but rather reflects the dipole waveform shape which has a fast oscillation on each cycle of the slower rhythm, due to the strong downward currents induced by strong somatic inhibition on the pyramidal neurons.
+After adding the tonic drives, change the simulation name to `gamma_L5weak_tonic`, and then click the `Run` button. The simulation will yield the output shown in Figure 11 below. 
 
-In this new excitability state, we’ll now explore the impact of adjusting synaptic connectivity parameters in the network. Load the local network parameters with:
-```
-Set Parameters > Local Network
-```
+#### Figure 11.A
 
-Then click on the Layer 5 Bas tab and adjust the weight of the L5 Pyr -> L5 Basket cells from 9.1e-4 $\mu S$to 9.1e-5 $\mu S$ (10x weaker) as shown below.
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
 
-<div class="stylefig" style="max-width:450px;">
-
-<h3>Figure 14</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image41.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image41.png" alt="image41" /></a></p>
+![](images/gamma_fig_11_01.png)
 
 </div>
 
-Next, save the simulation with a new “Simulation Name” in the Set Parameters dialog box: “gamma_L5weak_only_tonic2” , and run the simulation by clicking Start Simulation  in the main HNN GUI. The main HNN GUI will now show the  following output.
+#### Figure 11.B
 
-<div class="stylefig" style="max-width:600px;">
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
 
-<h3>Figure 15</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image44.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image44.png" alt="image44" /></a></p>
+![](images/gamma_fig_11_02.png)
 
 </div>
 
-Notice that the rhythm has now slowed from 50 Hz to 40 Hz. This slowing is due to the fact that since the excitatory to inhibitory connection was weakened, it takes longer for the basket cells to respond to the excitation and hence the rhythm is slowed. This can be visualized with the Simulation Spiking Activity as shown below.
+#### Figure 11.C
 
-<div class="stylefig" style="max-width:600px;">
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
 
-<h3>Figure 16</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image16.png" alt="image16" /></a></p>
+![](images/gamma_fig_11_03.png)
 
 </div>
+
+The oscillation as seen in the dipole is more regular with less noise due to the fact that the tonic drive is strong and outweighs the influence of the Poisson drive. 
+
+Note in the spike plot that the Layer 5 pyramidal neurons are now firing nearly synchronously. They, in turn, synchronously activate the inhibitory basket neurons, which then inhibit the pyramidal neurons for ~20 ms. After ~20 ms, the tonic drive outweighs the inhibition and the pyramidal neurons fire again, creating a ~50 Hz PING rhythm. 
+
+This type of synchronous rhythm is sometimes referred to as “strong” PING. Notice that there is also a ~90 Hz component to the dipole spectrogram. Inspection of the dipole waveform shows that this 90 Hz activity does not represent a separate rhythm, but rather reflects the dipole waveform shape, which has a fast oscillation on each cycle of the slower rhythm due to the strong downward currents induced by somatic inhibition on the pyramidal neurons.
+
+### 4.1.2 Adjusting network connectivity
+
+**Weakening the excitatory connections**
+
+We’ll now explore the impact of adjusting synaptic connectivity parameters in the network. 
+
+First navigate to the `Connectivity` section of the `Network` tab. From there, change the weight of the `L5_pyramidal->L5_basket` connection from 0.00091 to 0.000091, making it 10 times weaker. 
+
+Change the `Name` of the simulation to `gamma_L5weak_tonic_02`, and run the simulation. As we've done in previous sections, you'll want to generate visualizations that show the spike plot and the spectrogram. In Figure 12.B, we display the spiking and the spectrogram in a single plot rather than two separate plots.
+
+#### Figure 12.A
+
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+
+![](images/gamma_fig_12_01.png)
+
+</div>
+
+#### Figure 12.B
+
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+
+![](images/gamma_fig_12_02.png)
+
+</div>
+
+It is also instructive to view visualizations for different simulations in the same figure to compare differences. Figure 13 below shows the PSD for `gamma_L5weak_tonic` (top subplot) and `gamma_L5weak_tonic_02` (bottom subplot)
+
+#### Figure 13
+
+<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+
+![](images/gamma_fig_13.png)
+
+</div>
+
+Notice that the gamma rhythm has now slowed from ~45 Hz to ~40 Hz. This slowing is due to the fact that the excitatory-to-inhibitory connection was weakened. Due to this change, it now takes longer for the basket cells to respond to the excitation, and hence the rhythm is slowed. 
+
+
+
+# LEFT OFF HERE
+
+
+
+**Removing the inhibitory connections**
 
 Next, we’ll explore the importance of the inhibitory connections in setting gamma rhythmicity. First, set the L5 Pyr -> L5 Basket back to 9.1e-4 $\mu S$. Now remove the Tonic Input to the Layer 5 cells by setting the amplitude of L5 Pyr to be 0.0 nA. We are now back to the Layer 5 only weak PING parameter set that we started with in this section (confirm this by saving the file with a new name and running the simulation).
 
@@ -364,6 +360,8 @@ Notice that the rhythm is still present but less regular and noisier (compare wi
 <p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png" alt="image39" /></a></p>
 
 </div>
+
+**Reducing the GABAB decay time**
 
 Lastly, we’ll see that the time constant of inhibitory decay is an essential  parameter controlling the frequency of the PING rhythm. In the Local Network dialog box adjust the strength of the L5 Basket -> L5 Basket weight back to 7.5e-3 $\mu S$, and keep all other parameters the same. Next, load the “Cell Parameters” by clicking:
 ```
