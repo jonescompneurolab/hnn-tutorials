@@ -63,7 +63,7 @@ hnn-gui
 
 This will open the GUI in your local browser, as shown below
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_01.png)
 
@@ -83,7 +83,7 @@ You should now see a dropdown menu labelled 'extpois (proximal)' which contains 
 
 #### Figure 2
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_02.gif)
 
@@ -99,7 +99,7 @@ The adjustable network parameters are displayed in the dropdown boxes under the 
 
 #### Figure 3
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_03.png)
 
@@ -121,7 +121,7 @@ The console below the `Run` button will print progress as the simulation is runn
 
 #### Figure 4
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_04.png)
 
@@ -135,7 +135,7 @@ To view the Spectrogram, select the `Visualization` tab. You will see a `Layout 
 
 #### Figure 5
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_05.png)
 
@@ -153,7 +153,7 @@ From the `Layout template` menu in the `Visualization` tab, select `[Blank] sing
 
 #### Figure 6
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_06.png)
 
@@ -167,7 +167,7 @@ To view the PSD from this simulation, select the `PSD Layers (3x1)` option from 
 
 #### Figure 7
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_07.png)
 
@@ -199,7 +199,7 @@ Once you've set all of the Layer 2/3 weights to zero, click the `Run` button to 
 
 #### Figure 8
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_08.png)
 
@@ -211,7 +211,7 @@ You can follow the same steps as outlined in Section 3 above to generate these v
 
 #### Figure 9.A
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_09_01.png)
 
@@ -219,7 +219,7 @@ You can follow the same steps as outlined in Section 3 above to generate these v
 
 #### Figure 9.B
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_09_02.png)
 
@@ -233,7 +233,7 @@ To do so, first select the `External drives` tab, then select the `Tonic` option
 
 #### Figure 10.A
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_10_01.png)
 
@@ -241,7 +241,7 @@ To do so, first select the `External drives` tab, then select the `Tonic` option
 
 #### Figure 10.B
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_10_02.png)
 
@@ -251,7 +251,7 @@ After adding the tonic drives, change the simulation name to `gamma_L5weak_tonic
 
 #### Figure 11.A
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_11_01.png)
 
@@ -259,7 +259,7 @@ After adding the tonic drives, change the simulation name to `gamma_L5weak_tonic
 
 #### Figure 11.B
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_11_02.png)
 
@@ -267,7 +267,7 @@ After adding the tonic drives, change the simulation name to `gamma_L5weak_tonic
 
 #### Figure 11.C
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_11_03.png)
 
@@ -291,7 +291,7 @@ Change the `Name` of the simulation to `gamma_L5weak_tonic_02`, and run the simu
 
 #### Figure 12.A
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_12_01.png)
 
@@ -299,7 +299,7 @@ Change the `Name` of the simulation to `gamma_L5weak_tonic_02`, and run the simu
 
 #### Figure 12.B
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_12_02.png)
 
@@ -309,7 +309,7 @@ It is also instructive to view visualizations for different simulations in the s
 
 #### Figure 13
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
 ![](images/gamma_fig_13.png)
 
