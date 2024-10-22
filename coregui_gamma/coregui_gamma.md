@@ -460,8 +460,6 @@ In each layer, the inhibitory neurons are firing synchronously and causing stron
 
 As an exercise, play with the current injection amplitude provided to the different neurons to see how it affects the generated rhythm.
 
-<div class="stylefig" style="max-width:600px;">
-
 ### 4.3 Gamma through rhythmic subthreshold synaptic inputs to pyramidal neurons
 
 In the next example, we will apply 50 Hz rhythmic synaptic inputs through proximal and distal projection patterns to produce gamma oscillations similar to those shown in Figure 8A of (Lee & Jones, 2013) [1]. 
