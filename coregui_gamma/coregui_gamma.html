@@ -676,182 +676,110 @@ neurons</h3>
 <p>In the next example, we will apply 50 Hz rhythmic synaptic inputs
 through proximal and distal projection patterns to produce gamma
 oscillations similar to those shown in Figure 8A of (Lee &amp; Jones,
-2013) [1]. In this simulation, the strength of the input is set so that
-the cells remain subthreshold and gamma rhythms emerge from subthreshold
+2013) [1].</p>
+<p>In this simulation, the strength of the input is set so that the
+cells remain subthreshold and gamma rhythms emerge from subthreshold
 current flow in the pyramidal neuron dendrites, rather than local
 spiking interactions as in the PING mechanisms described above.</p>
-<p>The parameter set that will simulate subthreshold gamma oscillations
-through rhythmic inputs to pyramidal neurons in proximal and distal
-projection patterns can be downloaded via the following hyperlink <a
-href="https://github.com/jonescompneurolab/hnn/blob/master/param/gamma_rhythmic_drive.param">gamma_rhythmic_drive.param</a>.
-This file can also be found in the HNN param subfolder.</p>
-<p>Load the parameter file values by returning to the main GUI window
-and clicking:</p>
-<pre><code>Set Parameters From File</code></pre>
-<p>Then select the file from HNN’s param subfolder or from your local
-machine. To view the parameters, click:</p>
-<pre><code>Set Parameters &gt; Rhythmic Proximal Inputs
-
-Set Parameters &gt; Rhythmic Distal Inputs</code></pre>
-<p>You should see the values of adjustable parameters displayed in the
-dialog boxes below. In this example, the pyramidal neurons receive
-inputs, and the interneurons do not. The proximal and distal inputs
-start at 50.0 and 55.0 ms, respectively, and are slightly out of phase
-to allow synaptic inputs to effectively push current flow up the
-dendrites followed 5 ms later by current flow down the dendrites.
-Additionally, the input frequency for both proximal and distal inputs is
-set to a 50 Hz rhythm provided by “bursts” of excitatory synaptic input
-(driving burst frequencies; inter-burst-interval of 20 ms), with minimal
-noise within each driving burst (burst stdev of 2.5 ms). Please review
-the Alpha/Beta tutorial for a detailed description of the driving
-bursts. Note also that the amplitude of the inputs, which are only
-provided to the Layer 5 pyramidal neurons, is set to a small value (4e-5
-<span class="math inline"><em>μ</em><em>S</em></span>), which produces
-only subthreshold responses in the Layer 5 pyramidal neurons. As a
-result, the gamma mechanism shown in this simulation is fundamentally
-different from the previous examples, since it does not rely on the
-local-spiking interactions that underlie the PING mechanism.</p>
-<div class="stylefig" style="max-width: 800px;">
-<table>
-<h3>
-Figure 27
-</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image2.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image2.png" alt="image2" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image11.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image11.png" alt="image11" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image47.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image47.png" alt="image47" />
-</a>
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image35.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image35.png" alt="image35" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image5.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image5.png" alt="image5" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image10.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image10.png" alt="image10" />
-</a>
-</td>
-</tr>
-</table>
+<p>First, navigate to the <code>Network</code> tab and load the
+<code>gamma_rhythmic_drive</code> configuration from the
+<code>hnn_data</code> folder. Next, select the
+<code>External drives</code> tab and similarly load the subthreshold
+drives from the <code>gamma_rhythmic_drive</code> file. You will see two
+drives named <code>bursty1 (proximal)</code> and
+<code>bursty2 (distal)</code></p>
+<p>In this example, the pyramidal neurons receive inputs, and the
+interneurons do not. The proximal and distal inputs start at 50.0 and
+55.0 ms, respectively, and are slightly out of phase to allow synaptic
+inputs to effectively push current flow up the dendrites, followed 5 ms
+later by current flow down the dendrites. Additionally, the input
+frequency (as indicated by the <code>burst rate</code> parameter) for
+both proximal and distal inputs is set to a 50 Hz, representing “bursts”
+of excitatory synaptic input. The driving burst has an
+inter-burst-interval of 20 ms, with minimal noise within each driving
+burst (as indicated by the <code>Burst std dev</code> of 2.5 ms).</p>
+<p>:exclamation: For a detailed description of the driving bursts,
+please review the Alpha/Beta tutorial.</p>
+<p>Note also that the amplitude of the inputs, which are only provided
+to the Layer 5 pyramidal neurons, is set to a small value 0.00004, which
+produces only subthreshold responses in the Layer 5 pyramidal neurons.
+As a result, the gamma mechanism shown in this simulation is
+fundamentally different from the previous examples, since it does not
+rely on the local spiking interactions that underlie the PING
+mechanism.</p>
+<p>Next, change the <code>Name</code> in the <code>Simulation</code> tab
+to <code>gamma_rhythmic_drive</code> and click the <code>Run</code>
+button to run the simulation.</p>
+<p>Once completed, navigate to the <code>Visualization</code> tab and
+set the <code>Layout template</code> to <code>Dipole-Spectrogram</code>.
+Make sure you’ve sected the proper <code>Dataset</code>
+(<code>gamma_L5ping_L2ping</code>), and then click the
+<code>Make figure</code> button. Similarly, we’ll generate the PSD
+vizualization nby selecting <code>PSD Layers</code> from the
+<code>Layout template</code> and then clicking the
+<code>Make figure</code> button. You will see outputs similar to those
+shown in Figure 21 below.</p>
+<h4 id="figure-21.a">Figure 21.A</h4>
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+<p><img src="images/gamma_fig_21_01.png" /></p>
 </div>
-<p>To run this simulation, return to the main GUI and click:</p>
-<pre><code>Start Simulation</code></pre>
-<p>This simulation runs for 550 ms of simulation time. Once completed,
-you will see output similar to that shown below.</p>
-<div class="stylefig" style="max-width: 850px;">
-<table>
-<h3>
-Figure 28
-</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image40.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image40.png" alt="image40" width="100%"/>
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image25.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image25.png" alt="image25" width="100%"/>
-</a>
-</td>
-</tr>
-</table>
+<h4 id="figure-21.b">Figure 21.B</h4>
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+<p><img src="images/gamma_fig_21_02.png" /></p>
 </div>
-<p>Histograms of the proximal and distal drives are shown in the top of
-the HNN GUI. The net dipole signal in this simulation shows a clear
-gamma rhythm at ~50 Hz, produced by the Layer 5 pyramidal neurons. Note,
-here the Layer 2/3 pyramidal neurons are not receiving any drive and
-hence do not contribute to the dipole current. There is only minor
-stochasticity to the synaptic inputs (burst stdev of 2.5 ms). Also note
-that the waveform shape in this simulation is distinct from the previous
-examples, lacking the sharp deflections produced by neuronal firing and
-strong somatic inhibition during PING.</p>
+<p>The net dipole signal in this simulation shows a clear gamma rhythm
+at ~50 Hz, produced by the Layer 5 pyramidal neurons. Note, here the
+Layer 2/3 pyramidal neurons are not receiving any drive and hence do not
+contribute to the dipole current. There is only minor stochasticity to
+the synaptic inputs (burst stdev of 2.5 ms). Also note that the waveform
+shape in this simulation is distinct from the previous examples, lacking
+the sharp deflections produced by neuronal firing and strong somatic
+inhibition during PING.</p>
 <h3
-id="gamma-through-rhythmicsubthreshold-synaptic-inputs-to-pyramidal-neurons-with-additional-noise">4.4
-Gamma through rhythmicsubthreshold synaptic inputs to pyramidal neurons,
-with additional noise</h3>
+id="gamma-through-rhythmic-subthreshold-synaptic-inputs-to-pyramidal-neurons-with-additional-noise">4.4
+Gamma through rhythmic subthreshold synaptic inputs to pyramidal
+neurons, with additional noise</h3>
 <p>In the final simulation of this section, we will add more noise to
-the previously applied 50 Hz rhythmic drive, described in section 4.2.
-The parameter set can be loaded by clicking the following hyperlink: <a
-href="https://github.com/jonescompneurolab/hnn/blob/master/param/gamma_rhythmic_drive_more_noise.param">gamma_rhythmic_drive_more_noise.param</a>.
-This file can also be found in the HNN’s param subfolder.</p>
-<p>To load the file, navigate to the main GUI window and click:</p>
-<pre><code>Set Parameters From File</code></pre>
-<p>Then select the file from HNN’s param subfolder or from your local
-machine. Next, view the parameters by clicking:</p>
-<pre><code>Set Parameters &gt; Rhythmic Proximal Inputs
-
-Set Parameters &gt; Rhythmic Distal Inputs</code></pre>
-<p>You will see the values displayed in the dialog boxes below. Note
-that additional noise is present in the driving proximal and distal
-inputs, which now have Burst stdev = 5.0 ms, as compared to 2.5 ms in
-the previous simulations. This increase adds variability to timing of
-the burst of synaptic drive each input provides, and hence adds “noise”
-to the network.</p>
-<div class="stylefig" style="max-width: 650px;">
-<table>
-<h3>
-Figure 29
-</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image13.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image13.png" alt="image13" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image27.png" alt="image27" />
-</a>
-</td>
-</tr>
-</table>
+the previously applied 50 Hz rhythmic drive.</p>
+<p>For each of the drives in the <code>External drives</code> tab,
+change the value of the <code>Burst std dev</code> from 2.5 ms to 5 ms.
+This increase adds variability to the timing of the burst of synaptic
+drive each input provides, and hence adds more “noise” to the
+network.</p>
+<p>Next, change the <code>Name</code> in the <code>Simulation</code> tab
+to <code>gamma_rhythmic_more_noise</code> and click the <code>Run</code>
+button to run the simulation.</p>
+<p>Once completed, navigate to the <code>Visualization</code> tab and
+set the <code>Layout template</code> to <code>Dipole-Spectrogram</code>.
+Make sure you’ve sected the proper <code>Dataset</code>, and then click
+the <code>Make figure</code> button. Similarly, we’ll generate the PSD
+vizualization by selecting <code>PSD Layers</code> from the
+<code>Layout template</code> and then clicking the
+<code>Make figure</code> button. You will see outputs similar to those
+shown in Figure 22 below.</p>
+<h4 id="figure-22.a">Figure 22.A</h4>
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+<p><img src="images/gamma_fig_22_01.png" /></p>
 </div>
-<p>To run this simulation, navigate to the main GUI window and
-click:</p>
-<pre><code>Start Simulation</code></pre>
-<p>Once completed, you will see output similar to that shown below.</p>
-<div class="stylefig" style="max-width: 850px;">
-<table>
-<h3>
-Figure 30
-</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image29.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image29.png" alt="image29" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image4.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image4.png" alt="image4" />
-</a>
-</td>
-</tr>
-</table>
+<h4 id="figure-22.b">Figure 22.B</h4>
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+<p><img src="images/gamma_fig_22_02.png" /></p>
 </div>
-<p>In the simulation above, due to the higher variability in synaptic
-input timing, there is now more variability in the temporal dynamics and
-frequency content seen in the dipole signal. This is seen in the
-intermittent 50 Hz gamma events seen in the wavelet spectrogram. Here
-there is also a high power 25 Hz event that emerges, and both
-frequencies create peaks in the PSD from this single trial simulation,
-shown above.</p>
+<p>Due to the higher variability in synaptic input timing, there is now
+more variability in the temporal dynamics and frequency content seen in
+the dipole signal in the simulation above. This is seen in the
+intermittent 50 Hz gamma events visible in the wavelet spectrogram.</p>
+<p>With the added noise, we also observe lower-frequency peaks with
+relatively high power in the average PSD, though the intermittent gamma
+events still yield the highest-power peak observed in the PSD.</p>
 <h3 id="exercises-for-further-exploration-1">4.4.1 Exercises for further
 exploration</h3>
 <ul>
-<li><p>Go back to the gamma_L5weak_L2weak.param file and add recurrent
-synaptic connectivity between pyramidal neurons within a layer (e.g., L5
-Pyr -&gt; L5 Pyr weight = 9.1e-4(<span
-class="math inline"><em>μ</em><em>S</em></span>)); how does that
-influence the gamma rhythm? What happens as you change the strength of
-this connection?</p></li>
+<li><p>Go back to the <code>gamma_L5weak_L2weak</code> configuration and
+add recurrent synaptic connectivity between pyramidal neurons within a
+layer (e.g., L5 Pyr -&gt; L5 Pyr weight = 0.00091e-4); how does that
+change influence the gamma rhythm? What happens as you change the
+strength of this connection?</p></li>
 <li><p>Adjust the synaptic time constants of GABAA or other synapses;
 can you alter the peak gamma frequency?</p></li>
 <li><p>Add connectivity between Layer 2/3 and Layer 5? Is gamma
