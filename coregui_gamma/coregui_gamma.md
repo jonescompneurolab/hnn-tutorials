@@ -359,8 +359,11 @@ Next, select the `Cell parameters` section of the `Network` tab. Set the `Cell t
 
 #### Figure 15
 
-**This figure will be added after PR to fix Synapses widget is merged**
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
+![](images/gamma_fig_15.png)
+
+</div>
 :exclamation: Note in these simulations the weights of the GABAB synapses are all set to zero
 
 From the `Simulation` tab, change the `Name` to  `gamma_L5weak_only_fasterinh` and click the `Run` button. Then create new visualizations to show the spike plot and the spectrogram for your simulation, as shown in Figure 16 below. 
@@ -369,7 +372,7 @@ From the `Simulation` tab, change the `Name` to  `gamma_L5weak_only_fasterinh` a
 
 <div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
-![](images/gamma_fig_16_0.png)
+![](images/gamma_fig_16_01.png)
 
 </div>
 
@@ -377,7 +380,7 @@ From the `Simulation` tab, change the `Name` to  `gamma_L5weak_only_fasterinh` a
 
 <div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
-![](images/gamma_fig_16_0.png)
+![](images/gamma_fig_16_02.png)
 
 </div>
 
