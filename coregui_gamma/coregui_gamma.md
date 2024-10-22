@@ -393,90 +393,76 @@ Notice that the rhythm is now faster at ~ 60 Hz. As illustrated in the spiking a
 
 ### 4.2 Only tonic inputs to pyramidal neurons can also generate gamma
 
-The next exercise involves setting up a PING rhythm in both layer 2/3 and layer 5 by providing tonic inputs to the pyramidal neurons, as opposed to the stochastic Poisson inputs described above. HNN provide the capability of applying a constant depolarizing current injection to the soma of neurons representative of a “tonic input”.
+The next exercise involves setting up a PING rhythm in both Layer 2/3 and Layer 5 by providing tonic inputs to the pyramidal neurons, as opposed to the stochastic Poisson inputs described above. To do so, we will apply a constant depolarizing current injection to the soma of neurons, representative of a “tonic input”.
 
-A parameter set that will simulate PING rhythms through “tonic input” to the pyramidal neurons can be downloaded via the following hyperlink: [gamma_L5ping_L2ping.param](https://github.com/jonescompneurolab/hnn/blob/master/param/gamma_L5ping_L2ping.param). This file can also be found in the HNN param subfolder.
+Navigate to the `Network` tab and load the `gamma_L5ping_L2ping.json` configuration file. Then select the `External drives` tab and similarly load in the `gamma_L5ping_L2ping.json` file. 
 
-Load the parameter file values by navigating to the main GUI and clicking:
-```
-Set Parameters From File
-```
-Then select the file from HNN’s param subfolder or from your local machine. In this simulation, tonic input is given to the pyramidal neurons in Layer 2/3 and Layer 5 to generate spiking that initiates PING.
+Next, we will add a tonic input to the pyramidal neurons in Layer 2/3 and Layer 5 will generate spiking that initiates PING. 
 
-To view the parameters, return to the main GUI and click:
-```
-Set Parameters > Tonic Inputs
-```
-You should see the values of adjustable parameters displayed in the dialog boxes below. Note that in the dialog boxes, only the pyramidal neurons are set to receive depolarizing current injections (tonic inputs). These inputs start at the beginning of the simulation (0 ms) and stop at its end (indicated with stop time of -1.0), with slightly stronger input to Layer 5 (6 nA) than to Layer 2/3 (4 nA).
+From the `External drives` tab, set the `Drive` parameter to `Tonic` and click the `Add drive` button. A new `Tonic0` dropdown will appear. From the dropdown, set `L2_pyramidal` to 4, and set `L5_pyramidal` to 6, as shown in Figure 17 below.
 
-<div class="stylefig" style="max-width: 650px;">
-<table>
-<h3>Figure 23</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image45.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image45.png" alt="image45" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image20.png" alt="image20" />
-</a>
-</td>
-</tr>
-</table>
+:exclamation: Note that only the pyramidal neurons are set to receive depolarizing current injections (i.e., our tonic inputs)
+
+#### Figure 17
+
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+
+![](images/gamma_fig_17.png)
+
 </div>
 
-To run this simulation, return to the main GUI window and click:
-```
-Start Simulation
-```
-This simulation runs for 550 ms of simulation time. Once completed, you will see output similar to that shown below.
+Next, change the `Name` in the `Simulation` tab to `gamma_L5ping_L2ping` and click the `Run` button to run the simulation. 
+
+Once completed, navigate to the `Visualization` tab and set the `Layout template` to `Dipole-Spectrogram`. Make sure you've sected the proper `Dataset` (`gamma_L5ping_L2ping`), and then click the `Make figure` button. You will see an ourput similar to that shown in Figure 18 below. 
+
+#### Figure 18
+
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+
+![](images/gamma_fig_18.png)
+
+</div>
+
+In this simulation, there are no spiking inputs provided to the model; instead, a current clamp provides a constant depolarizing current to the pyramidal neuron somas, causing the cells to fire. This firing initiates the PING rhythm through mechanisms similar to that described above. In contrast to the Poisson drive, the constant depolarization to pyramidal neurons creates higher excitability in the pyramidal neurons, causing more synchronous firing. In turn, this causes the interneurons to fire synchronously, producing a higher amplitude gamma oscillation. 
+
+In Figure 18 above we see that the dipole displays even sharper downward deflections, caused by the strong synchronous inhibition onto the pyramidal neuron somas that pulls current flow down the dendrites. This PING rhythm has less variability and would thus be considered “strong” PING rather than “weak” PING.
+
+Let's further explore this simulation by looking at the layer-specific dipoles and the PSD. To generate this visualization, select the `PSD Layers` option from the `Layout template` dropdown in the `Visualization` tab. Make sure you've sected the proper `Dataset` (`gamma_L5ping_L2ping`), and then click the `Make figure` button. You will see an ourput similar to that shown in Figure 19 below. 
+
+#### Figure 19
+
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+
+![](images/gamma_fig_19.png)
+
+</div>
+
+When looked at together, the spectrogram (Figure 18) and the PSD (Figure 19) illustrate that the dipole signal contains strong oscillatory components in the gamma range in the net dipole, which is being driven by the strong Layer 5 activity. Layer 2/3 is oscillating at higher frequency with a lower amplitude (note the scaling of the y-axes in the layer-specific dipoles).
+
+:exclamation: Keep in mind that Layer 2/3 and Layer 5 are not synaptically connected to each other in this simulation
+
+A closer look at the spiking activity will reveal the mechanisms creating these waveform shapes, as shown in Figure 20 below 
+
+#### Figure 20
+
+
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+
+![](images/gamma_fig_20.png)
+
+</div>
+
+The PING mechanism is seen in each layer where the pyramidal neurons fire, causing the inhibitory neurons to fire, which consequently keep the pyramidal neurons from firing until their excitation outweighs the inhibition. Notice that the firing rate of Layer 2/3 pyramidal and basket neurons is faster than that of Layer 5 neurons. This is because although the Layer 2/3 pyramidal neurons receive a lower current injection, they have shorter dendrites and therefore the current flow up and down the dendrites is faster. Further, the Layer 2/3 pyramidal neurons have lower spiking thresholds due to their intrinsic properties.
+
+In each layer, the inhibitory neurons are firing synchronously and causing strong somatic inhibition on the pyramidal neurons, resulting in fast downward current flow that creates the sharp dipole deflections seen in the dipole waveforms above. 
+
+:exclamation: While not shown in the figures above, there is an additional higher-frequency component near 80 Hz in Layer 5 that can be seen in the layer-specific PSD. The higher-frequency activity in Layer 5 comes from the sharp deflections in the dipole waveform along with a small-amplitude peak that together create high power at 80 Hz in the frequency domain. These deflections are driven by the strong depolarizing current on the pyramidal neurons that causes their voltage to rise quickly even before the inhibitory neurons fire. 
+
+As an exercise, play with the current injection amplitude provided to the different neurons to see how it affects the generated rhythm.
 
 <div class="stylefig" style="max-width:600px;">
 
-<h3>Figure 24</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image36.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image36.png" alt="image36" /></a></p>
-
-</div>
-
-In this simulation, there are no spiking inputs provided to the model, so the HNN GUI does not display a histogram of driving inputs. Instead, a current clamp provides a constant depolarizing current to the pyramidal neuron somas, causing the cells to fire. This firing initiates the PING rhythm through mechanisms similar to that described above. In contrast to the Poisson drive, the constant depolarization to pyramidal neurons creates higher excitability in the pyramidal neurons, causing more synchronous firing. In turn, this causes the interneurons to fire synchronously, hence producing a higher amplitude gamma oscillation. Here, the rhythmic dipole displays even sharper downward deflections, caused by the strong synchronous inhibition onto the pyramidal neuron somas that pulls current flow down the dendrites. This PING rhythm has less variability and would be considered “strong” PING rather than “weak” PING.
-
-The corresponding spectrogram and PSD (View menu> View PSD) (shown below, right column) confirms that, for this parameter set, the dipole signal contains strong oscillatory components in the gamma range (\~45  Hz) in the net dipole with, once again, a strong contribution from Layer 5. Layer 2/3 is oscillating at higher frequency(\~65 Hz) with lower amplitude (note: Layer 2/3 and Layer 5 are not synaptically connected to each other in this simulation). There is an additional higher frequency component near 80 Hz in Layer 5. A closer look at the dipole currents from Layer 5 (View menu > View Simulation Dipoles) (shown below, left column, middle panel) shows that the 80 Hz activity comes from sharp deflections in the dipole waveform along with a small amplitude peak that together create high power at 80 Hz in the frequency domain. A closer look at the spiking activity in each population below will reveal the mechanisms creating these waveform shapes.
-
-
-<div class="stylefig" style="max-width: 850px;">
-<table>
-<h3>Figure 25</h3>
-<tr>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image18.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image18.png" alt="image18" />
-</a>
-</td>
-<td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image24.png" alt="image24" />
-</a>
-</td>
-</tr>
-</table>
-</div>
-
-To view the spiking activity of each neuron in the population, return the main GUI window and click:
-```
-View > View Simulation Spiking Activity
-```
-The HNN Spike Viewerwill appear, as shown below. The PING mechanism is seen in each layer where the pyramidal neurons fire, causing the inhibitory neurons to fire, which consequently keep the pyramidal neurons from firing until their excitation outweighs the inhibition. Notice that the firing rate of Layer 2/3 pyramidal and basket neurons is faster than that of Layer 5 neurons. This is because although the Layer 2/3 pyramidal neurons receive a lower current injection, they have shorter dendrites and therefore the current flow up and down the dendrites is faster. Further, the Layer 2/3 pyramidal neurons have lower spiking thresholds due to their intrinsic properties.
-
-In each layer, the inhibitory neurons are firing synchronously and causing strong somatic inhibition on the pyramidal neurons, resulting in fast downward current flow that creates the sharp dipole deflections seen in the dipole waveforms above. Notice that the small peak in the Layer 5 dipole that contributes to the 80 Hz activity is due to the strong depolarizing current on the pyramidal neurons that causes their voltage to rise quickly even before the inhibitory neurons fire. As an exercise, play with the current injection amplitude provided to the different neurons to see how it affects the generated rhythm.
-
-<div class="stylefig" style="max-width:600px;">
-
-<h3>Figure 26</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image7.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image7.png" alt="image7" /></a></p>
-
-</div>
-
-### 4.3 Gamma through rhythmicsubthreshold synaptic inputs to pyramidal neurons
+### 4.3 Gamma through rhythmic subthreshold synaptic inputs to pyramidal neurons
 
 In the next example, we will apply 50 Hz rhythmic synaptic inputs through proximal and distal projection patterns to produce gamma oscillations similar to those shown in Figure 8A of (Lee & Jones, 2013) [1]. In this simulation, the strength of the input is set so that the cells remain subthreshold and gamma rhythms emerge from subthreshold current flow in the pyramidal neuron dendrites, rather than local spiking interactions as in the PING mechanisms described above.
 
