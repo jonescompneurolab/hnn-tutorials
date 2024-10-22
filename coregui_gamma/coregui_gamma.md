@@ -317,85 +317,71 @@ It is also instructive to view visualizations for different simulations in the s
 
 Notice that the gamma rhythm has now slowed from ~45 Hz to ~40 Hz. This slowing is due to the fact that the excitatory-to-inhibitory connection was weakened. Due to this change, it now takes longer for the basket cells to respond to the excitation, and hence the rhythm is slowed. 
 
-
-
-# LEFT OFF HERE
-
-
-
 **Removing the inhibitory connections**
 
-Next, we’ll explore the importance of the inhibitory connections in setting gamma rhythmicity. First, set the L5 Pyr -> L5 Basket back to 9.1e-4 $\mu S$. Now remove the Tonic Input to the Layer 5 cells by setting the amplitude of L5 Pyr to be 0.0 nA. We are now back to the Layer 5 only weak PING parameter set that we started with in this section (confirm this by saving the file with a new name and running the simulation).
+Next, we’ll explore the importance of the inhibitory connections in setting gamma rhythmicity. 
 
-Next, remove the inhibitory to inhibitory connections by loading:
-```
-Set Parameters > Local Network
-```
-Adjust L5 Basket -> L5 Basket weight from 7.5e-3 $\mu S$to 0 $\mu S$ as shown below.
+First from the `Network` section of the `Connectivity` tab, change the weight of the `L5_pyramidal->L5_basket` connection back to 0.00091.
 
-<div class="stylefig" style="max-width:450px;">
+Then navigate to the `External drives` tab and select the `Tonic1` drive. Click the `Delete drive` button to remove this drive.
 
-<h3>Figure 17</h3>
+We are now back to the Layer 5 weak PING configuration (`gamma_L5weak_only`) that we simulated previously.
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image26.png" alt="image26" /></a></p>
+Next, let's experiment with remove the inhibitory-to-inhibitory connections. To do so, navigate to the `Network` section of the `Connectivity` tab and change the weight of the `L5_basket->L5_basket` connection from 0.0075 to 0
 
-</div>
+From the `Simulation` tab, change the `Name` to  `gamma_L5weak_only_noinh` and click the `Run` button. Then create new visualizations to show the spike plot and the spectrogram for your simulation, as shown in Figure 14 below. 
 
-Save the simulation with a new simulation name (e.g., "gamma_L5weak_only_noinh") in the Set Parameters dialog box and run the simulation by clicking Start Simulation in the main HNN GUI. The simulation will then yield the following output.
+#### Figure 14.A
 
-<div class="stylefig" style="max-width:600px;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
-<h3>Figure 18</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image3.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image3.png" alt="image3" /></a></p>
+![](images/gamma_fig_14_01.png)
 
 </div>
 
-Notice that the rhythm is still present but less regular and noisier (compare with first waveform image in this section 4.1 above). You can also observe this in the Simulation Spiking Activity (below). This lack of regularity is due to the fact that removal of the inhibitory to inhibitory connections caused the inhibition to be less synchronous and noiser, and hence the PING rhythm is in turn noisier.
+#### Figure 14.B
 
-<div class="stylefig" style="max-width:600px;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
-<h3>Figure 19</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image39.png" alt="image39" /></a></p>
+![](images/gamma_fig_14_02.png)
 
 </div>
+
+Notice that the rhythm is still present but less regular and noisier (compare with first waveform image in this section 4.1 above). You can also observe this in the Simulation Spiking Activity (below). This lack of regularity is due to the fact that removal of the inhibitory to inhibitory connections caused the inhibition to be less synchronous and noiser, in turn yielding a noisier PING rhythm.
 
 **Reducing the GABAB decay time**
 
-Lastly, we’ll see that the time constant of inhibitory decay is an essential  parameter controlling the frequency of the PING rhythm. In the Local Network dialog box adjust the strength of the L5 Basket -> L5 Basket weight back to 7.5e-3 $\mu S$, and keep all other parameters the same. Next, load the “Cell Parameters” by clicking:
-```
-Set Parameters > Cell Parameters
-```
-Click on the “L5 Pyr Synapses” tab and adjust the GABAA decay time from 5.0 ms to 2.0 ms (note in these simulations the weight of the GABAB synapses are all set to zero), as shown below.
+Lastly, we’ll show that the time constant of inhibitory decay is an essential parameter controlling the frequency of the PING rhythm. 
 
-<div class="stylefig" style="max-width:400px;">
+In the `Network` section of the `Connectivity` tab, change the weight of the `L5_basket->L5_basket` connection back to 0.0075
 
-<h3>Figure 20</h3>
+Next, select the `Cell parameters` section of the `Network` tab. Set the `Cell type` to `L5 Pyramidal` and the `Cell Properties` to `Synapses`, then change the `GABAA decay time` from 5.0 ms to 2.0 ms, as shown in Figure 15 below.
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image42.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image42.png" alt="image42" /></a></p>
+#### Figure 15
 
-</div>
+**This figure will be added after PR to fix Synapses widget is merged**
 
-Save the simulation with a new “Simulation Name” in the Set Parameters dialog box: “gamma_L5weak_only_fasterinh”, and run the simulation by clicking Start Simulation  in the main HNN GUI. The main HNN GUI will now show the following output.
+:exclamation: Note in these simulations the weights of the GABAB synapses are all set to zero
 
-<div class="stylefig" style="max-width:600px;">
+From the `Simulation` tab, change the `Name` to  `gamma_L5weak_only_fasterinh` and click the `Run` button. Then create new visualizations to show the spike plot and the spectrogram for your simulation, as shown in Figure 16 below. 
 
-<h3>Figure 21</h3>
+#### Figure 16.A
 
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image31.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image31.png" alt="image31" /></a></p>
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
+
+![](images/gamma_fig_16_0.png)
 
 </div>
 
-Notice that the rhythm is now faster at 60 Hz. As can be seen in the Simulation Spiking Activity viewer below this is due to the fact that the faster decay of inhibition allows the pyramidal neurons to recover more quickly from the inhibition and respond to the Poisson drive, resulting in a faster network oscillation.
+#### Figure 16.B
 
-<div class="stylefig" style="max-width:600px;">
+<div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 
-<h3>Figure 22</h3>
-
-<p><a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/gamma/images/image21.png" alt="image21" /></a></p>
+![](images/gamma_fig_16_0.png)
 
 </div>
+
+Notice that the rhythm is now faster at ~ 60 Hz. As illustrated in the spiking activity, the faster decay of inhibition allows the pyramidal neurons to recover more quickly from the inhibition and respond to the Poisson drive, resulting in a faster network oscillation.
 
 ### 4.1.1 Exercises for further exploration
 
