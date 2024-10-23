@@ -571,7 +571,7 @@ Once completed, navigate to the `Visualization` tab and set the `Layout template
 
 The net dipole signal in this simulation shows a clear gamma rhythm at ~50 Hz, produced by the Layer 5 pyramidal neurons. Note, here the Layer 2/3 pyramidal neurons are not receiving any drive and hence do not contribute to the dipole current. There is only minor stochasticity to the synaptic inputs (burst stdev of 2.5 ms). Also note that the waveform shape in this simulation is distinct from the previous examples, lacking the sharp deflections produced by neuronal firing and strong somatic inhibition during PING.
 
-### 5.2.1 Adding noise to gamma generate through rhythmic subthreshold synaptic inputs
+### 5.2.1 Adding noise to gamma generated through rhythmic subthreshold synaptic inputs
 
 In the final simulation of this section, we will add more noise to the previously applied 50 Hz rhythmic drive.
 
