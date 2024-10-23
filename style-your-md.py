@@ -1,11 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
+###############################################################################
 
-# In[1]:
-
-
-import subprocess
+import os
 import sys
+import subprocess
+import pypandoc
 
 reqs = subprocess.check_output([sys.executable, '-m', 'pip', 'freeze'])
 installed_packages = [r.decode().split('==')[0] for r in reqs.split()]
@@ -16,13 +14,8 @@ elif not 'pypandoc' in installed_packages:
     input('\nIMPORTANT: This script requires pypandoc (and, in turn, pandoc) to run. See the information below on installing pypandoc (and pandoc). Press any key to close this message and halt the script. \n\n------------------------------\n-------- Installation --------\n------------------------------\n\nSee: https://pypi.org/project/pypandoc/\n\nPypandoc uses pandoc, so it needs an available installation of pandoc. For some common cases (wheels, conda packages), pypandoc already includes pandoc (and pandoc-citeproc) in it’s prebuilt package.\n\n------------------------------\n----- Installing via Pip -----\n------------------------------\n\nInstall via pip:\n\n     pip install pypandoc\n\nPrebuilt wheels for Windows and Mac OS X include pandoc. If there is no prebuilt binary available, you have to install pandoc yourself.\n\nIf you use Linux and have your own wheelhouse, you can build a wheel which include pandoc with python setup.py download_pandoc; python setup.py bdist_wheel. Be aware that this works only on 64bit intel systems, as we only download it from the official releases.\n\n------------------------------\n---- Installing via Conda ----\n------------------------------\n\nPypandoc is included in conda-forge. The conda packages will also install the pandoc package, so pandoc is available in the installation.\n\nInstall via conda: \n\n     install -c conda-forge pypandoc\n\nYou can also add the channel to your conda config via conda config --add channels conda-forge. This makes it possible to use conda install pypandoc directly and also lets you update via conda update pypandoc.\n\nPress any key to exit the this message and halt the script.\n')
     quit()
 
-import pypandoc
+###############################################################################
 
-
-# In[3]:
-
-
-import os
 #os.chdir('/Users/dylandaniels/Documents/github-repos/hnn-tutorials')
 parentdirectory=os.getcwd()
 
@@ -51,9 +44,7 @@ subfolder = y[shift-1]
 ## join 'subfolder' to parent directory path
 subfolder=os.path.join(parentdirectory,subfolder)
 
-
-# In[9]:
-
+###############################################################################
 
 ## change directory to 'subfolder' as defined above
 os.chdir(subfolder)
@@ -86,9 +77,7 @@ while 1 > shift2 or lenx < shift2:
 mdfile_og = x[shift2-1]
 print('You chose: '+mdfile_og)
 
-
-# In[17]:
-
+###############################################################################
 
 ## covert the chosen md file to html with pandoc
 output = pypandoc.convert_file(mdfile_og, 'html', outputfile="body_only.html")
@@ -120,16 +109,3 @@ with open(output_fname, 'w') as outfile:
 os.remove(htmlbody)
 
 os.chdir(parentdirectory)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
