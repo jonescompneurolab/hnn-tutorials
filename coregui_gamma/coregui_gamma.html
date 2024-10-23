@@ -473,13 +473,14 @@ simulation (<code>gamma_L5weak_tonic</code>) on the bottom. We observe
 that after the network stabilizes, the frequency of gamma appears to
 have decreased slightly.</p>
 <p>We see that while increasing the excitability causes the PNs to fire
-more synchronously, interpreting the competing effects of excitation and
-inhibition is not always straightforward. The moderately more
-synchronous pyramidal neuron firing is not quite strong enough to induce
-a “strong” PING in the local network. However, the overall increase in
-the pyramidal neuron firing rate appears to more strongly recruit the
-inhibitory interneurons, which has the overall effect of slightly
-lowering the frequency of the ovserved gamma rhythm.</p>
+more synchronously, interpreting the competing effects of the excitation
+and inhibition is not always straightforward. The more synchronous
+pyramidal neuron firing is not strong enough to induce a “strong” PING
+in the local network, as there is still some apparent noise from the
+Poisson input. However, the overall increase in the pyramidal neuron
+firing rate appears to more strongly recruit the inhibitory
+interneurons, which has the net effect of slightly lowering the
+frequency of the observed gamma rhythm.</p>
 <h3 id="weakening-the-excitatory-connections">4.1.2 Weakening the
 excitatory connections</h3>
 <p>We’ll now explore the impact of adjusting synaptic connectivity
@@ -549,8 +550,8 @@ also observe this in the Simulation Spiking Activity (below). This lack
 of regularity is due to the fact that removal of the inhibitory to
 inhibitory connections caused the inhibition to be less synchronous and
 noiser, in turn yielding a noisier PING rhythm.</p>
-<h4 id="reducing-the-gabaa-decay-time">4.1.4 Reducing the GABAA decay
-time</h4>
+<h3 id="reducing-the-gabaa-decay-time">4.1.4 Reducing the GABAA decay
+time</h3>
 <p>Lastly, we’ll show that the time constant of inhibitory decay is an
 essential parameter controlling the frequency of the PING rhythm.</p>
 <p>In the <code>Network</code> section of the <code>Connectivity</code>

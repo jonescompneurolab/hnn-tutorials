@@ -301,7 +301,7 @@ Figure 11.B shows the spike plot from the previous simulation (`gamma_L5weak`) o
 
 Figure 11.C similarly shows the spectrograms, with previous simulation (`gamma_L5weak`) on the top and the latest simulation (`gamma_L5weak_tonic`) on the bottom. We observe that after the network stabilizes, the frequency of gamma appears to have decreased slightly.
 
-We see that while increasing the excitability causes the PNs to fire more synchronously, interpreting the competing effects of excitation and inhibition is not always straightforward. The moderately more synchronous pyramidal neuron firing is not quite strong enough to induce a "strong" PING in the local network. However, the overall increase in the pyramidal neuron firing rate appears to more strongly recruit the inhibitory interneurons, which has the overall effect of slightly lowering the frequency of the ovserved gamma rhythm. 
+We see that while increasing the excitability causes the PNs to fire more synchronously, interpreting the competing effects of the excitation and inhibition is not always straightforward. The more synchronous pyramidal neuron firing is not strong enough to induce a "strong" PING in the local network, as there is still some apparent noise from the Poisson input. However, the overall increase in the pyramidal neuron firing rate appears to more strongly recruit the inhibitory interneurons, which has the net effect of slightly lowering the frequency of the observed gamma rhythm. 
 
 ### 4.1.2 Weakening the excitatory connections
 
@@ -371,7 +371,7 @@ From the `Simulation` tab, change the `Name` to  `gamma_L5weak_only_noinh` and c
 
 Notice that the rhythm is still present but less regular and noisier (compare with first waveform image in this section 4.1 above). You can also observe this in the Simulation Spiking Activity (below). This lack of regularity is due to the fact that removal of the inhibitory to inhibitory connections caused the inhibition to be less synchronous and noiser, in turn yielding a noisier PING rhythm.
 
-#### 4.1.4 Reducing the GABAA decay time
+### 4.1.4 Reducing the GABAA decay time
 
 Lastly, we’ll show that the time constant of inhibitory decay is an essential parameter controlling the frequency of the PING rhythm. 
 
