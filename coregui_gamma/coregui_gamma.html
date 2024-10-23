@@ -371,22 +371,18 @@ the Layer 2/3 pyramidal neurons is smaller than Layer 5, and hence Layer
 activity in Layer 5 (see [1] for further discussion).</p>
 <p><a id="toc_4"></a></p>
 <h2 id="adjusting-parameters">4 Adjusting parameters</h2>
-<p>In the following sections, we explore parameter alterations
-influencing the generation of gamma rhythms.</p>
-<p>In <strong>Section 4.1</strong>, we’ll use HNN to explore the impact
-of two key parameters controlling gamma rhythmicity: cell excitability
-and network connectivity</p>
-<p>In <strong>Section 4.2</strong>, we’ll show that gamma can also be
-generate with only tonic inputs to the pyramidal neurons.</p>
-<h3 id="adjusting-cell-excitability">4.1.1 Adjusting cell
-excitability</h3>
+<p>In the following sections, we explore the impacts of two key
+parameters controlling gamma rhythmicity: cell excitability and network
+connectivity</p>
 <p>Cell “excitability” can be adjusted in many ways, reflecting the
 intrinsic properties of a neuron (e.g. membrane resting potential)
 and/or the influence of external factors such as noisy background inputs
-or tonic drive via neuromodulation. Parameters controlling network
-connectivity include the synaptic connection strengths between cells
-and/or the time constants of synaptic activation. Here, we explore the
-influence of a few of these factors on gamma rhythmicity. To do so, we
+neuromodulation.</p>
+<p>Parameters controlling network connectivity include the synaptic
+connection strengths between cells and/or the time constants of synaptic
+activation.</p>
+<h3 id="section">4.1</h3>
+<p>To explore the influence of these factors on gamma rhythmicity, we
 will examine activity in only one of the layers, namely Layer 5, by
 setting all inputs and connectivity in Layer 2/3 to zero.</p>
 <p>First, navigate to the <code>Simulation</code> tab and change the
@@ -423,6 +419,8 @@ under the <code>Vizualization</code> tab and above the
 <p>Notice the weak PING rhythm in Layer 5 consisting of weakly
 synchronous pyramidal neuron firing, followed by synchronous inhibitory
 neuron firing, that gates the network dipole rhythm to ~50 Hz.</p>
+<h3 id="increasing-cell-excitability-via-a-weak-tonic-input">4.1.1
+Increasing cell excitability via a weak tonic input</h3>
 <p>To examine the impact of cell excitability on gamma expression, we
 can increase the excitability of the Layer 5 pyramidal neurons by adding
 a tonic applied current that might represent a neuromodulatory
@@ -431,8 +429,8 @@ influence.</p>
 select the <code>Tonic</code> option under <code>Drive</code> and click
 the <code>Add drive</code> button. This will create a new external drive
 titled <code>Tonic1</code>, as shown in Figure 10 below. Select the new
-drive, and then set the aplitude of the tonic drive to the Layer 5
-pyramidal neuron to be 6 nA. This level of injected current will be
+drive, and then set the amplitude of the tonic drive to the Layer 5
+pyramidal neuron to be 2 nA. This level of injected current will be
 applied to the soma of the L5 Pyramidal neurons for the duration of the
 simulation.</p>
 <h4 id="figure-10.a">Figure 10.A</h4>
@@ -459,24 +457,31 @@ below.</p>
 <div style="display:block; width:90%; max-width:800px; margin: 0 auto;">
 <p><img src="images/gamma_fig_11_03.png" /></p>
 </div>
-<p>The oscillation as seen in the dipole is more regular with less noise
-due to the fact that the tonic drive is strong and outweighs the
-influence of the Poisson drive.</p>
-<p>Note in the spike plot that the Layer 5 pyramidal neurons are now
-firing nearly synchronously. They, in turn, synchronously activate the
-inhibitory basket neurons, which then inhibit the pyramidal neurons for
-~20 ms. After ~20 ms, the tonic drive outweighs the inhibition and the
-pyramidal neurons fire again, creating a ~50 Hz PING rhythm.</p>
-<p>This type of synchronous rhythm is sometimes referred to as “strong”
-PING. Notice that there is also a ~90 Hz component to the dipole
-spectrogram. Inspection of the dipole waveform shows that this 90 Hz
-activity does not represent a separate rhythm, but rather reflects the
-dipole waveform shape, which has a fast oscillation on each cycle of the
-slower rhythm due to the strong downward currents induced by somatic
-inhibition on the pyramidal neurons.</p>
-<h3 id="adjusting-network-connectivity">4.1.2 Adjusting network
-connectivity</h3>
-<p><strong>Weakening the excitatory connections</strong></p>
+<p>Note that network takes longer to stabilize due to the initial impact
+of the tonic current. From about 50 ms onward, we see that the initial
+impact of the tonic input has subsided and the influence of both the
+tonic and Poisson drives is more evident.</p>
+<p>Figure 11.B shows the spike plot from the previous simulation
+(<code>gamma_L5weak</code>) on the top and the spike plot from the
+latest simulation (<code>gamma_L5weak_tonic</code>) on the bottom. We
+see that by introducing a weak tonic input, the pyramidal neuron spiking
+is visibly more synchronous, though with some noise still present from
+the Poisson drive.</p>
+<p>Figure 11.C similarly shows the spectrograms, with previous
+simulation (<code>gamma_L5weak</code>) on the top and the latest
+simulation (<code>gamma_L5weak_tonic</code>) on the bottom. We observe
+that after the network stabilizes, the frequency of gamma appears to
+have decreased slightly.</p>
+<p>We see that while increasing the excitability causes the PNs to fire
+more synchronously, interpreting the competing effects of excitation and
+inhibition is not always straightforward. The moderately more
+synchronous pyramidal neuron firing is not quite strong enough to induce
+a “strong” PING in the local network. However, the overall increase in
+the pyramidal neuron firing rate appears to more strongly recruit the
+inhibitory interneurons, which has the overall effect of slightly
+lowering the frequency of the ovserved gamma rhythm.</p>
+<h3 id="weakening-the-excitatory-connections">4.1.2 Weakening the
+excitatory connections</h3>
 <p>We’ll now explore the impact of adjusting synaptic connectivity
 parameters in the network.</p>
 <p>First navigate to the <code>Connectivity</code> section of the
@@ -510,7 +515,8 @@ This slowing is due to the fact that the excitatory-to-inhibitory
 connection was weakened. Due to this change, it now takes longer for the
 basket cells to respond to the excitation, and hence the rhythm is
 slowed.</p>
-<p><strong>Removing the inhibitory connections</strong></p>
+<h3 id="removing-the-inhibitory-connections">4.1.3 Removing the
+inhibitory connections</h3>
 <p>Next, we’ll explore the importance of the inhibitory connections in
 setting gamma rhythmicity.</p>
 <p>First from the <code>Network</code> section of the
@@ -543,7 +549,8 @@ also observe this in the Simulation Spiking Activity (below). This lack
 of regularity is due to the fact that removal of the inhibitory to
 inhibitory connections caused the inhibition to be less synchronous and
 noiser, in turn yielding a noisier PING rhythm.</p>
-<p><strong>Reducing the GABAB decay time</strong></p>
+<h4 id="reducing-the-gabaa-decay-time">4.1.4 Reducing the GABAA decay
+time</h4>
 <p>Lastly, we’ll show that the time constant of inhibitory decay is an
 essential parameter controlling the frequency of the PING rhythm.</p>
 <p>In the <code>Network</code> section of the <code>Connectivity</code>
@@ -590,7 +597,7 @@ the spiking activity, the faster decay of inhibition allows the
 pyramidal neurons to recover more quickly from the inhibition and
 respond to the Poisson drive, resulting in a faster network
 oscillation.</p>
-<h3 id="exercises-for-further-exploration">4.1.1 Exercises for further
+<h3 id="exercises-for-further-exploration">4.1.5 Exercises for further
 exploration</h3>
 <ul>
 <li><p>How else might the excitability of the cells be adjusted? What
@@ -605,8 +612,8 @@ by interneuron firing (interneuron mediated gamma: ING). Can you adjust
 parameters to create such an oscillation in the network?</p></li>
 </ul>
 <h3
-id="only-tonic-inputs-to-pyramidal-neurons-can-also-generate-gamma">4.2
-Only tonic inputs to pyramidal neurons can also generate gamma</h3>
+id="strong-gamma-can-arise-from-tonic-inputs-to-pyramidal-neurons">5.1
+“Strong” gamma can arise from tonic inputs to pyramidal neurons</h3>
 <p>The next exercise involves setting up a PING rhythm in both Layer 2/3
 and Layer 5 by providing tonic inputs to the pyramidal neurons, as
 opposed to the stochastic Poisson inputs described above. To do so, we
@@ -746,8 +753,8 @@ to rise quickly even before the inhibitory neurons fire.
 <p>As an exercise, play with the current injection amplitude provided to
 the different neurons to see how it affects the generated rhythm.</p>
 <h3
-id="gamma-through-rhythmic-subthreshold-synaptic-inputs-to-pyramidal-neurons">4.3
-Gamma through rhythmic subthreshold synaptic inputs to pyramidal
+id="gamma-can-emerge-from-rhythmic-subthreshold-synaptic-inputs-to-pyramidal-neurons">5.2
+Gamma can emerge from rhythmic subthreshold synaptic inputs to pyramidal
 neurons</h3>
 <p>In the next example, we will apply 50 Hz rhythmic synaptic inputs
 through proximal and distal projection patterns to produce gamma
@@ -825,9 +832,9 @@ shape in this simulation is distinct from the previous examples, lacking
 the sharp deflections produced by neuronal firing and strong somatic
 inhibition during PING.</p>
 <h3
-id="gamma-through-rhythmic-subthreshold-synaptic-inputs-to-pyramidal-neurons-with-additional-noise">4.4
-Gamma through rhythmic subthreshold synaptic inputs to pyramidal
-neurons, with additional noise</h3>
+id="adding-noise-to-gamma-generate-through-rhythmic-subthreshold-synaptic-inputs">5.2.1
+Adding noise to gamma generate through rhythmic subthreshold synaptic
+inputs</h3>
 <p>In the final simulation of this section, we will add more noise to
 the previously applied 50 Hz rhythmic drive.</p>
 <p>For each of the drives in the <code>External drives</code> tab,
@@ -861,7 +868,7 @@ intermittent 50 Hz gamma events visible in the wavelet spectrogram.</p>
 <p>With the added noise, we also observe lower-frequency peaks with
 relatively high power in the average PSD, though the intermittent gamma
 events still yield the highest-power peak observed in the PSD.</p>
-<h3 id="exercises-for-further-exploration-1">4.4.1 Exercises for further
+<h3 id="exercises-for-further-exploration-1">5.2.2 Exercises for further
 exploration</h3>
 <ul>
 <li><p>Go back to the <code>gamma_L5weak_L2weak</code> configuration and
@@ -875,7 +882,7 @@ can you alter the peak gamma frequency?</p></li>
 rhythmicity retained? Under what circumstances might gamma
 persist?</p></li>
 </ul>
-<h2 id="have-fun-exploring-your-own-data">5. Have fun exploring your own
+<h2 id="have-fun-exploring-your-own-data">6. Have fun exploring your own
 data!</h2>
 <p>We have not observed strong gamma activity in our SI dipole data, and
 as such have not provided an example data set to compare simulation
