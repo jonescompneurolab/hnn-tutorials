@@ -178,17 +178,17 @@ img.imgcenter100{
 
 .emoji-cell {
   width: 5px; 
-  vertical-align: top; 
-  font-size: 1.4em;
-  line-height: 1.4;
-  text-align: justify;
+  vertical-align: top !important; 
+  font-size: 1.4em !important;
+  line-height: 1.4 !important;
+  text-align: justify !important;
 }
 
 .text-cell {
-  vertical-align: top;
-  font-size: 1.4em;
-  line-height: 1.4;
-  text-align: justify;
+  vertical-align: top !important;
+  font-size: 1.4em !important;
+  line-height: 1.4 !important;
+  text-align: justify !important;
 }
 
 /* 
