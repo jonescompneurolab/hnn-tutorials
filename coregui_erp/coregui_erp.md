@@ -38,11 +38,11 @@ In summary, to simulate the SI evoked response, a sequence of exogenous excitato
 
 ## 1. Load/view data
 
-An example ERP dataset is provided in the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data GitHub repository</a>. We use the data as an orienting example for where to begin to simulate an ERP. 
+An example ERP dataset is provided in the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data GitHub repository</a>. We use the data as an orienting example for where to begin to simulate an ERP. You will need to either clone the hnn-data repository or download its contents to your machine to follow along with this tutorial. 
 
 This dataset represents early evoked activity (0-175 ms) from an equivalent current dipole source localized to the hand area of the primary somatosensory cortex (SI), elicited by a brief perceptual threshold level tap to the contralateral D3 digit (read Getting Started above for details). The example dataset provided was collected at 600Hz and contains only averaged data from 100 trials in which the tap was detected. (Note, when loading your own data, if it was not collected at 600Hz, you must first downsample to 600Hz to view it in the HNN GUI).
 
-To load and view this data, navigate to the main GUI window and on the bottom left corner click: `Load data`
+To load and view the data, navigate to the `Simulation` tab of the main GUI window and click the `Load data` button in the bottom left corner.
 
 If you have cloned the hnn-data repository, navigate to hnn-data folder on your desktop and select `MEG_detection_data/yes_trial_S1_ERP_all_avg.txt`. HNN will then load the data and display the waveform in the dipole window as shown below.
 
@@ -64,7 +64,7 @@ Note, the software can be used without loading data. If you wish to play with si
 
 An initial parameter set that will simulate the evoked drives that generate an evoked response in close agreement with the SI data described in Step 1 is distributed in the hnn-data repository.  Click on the `External drives` tab at the top of the GUI and then click the `Load external drives` button. Navigate to the `hnn-data/network-configurations` folder on your computer and select  'ERPYesTrials.param', or click <a href="">here</a> to download the parameter file directly and load it into the GUI. 
 
-<div style="display:block; width:90%; max-width:500px; margin: 0 auto;">
+
 
 ### Figure 3
 
