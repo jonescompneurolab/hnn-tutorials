@@ -109,13 +109,33 @@ In our loaded configuration file, all synaptic connections within the network ar
 
 Note also that the inhibitory conductances within layers are stronger than the excitatory conductances, and there are also strong inhibitory-to-inhibitory (i.e., basket-to-basket) connections. This strong autonomous inhibition will cause synchrony among the basket cells, and hence strong inhibition onto the pyramidal neurons (note: this synapse was not depicted in Figure 1).
 
-:exclamation: Keep in mind that because Layer 2/3 and Layer 5 are not connected, this is not a biologically realistic network. We use this configuration as a starting point for illustrative purposes only, as it will prevent pyramidal-to-pyramidal interactions from disrupting the gamma rhythm.
+<div class="callout">
+  <table class="callout-table">
+    <tr>
+      <td class="emoji-cell">&#10071;</td>
+      <td class="text-cell">
+        Keep in mind that because Layer 2/3 and Layer 5 are not connected, this is not a biologically realistic network. We use this configuration as a starting point for illustrative purposes only, as it will prevent pyramidal-to-pyramidal interactions from disrupting the gamma rhythm.
+    </td>
+      <td class="emoji-cell"> </td>
+    </tr>
+  </table>
+</div>
 
 ## 2. Run the simulation and visualize net current dipole
 
-Now that we have set our Simulation parameters and loaded in both our external drives and our network configuration, we are ready to run our simulation. To do so, click the `Run` button. 
+Now that we have set our Simulation parameters and loaded in both our external drives and our network configuration, we are ready to run our simulation. To do so, click the `Run` button.
 
-:exclamation: Note that each new simulation you run will require a unique simulation `Name` as indicated in the `Simulation` tab. If you have run a simulation under the same name previously, you will get an error message stating that the simulation has failed.
+<div class="callout">
+  <table class="callout-table">
+    <tr>
+      <td class="emoji-cell">&#10071;</td>
+      <td class="text-cell">
+        Note that each new simulation you run will require a unique simulation <code>Name</code> as indicated in the <code>Simulation</code> tab. If you have run a simulation under the same name previously, you will get an error message stating that the simulation has failed.
+    </td>
+      <td class="emoji-cell"> </td>
+    </tr>
+  </table>
+</div>
 
 The console below the `Run` button will print progress as the simulation is running. Once it is complete, the input histogram and the dipole will be plotted in the right-most panel, as shown in Figure 4 below.
 
@@ -364,7 +384,17 @@ Next, select the `Cell parameters` section of the `Network` tab. Set the `Cell t
 ![](images/gamma_fig_15.png)
 
 </div>
-:exclamation: Note in these simulations the weights of the GABAB synapses are all set to zero
+<div class="callout">
+  <table class="callout-table">
+    <tr>
+      <td class="emoji-cell">&#10071;</td>
+      <td class="text-cell">
+        Note in these simulations the weights of the GABAB synapses are all set to zero
+    </td>
+      <td class="emoji-cell"> </td>
+    </tr>
+  </table>
+</div>
 
 From the `Simulation` tab, change the `Name` to  `gamma_L5weak_only_fasterinh` and click the `Run` button. Then create new visualizations to show the spike plot and the spectrogram for your simulation, as shown in Figure 16 below. 
 
@@ -404,7 +434,17 @@ Next, we will add a tonic input to the pyramidal neurons in Layer 2/3 and Layer 
 
 From the `External drives` tab, set the `Drive` parameter to `Tonic` and click the `Add drive` button. A new `Tonic0` dropdown will appear. From the dropdown, set `L2_pyramidal` to 4, and set `L5_pyramidal` to 6, as shown in Figure 17 below.
 
-:exclamation: Note that only the pyramidal neurons are set to receive depolarizing current injections (i.e., our tonic inputs)
+<div class="callout">
+  <table class="callout-table">
+    <tr>
+      <td class="emoji-cell">&#10071;</td>
+      <td class="text-cell">
+        Note that only the pyramidal neurons are set to receive depolarizing current injections (i.e., our tonic inputs)
+    </td>
+      <td class="emoji-cell"> </td>
+    </tr>
+  </table>
+</div>
 
 #### Figure 17
 
@@ -442,7 +482,17 @@ Let's further explore this simulation by looking at the layer-specific dipoles a
 
 When looked at together, the spectrogram (Figure 18) and the PSD (Figure 19) illustrate that the dipole signal contains strong oscillatory components in the gamma range in the net dipole, which is being driven by the strong Layer 5 activity. Layer 2/3 is oscillating at higher frequency with a lower amplitude (note the scaling of the y-axes in the layer-specific dipoles).
 
-:exclamation: Keep in mind that Layer 2/3 and Layer 5 are not synaptically connected to each other in this simulation
+<div class="callout">
+  <table class="callout-table">
+    <tr>
+      <td class="emoji-cell">&#10071;</td>
+      <td class="text-cell">
+        Keep in mind that Layer 2/3 and Layer 5 are not synaptically connected to each other in this simulation
+    </td>
+      <td class="emoji-cell"> </td>
+    </tr>
+  </table>
+</div>
 
 A closer look at the spiking activity will reveal the mechanisms creating these waveform shapes, as shown in Figure 20 below 
 
@@ -459,7 +509,17 @@ The PING mechanism is seen in each layer where the pyramidal neurons fire, causi
 
 In each layer, the inhibitory neurons are firing synchronously and causing strong somatic inhibition on the pyramidal neurons, resulting in fast downward current flow that creates the sharp dipole deflections seen in the dipole waveforms above. 
 
-:exclamation: While not shown in the figures above, there is an additional higher-frequency component near 80 Hz in Layer 5 that can be seen in the layer-specific PSD. The higher-frequency activity in Layer 5 comes from the sharp deflections in the dipole waveform along with a small-amplitude peak that together create high power at 80 Hz in the frequency domain. These deflections are driven by the strong depolarizing current on the pyramidal neurons that causes their voltage to rise quickly even before the inhibitory neurons fire. 
+<div class="callout">
+  <table class="callout-table">
+    <tr>
+      <td class="emoji-cell">&#10071;</td>
+      <td class="text-cell">
+        While not shown in the figures above, there is an additional higher-frequency component near 80 Hz in Layer 5 that can be seen in the layer-specific PSD. The higher-frequency activity in Layer 5 comes from the sharp deflections in the dipole waveform along with a small-amplitude peak that together create high power at 80 Hz in the frequency domain. These deflections are driven by the strong depolarizing current on the pyramidal neurons that causes their voltage to rise quickly even before the inhibitory neurons fire. 
+    </td>
+      <td class="emoji-cell"> </td>
+    </tr>
+  </table>
+</div>
 
 As an exercise, play with the current injection amplitude provided to the different neurons to see how it affects the generated rhythm.
 
@@ -473,7 +533,17 @@ First, navigate to the `Network` tab and load the `gamma_rhythmic_drive` configu
 
 In this example, the pyramidal neurons receive inputs, and the interneurons do not. The proximal and distal inputs start at 50.0 and 55.0 ms, respectively, and are slightly out of phase to allow synaptic inputs to effectively push current flow up the dendrites, followed 5 ms later by current flow down the dendrites. Additionally, the input frequency (as indicated by the `burst rate` parameter) for both proximal and distal inputs is set to a 50 Hz, representing “bursts” of excitatory synaptic input. The driving burst has an inter-burst-interval of 20 ms, with minimal noise within each driving burst (as indicated by the `Burst std dev` of 2.5 ms). 
 
-:exclamation: For a detailed description of the driving bursts, please review the Alpha/Beta tutorial.
+<div class="callout">
+  <table class="callout-table">
+    <tr>
+      <td class="emoji-cell">&#10071;</td>
+      <td class="text-cell">
+        For a detailed description of the driving bursts, please review the Alpha/Beta tutorial.
+    </td>
+      <td class="emoji-cell"> </td>
+    </tr>
+  </table>
+</div>
 
  Note also that the amplitude of the inputs, which are only provided to the Layer 5 pyramidal neurons, is set to a small value 0.00004, which produces only subthreshold responses in the Layer 5 pyramidal neurons. As a result, the gamma mechanism shown in this simulation is fundamentally different from the previous examples, since it does not rely on the local spiking interactions that underlie the PING mechanism.
 
