@@ -10,61 +10,49 @@ We found that we could reproduce evoked responses that accurately reflected the 
 
 In our model, the exogenous driving inputs were simulated as predefined trains of action potentials (pre-synaptic spikes) that activated excitatory synapses in the local cortical circuit in proximal and distal projection patterns (i.e. feedforward, and feedback, respectively, as shown schematically in Figure 1 right, and in the HNN GUI Model Schematics). The number, timing and strength (post-synaptic conductance) of the driving spikes were manually adjusted in the model until a close representation of the data was found (all other model parameters were tuned and fixed based on the morphology, physiology and connectivity within layered neocortical circuits [1]. Note, a scaling factor was applied to net dipole output to match to the magnitude of the recorded ERP data and used to predict the number of neurons contributing to the recorded ERP (purple circle, Figure 1, right panel). The dipole units were in nAm, with a one-to-one comparison between data and model output due to the biophysical detail in our model.
 
-<div class="stylefig">
+<div style="display:block; width:100%; margin: 0 auto;">
 
-### Figure 1
+![Figure 1](../erp/images/image8.png)
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image8.png" alt="image8" style="max-width:650px;"/></a>
-
-<p style="text-align:justify;"> Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experiment and neural model simulation. Left: MEG data showing tactile evoked response (ERP) source localized to the hand area of SI. Red: suprathreshold stimulation; Blue: Threshold stimulation (avg. n=100 trials). Right: Neural model simulation depicting proximal/distal inputs needed to replicate the ERP waveform (avg. n=25 trials) </p>
 </div>
+
+<p style="text-align:justify; display: block; margin: 0 auto;width: 90%; font-size: 1em;"> 
+Adapted from Jones et al. 2007 [1]. Comparison of SI evoked response in experiment and neural model simulation. Left: MEG data showing tactile evoked response (ERP) source localized to the hand area of SI. Red: suprathreshold stimulation; Blue: Threshold stimulation (avg. n=100 trials). Right: Neural model simulation depicting proximal/distal inputs needed to replicate the ERP waveform (avg. n=25 trials) 
+</p>
 
 In summary, to simulate the SI evoked response, a sequence of exogenous excitatory synaptic drive was simulated (by creating presynaptic spikes that activate layer specific synapses in the neocortical network) consisting of proximal drive at ~25 ms, followed by distal drive at ~60 ms, followed by a second proximal drive at ~122 ms. Given this background information, we can now walk you through the steps of simulating a similar ERP, using a subset of the data shown in Figure 1.
 
 ## Tutorial Table of Contents
 
-1. [Load/view data](#toc_1)
+[1. Load/view data](#1-loadview-data)
 
-2. [Load/view parameters to define network structure &  to “activate” the network](#toc_2)
+[2. Load/view parameters to define network structure \&  to “activate” the network](#2-loadview-parameters-to-define-network-structure---to-activate-the-network)
 
-3. [Running the simulation and visualizing net current dipole](#toc_3)
+[3. Running the simulation and visualizing net current dipole](#3-running-the-simulation-and-visualizing-net-current-dipole)
 
-4. [A closer look inside the simulations: contribution of layers and cell types](#toc_4)
+[4. A closer look inside the simulations: contribution of layers and cell types](#4-a-closer-look-inside-the-simulations-contribution-of-layers-and-cell-types)
 
-5. [Comparing model output and recorded data](#toc_5)
-
-6. [Adjusting parameters](#toc_6)
-
-7. [Have fun exploring your own data!](#toc_7)
-
-8. [Additional documents](#toc_8)
-
-    8.1. [Parameter files](#toc_8.1)
-
-    8.2. [Video walkthrough (2018)](#toc_8.2)
+[5. Comparing model output and recorded data](#5-comparing-model-output-and-recorded-data)
 
 <a id="toc_1"></a>
 
 ## 1. Load/view data
 
-An example ERP dataset is provided in the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data GitHub repository</a>. We use the data as an orienting example for where to begin to simulate an ERP. 
+An example ERP dataset is provided in the <a href="https://github.com/jonescompneurolab/hnn-data">hnn-data GitHub repository</a>. We use the data as an orienting example for where to begin to simulate an ERP. You will need to either clone the hnn-data repository or download its contents to your machine to follow along with this tutorial. 
 
 This dataset represents early evoked activity (0-175 ms) from an equivalent current dipole source localized to the hand area of the primary somatosensory cortex (SI), elicited by a brief perceptual threshold level tap to the contralateral D3 digit (read Getting Started above for details). The example dataset provided was collected at 600Hz and contains only averaged data from 100 trials in which the tap was detected. (Note, when loading your own data, if it was not collected at 600Hz, you must first downsample to 600Hz to view it in the HNN GUI).
 
-To load and view this data, navigate to the main GUI window and on the bottom left corner click:
-```
-Load data
-```
+To load and view the data, navigate to the `Simulation` tab of the main GUI window and click the `Load data` button in the bottom left corner.
 
 If you have cloned the hnn-data repository, navigate to hnn-data folder on your desktop and select `MEG_detection_data/yes_trial_S1_ERP_all_avg.txt`. HNN will then load the data and display the waveform in the dipole window as shown below.
 
 Alternatively, if you have not cloned the hnn-data repository, you can download the file directly by clicking <a href="https://github.com/jonescompneurolab/hnn/blob/master/data/MEG_detection_data/yes_trial_S1_ERP_all_avg.txt">here</a>.
 
-<div class="stylefig">
+<div style="display:block; width:90%; margin: 0 auto;">
 
 ### Figure 2
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_02.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_02.png" alt="image7" style="max-width:500px;"/></a>
+![](images/erp_fig_02.gif)
 
 </div>
 
@@ -78,11 +66,11 @@ When you start HNN, the default template cortical column networks structure dist
 
 An initial parameter set that will simulate the evoked drives that generate an evoked response in close agreement with the SI data described in Step 1 is distributed in the hnn-data repository.  Click on the `External drives` tab at the top of the GUI and then click the `Load external drives` button. Navigate to the `hnn-data/network-configurations` folder on your computer and select  'ERPYesTrials.param', or click <a href="">here</a> to download the parameter file directly and load it into the GUI. 
 
-<div class="stylefig">
+
 
 ### Figure 3
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_01.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_01.png" alt="image7" style="max-width:500px;"/></a>
+![](images/erp_fig_03.png)
 
 </div>
 
@@ -98,15 +86,21 @@ Each evoked input consists of a Gaussian distributed train of presynaptic action
 
 <div class="stylefig">
 <table>
-<h3>Figure 3</h3>
+<h3>Figure 4</h3>
 <tr>
 <td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_02.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_02.png" alt="image17"/>
-</a>
+<div style="max-width:500px;">
+
+![Figure 4a](images/erp_fig_04_01.png)
+
+</div>
 </td>
 <td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_03.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/core-gui/coregui_erp/images/erp_fig_03_03.png" alt="image25"/>
-</a>
+<div style="max-width:500px;">
+
+![Figure 4a](images/erp_fig_04_02.png)
+
+</div>
 </td>
 </tr>
 </table>
@@ -118,62 +112,90 @@ Each evoked input consists of a Gaussian distributed train of presynaptic action
 
 Now that we have an initial parameter set, we can run a simulation for a set number or trials. Let's start by defining 3 trials, by clicking on the 'Simulation' tab and defining Trials=3.  On each simulated trial, the timings of the evoked inputs (i.e., spikes) are chosen from a Gaussian distribution with mean and stdev (standard deviation) as defined in the “Evoked drives” tap. Histograms of each of the evoked inputs will be displayed at the top of the Figure tab after the simulations run. 
 
-Before running the simulation, we’ll first change the simulation name (i.e., the name under which the simulated data will be saved) to a new descriptive-name for the simulation here. Under the 'Simulation' tab change 'Name' from default to ERPyes-1trial.  There are several other adjustable simulate parameters, in the 'Simulation' tab. These parameters control the duration (stop), integration time step (dt), number of trials (Trials), and the choice of the simulation backend of either MPI (parallel across neurons) or Joblib (parallel across trials), assuming both backends are installed. 
+Before running the simulation, we’ll first change the simulation name (i.e., the name under which the simulated data will be saved) to a new descriptive-name for the simulation here. Under the `Simulation` tab, change the "Name" from default to ERPyes-3trials. (Note that the default simulation is in fact 1 run of the "ERPyes" simulation.)  There are several other adjustable simulate parameters in the `Simulation` tab. These parameters control the duration (stop), integration time step (dt), number of trials (Trials), and the choice of the simulation backend of either MPI (parallel across neurons) or Joblib (parallel across trials), assuming both backends are installed. 
 
-Hit 'Run" button to run the simulation. A simulation log is shown under the Run button that will tell you the status of your simulaion. 
+Hit the `Run` button to run the simulation. A simulation log is shown under the Run button that will tell you the status of your simulaion. 
+
+<div style="display:block; width:90%; margin: 0 auto;">
+
+### Figure 5
+
+![](images/erp_fig_05.png)
+
+</div>
 
 Once complete, a new Figure 2 window will appear showing the output of the simulation as in the figure below. The thin blue traces are net current dipole signals from individual trials while the thick blue trace is the average ERP, with histograms of the Gaussian distributed proximal and distal driving spikes is shown in a subplot at the top of the figure. 
 
-To view the simulation on top of the data and examine the goodness of fit, click on the 'Visualization' tab. Under Figure 2 you will see that Figure 2 has two subplots defined by ax0 and ax1. ax0 describes the adjustable features of the histogram subplot, while ax1 describes the adjustable features of the net current dipole subplot. Note you can change what is shown in either of these subplots by selecting 'clear axis', picking the 'Type' of data from the pulldown menu, and clicking 'Add plot'.  For now, we're going to continue to visualize the net current dipole plot. 
+Next, let's create a new figure to view the simulation on top of the loaded data. Click on the `Visualization` tab and select the `[blank] 2row x 1col (1:3)` option from the `Layout template` dropdown menu, then select `Make figure`. 
 
-To overlay the data shown in Figure 1 in Figure 2, go to Figure 2 and select ax1. in the 'Data to Compare:' pull down menu choose yes_trial_S1_ERP_all_avg, then click add plot. The data will now be overlaid in Figure 2 with the root mean square error (RMSE) displayed. 
+You will see that our new figure has two subplots defined by ax0 and ax1, both of which are blank. Select the ax1 subplot and set the `Simution Data` to `ERPyes-3trials`. Set `Data to compare` to `yes_trial_S1_ERP_all_avg`, then click `Add plot`. 
 
-You can remove the data or simulation output from the figure by clicking "clear axis' 
+Next, select ax0, set the `Type` to `input histogram`, and click `Add plot`. 
 
-Importantly, note that a scaling factor of 3000.00 was multiplied by the net dipole produced by the model, as seen on the y-axis scale based on the assumption that the dipole signal recorded comes from a larger number of neurons that are approximately sychronously active. This scaling factor can be adjusted to match the magnitude of the recorded data and provides an estimate of the number of pyramidal neurons contributing to the recorded signal by adjusting the 'Simulation Dipole Scaling' value under the Figure 2 tab. Alternatively, the data can be scaled by adjusting the 'Data Dipole Scaling' value.   The Simulatino Dipole Scaling value of 3000 for this simulation accurately accounts for the magnitude of the loaded SI evoked response data and suggests ~600,000 pyramidal neurons (200 PN x3000) contribute to recorded data.  
-<div class="stylefig">
+Note you can change what is shown in either of these subplots by selecting `clear axis`, picking the `Type` of data from the pulldown menu, and clicking `Add plot`.
 
-### Figure 8
+<div style="display:block; width:90%; margin: 0 auto;">
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image6.png" alt="image6" style="max-width:300px;"/></a>
+### Figure 6
+
+![](images/erp_fig_06.gif)
+
+</div> 
+
+Importantly, note that a scaling factor of 3000.00 was multiplied by the net dipole produced by the model, as seen on the y-axis scale in the figure above. This scaling factor can be adjusted to match the magnitude of the recorded data; the value of 3000 is the default value for the loaded parameter set. In this case, since the template model contains 200 pyramidal neurons (PNs), the simulation predicts that the number of cells that contribute to the signal is 600,000 (200 x 3000) PNs.
+
+Also note that in the ERP simulation shown, the raw dipole signal was smoothed using a Hamming filter using a window size of 30 milliseconds, in order to reduce noise in the ERP signal generated by this reduced network model. The level of smoothing can be adjusted by changing the value of the Dipole Smooth Window (ms). The longer the window, the more smoothing will occur. To turn off smoothing entirely, set the window size to 0. Below, we provide an example of the same simulation with smoothing turned off entirely. Note the higher-frequency content compared to the ERP simulation with smoothing turned on.
+
+<div style="display:block; width:90%; margin: 0 auto;">
+
+### Figure 7
+
+![](images/erp_fig_07.png)
 
 </div>
-
-Additionallly, in the ERP simulation shown, the raw dipole signal was smoothed using a Hamming filter using a window size of 30 milliseconds, in order to reduce noise in the ERP signal generated by this reduced network model (i.e. 200 pyramidal neurons) under the assumption such noise would average out in a larger more heterogeneous network. The level of smoothing can be changed through setting the value next to 'Dipole Smooth Window (ms). The longer the smoothing window, the more smoothing will occur. To turn off smoothing entirely, set the window size to 0\. Below, we provide an example of the same simulation with smoothing turned off entirely. Note the higher-frequency content compared to the ERP simulation with smoothing turned on. Importantly, don't forget to first change the name of the simulation so that the parameters representing your new simualtion will be saved by clicking on the 'Simulation' tab and changing the Name to "EPRyes3trials-nosmooth", for example. Also _before running this simulation,_ remove the prior simulation by pressing the gray “Clear axis” button at the bottom of the Figure 2 tab.  In the remainder of the tutorial, before running a new simulation, we always remove the previously run simulation.
-
-Now hit the "Run" button and the new un-smoothed simulation results will appear. XXCHECK THIS XX
-
-<div class="stylefig">
-
-### Figure 9
-
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image3.png" alt="image3" style="max-width:500px;"/></a>
-
-</div>
-
-<a id="toc_4"></a>
 
 ## 4. A closer look inside the simulations: contribution of layers and cell types
 
-One of the main advantages of simulating neocortical activity is that we can dive into the details of the simulation to investigate the contribution of different components in the network; e.g., layers, cell types, etc, to the net current dipole signal. HNN currently enables the viewing of the following:
+One of the main advantages of simulating neocortical activity is that we can dive into the details of the simulation to investigate the contribution of different components in the network; e.g., layers, cell types, etc. HNN currently enables the viewing of the following:
 
-1. layer specific dipole activity
+1. Layer-specific dipole activity
+2. Spiking activity in each individual neuron population
 
-2. spiking activity in each individual neuron population
-### 4.1 Viewing layer specific current dipoles
+**4.1 Viewing layer specific current dipoles**
 
-To view the contribution of pyramidal neurons in the different layers to the net current dipole, let's first create a new Figure window. We first choose a figure Layout template Under the 'Visualization' tab. We have some predefined examples of visalizations to choose from that will automatically be populated or you can create your own.  To view the layer specific contributions simulataneously with the net current dipole choose
-'Dipole layers (3x1)' and click the "Make figure" botton. 
-XX STEPH STOPPED HERE XXX 
-```
-View > View Simulation Dipoles
-```
-This will allow the user to view the dipole signal contributions from individual layers. The following window will appear (first reload the ERPYes2Trials.param simulation, that was run above, into HNN).
+From the `Visualization` tab, select "Dipole Layers (3x1)" from the `Layout template` dropdown menu. From the `Dataset` dropdown, select the simulation data you would like to visualize. Next, click `Make figure` to generate a new figure. 
 
-<div class="stylefig">
+<div style="display:block; width:90%; margin: 0 auto;">
 
-### Figure 10
+### Figure 8
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png"><img class="imgcenter100" src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/erp/images/image14.png" alt="image14" style="max-width:500px;"/></a>
+![](images/erp_fig_08.png)
 
 </div>
+
+The new figure shows the dipole contributions from Layer 2/3 (top), Layer 5 (middle), and the aggregate (bottom). Note the different features in Layer 2/3 vs Layer 5 dipole signals, allowing you to tease apart how the different cortical layers contribute to different net waveform features. In this figure, the light blue traces are from individual trials (n=2), and the dark blue trace is the average across trials. The same dipole scaling factor (3000.0) is applied.
+
+**4.2 Viewing network spiking activity**
+
+From the `Visualization` tab, select "Drive-Spikes (2x1)" from the `Layout template` dropdown menu. From the `Dataset` dropdown, select the simulation data you would like to visualize. Next, click `Make figure` to generate a new figure. 
+
+<div style="display:block; width:90%; margin: 0 auto;">
+
+### Figure 9
+
+![](images/erp_fig_09.png)
+
+</div>
+
+This window shows the spiking activity produced in each population in response to the evoked inputs. The top two panels show histograms of distal evoked inputs (green) and proximal evoked inputs (red) provided to the neurons. The large third panel shows a raster plot of the spiking activity generated by the individual neurons, with different populations in different colors as labeled (x-axis: time in ms; y-axis: neuron identifier). The neuron identifiers are arranged vertically by layer, with top representing supragranular layers and the bottom representing the infragranular layers. Individual neuron types are drawn in the different colors shown in the legend. The dotted lines in the bottom panel show a time-series of summed activity per population (these use the same color code as the individual spikes; you can turn these lines off or on by selecting View> Toggle Histograms). The initial view shows the aggregate spiking activity across trials. To see spiking activity generated by a single trial, select the trial number using the combination box at the bottom of the window. This spike viewer window also provides the standard save/navigation functionality through the matplotlib control at the top.
+
+## 5. Comparing model output and recorded data
+
+When loading data, the root-mean-squared-error (RMSE) is calculate between the average simulated ERP waveform and the loaded waveform.
+
+Our `ERPyes-3trial` simulation yields an RMSE of ___
+
+Let's run a simulation with 10 trials and see how the RMSE changes. 
+
+Notice that when we simulated more trials, the RMSE between the data and the simulated average ERP was ___ 
+
