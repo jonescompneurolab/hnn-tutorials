@@ -183,3 +183,77 @@ Finally click `Clear axis` and then `Add plot` to regenerate the spectrogram. Yo
 While this exploration with proximal drive is only useful in understanding how subthreshold rhythmic inputs impact the current dipole produced by the circuit, several features of the waveform and spectrogram of the signal do not match the recorded data shown in Figures 1and 2. Next, we explore the impact of rhythmic distal inputs only (step 2), and then a combination of the two (step 3).
 
 <a id="toc_two"></a>
+
+### 2.1 Load/view parameters to define the network structure & to “activate” the network
+
+We will use a param file that generates bursts of distal inputs provided at the alpha frequency (10 Hz; [OnlyRhythmicDist.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/OnlyRhythmicDist.json)).
+
+The template cortical column networks structure for this simulation is described in the Overview and What’s Under the Hood sections. Several of the network parameter can be adjusted via the HNN GUI (e.g. local excitatory and inhibitory connection strengths), but we will leave them fixed for this tutorial and only adjust the inputs the “activate” the network.
+
+To load the initial parameter set, navigate to the HNN GUI and click the tab labeled:
+
+```
+External drives
+```
+
+Then inside of the inside of the tab, click the button
+
+```
+Load external drives (0)
+```
+Then select the file [OnlyRhythmicDist.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/OnlyRhythmicDist.json) from HNN’s param subfolder or from your local machine.
+
+To view the parameters that “activate” the network via rhythmic distal input, click the dropdown menu labeled:
+
+```
+bursty2 (distal)
+```
+
+You should see the values of adjustable parameters displayed as  in the dialog boxes below. Notice that these parameters are the same as those regulating the proximal drive in step (1). However, in this case the parameters define bursts of synaptic inputs that drive the network in a distal project pattern, shown schematically at the bottom of the dialog box.
+
+<div class="stylefig" style="max-width: 650px;">
+<table>
+<h3>Figure 7</h3>
+<tr>
+<td>
+<a href=""><img src="images/image15.png"/></a>
+</td>
+<td>
+<a href=""><img src="images/image16.png"/></a>
+</td>
+<td>
+<a href=""><img src="images/image17.png"    /></a>
+</td>
+</tr>
+</table>
+</div>
+
+To run this simulation, navigate to the main GUI window and  click:
+```
+Start Simulation
+```
+Once completed, you will see output similar to that shown below.
+
+<div class="stylefig"  style="max-width:550px;">
+
+<h3>Figure 8</h3>
+
+<a href=""><img src="images/image18.png"/></a>
+</div>
+
+As shown in the green histogram in the top panel of the HNN GUI above, with this parameter set, a burst of distal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev, and Burst stdev parameters), there is some variability in the histogram of proximal input times. The ~10 Hz bursts of distal input induces current flow down the pyramidal neuron dendrites decreasing the signal below the 0 nAm baseline, which then relaxes back to zero, approximately every 100 ms. This is observed in the black current dipole waveform in the GUI window.
+
+Once again we will create time-frequency spectrogram for this waveform by first clicking on the `Visualization` tab. Then click on the `Layout template` dropdown menu and select `Drive-Dipole-Spectrogram`. Finally click the `Make Figure` button.
+
+<div class="stylefig"  style="max-width:550px;">
+
+<h3>Figure 9</h3>
+
+<a href=""><img src="images/image19.png"/></a>
+</div>
+
+The bottom panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high power continuous 10 Hz signal. Importantly, in this example the strength of the distal input was also titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons.  
+
+While instructional, this simulation also does not produce waveform and spectral features that match the experimental data in Figures 1 and 2. In the next step (step 3), we describe how combining both the 10 Hz proximal and distal drives can produce an oscillation with many characteristic features of the spontaneous SI signal (Jones et al 2009).
+
+<a id="toc_three"></a>
