@@ -69,7 +69,7 @@ In this tutorial, we will explore parameter changes that illustrate these result
 
 ## 1. Simulating Rhythmic Proximal Inputs: Alpha Only
 
-Note that before running/loading new simulations, we first remove the prior simulation(s) by pressing the “Remove Simulation” button at the bottom of the GUI. If we do not do this, both simulation dipoles are displayed (the old simulation is displayed with a dotted line, new simulation with a solid line; see “Tour of the GUI” for more details on simulation controls).
+Note that before running/loading new simulations, we will increase the run time of the simulation. Find the box labeled `tstop (ms)` under the `Simulation` tab and type in `700` as the value. This will enable us to see simulated oscillations as they evolve over longer time periods.
 
 ### 1.1 Load/view parameters to define the network structure & to “activate” the network.  
 
@@ -145,3 +145,41 @@ Layer 2/3, and Layer 5 tabs: This dialog box allows you to set the postsynaptic 
 
 XX TODO: DESCRIBE SYNPATIC DELAYS XX
 
+### 1.2 Run the simulation and visualize net current dipole
+
+To run this simulation, navigate to the main GUI window and  click:
+```
+Start Simulation
+```
+This simulation runs for 700 ms of simulation time, so will take a little longer to run than the ERP simulations. Once completed, you will see output similar to that shown below.
+
+<div class="stylefig"  style="max-width:550px;">
+
+<h3>Figure 5</h3>
+
+<a href=""><img src="images/image12.png"/></a>
+</div>
+
+As shown in the red histogram in the top panel of Figure 5 above, with this parameter set, a burst of proximal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev and Burst stdev parameters, there is some variability in the histogram of proximal input times. Note that a decrease in the Burst stdev would create shorter duration bursts (i.e., more synchronous bursts); this will be explored further in step 6.1 below.
+
+The ~10 Hz bursts of proximal drive induces current flow up the pyramidal neuron dendrites increasing the signal above the 0 nAm baseline, which then relaxes back to zero, approximately every 100 ms. This is observed in the black current dipole waveform in the GUI window. 
+
+To view the time-frequency spectrogram for this waveform, click on the `Visualization` tab. Then click on the `Layout template` dropdown menu and select `Drive-Dipole-Spectrogram`. Finally click the `Make Figure` button.
+ 
+
+The bottom panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high-power continuous 10 Hz signal. Importantly, in this example the strength of the proximal input was titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons. In step 6.2 below, we explore differences in the signal when the cells are driven to spike (see also ERP tutorial).
+
+To better see the 10 Hz signal, we can adjust the y-axis of the spectrogram. Under the options for `ax2` which corresponds to the spectrogram on the bottom panel, change the values for `Min Spectral Frequency (Hz)` to `0.1` and `Max Spectral Frequency (Hz)` to `40.0`.
+
+Finally click `Clear axis` and then `Add plot` to regenerate the spectrogram. You should see the signal corresponding to the alpha rhthym much more clearly like in the figure below:
+
+<div class="stylefig"  style="max-width:550px;">
+
+<h3>Figure 6</h3>
+
+<a href=""><img src="images/image14.png"/></a>
+</div>
+
+While this exploration with proximal drive is only useful in understanding how subthreshold rhythmic inputs impact the current dipole produced by the circuit, several features of the waveform and spectrogram of the signal do not match the recorded data shown in Figures 1and 2. Next, we explore the impact of rhythmic distal inputs only (step 2), and then a combination of the two (step 3).
+
+<a id="toc_two"></a>
