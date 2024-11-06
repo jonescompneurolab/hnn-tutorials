@@ -222,7 +222,7 @@ You should see the values of adjustable parameters displayed as  in the dialog 
 <a href=""><img src="images/image16.png"/></a>
 </td>
 <td>
-<a href=""><img src="images/image17.png"    /></a>
+<a href=""><img src="images/image17.png"/></a>
 </td>
 </tr>
 </table>
@@ -257,3 +257,203 @@ The bottom panel shows the corresponding time-frequency spectrogram for this wav
 While instructional, this simulation also does not produce waveform and spectral features that match the experimental data in Figures 1 and 2. In the next step (step 3), we describe how combining both the 10 Hz proximal and distal drives can produce an oscillation with many characteristic features of the spontaneous SI signal (Jones et al 2009).
 
 <a id="toc_three"></a>
+
+## 3. Simulating Combined Rhythmic Proximal and Distal Inputs: Alpha/Beta Complex
+
+### 3.1 Load/view parameters to define the network structure & to “activate” the network.  
+
+In this example, we provide a parameter set ([AlphaAndBeta.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/AlphaAndBeta.json)) that produces many of the waveform and spectral features observed in our SI data (Figure 2).
+
+The template cortical column networks structure for this simulation is described in the Overview and What’s Under the Hood sections. Several of the network parameter can be adjusted via the HNN GUI (e.g. local excitatory and inhibitory connection strengths), but we will leave them fixed for this tutorial and only adjust the inputs the “activate” the network.
+
+To load the initial parameter set, navigate to the HNN GUI and click the tab labeled:
+
+```
+External drives
+```
+
+Then inside of the inside of the tab, click the button
+
+```
+Load external drives (0)
+```
+
+Then select the file [AlphaAndBeta.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/AlphaAndBeta.json) from HNN’s param subfolder or from your local machine.
+
+To view the new parameters that “activate” the network via both rhythmic proximal and rhythmic distal input, click the dropdown menus labeled:
+```
+bursty1 (proximal)
+bursty2 (distal)
+```
+You should see the values displayed in the dialogue boxes below.
+
+<div class="stylefig" style="max-width: 500px;">
+<table>
+<h3>Figure 10 </h3>
+<tr>
+<td style="border: none;" width="50%">
+<a href=""><img src="images/image20.png" alt="image11"/></a>
+</tr>
+</table>
+</div>
+
+In this simulation, the Start time mean (ms) values for both proximal and distal inputs are set to 50.0 ms, and all other parameters are the same. Note that the synaptic weights are the same as used in the previous two simulations (not shown in dialog boxes above, click on Layer 2/3 and Layer 5 to see them). The equal start time implies that the proximal and distal input bursts will arrive nearly synchronously to the network on each cycle of the 10 Hz input. Due to the stochasticity in the parameters (start time stdev, and Burst stdev) sometimes the bursts will arrive together and sometimes there will be a slight delay. As will be described further below, this stochasticity creates intermittent alpha and beta events.  
+
+### 3.2 Run the simulation and visualize net current dipole
+
+To run this simulation, navigate to the main GUI window by clicking the `Simulation` tab and then click:
+```
+Run
+```
+Once completed, you will see output similar to that shown below.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 11
+
+<p align="center"><a href=""><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image28.png"/></a>
+
+</div>
+
+Follow the steps in the previous sections to create a time-frequency spectrogram for this waveform. The output will look similar to the figure below:
+
+<div class="stylefig"  style="max-width:550px;">
+
+<h3>Figure 12</h3>
+
+<a href=""><img src="images/image19.png"/></a>
+</div>
+
+
+As shown in the green and red histogram in the top panel of the HNN GUI above, with this parameter set, bursts of both proximal and distal input spikes are provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs, there is some variability in the timing and duration of the input bursts such that sometimes they arrive at the same time and sometimes there is a slight offset between them. As a result, intermittent transient alpha and beta  events emerge in the time-frequency spectrogram. Alpha events are produced when the inputs occur slightly out of phase and current flow is pushed alternately up and down the dendrites for ~50 ms duration each (set by the length of the bursts inputs). Beta events occur when the burst inputs arrive more synchronously and the upward current flow is disrupted by downward current flow for ~50 ms to effectively cut the oscillation period in half. As such, the relative alpha to beta expression can be controlled by the delay between the inputs and their relative burst strengths. We will detail this further below (see step 6 below).
+
+In contrast to the results from only proximal or distal input, since the current in the pyramidal neurons is pushed both upward and downward in this simulation, the current dipole signal oscillates above and below 0 nAm, which qualitatively matches the experimental data (see Figures 1 and 2 in “Getting Started”).   Additionally, this simulation reproduces the transient nature of the alpha and beta activity and several other features of the waveform and spectrogram can be quantified to show close agreement between model and experimental results (see Figure 2 above, and Jones et al. 2009[1], for further details). 
+
+We note that here we do not directly compare the spontaneous current dipole waveform to recorded data, as was done in the ERP tutorial with a root mean squared error. This is due to the fact that the spontaneous SI signal we are simulating is not time locked to  alpha or beta events on any given trial, and the stochastic nature of the driving inputs causes variability in the timing of the alpha or beta activity, making it difficult to align recorded data and simulated results. However, a direct comparison can be made between time averaged recorded and simulated signals by comparing power spectral density waveforms. An example of comparison is shown in step 5 below.
+
+### 3.3 Simulating and averaging multiple trials with jittered start times creates the impression of continuous oscillations
+
+As described in the “Getting Started” section above, our simulation goal was to study the mechanisms that reproduce features of spontaneous alpha and beta rhythms observed in un-averaged data, where the alpha and beta components are transient and intermittent (Figure 1, right panel). Each tutorial step up to this point was based on simulating un-averaged data. Here, we describe how to run and average multiple “trials” (700 ms epochs of spontaneous activity). We show that, due to the stochastic nature of the proximal and distal rhythmic input, controlled by the standard deviation (stdev) of the start times, and the stdev of the input bursts), when running multiple trials, the precise timing of the input bursts on each trial is jittered, and hence the alpha and beta activity in the spectrograms on each trial is jittered. This is akin to simulating induced rhythms rather than time-locked evoked rhythms. In the averaged spectrogram across trials, the alpha and beta events accumulate without cancellation (due to the fact that spectrogram value are purely positive) creating the impression of a continuous oscillation (Figure 1, left panel).
+
+Below we illustrate the effects of “jitter” in the proximal and distal rhythmic inputs across trials in two ways. First, we examine the effects of “jitter” due to the “Burst stdev”, and second due to the “Start time stdev”.
+
+To first test the effects of jittering due to “Burst stdev” and averaging across trials,  we will use a param file ([AlphaAndBetaJitter0.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/AlphaAndBetaJitter0.json)) with rhythmic proximal and distal inputs provided at 10 Hz, with proximal and distal inputs in phase. These are the same parameters as in the AlphaAndBeta.json file (Step 3.2 above), but now with 10 trials instead of 1.
+
+To load the initial parameter set, navigate to the HNN GUI and click the tab labeled:
+
+```
+External drives
+```
+
+Then inside of the inside of the tab, click the button
+
+```
+Load external drives (0)
+```
+Then select the file [OnlyRhythmicDist.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/OnlyRhythmicDist.json) from HNN’s param subfolder or from your local machine.
+
+To view the new parameters, click:
+```
+bursty1 (proximal)
+bursty2 (distal)
+```
+You should see the values displayed in the dialog boxes below.
+
+<div class="stylefig" style="max-width: 650px;">
+<table>
+<h3>Figure 13</h3>
+<tr>
+<td>
+<a href=""><img src="images/image21.png" alt=""/></a>
+</td>
+<td>
+<a href=""><img src="images/image22.png" alt=""/></a>
+</td>
+</tr>
+</table>
+</div>
+
+
+Notice that the Start time stdev (ms) is set to 0.0 for both proximal and distal inputs, while the Burst stdev (ms) is 20.
+
+
+To run this simulation, navigate to the `Simulation` tab and click
+
+```
+Run
+```
+
+This simulation will take longer to run because it uses 10 trials. Once completed, you will see output similar to that shown below.
+
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 14</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image17.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image17.png" alt="image17"/></a>
+</div>
+
+Follow the previous steps from section (1) or (2) to create a time-frequency spectrogram. The output will look like the following:
+
+<h3>Figure 15</h3>
+<div class="stylefig" style="max-width:550px;">
+<a href=""><img src="images/image1.png" alt=""/></a>
+</div>
+
+Notice that the input histograms for distal (green) and proximal (red) input accumulated across the 10 trials, now have higher values than before (up to ~20 compared to 5 in Step 3.2) and the burst inputs are slightly broader on each cycle, since these histograms represent the accumulated activity from 10 simulations, where the standard deviation in the Burst duration across trials is 20 ms. Approximately 10 Hz rhythmicity in the timing of the distal and proximal inputs can be clearly visualized (note also the symmetric profile of the histograms). However, on any individual trial, the coincidence of inputs leading to alpha or beta events displays some variability due to the stochastic parameter value (Burst stdev=20 ms). This is observed in the dipole waveforms shown for each trial (example shown below). The spectrogram shown in the GUI window is now created by calculating the spectrogram from each of the 10 trials separately, then averaging the 10 spectrograms. Importantly, this is not the spectrogram of the average of the dipole waveforms. The averaged spectrogram above shows more continuous bands of alpha and beta activity than for a single trial (compare to spectrogram in Step 3). Running more trials will increase the appearance of continuous rhythms.
+
+In the next simulation, we will jitter the start times of rhythmic inputs across trials with the Start time stdev, in addition to a non-zero Burst stdev. This will add additional variability to the timing of the transient alpha and beta events on each trial, and hence produce even more continuous bands of activity in the averaged spectrogram.
+
+First, navigate to the `External drives` tab and open the `bursty1 (proximal)` and `bursty2 (distal)` dropdown menus. Change the start time stdev from 0 ms to 50 ms in the timing tabs. The dialog boxes should now look as follows.
+
+
+<div class="stylefig" style="max-width: 650px;">
+<table>
+<h3>Figure 16</h3>
+<tr>
+<td>
+<a href=""><img src="images/image23.png" alt=""/></a>
+</td>
+<td>
+<a href=""><img src="images/image24.png" alt=""/></a>
+</td>
+</tr>
+</table>
+</div>
+
+To run this simulation, click Start Simulation from the main GUI window. Follow the steps from either section 1 or 2 to create a time-frequency spectrogram
+
+Once completed, you will see output similar to that shown below.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 17</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image27.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image27.png" alt="image27"/></a>
+</div>
+
+Notice that the input histograms for distal (green) and proximal (red) input accumulated across the 10 trials now show little rhythmicity due to the jitter in the rhythmic input start times across trials (Start time stdv (ms) = 50), in addition to jitter due to the Burst stdev (ms) = 20\. However, if we were to visualize histograms on each individual trial (using the View spectrograms tab), they would show the ~10 Hz and 20 Hz (alpha and beta) rhythmicity. It is also difficult to visualize rhythmicity in any of the overlaid dipole waveforms. However, on each trial, alpha and beta rhythmicity is present, and even more continuous bands of alpha and beta activity are observed (compare to averaged data in Figure 1 left panel; n=100 trials) when the spectrograms from individual trials are averaged. Running more trials will further increase the continuous nature of alpha and beta activity across time.
+
+### 3.4 Viewing network spiking activity
+
+Importantly, as stated above in this example the strength of the proximal and distal input were titrated to be subthreshold (cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons. We can verify the subthreshold nature of the inputs by viewing the spiking activity in the network.
+
+Return to the single-trial parameter set as in Steps 3.1 and 3.2, by loading the AlphaAndBeta.json file and run the simulation. Then navigate to the `Visualization` tab, click the `Layout template` dropdown menu select `Dipole-Spikes (2x1)`. Finally click `Make figure`.
+
+You should see the following window.
+
+<div class="stylefig" style="max-width:550px;" >
+
+<h3>Figure 17</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image21.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image21.png" alt="image21"/></a>
+</div>
+
+In this window, the rhythmic distal (green/top) and proximal (red/middle) inputs bursts histograms are shown along with the spiking activity in each population of cells (bottom panel). In this case, the alpha and beta events are indeed produced through subthreshold processes and there is no spiking produced in any cell in the network (no dots present in the bottom raster plot).
+
+### 3.5 Exercises for further exploration
+
+Try decreasing or increasing the number of trials in the above simulations to see how these changes impact the continuity of alpha/beta power over time. View some of the individual spectrograms to see that alpha/beta are maintained on individual trials.
+
+
+<a id="toc_four"></a>
