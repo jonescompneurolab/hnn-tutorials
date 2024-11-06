@@ -457,3 +457,194 @@ Try decreasing or increasing the number of trials in the above simulations to se
 
 
 <a id="toc_four"></a>
+
+## 4. Calculating and Viewing Power Spectral Density (PSD)
+
+HNN provides a feature to calculate and view the power spectral density (PSD) of the simulated signal and imported data (Note: the PSD is calculated as the time average of the spectrogram, in the simulation examples).
+
+To calculate and view the PSD, navigate to the `Visualization` tab, click on the `Layout template` dropdown, and select `PSD Layers (3x1)`
+
+You should see something similar to the following window.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 16</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image33.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image33.png" alt="image33"/></a>
+</div>
+
+The PSD Viewer window shows the net current dipole (bottom panel) and contribution from each layer in the network separately (top panels). This example was run using the parameter set described in Step 3\. PSD from the simulation shows a strong peak in the alpha (~10 Hz) band,  with a lower peak power in beta band (~20 Hz).
+
+<a id="toc_five"></a>
+
+## 5. Comparing model output and recorded data
+
+Work in progress!
+
+## 6. Adjusting parameters
+
+Parameter adjustments will be key to developing and testing hypotheses on the circuit origin of your own low-frequency rhythmic data. HNN is designed so that many of the parameters in the model can be adjusted from the GUI (see the Tour of the GUI tutorial).
+
+Here, we’ll walk through examples of how to adjust several “Rhythmic Proximal/Distal Input” parameters to investigate how they impact the alpha and beta rhythms described above. We end with some suggested exercises for further exploration.
+
+### 6.1 Changing the strength (post-synaptic conductance) and synchrony of the distal drive increases beta activity
+
+We described above (Step 3) that the timing of proximal and distal inputs can lead to either alpha events (when the bursts arrive to the local network out of phase) or beta events (when the bursts arrive in phase).
+
+We have also found that other factors that contribute to the prevalence of beta activity are the strengthand synchrony of the distal inputs; beta activity is increased with stronger and more synchronous subthreshold drive, where the beta frequency is set by the duration of the driving bursts (~50ms) (Jones et al. 2009; Sherman et al. 2016). The strength is controlled by the postsynaptic conductance, and the synchrony is controlled by the Burst stdev in the “Rhythmic Distal Inputs” dialog box. We will demonstrate this here.
+
+Open the `External drives` tab and click on the dropdown menu
+ ```
+bursty2 (distal)
+```
+
+
+Reduce the Burst stdev (Hz) value from 20 ms to 10 ms.  This will create higher synchrony in the timing of the distal input bursts. Under both the Layer 2/3 and Layer 5 tabs, increase the postsynaptic condances weights of the AMPA synapses onto the Layer 2/3 and Layer 5 pyramidal neurons from 5.4e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)to 6e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png). Both of these changes will cause the distal input burst to push a greater amount of current flow down the pyramidal neuron dendrites. The “Rhythmic Distal Input” dialog windows should look as shown below.
+
+<div class="stylefig" style="max-width: 650px;">
+<table>
+<h3>Figure 19</h3>
+<tr>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image26.png" alt="image26"/></a>
+</td>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image16.png" alt="image 16"/></a>
+</td>
+<td>
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image30.png" alt="image30"/></a>
+</td>
+</tr>
+</table>
+</div>
+
+Next, we will test how these parameter changes affect the simulation. Select the `Simulation` tab and click the `Run` button. Then follow the steps from section 1 or 2 to create a time-frequency spectrogram Once completed, you will see output in the GUI similar to that shown below.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 20</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image34.png" alt="image34"/></a>
+</div>
+
+First, notice that the histogram profile of the distal input bursts (green) are narrower corresponding to more synchronous input than in the prior simulation (Step 3). Second, notice that the waveform of the oscillation is different with a sharper downward deflecting signal, due to to the stronger distal input. These deflections increased ~20 Hz beta activity, as seen in the corresponding spectrogram (compare to spectrogram in Step 3). The 20 Hz frequency is set by the duration of the downward current flow, which with this parameter set is approximately 50 ms (see Sherman et al. 2016[3] for further details).
+
+We can verify the increase in beta activity more directly by viewing the simulation’s power spectral density (PSD). To do so, navigate to `Visualization` tab, click the `Layout template` dropdown menu and select `PSD Layers (3x1)`. Then click `Make figure`.
+
+You should see the following window:
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 21</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image36.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image36.png" alt="image36"/></a>
+</div>
+
+Notice that the power spectral density from the simulation shows a larger beta than alpha amplitude in net current dipole (bottom panel), with a stronger contribution from Layer 5 (middle panel).
+
+### 6.1.1 Exercise for further exploration
+
+Try changing the frequency of the rhythmic distal drive from 10 Hz to 20 Hz. Try other frequencies for the proximal and distal rhythmic drive. How do the rhythms change? See how changes in the Burst stdev effects the rhythms expressed.
+
+### 6.2 Increasing the strength (post-synaptic conductance) of the distal drive further creates high frequency responses due to induced spiking activity
+
+Recall that in the above simulations, the strength of the rhythmic proximal and distal inputs were chosen so that the cells remained subthreshold (no spiking). We will now demonstrate what happens if we increase the strength of the inputs far enough to induce spikes. Instead of simulating subthreshold alpha/beta events, we will see that the dipole signals are dominated by higher-frequency events created by spiking activity. We note that the produced waveforms of activity are, to our knowledge, not typically observed in MEG or EEG data, supporting the notion that alpha/beta rhythms are created through subthreshold processes.
+
+To test this, select the `External drives` tab, open the `bursty2 (distal)` dropdown menu, and change the parameters as follows. Under the timing tab, change the Burst stdev value back to 20 ms. Under both the Layer 2/3 and Layer 5 tabs, increase the postsynaptic conductance weights of the AMPA synapses onto the Layer 2/3 and Layer 5 pyramidal neurons from 6e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)to 40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png) (a big change that will provide enough current to cause the cells to spike). The “Rhythmic Distal Input” dialog windows should look as shown below.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 23</h3>
+
+<a href=""><img src="images/image25.png" alt=""/></a>
+</div>
+
+Next, run the simulation. Click on Start Simulation from the main GUI window. Once completed, you will see output similar to that shown below.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 23</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image37.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image37.png" alt="image37"/></a>
+</div>
+
+Notice that the histogram profile of the distal input bursts (green) are once again wider corresponding to less synchronous input and comparable to those shown in the example in Step 3\. However, in this case the postsynaptic conductance of these driving spike is significantly larger (40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)). This strong input induces spiking activity in the pyramidal neuron on several cycles of the drive (2.5 shown here) resulting in a sharp and rapidly oscillating dipole waveform. The corresponding dipole spectrogram shows broadband spiking from ~60-120 Hz. This type of activity is not typically seen in EEG or MEG data, and hence unlikely to underlie macroscale recordings.
+
+We can verify the increase in high-frequency activity more directly by viewing the simulation’s power spectral density (PSD). To do so, click on the View> View PSD from the main GUI window. You should see the following window.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 24</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image23.png" alt="image23"/></a>
+</div>
+
+The PSD from the simulation shows broadband 60-120Hz high frequency activity caused by neuronal spiking.
+
+
+
+We can verify that the neurons are spiking by looking at the spiking raster plots. To do so, navigate to `Visualization` tab, click the `Layout template` dropdown menu and select `PSD Layers (3x1)`. Then click `Make figure`.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 25</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image38.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image38.png" alt="image38"/></a>
+</div>
+
+Notice that highly synchronous neuronal spiking in each population coincides with the high-frequency events seen in the waveform and spectrogram. The waveform response is induced by the pyramidal neuron spiking which creates rapid back-propagating action potentials and repolarization of the dendrites.
+
+Hypothesis testing:This simulation demonstrates that HNN can be used to test the limits of physiological variables and to see how, as parameters are varied, simulations results can be similar or dissimilar to experimental data.
+
+
+
+### 6.2.1 Exercise for further exploration
+
+View the contribution of Layer 2/3 and Layer 5 to the net current dipole waveform and compare with the spiking activity in each population. How do each contribute? Try also to change the proximal input parameters instead of the distal input parameters.
+
+Adjust one of the parameter regulating the local network connections. What happens?
+
+
+
+### 6.3 Increasing the delay between the proximal and distal inputs to anti-phase (50 ms delay) creates continuous alpha oscillations without beta activity
+
+
+We mentioned above that, in addition to parameters controlling the strength and synchrony of the distal (or proximal) drive, the relative timing of proximal and distal inputs is an important factor in determining relative alpha and beta expression in the model. Here we will demonstrate that out-of-phase, 10 Hz burst inputs can produce continuous alpha activity without any beta events. For this simulation, load the [AlphaAndBeta.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/AlphaAndBeta.json) parameter file as described in Step 3 by clicking Set Parameters From File and selecting the file from HNN’s param subfolder. To view the new parameters, click on the `External drives` tab. Next, in the `bursty1 (proximal)` dropdown menu, change the start time mean from 50 to 100 ms. The timing tabs in the Rhythmic Proximal and Distal Input dialog boxes should look as follows:  
+
+<div class="stylefig" style="max-width: 500px;">
+<table>
+<h3>Figure 26</h3>
+<tr>
+<td>
+<a href=""><img src="images/image26" alt=""/></a>
+</td>
+<td>
+<a href=""><img src="images/image27" alt=""/></a>
+</td>
+</tr>
+</table>
+</div>
+
+Note that both the proximal and distal input frequency are set to 10 Hz (bursts of activity every ~100 ms). Since the proximal input Start time mean is 50.0 ms and the the distal input Start time mean is 100.0 ms, the input will, on average, arrive to the network a 1/2 cycle out of phase (i.e., in antiphase, every 50 ms).
+
+Next, we will run the simulation to investigate the impact of this parameter change. Click on Start Simulation from the main GUI window. Once completed, you will see output similar to that shown below.
+
+<div class="stylefig" style="max-width:550px;">
+
+<h3>Figure 27</h3>
+
+<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image24.png" alt="image24"/></a>
+</div>
+
+Notice that the histogram profile of the proximal (red) and distal (green) input bursts are generally ½ cycle out-of-phase (antiphase). This rhythmic alteration of proximal followed by distal drive induces alternating subthreshold current flow up and down the pyramidal neuron dendrites to create a continuous alpha oscillation in the current dipole waveform that oscillates around 0 nAm. The period of the oscillation is set by the duration of each burst (~50 ms, controlled in part by Burst stdev) and the 50 ms delay between the inputs on each cycle (due to different start times). The corresponding spectrogram shows continuous nearly pure alpha activity. This type of strong alpha activity is similar to what might be observed over occipital cortex during eyes closed conditions.
+
+
+
+### 6.3.1 Exercise for further exploration
+
+Try changing the delay between the proximal and distal drive by varying amounts. What happens to the rhythm expressed?
+
+Can you create a simulation where other frequencies are expressed? How is it created? Are the cells spiking or subthreshold?
+
+
+<a id="toc_seven"></a>
