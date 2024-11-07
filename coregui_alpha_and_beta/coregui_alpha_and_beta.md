@@ -446,7 +446,7 @@ You should see the following window.
 
 <h3>Figure 17</h3>
 
-<a href=""><img src="" alt=""/></a>
+<a href=""><img src="images/AlphaAndBeta_Spikes.png" alt=""/></a>
 </div>
 
 In this window, the rhythmic distal (green/top) and proximal (red/middle) inputs bursts histograms are shown along with the spiking activity in each population of cells (bottom panel). In this case, the alpha and beta events are indeed produced through subthreshold processes and there is no spiking produced in any cell in the network (no dots present in the bottom raster plot).
@@ -506,13 +506,13 @@ Reduce the Burst stdev (Hz) value from 20 ms to 10 ms.  This will create higher
 <h3>Figure 19</h3>
 <tr>
 <td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image26.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image26.png" alt="image26"/></a>
+<a href=""><img src="images/image28.png" alt=""/></a>
 </td>
 <td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image16.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image16.png" alt="image 16"/></a>
+<a href=""><img src="images/image29.png" alt=""/></a>
 </td>
 <td>
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image30.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image30.png" alt="image30"/></a>
+<a href=""><img src="images/image30.png" alt=""/></a>
 </td>
 </tr>
 </table>
@@ -524,23 +524,17 @@ Next, we will test how these parameter changes affect the simulation. Select the
 
 <h3>Figure 20</h3>
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image34.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image34.png" alt="image34"/></a>
+<a href=""><img src="images/sec6pt1-oldFig20-nonspect.png"/></a>
 </div>
-
-First, notice that the histogram profile of the distal input bursts (green) are narrower corresponding to more synchronous input than in the prior simulation (Step 3). Second, notice that the waveform of the oscillation is different with a sharper downward deflecting signal, due to to the stronger distal input. These deflections increased ~20 Hz beta activity, as seen in the corresponding spectrogram (compare to spectrogram in Step 3). The 20 Hz frequency is set by the duration of the downward current flow, which with this parameter set is approximately 50 ms (see Sherman et al. 2016[3] for further details).
-
-We can verify the increase in beta activity more directly by viewing the simulation’s power spectral density (PSD). To do so, navigate to `Visualization` tab, click the `Layout template` dropdown menu and select `PSD Layers (3x1)`. Then click `Make figure`.
-
-You should see the following window:
 
 <div class="stylefig" style="max-width:550px;">
 
 <h3>Figure 21</h3>
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image36.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image36.png" alt="image36"/></a>
+<a href=""><img src="images/sec6pt1-oldFig20-spect.png"/></a>
 </div>
 
-Notice that the power spectral density from the simulation shows a larger beta than alpha amplitude in net current dipole (bottom panel), with a stronger contribution from Layer 5 (middle panel).
+First, notice that the histogram profile of the distal input bursts (green) are narrower corresponding to more synchronous input than in the prior simulation (Step 3). Second, notice that the waveform of the oscillation is different with a sharper downward deflecting signal, due to to the stronger distal input. These deflections increased ~20 Hz beta activity, as seen in the corresponding spectrogram (compare to spectrogram in Step 3). The 20 Hz frequency is set by the duration of the downward current flow, which with this parameter set is approximately 50 ms (see Sherman et al. 2016[3] for further details).
 
 ### 6.1.1 Exercise for further exploration
 
@@ -554,7 +548,7 @@ To test this, select the `External drives` tab, open the `bursty2 (distal)` drop
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 23</h3>
+<h3>Figure 22</h3>
 
 <a href=""><img src="images/image25.png" alt=""/></a>
 </div>
@@ -565,31 +559,18 @@ Next, run the simulation. Click on Start Simulation from the main GUI window. O
 
 <h3>Figure 23</h3>
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image37.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image37.png" alt="image37"/></a>
+<a href=""><img src="images/sec6pt2-oldFig23-nonspect.png" alt=""/></a>
 </div>
 
 Notice that the histogram profile of the distal input bursts (green) are once again wider corresponding to less synchronous input and comparable to those shown in the example in Step 3\. However, in this case the postsynaptic conductance of these driving spike is significantly larger (40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)). This strong input induces spiking activity in the pyramidal neuron on several cycles of the drive (2.5 shown here) resulting in a sharp and rapidly oscillating dipole waveform. The corresponding dipole spectrogram shows broadband spiking from ~60-120 Hz. This type of activity is not typically seen in EEG or MEG data, and hence unlikely to underlie macroscale recordings.
-
-We can verify the increase in high-frequency activity more directly by viewing the simulation’s power spectral density (PSD). To do so, click on the View> View PSD from the main GUI window. You should see the following window.
-
-<div class="stylefig" style="max-width:550px;">
-
-<h3>Figure 24</h3>
-
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image23.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image23.png" alt="image23"/></a>
-</div>
-
-The PSD from the simulation shows broadband 60-120Hz high frequency activity caused by neuronal spiking.
-
-
 
 We can verify that the neurons are spiking by looking at the spiking raster plots. To do so, navigate to `Visualization` tab, click the `Layout template` dropdown menu and select `PSD Layers (3x1)`. Then click `Make figure`.
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 25</h3>
+<h3>Figure 24</h3>
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image38.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image38.png" alt="image38"/></a>
+<a href=""><img src="images/sec6pt2-oldFig25.png" alt=""/></a>
 </div>
 
 Notice that highly synchronous neuronal spiking in each population coincides with the high-frequency events seen in the waveform and spectrogram. The waveform response is induced by the pyramidal neuron spiking which creates rapid back-propagating action potentials and repolarization of the dendrites.
@@ -611,9 +592,10 @@ Adjust one of the parameter regulating the local network connections. What happe
 
 We mentioned above that, in addition to parameters controlling the strength and synchrony of the distal (or proximal) drive, the relative timing of proximal and distal inputs is an important factor in determining relative alpha and beta expression in the model. Here we will demonstrate that out-of-phase, 10 Hz burst inputs can produce continuous alpha activity without any beta events. For this simulation, load the [AlphaAndBeta.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/AlphaAndBeta.json) parameter file as described in Step 3 by clicking Set Parameters From File and selecting the file from HNN’s param subfolder. To view the new parameters, click on the `External drives` tab. Next, in the `bursty1 (proximal)` dropdown menu, change the start time mean from 50 to 100 ms. The timing tabs in the Rhythmic Proximal and Distal Input dialog boxes should look as follows:  
 
-<div class="stylefig" style="max-width: 500px;">
+
+<div class="stylefig" style="max-width: 650px;">
 <table>
-<h3>Figure 26</h3>
+<h3>Figure 25</h3>
 <tr>
 <td>
 <a href=""><img src="images/image26" alt=""/></a>
@@ -631,9 +613,16 @@ Next, we will run the simulation to investigate the impact of this parameter cha
 
 <div class="stylefig" style="max-width:550px;">
 
+<h3>Figure 26</h3>
+
+<a href=""><img src="images/sec6pt3-oldFig27-everything-except-spect.png" alt=""/></a>
+</div>
+
+<div class="stylefig" style="max-width:550px;">
+
 <h3>Figure 27</h3>
 
-<a href="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image24.png"><img src="https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image24.png" alt="image24"/></a>
+<a href=""><img src="images/sec6pt3-oldFig27-spect.png" alt=""/></a>
 </div>
 
 Notice that the histogram profile of the proximal (red) and distal (green) input bursts are generally ½ cycle out-of-phase (antiphase). This rhythmic alteration of proximal followed by distal drive induces alternating subthreshold current flow up and down the pyramidal neuron dendrites to create a continuous alpha oscillation in the current dipole waveform that oscillates around 0 nAm. The period of the oscillation is set by the duration of each burst (~50 ms, controlled in part by Burst stdev) and the 50 ms delay between the inputs on each cycle (due to different start times). The corresponding spectrogram shows continuous nearly pure alpha activity. This type of strong alpha activity is similar to what might be observed over occipital cortex during eyes closed conditions.
@@ -648,3 +637,23 @@ Can you create a simulation where other frequencies are expressed? How is it cre
 
 
 <a id="toc_seven"></a>
+
+## 7. Have fun exploring your own data!
+
+Follow steps 1-6 above using your data and parameter adjustments based on your own hypotheses.  
+
+
+
+## References
+
+1. [Jones, S. R.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/NxR0&sa=D&ust=1552525363656000) [et al.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/NxR0&sa=D&ust=1552525363656000)[Quantitative analysis and biophysically realistic neural modeling of the MEG mu rhythm: rhythmogenesis and modulation of sensory-evoked responses.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/NxR0&sa=D&ust=1552525363656000) [J. Neurophysiol.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/NxR0&sa=D&ust=1552525363657000)[ ](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/NxR0&sa=D&ust=1552525363657000)[102,](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/NxR0&sa=D&ust=1552525363657000)[ 3554–3572 (2009).](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/NxR0&sa=D&ust=1552525363657000)
+
+2. [Ziegler, D. A.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/WrO3&sa=D&ust=1552525363657000) [et al.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/WrO3&sa=D&ust=1552525363658000)[Transformations in oscillatory activity and evoked responses in primary somatosensory cortex in middle age: a combined computational neural modeling and MEG study.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/WrO3&sa=D&ust=1552525363658000) [Neuroimage](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/WrO3&sa=D&ust=1552525363658000)[ ](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/WrO3&sa=D&ust=1552525363658000)[52,](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/WrO3&sa=D&ust=1552525363658000)[ 897–912 (2010).](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/WrO3&sa=D&ust=1552525363659000)
+
+3. [Sherman, M. A.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/ciWL&sa=D&ust=1552525363659000) [et al.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/ciWL&sa=D&ust=1552525363659000)[Neural mechanisms of transient neocortical beta rhythms: Converging evidence from humans, computational modeling, monkeys, and mice.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/ciWL&sa=D&ust=1552525363659000) [Proc. Natl. Acad. Sci. U. S. A.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/ciWL&sa=D&ust=1552525363659000)[ ](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/ciWL&sa=D&ust=1552525363660000)[113,](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/ciWL&sa=D&ust=1552525363660000)[ E4885–94 (2016).](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/ciWL&sa=D&ust=1552525363660000)
+
+4. [Jones, S. R. When brain rhythms aren’t ‘rhythmic’: implication for their mechanisms and meaning.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/4jg3&sa=D&ust=1552525363660000) [Curr. Opin. Neurobiol.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/4jg3&sa=D&ust=1552525363660000)[ ](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/4jg3&sa=D&ust=1552525363661000)[40,](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/4jg3&sa=D&ust=1552525363661000)[ 72–80 (2016).](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/4jg3&sa=D&ust=1552525363661000)
+
+5. [Jones, E. G. The thalamic matrix and thalamocortical synchrony.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/CgPQ&sa=D&ust=1552525363661000) [Trends Neurosci.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/CgPQ&sa=D&ust=1552525363662000)[ ](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/CgPQ&sa=D&ust=1552525363662000)[24,](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/CgPQ&sa=D&ust=1552525363662000)[ 595–601 (2001).](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/CgPQ&sa=D&ust=1552525363662000)
+
+6. [Hughes, S. W. & Crunelli, V. Thalamic mechanisms of EEG alpha rhythms and their pathological implications.](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&sa=D&ust=1552525363663000) [Neuroscientist](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&sa=D&ust=1552525363663000)[ ](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&sa=D&ust=1552525363663000)[11,](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&sa=D&ust=1552525363663000)[ 357–372 (2005).](https://www.google.com/url?q=http://paperpile.com/b/XBRvEX/oQZB&sa=D&ust=1552525363663000)
