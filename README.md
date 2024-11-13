@@ -34,6 +34,10 @@ HNN allows you to define and adjust trains of action potentials that generate ex
 * <a href="https://jonescompneurolab.github.io/hnn-tutorials/starting_with_data/getting_started">Starting with Your Data</a>
 * <a href="https://jonescompneurolab.github.io/hnn-tutorials/optimization/optimization">Optimization</a>
 
+For the versions of the tutorials using the new HNN-Core GUI, see below.
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/coregui_erp/coregui_erp">ERP</a>
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/coregui_alpha_and_beta/coregui_alpha_and_beta">Alpha and Beta</a>
+* <a href="https://jonescompneurolab.github.io/hnn-tutorials/coregui_gamma/coregui_gamma">Gamma</a>
 
 
 
