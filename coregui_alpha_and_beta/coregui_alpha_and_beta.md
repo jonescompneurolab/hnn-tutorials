@@ -11,7 +11,7 @@ In order to understand the workflow and initial parameter sets provided with thi
 <p align="justify">
 <b>Left:</b> Spectrogram of spontaneous activity from current dipole source in SI averaged across 100 trials, from an example subject, shows nearly continuous prestimulus alpha and beta oscillations. At time zero, a brief tap was given to the contralateral finger tip and the spontaneous oscillations briefly desynchronized.</p>
 
-<p align="justify"><b>Right:</b> A closer look at the prestimulus waveform and spectrogram from spontaneous activity during example signal trials, shows that the alpha and beta oscillations occur intermittently and primarily non-overlapping.</span>
+<p align="justify"><b>Right:</b> A closer look at the prestimulus waveform and spectrogram from spontaneous activity during example signal trials, shows that the alpha and beta oscillations occur intermittently and primarily non-overlapping.</p>
 </p>
 </div>
 
@@ -108,13 +108,13 @@ bursty1 (proximal)
 <h3>Figure 4</h3>
 <tr>
 <td>
-<a href=""><img src="images/image5.png"/></a>
+<a href="images/image5.png"><img src="images/image5.png"/></a>
 </td>
 <td>
-<a href=""><img src="images/image6.png"/></a>
+<a href="images/image6.png"><img src="images/image6.png"/></a>
 </td>
 <td>
-<a href=""><img src="images/image11.png"/></a>
+<a href="images/image11.png"><img src="images/image11.png"/></a>
 </td>
 </tr>
 </table>
@@ -127,13 +127,13 @@ You should see the values of adjustable parameters displayed as in the dialog bo
 <h3>Figure 5</h3>
 <tr>
 <td>
-<a href=""><img src="images/image8.png"/></a>
+<a href="images/image8.png"><img src="images/image8.png"/></a>
 </td>
 <td>
-<a href=""><img src="images/image9.png"/></a>
+<a href="images/image9.png"><img src="images/image9.png"/></a>
 </td>
 <td>
-<a href=""><img src="images/image10.png"    /></a>
+<a href="images/image10.png"><img src="images/image10.png"/></a>
 </td>
 </tr>
 </table>
@@ -142,8 +142,6 @@ You should see the values of adjustable parameters displayed as in the dialog bo
 Timing tab: The rhythmic proximal inputs drive excitatory synapses in the neocortical network in a proximal projection pattern, as shown at the bottom of the dialog box. For further details on the connectivity structure of the network, see the Under the Hoodsection of the HNN website. Rhythmic proximal input occurs through stochastic, presynaptic bursts of action potentials from a population of bursting cells (set with “Number bursts”; see Figure 3) onto postsynaptic neurons of the modelled network. Stochasticity is introduced in two places: the spike train start time for each bursting cell is sampled from a normal distribution with mean “Start time mean (ms)” and standard deviation “Start time stdev (ms)” and the inter-burst intervals for each bursting cell are sampled from a normal distribution of mean ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image1.png)(e.g., a 100 ms inter-burst interval corresponds to a “Burst frequency” of 10 Hz) and standard deviation “Burst stdev (ms)” (see Figure 3). Also note that the number of spikes per burst unit is set with “Spikes/burst” (currently, only values of 1 and 2 with a fixed 10ms delay can be used) and the final stop time for the entire population of rhythmic proximal inputs is set with “Stop time (ms)”.
 
 Layer 2/3, and Layer 5 tabs: This dialog box allows you to set the postsynaptic conductance of each of the excitatory synapses in the networks. There are AMPA and NMDA receptors on each cell type (pyramidal and basket cells). There is also a delay parameter to control the arrival time of each spike to the network. In this example, the delay to the layer 2/3 cells is 0.1 ms, with a slightly longer delay to the layer 5 cells of 1 ms. For further details on the connectivity structure of the network, see Under the Hood.
-
-XX TODO: DESCRIBE SYNPATIC DELAYS XX
 
 ### 1.2 Run the simulation and visualize net current dipole
 
@@ -157,7 +155,7 @@ This simulation runs for 700 ms of simulation time, so will take a little longer
 
 <h3>Figure 5</h3>
 
-<a href=""><img src="images/OnlyRhythmicProx.png"/></a>
+<a href="images/OnlyRhythmicProx.png"><img src="images/OnlyRhythmicProx.png"/></a>
 </div>
 
 As shown in the red histogram in the top panel of Figure 5 above, with this parameter set, a burst of proximal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev and Burst stdev parameters, there is some variability in the histogram of proximal input times. Note that a decrease in the Burst stdev would create shorter duration bursts (i.e., more synchronous bursts); this will be explored further in step 6.1 below.
@@ -177,7 +175,7 @@ Finally click `Clear axis` and then `Add plot` to regenerate the spectrogram. Yo
 
 <h3>Figure 6</h3>
 
-<a href=""><img src="images/OnlyRhythmicProx_Spect.png"/></a>
+<a href="images/OnlyRhythmicProx_Spect.png"><img src="images/OnlyRhythmicProx_Spect.png"/></a>
 </div>
 
 While this exploration with proximal drive is only useful in understanding how subthreshold rhythmic inputs impact the current dipole produced by the circuit, several features of the waveform and spectrogram of the signal do not match the recorded data shown in Figures 1and 2. Next, we explore the impact of rhythmic distal inputs only (step 2), and then a combination of the two (step 3).
@@ -216,13 +214,13 @@ You should see the values of adjustable parameters displayed as  in the dialog 
 <h3>Figure 7</h3>
 <tr>
 <td>
-<a href=""><img src="images/image15.png"/></a>
+<a href="images/image15.png"><img src="images/image15.png"/></a>
 </td>
 <td>
-<a href=""><img src="images/image16.png"/></a>
+<a href="images/image16.png"><img src="images/image16.png"/></a>
 </td>
 <td>
-<a href=""><img src="images/image17.png"/></a>
+<a href="images/image17.png"><img src="images/image17.png"/></a>
 </td>
 </tr>
 </table>
@@ -238,7 +236,7 @@ Once completed, you will see output similar to that shown below.
 
 <h3>Figure 8</h3>
 
-<a href=""><img src="images/OnlyRhythmicDist.png"/></a>
+<a href="images/OnlyRhythmicDist.png"><img src="images/OnlyRhythmicDist.png"/></a>
 </div>
 
 As shown in the green histogram in the top panel of the HNN GUI above, with this parameter set, a burst of distal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev, and Burst stdev parameters), there is some variability in the histogram of proximal input times. The ~10 Hz bursts of distal input induces current flow down the pyramidal neuron dendrites decreasing the signal below the 0 nAm baseline, which then relaxes back to zero, approximately every 100 ms. This is observed in the black current dipole waveform in the GUI window.
@@ -249,7 +247,7 @@ Once again we will create time-frequency spectrogram for this waveform by first 
 
 <h3>Figure 9</h3>
 
-<a href=""><img src="images/OnlyRhythmicDist_Spect.png"/></a>
+<a href="images/OnlyRhythmicDist_Spect.png"><img src="images/OnlyRhythmicDist_Spect.png"/></a>
 </div>
 
 The bottom panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high power continuous 10 Hz signal. Importantly, in this example the strength of the distal input was also titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons.  
@@ -289,10 +287,11 @@ You should see the values displayed in the dialogue boxes below.
 
 <div class="stylefig" style="max-width: 500px;">
 <table>
-<h3>Figure 10 </h3>
+<h3>Figure 10</h3>
 <tr>
 <td style="border: none;" width="50%">
-<a href=""><img src="images/image20.png" alt="image11"/></a>
+<a href="images/image20.png"><img src="images/image20.png" alt="image11"/></a>
+</td>
 </tr>
 </table>
 </div>
@@ -309,9 +308,9 @@ Once completed, you will see output similar to that shown below.
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 11
+<h3>Figure 11</h3>
 
-<p align="center"><a href=""><img src="images/AlphaAndBeta.png"/></a>
+<p align="center"><img src="images/AlphaAndBeta.png"></p>
 
 </div>
 
@@ -321,7 +320,7 @@ Follow the steps in the previous sections to create a time-frequency spectrogram
 
 <h3>Figure 12</h3>
 
-<a href=""><img src="images/AlphaAndBeta_Spect.png"/></a>
+<a href="images/AlphaAndBeta_Spect.png"><img src="images/AlphaAndBeta_Spect.png"/></a>
 </div>
 
 
@@ -364,10 +363,10 @@ You should see the values displayed in the dialog boxes below.
 <h3>Figure 13</h3>
 <tr>
 <td>
-<a href=""><img src="images/image21.png" alt=""/></a>
+<a href="images/image21.png"><img src="images/image21.png" alt=""/></a>
 </td>
 <td>
-<a href=""><img src="images/image22.png" alt=""/></a>
+<a href="images/image22.png"><img src="images/image22.png" alt=""/></a>
 </td>
 </tr>
 </table>
@@ -390,14 +389,14 @@ This simulation will take longer to run because it uses 10 trials. Once complete
 
 <h3>Figure 14</h3>
 
-<a href=""><img src="images/AlphaAndBetaJitter0_3trials.png" alt=""/></a>
+<a href="images/AlphaAndBetaJitter0_3trials.png"><img src="images/AlphaAndBetaJitter0_3trials.png" alt=""/></a>
 </div>
 
 Follow the previous steps from section (1) or (2) to create a time-frequency spectrogram. The output will look like the following:
 
 <h3>Figure 15</h3>
 <div class="stylefig" style="max-width:550px;">
-<a href=""><img src="images/AlphaAndBetaJitter0_3trials_spect.png" alt=""/></a>
+<a href="images/AlphaAndBetaJitter0_3trials_spect.png"><img src="images/AlphaAndBetaJitter0_3trials_spect.png" alt=""/></a>
 </div>
 
 Notice that the input histograms for distal (green) and proximal (red) input accumulated across the 10 trials, now have higher values than before (up to ~20 compared to 5 in Step 3.2) and the burst inputs are slightly broader on each cycle, since these histograms represent the accumulated activity from 10 simulations, where the standard deviation in the Burst duration across trials is 20 ms. Approximately 10 Hz rhythmicity in the timing of the distal and proximal inputs can be clearly visualized (note also the symmetric profile of the histograms). However, on any individual trial, the coincidence of inputs leading to alpha or beta events displays some variability due to the stochastic parameter value (Burst stdev=20 ms). This is observed in the dipole waveforms shown for each trial (example shown below).
@@ -412,10 +411,10 @@ First, navigate to the `External drives` tab and open the `bursty1 (proximal)` a
 <h3>Figure 16</h3>
 <tr>
 <td>
-<a href=""><img src="images/image23.png" alt=""/></a>
+<a href="images/image23.png"><img src="images/image23.png" alt=""/></a>
 </td>
 <td>
-<a href=""><img src="images/image24.png" alt=""/></a>
+<a href="images/image24.png"><img src="images/image24.png" alt=""/></a>
 </td>
 </tr>
 </table>
@@ -429,7 +428,7 @@ Once completed, you will see output similar to that shown below.
 
 <h3>Figure 17</h3>
 
-<a href=""><img src="images/AlphaAndBetaJitter50_3trials_spect.png" alt=""/></a>
+<a href="images/AlphaAndBetaJitter50_3trials_spect.png"><img src="images/AlphaAndBetaJitter50_3trials_spect.png" alt=""/></a>
 </div>
 
 Notice that the input histograms for distal (green) and proximal (red) input accumulated across the 10 trials now show little rhythmicity due to the jitter in the rhythmic input start times across trials (Start time stdv (ms) = 50), in addition to jitter due to the Burst stdev (ms) = 20\. However, if we were to visualize histograms on each individual trial (using the View spectrograms tab), they would show the ~10 Hz and 20 Hz (alpha and beta) rhythmicity. It is also difficult to visualize rhythmicity in any of the overlaid dipole waveforms. However, on each trial, alpha and beta rhythmicity is present, and even more continuous bands of alpha and beta activity are observed (compare to averaged data in Figure 1 left panel; n=100 trials) when the spectrograms from individual trials are averaged. Running more trials will further increase the continuous nature of alpha and beta activity across time.
@@ -446,7 +445,7 @@ You should see the following window.
 
 <h3>Figure 17</h3>
 
-<a href=""><img src="images/AlphaAndBeta_Spikes.png" alt=""/></a>
+<a href="images/AlphaAndBeta_Spikes.png"><img src="images/AlphaAndBeta_Spikes.png" alt=""/></a>
 </div>
 
 In this window, the rhythmic distal (green/top) and proximal (red/middle) inputs bursts histograms are shown along with the spiking activity in each population of cells (bottom panel). In this case, the alpha and beta events are indeed produced through subthreshold processes and there is no spiking produced in any cell in the network (no dots present in the bottom raster plot).
@@ -470,7 +469,7 @@ You should see something similar to the following window.
 
 <h3>Figure 16</h3>
 
-<a href=""><img src="images/AlphaAndBetaJitter50_3trials_PSD.png" alt=""/></a>
+<a href="images/AlphaAndBetaJitter50_3trials_PSD.png"><img src="images/AlphaAndBetaJitter50_3trials_PSD.png" alt=""/></a>
 </div>
 
 The PSD Viewer window shows the net current dipole (bottom panel) and contribution from each layer in the network separately (top panels). This example was run using the parameter set described in Step 3\. PSD from the simulation shows a strong peak in the alpha (~10 Hz) band,  with a lower peak power in beta band (~20 Hz).
@@ -506,13 +505,13 @@ Reduce the Burst stdev (Hz) value from 20 ms to 10 ms.  This will create higher
 <h3>Figure 19</h3>
 <tr>
 <td>
-<a href=""><img src="images/image28.png" alt=""/></a>
+<a href="images/image28.png"><img src="images/image28.png" alt=""/></a>
 </td>
 <td>
-<a href=""><img src="images/image29.png" alt=""/></a>
+<a href="images/image29.png"><img src="images/image29.png" alt=""/></a>
 </td>
 <td>
-<a href=""><img src="images/image30.png" alt=""/></a>
+<a href="images/image30.png"><img src="images/image30.png" alt=""/></a>
 </td>
 </tr>
 </table>
@@ -524,14 +523,14 @@ Next, we will test how these parameter changes affect the simulation. Select the
 
 <h3>Figure 20</h3>
 
-<a href=""><img src="images/sec6pt1-oldFig20-nonspect.png"/></a>
+<a href="images/sec6pt1-oldFig20-nonspect.png"><img src="images/sec6pt1-oldFig20-nonspect.png"/></a>
 </div>
 
 <div class="stylefig" style="max-width:550px;">
 
 <h3>Figure 21</h3>
 
-<a href=""><img src="images/sec6pt1-oldFig20-spect.png"/></a>
+<a href="images/sec6pt1-oldFig20-spect.png"><img src="images/sec6pt1-oldFig20-spect.png"/></a>
 </div>
 
 First, notice that the histogram profile of the distal input bursts (green) are narrower corresponding to more synchronous input than in the prior simulation (Step 3). Second, notice that the waveform of the oscillation is different with a sharper downward deflecting signal, due to to the stronger distal input. These deflections increased ~20 Hz beta activity, as seen in the corresponding spectrogram (compare to spectrogram in Step 3). The 20 Hz frequency is set by the duration of the downward current flow, which with this parameter set is approximately 50 ms (see Sherman et al. 2016[3] for further details).
@@ -550,7 +549,7 @@ To test this, select the `External drives` tab, open the `bursty2 (distal)` drop
 
 <h3>Figure 22</h3>
 
-<a href=""><img src="images/image25.png" alt=""/></a>
+<a href="images/image25.png"><img src="images/image25.png" alt=""/></a>
 </div>
 
 Next, run the simulation. Click on Start Simulation from the main GUI window. Once completed, you will see output similar to that shown below.
@@ -559,7 +558,7 @@ Next, run the simulation. Click on Start Simulation from the main GUI window. O
 
 <h3>Figure 23</h3>
 
-<a href=""><img src="images/sec6pt2-oldFig23-nonspect.png" alt=""/></a>
+<a href="images/sec6pt2-oldFig23-nonspect.png"><img src="images/sec6pt2-oldFig23-nonspect.png" alt=""/></a>
 </div>
 
 Notice that the histogram profile of the distal input bursts (green) are once again wider corresponding to less synchronous input and comparable to those shown in the example in Step 3\. However, in this case the postsynaptic conductance of these driving spike is significantly larger (40e-5 ![](https://raw.githubusercontent.com/jonescompneurolab/hnn-tutorials/master/alpha_and_beta/images/image2.png)). This strong input induces spiking activity in the pyramidal neuron on several cycles of the drive (2.5 shown here) resulting in a sharp and rapidly oscillating dipole waveform. The corresponding dipole spectrogram shows broadband spiking from ~60-120 Hz. This type of activity is not typically seen in EEG or MEG data, and hence unlikely to underlie macroscale recordings.
@@ -570,7 +569,7 @@ We can verify that the neurons are spiking by looking at the spiking raster plot
 
 <h3>Figure 24</h3>
 
-<a href=""><img src="images/sec6pt2-oldFig25.png" alt=""/></a>
+<a href="images/sec6pt2-oldFig25.png"><img src="images/sec6pt2-oldFig25.png" alt=""/></a>
 </div>
 
 Notice that highly synchronous neuronal spiking in each population coincides with the high-frequency events seen in the waveform and spectrogram. The waveform response is induced by the pyramidal neuron spiking which creates rapid back-propagating action potentials and repolarization of the dendrites.
@@ -598,10 +597,10 @@ We mentioned above that, in addition to parameters controlling the strength and 
 <h3>Figure 25</h3>
 <tr>
 <td>
-<a href=""><img src="images/image26" alt=""/></a>
+<a href="images/image26"><img src="images/image26" alt=""/></a>
 </td>
 <td>
-<a href=""><img src="images/image27" alt=""/></a>
+<a href="images/image27"><img src="images/image27" alt=""/></a>
 </td>
 </tr>
 </table>
@@ -615,14 +614,14 @@ Next, we will run the simulation to investigate the impact of this parameter cha
 
 <h3>Figure 26</h3>
 
-<a href=""><img src="images/sec6pt3-oldFig27-everything-except-spect.png" alt=""/></a>
+<a href="images/sec6pt3-oldFig27-everything-except-spect.png"><img src="images/sec6pt3-oldFig27-everything-except-spect.png" alt=""/></a>
 </div>
 
 <div class="stylefig" style="max-width:550px;">
 
 <h3>Figure 27</h3>
 
-<a href=""><img src="images/sec6pt3-oldFig27-spect.png" alt=""/></a>
+<a href="images/sec6pt3-oldFig27-spect.png"><img src="images/sec6pt3-oldFig27-spect.png" alt=""/></a>
 </div>
 
 Notice that the histogram profile of the proximal (red) and distal (green) input bursts are generally ½ cycle out-of-phase (antiphase). This rhythmic alteration of proximal followed by distal drive induces alternating subthreshold current flow up and down the pyramidal neuron dendrites to create a continuous alpha oscillation in the current dipole waveform that oscillates around 0 nAm. The period of the oscillation is set by the duration of each burst (~50 ms, controlled in part by Burst stdev) and the 50 ms delay between the inputs on each cycle (due to different start times). The corresponding spectrogram shows continuous nearly pure alpha activity. This type of strong alpha activity is similar to what might be observed over occipital cortex during eyes closed conditions.
