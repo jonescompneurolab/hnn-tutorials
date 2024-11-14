@@ -53,11 +53,13 @@ In this tutorial, we will explore parameter changes that illustrate these result
 
 4\. [Calculating and Viewing Power Spectral Density (PSD)](#toc_four)
 
-5\. [Comparing model output and recorded data](#toc_five)
+<!-- 5\. [Comparing model output and recorded data](#toc_five) -->
 
-6\. [Adjusting parameters](#toc_six)
+<!-- 6\. [Adjusting parameters](#toc_six) -->
+5\. [Adjusting parameters](#toc_six)
 
-7\. [Have fun exploring your own data!](#toc_seven)
+<!-- 7\. [Have fun exploring your own data!](#toc_seven) -->
+6\. [Have fun exploring your own data!](#toc_seven)
 
 <!-- -->
 <!-- -->
@@ -153,19 +155,22 @@ This simulation runs for 700 ms of simulation time, so will take a little longer
 
 <div class="stylefig"  style="max-width:550px;">
 
-<h3>Figure 5</h3>
+<h3>Figure 6</h3>
 
 <a href="images/OnlyRhythmicProx.png"><img src="images/OnlyRhythmicProx.png"/></a>
 </div>
 
-As shown in the red histogram in the top panel of Figure 5 above, with this parameter set, a burst of proximal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev and Burst stdev parameters, there is some variability in the histogram of proximal input times. Note that a decrease in the Burst stdev would create shorter duration bursts (i.e., more synchronous bursts); this will be explored further in step 6.1 below.
+<!-- As shown in the red histogram in the top panel of Figure 6 above, with this parameter set, a burst of proximal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev and Burst stdev parameters, there is some variability in the histogram of proximal input times. Note that a decrease in the Burst stdev would create shorter duration bursts (i.e., more synchronous bursts); this will be explored further in step 6.1 below. -->
+As shown in the red histogram in the top panel of Figure 6 above, with this parameter set, a burst of proximal input spikes is provided to the network ~10 Hz (i.e., every 100 ms). Due to the stochastic nature of the inputs (controlled by the start time stdev and Burst stdev parameters, there is some variability in the histogram of proximal input times. Note that a decrease in the Burst stdev would create shorter duration bursts (i.e., more synchronous bursts); this will be explored further in step 5.1 below.
+
 
 The ~10 Hz bursts of proximal drive induces current flow up the pyramidal neuron dendrites increasing the signal above the 0 nAm baseline, which then relaxes back to zero, approximately every 100 ms. This is observed in the black current dipole waveform in the GUI window. 
 
 To view the time-frequency spectrogram for this waveform, click on the `Visualization` tab. Then click on the `Layout template` dropdown menu and select `Drive-Dipole-Spectrogram`. Finally click the `Make Figure` button.
  
 
-The bottom panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high-power continuous 10 Hz signal. Importantly, in this example the strength of the proximal input was titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons. In step 6.2 below, we explore differences in the signal when the cells are driven to spike (see also ERP tutorial).
+<!-- The bottom panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high-power continuous 10 Hz signal. Importantly, in this example the strength of the proximal input was titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons. In step 6.2 below, we explore differences in the signal when the cells are driven to spike (see also ERP tutorial). -->
+The bottom panel shows the corresponding time-frequency spectrogram for this waveform that exhibits a high-power continuous 10 Hz signal. Importantly, in this example the strength of the proximal input was titrated to be subthreshold (i.e., cells do not spike) under the assumption that macroscale oscillations are generated primarily by subthreshold current flow across large populations of synchronous pyramidal neurons. In step 5.2 below, we explore differences in the signal when the cells are driven to spike (see also ERP tutorial).
 
 To better see the 10 Hz signal, we can adjust the y-axis of the spectrogram. Under the options for `ax2` which corresponds to the spectrogram on the bottom panel, change the values for `Min Spectral Frequency (Hz)` to `0.1` and `Max Spectral Frequency (Hz)` to `40.0`.
 
@@ -173,12 +178,12 @@ Finally click `Clear axis` and then `Add plot` to regenerate the spectrogram. Yo
 
 <div class="stylefig"  style="max-width:550px;">
 
-<h3>Figure 6</h3>
+<h3>Figure 7</h3>
 
 <a href="images/OnlyRhythmicProx_Spect.png"><img src="images/OnlyRhythmicProx_Spect.png"/></a>
 </div>
 
-While this exploration with proximal drive is only useful in understanding how subthreshold rhythmic inputs impact the current dipole produced by the circuit, several features of the waveform and spectrogram of the signal do not match the recorded data shown in Figures 1and 2. Next, we explore the impact of rhythmic distal inputs only (step 2), and then a combination of the two (step 3).
+While this exploration with proximal drive is only useful in understanding how subthreshold rhythmic inputs impact the current dipole produced by the circuit, several features of the waveform and spectrogram of the signal do not match the recorded data shown in Figures 1 and 2. Next, we explore the impact of rhythmic distal inputs only (step 2), and then a combination of the two (step 3).
 
 <a id="toc_two"></a>
 
@@ -211,7 +216,7 @@ You should see the values of adjustable parameters displayed as  in the dialog 
 
 <div class="stylefig" style="max-width: 650px;">
 <table>
-<h3>Figure 7</h3>
+<h3>Figure 8</h3>
 <tr>
 <td>
 <a href="images/image15.png"><img src="images/image15.png"/></a>
@@ -234,7 +239,7 @@ Once completed, you will see output similar to that shown below.
 
 <div class="stylefig"  style="max-width:550px;">
 
-<h3>Figure 8</h3>
+<h3>Figure 9</h3>
 
 <a href="images/OnlyRhythmicDist.png"><img src="images/OnlyRhythmicDist.png"/></a>
 </div>
@@ -245,7 +250,7 @@ Once again we will create time-frequency spectrogram for this waveform by first 
 
 <div class="stylefig"  style="max-width:550px;">
 
-<h3>Figure 9</h3>
+<h3>Figure 10</h3>
 
 <a href="images/OnlyRhythmicDist_Spect.png"><img src="images/OnlyRhythmicDist_Spect.png"/></a>
 </div>
@@ -287,7 +292,7 @@ You should see the values displayed in the dialogue boxes below.
 
 <div class="stylefig" style="max-width: 500px;">
 <table>
-<h3>Figure 10</h3>
+<h3>Figure 11</h3>
 <tr>
 <td style="border: none;" width="50%">
 <a href="images/image20.png"><img src="images/image20.png" alt="image11"/></a>
@@ -308,7 +313,7 @@ Once completed, you will see output similar to that shown below.
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 11</h3>
+<h3>Figure 12</h3>
 
 <p align="center"><img src="images/AlphaAndBeta.png"></p>
 
@@ -318,7 +323,7 @@ Follow the steps in the previous sections to create a time-frequency spectrogram
 
 <div class="stylefig"  style="max-width:550px;">
 
-<h3>Figure 12</h3>
+<h3>Figure 13</h3>
 
 <a href="images/AlphaAndBeta_Spect.png"><img src="images/AlphaAndBeta_Spect.png"/></a>
 </div>
@@ -360,7 +365,7 @@ You should see the values displayed in the dialog boxes below.
 
 <div class="stylefig" style="max-width: 650px;">
 <table>
-<h3>Figure 13</h3>
+<h3>Figure 14</h3>
 <tr>
 <td>
 <a href="images/image21.png"><img src="images/image21.png" alt=""/></a>
@@ -387,15 +392,15 @@ This simulation will take longer to run because it uses 10 trials. Once complete
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 14</h3>
+<h3>Figure 15</h3>
 
 <a href="images/AlphaAndBetaJitter0_3trials.png"><img src="images/AlphaAndBetaJitter0_3trials.png" alt=""/></a>
 </div>
 
 Follow the previous steps from section (1) or (2) to create a time-frequency spectrogram. The output will look like the following:
 
-<h3>Figure 15</h3>
 <div class="stylefig" style="max-width:550px;">
+<h3>Figure 16</h3>
 <a href="images/AlphaAndBetaJitter0_3trials_spect.png"><img src="images/AlphaAndBetaJitter0_3trials_spect.png" alt=""/></a>
 </div>
 
@@ -408,7 +413,7 @@ First, navigate to the `External drives` tab and open the `bursty1 (proximal)` a
 
 <div class="stylefig" style="max-width: 650px;">
 <table>
-<h3>Figure 16</h3>
+<h3>Figure 17</h3>
 <tr>
 <td>
 <a href="images/image23.png"><img src="images/image23.png" alt=""/></a>
@@ -426,7 +431,7 @@ Once completed, you will see output similar to that shown below.
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 17</h3>
+<h3>Figure 18</h3>
 
 <a href="images/AlphaAndBetaJitter50_3trials_spect.png"><img src="images/AlphaAndBetaJitter50_3trials_spect.png" alt=""/></a>
 </div>
@@ -443,7 +448,7 @@ You should see the following window.
 
 <div class="stylefig" style="max-width:550px;" >
 
-<h3>Figure 17</h3>
+<h3>Figure 19</h3>
 
 <a href="images/AlphaAndBeta_Spikes.png"><img src="images/AlphaAndBeta_Spikes.png" alt=""/></a>
 </div>
@@ -467,7 +472,7 @@ You should see something similar to the following window.
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 16</h3>
+<h3>Figure 20</h3>
 
 <a href="images/AlphaAndBetaJitter50_3trials_PSD.png"><img src="images/AlphaAndBetaJitter50_3trials_PSD.png" alt=""/></a>
 </div>
@@ -476,17 +481,19 @@ The PSD Viewer window shows the net current dipole (bottom panel) and contributi
 
 <a id="toc_five"></a>
 
-## 5. Comparing model output and recorded data
+<!-- ## 5. Comparing model output and recorded data -->
 
-Work in progress!
+<!-- Work in progress! -->
 
-## 6. Adjusting parameters
+<a id="toc_six"></a>
+
+## 5. Adjusting parameters
 
 Parameter adjustments will be key to developing and testing hypotheses on the circuit origin of your own low-frequency rhythmic data. HNN is designed so that many of the parameters in the model can be adjusted from the GUI (see the Tour of the GUI tutorial).
 
 Here, we’ll walk through examples of how to adjust several “Rhythmic Proximal/Distal Input” parameters to investigate how they impact the alpha and beta rhythms described above. We end with some suggested exercises for further exploration.
 
-### 6.1 Changing the strength (post-synaptic conductance) and synchrony of the distal drive increases beta activity
+### 5.1 Changing the strength (post-synaptic conductance) and synchrony of the distal drive increases beta activity
 
 We described above (Step 3) that the timing of proximal and distal inputs can lead to either alpha events (when the bursts arrive to the local network out of phase) or beta events (when the bursts arrive in phase).
 
@@ -502,7 +509,7 @@ Reduce the Burst stdev (Hz) value from 20 ms to 10 ms.  This will create higher
 
 <div class="stylefig" style="max-width: 650px;">
 <table>
-<h3>Figure 19</h3>
+<h3>Figure 21</h3>
 <tr>
 <td>
 <a href="images/image28.png"><img src="images/image28.png" alt=""/></a>
@@ -521,25 +528,25 @@ Next, we will test how these parameter changes affect the simulation. Select the
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 20</h3>
+<h3>Figure 22</h3>
 
 <a href="images/sec6pt1-oldFig20-nonspect.png"><img src="images/sec6pt1-oldFig20-nonspect.png"/></a>
 </div>
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 21</h3>
+<h3>Figure 23</h3>
 
 <a href="images/sec6pt1-oldFig20-spect.png"><img src="images/sec6pt1-oldFig20-spect.png"/></a>
 </div>
 
 First, notice that the histogram profile of the distal input bursts (green) are narrower corresponding to more synchronous input than in the prior simulation (Step 3). Second, notice that the waveform of the oscillation is different with a sharper downward deflecting signal, due to to the stronger distal input. These deflections increased ~20 Hz beta activity, as seen in the corresponding spectrogram (compare to spectrogram in Step 3). The 20 Hz frequency is set by the duration of the downward current flow, which with this parameter set is approximately 50 ms (see Sherman et al. 2016[3] for further details).
 
-### 6.1.1 Exercise for further exploration
+### 5.1.1 Exercise for further exploration
 
 Try changing the frequency of the rhythmic distal drive from 10 Hz to 20 Hz. Try other frequencies for the proximal and distal rhythmic drive. How do the rhythms change? See how changes in the Burst stdev effects the rhythms expressed.
 
-### 6.2 Increasing the strength (post-synaptic conductance) of the distal drive further creates high frequency responses due to induced spiking activity
+### 5.2 Increasing the strength (post-synaptic conductance) of the distal drive further creates high frequency responses due to induced spiking activity
 
 Recall that in the above simulations, the strength of the rhythmic proximal and distal inputs were chosen so that the cells remained subthreshold (no spiking). We will now demonstrate what happens if we increase the strength of the inputs far enough to induce spikes. Instead of simulating subthreshold alpha/beta events, we will see that the dipole signals are dominated by higher-frequency events created by spiking activity. We note that the produced waveforms of activity are, to our knowledge, not typically observed in MEG or EEG data, supporting the notion that alpha/beta rhythms are created through subthreshold processes.
 
@@ -547,7 +554,7 @@ To test this, select the `External drives` tab, open the `bursty2 (distal)` drop
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 22</h3>
+<h3>Figure 24</h3>
 
 <a href="images/image25.png"><img src="images/image25.png" alt=""/></a>
 </div>
@@ -556,7 +563,7 @@ Next, run the simulation. Click on Start Simulation from the main GUI window. O
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 23</h3>
+<h3>Figure 25</h3>
 
 <a href="images/sec6pt2-oldFig23-nonspect.png"><img src="images/sec6pt2-oldFig23-nonspect.png" alt=""/></a>
 </div>
@@ -567,7 +574,7 @@ We can verify that the neurons are spiking by looking at the spiking raster plot
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 24</h3>
+<h3>Figure 26</h3>
 
 <a href="images/sec6pt2-oldFig25.png"><img src="images/sec6pt2-oldFig25.png" alt=""/></a>
 </div>
@@ -578,7 +585,7 @@ Hypothesis testing:This simulation demonstrates that HNN can be used to test the
 
 
 
-### 6.2.1 Exercise for further exploration
+### 5.2.1 Exercise for further exploration
 
 View the contribution of Layer 2/3 and Layer 5 to the net current dipole waveform and compare with the spiking activity in each population. How do each contribute? Try also to change the proximal input parameters instead of the distal input parameters.
 
@@ -586,7 +593,7 @@ Adjust one of the parameter regulating the local network connections. What happe
 
 
 
-### 6.3 Increasing the delay between the proximal and distal inputs to anti-phase (50 ms delay) creates continuous alpha oscillations without beta activity
+### 5.3 Increasing the delay between the proximal and distal inputs to anti-phase (50 ms delay) creates continuous alpha oscillations without beta activity
 
 
 We mentioned above that, in addition to parameters controlling the strength and synchrony of the distal (or proximal) drive, the relative timing of proximal and distal inputs is an important factor in determining relative alpha and beta expression in the model. Here we will demonstrate that out-of-phase, 10 Hz burst inputs can produce continuous alpha activity without any beta events. For this simulation, load the [AlphaAndBeta.json](https://raw.githubusercontent.com/jonescompneurolab/hnn-data/refs/heads/main/network-configurations/AlphaAndBeta.json) parameter file as described in Step 3 by clicking Set Parameters From File and selecting the file from HNN’s param subfolder. To view the new parameters, click on the `External drives` tab. Next, in the `bursty1 (proximal)` dropdown menu, change the start time mean from 50 to 100 ms. The timing tabs in the Rhythmic Proximal and Distal Input dialog boxes should look as follows:  
@@ -594,13 +601,13 @@ We mentioned above that, in addition to parameters controlling the strength and 
 
 <div class="stylefig" style="max-width: 650px;">
 <table>
-<h3>Figure 25</h3>
+<h3>Figure 27</h3>
 <tr>
 <td>
-<a href="images/image26"><img src="images/image26" alt=""/></a>
+<a href="images/image26.png"><img src="images/image26.png" alt=""/></a>
 </td>
 <td>
-<a href="images/image27"><img src="images/image27" alt=""/></a>
+<a href="images/image27.png"><img src="images/image27.png" alt=""/></a>
 </td>
 </tr>
 </table>
@@ -612,14 +619,14 @@ Next, we will run the simulation to investigate the impact of this parameter cha
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 26</h3>
+<h3>Figure 28</h3>
 
 <a href="images/sec6pt3-oldFig27-everything-except-spect.png"><img src="images/sec6pt3-oldFig27-everything-except-spect.png" alt=""/></a>
 </div>
 
 <div class="stylefig" style="max-width:550px;">
 
-<h3>Figure 27</h3>
+<h3>Figure 29</h3>
 
 <a href="images/sec6pt3-oldFig27-spect.png"><img src="images/sec6pt3-oldFig27-spect.png" alt=""/></a>
 </div>
@@ -628,7 +635,7 @@ Notice that the histogram profile of the proximal (red) and distal (green) input
 
 
 
-### 6.3.1 Exercise for further exploration
+### 5.3.1 Exercise for further exploration
 
 Try changing the delay between the proximal and distal drive by varying amounts. What happens to the rhythm expressed?
 
@@ -637,9 +644,10 @@ Can you create a simulation where other frequencies are expressed? How is it cre
 
 <a id="toc_seven"></a>
 
-## 7. Have fun exploring your own data!
+## 6. Have fun exploring your own data!
 
-Follow steps 1-6 above using your data and parameter adjustments based on your own hypotheses.  
+<!-- Follow steps 1-6 above using your data and parameter adjustments based on your own hypotheses.   -->
+Follow steps 1-5 above using your data and parameter adjustments based on your own hypotheses.  
 
 
 
