@@ -73,7 +73,7 @@ Configuration files that will simulate PING rhythms as described in the Getting 
 
 Before we load in the configuration file, let's update the parameters in the `Simulation` tab. 
 
-If you have the [MPI backend](https://jonescompneurolab.github.io/hnn-core/stable/parallel.html) for parallel simulations installed, you can change the backend from Joblib to MPI for faster simulation times. Otherwise, you can leave this option as is. We will keep `Trials` (the number of trials to simulate) as 1 and the integration timestep `dt (ms)` as 0.025 for now. Next, we will change the `tstop (ms)` parameter to 250 for a longer simulation. Lastly, we will change the `Name` to `gamma_L5weak_L2weak` to refect the network configuration we'll be starting with. 
+If you have the [MPI backend](https://jonescompneurolab.github.io/hnn-core/stable/parallel.html) for parallel simulations installed, you can change the backend from Joblib to MPI for faster simulation times. Otherwise, you can leave this option as is. We will keep `Trials` (the number of trials to simulate) as 1 and the integration timestep `dt (ms)` as 0.025 for now. We will change `Smoothing` to 0. Next, we will change the `tstop (ms)` parameter to 300 for a longer simulation. Lastly, we will change the `Name` to `gamma_L5weak_L2weak` to refect the network configuration we'll be starting with. 
 
 ## 1. Load/view parameters to “activate” the network and to define the network structure
 
